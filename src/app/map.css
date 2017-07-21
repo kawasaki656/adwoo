@@ -1,7 +1,5 @@
 .screen {
   position: relative;
-  width: 600px;
-  height: 600px;
   overflow: hidden;
 }
 .map {
