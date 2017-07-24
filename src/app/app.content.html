@@ -4,50 +4,11 @@
 </div>
 <div class="screen container-fluid" id="screen">
   <div class="map">
-    <div class="cell">
-
+    <div class="line" *ngFor="let line of mapSize">
+      <div class="cell" *ngFor="let cell of mapSize">
+      </div>
     </div>
-    <div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
-
-    </div><div class="cell">
+    <div class="cell" [style.width]="cellWidth + 'px'" [style.height]="cellHeight + 'px'">
 
     </div>
   </div>
