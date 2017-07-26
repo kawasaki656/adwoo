@@ -13,4 +13,4 @@ import { AppContent } from './app.content';
   providers: [],
   bootstrap: [AppContent]
 })
-export class AppModule { }
+export class AppModule {}
