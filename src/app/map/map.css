@@ -6,8 +6,6 @@
 }
 .map {
   position: absolute;
-  width: 2000px;
-  height: 2000px;
 }
 .screen .map .line {
   border-bottom: 1px solid #c4d6fa;

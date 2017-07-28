@@ -7,7 +7,11 @@ import {Component, ElementRef, OnInit, Input} from '@angular/core';
 })
 export class AppContent implements OnInit{
   ngOnInit(): void {
-    this.fillMap()
+    this.fillMap();
+    let screenDom = window.getComputedStyle(document.getElementsByClassName("screen").item(0));
+    this.mapHeight = screenDom.height;
+    this.mapWidth = screenDom.width;
+    console.log(window.getComputedStyle(document.getElementsByClassName("map").item(0)))
   }
   sizemap:number;
   title = 'Adwoo';
@@ -17,6 +21,8 @@ export class AppContent implements OnInit{
   cellWidth: number;
   map: Array<Array<Object>>;
   rotateMap: number;
+  mapHeight: string;
+  mapWidth: string;
   constructor(el: ElementRef) {
     this.screenWidth = document.documentElement.clientWidth;
     this.screenHeight = document.documentElement.clientHeight;
@@ -25,9 +31,11 @@ export class AppContent implements OnInit{
     this.rotateMap = 145;
     document.body.style.height = this.screenHeight + 'px';
     document.body.style.width = this.screenWidth + 'px';
+
+    //window.getComputedStyle(el.nativeElement.querySelector("#map").nativeElement, null)
   }
   fillMap():void {
-    this.sizemap = 20;
+    this.sizemap = 3;
     this.map = new Array();
     for(let i=0; i<this.sizemap; i++) {
       this.map.push(new Array());
