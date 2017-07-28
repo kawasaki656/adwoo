@@ -6,6 +6,16 @@ import {Component, ElementRef, OnInit, Input} from '@angular/core';
   styleUrls: ['map/map.css', 'header/header.css', 'footer/footer.css', './content.css']
 })
 export class AppContent implements OnInit{
+  sizemap:number;
+  title = 'Adwoo';
+  screenHeight: number;
+  screenWidth: number;
+  cellHeight: number;
+  cellWidth: number;
+  map: Array<Array<Object>>;
+  rotateMap: number;
+  mapHeight: string;
+  mapWidth: string;
   ngOnInit(): void {
     this.fillMap();
     this.screenWidth = document.documentElement.clientWidth;
@@ -20,16 +30,6 @@ export class AppContent implements OnInit{
     this.mapWidth = screenDom.width;
     //console.log(window.getComputedStyle(document.getElementsByClassName("map").item(0)))
   }
-  sizemap:number;
-  title = 'Adwoo';
-  screenHeight: number;
-  screenWidth: number;
-  cellHeight: number;
-  cellWidth: number;
-  map: Array<Array<Object>>;
-  rotateMap: number;
-  mapHeight: string;
-  mapWidth: string;
   constructor(el: ElementRef) {
   }
   fillMap():void {
