@@ -1,8 +1,10 @@
 .header {
   display: flex;
+  position: relative;
   align-items: center;
   height: 6%;
   background-color: rgb(56, 67, 78);
+  z-index: 4;
 }
 
 .header .buttons {
@@ -38,10 +40,23 @@
   background: none;
   border: none;
   border-bottom: 1px solid rgb(87,97,106);
-  color: rgb(87,97,106);
+  color: rgb(204,207,210);
+  font-size: 11px;
   font-weight: bold;
   padding-left: 10px;
   padding-right: 10px;
+}
+.header .search input::-webkit-input-placeholder {
+  color:rgb(106, 116, 125)
+}
+.header .search input::-moz-placeholder {
+  color:rgb(106, 116, 125)
+}
+.header .search input:-moz-placeholder  {
+  color:rgb(106, 116, 125)
+}
+.header .search input:-ms-input-placeholder  {
+  color:rgb(106, 116, 125)
 }
 .header .search input:focus {
   outline: none;

@@ -1,0 +1,16 @@
+.filters {
+  position: absolute;
+  top: 0px;
+  background: rgb(252, 252, 252);
+  z-index: 3;
+}
+
+.filters .show {
+  display: inline-block !important;
+  padding: 4px 10px;
+  background: rgb(237, 113, 83);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
