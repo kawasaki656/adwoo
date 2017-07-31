@@ -1,4 +1,51 @@
 .header {
+  display: flex;
+  align-items: center;
   height: 6%;
   background-color: rgb(56, 67, 78);
 }
+
+.header .buttons {
+  display: flex;
+  align-items: center;
+  width: 15%;
+  height: 70%;
+}
+
+.header .buttons input {
+  background: rgb(86, 95, 104);
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.header .empty1, .header .empty2 {
+  width: 5%;
+  height: 70%;
+}
+
+.header .search {
+  display: flex;
+  align-items: center;
+  width: 20%;
+  height: 70%
+}
+
+.header .search input {
+  width: 90%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgb(87,97,106);
+  color: rgb(87,97,106);
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.header .search input:focus {
+  outline: none;
+
+}
+
+

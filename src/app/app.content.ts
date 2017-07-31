@@ -33,7 +33,7 @@ export class AppContent implements OnInit{
   constructor(el: ElementRef) {
   }
   fillMap():void {
-    this.sizemap = 3;
+    this.sizemap = 5;
     this.map = new Array();
     for(let i=0; i<this.sizemap; i++) {
       this.map.push(new Array());
