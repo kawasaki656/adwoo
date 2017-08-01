@@ -19,3 +19,20 @@
   background: rgba(215, 232, 255, 0.64);
   border-right: 1px solid #c4d6fa;
 }
+.topNav, .leftNav, .rightNav, .bottomNav {
+  position: absolute;
+}
+.topNav, .bottomNav {
+  width: 100%;
+  height: 10%;
+}
+.leftNav, .rightNav {
+  height: 100%;
+  width: 9%;
+}
+.bottomNav {
+  top: 90%;
+}
+.rightNav {
+  left: 91%;
+}

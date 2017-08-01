@@ -62,5 +62,22 @@
   outline: none;
 
 }
+.header .empty3 {
+  width: 20%;
+  height: 70%
+}
+.header .icons1 {
+  display: flex;
+  width: 20%;
+  height: 70%
+}
+.header .icons1 .icon {
+  width: 19%;
+  height: 100%;
+  margin-right: 5px;
+  border: 1px solid rgb(106, 116, 125);
+  border-radius: 5px;
+  cursor: pointer;
+}
 
 
