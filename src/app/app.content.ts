@@ -3,7 +3,7 @@ import {Component, ElementRef, OnInit, Input} from '@angular/core';
 @Component({
   selector: 'app-content',
   templateUrl: './app.content.html',
-  styleUrls: ['map/map.css', 'header/header.css', 'filters/filters.css', 'footer/footer.css', './content.css']
+  styleUrls: ['map/map.css', 'header/header.css', 'footer/footer.css', './content.css']
 })
 export class AppContent implements OnInit{
   sizemap:number;
@@ -16,8 +16,6 @@ export class AppContent implements OnInit{
   rotateMap: number;
   mapHeight: string;
   mapWidth: string;
-  filtersHeight: string;
-  leftPositionShowButton: string;
   ngOnInit(): void {
     this.fillMap();
     this.screenWidth = document.documentElement.clientWidth;
@@ -30,13 +28,12 @@ export class AppContent implements OnInit{
     let screenDom = window.getComputedStyle(document.getElementsByClassName("screen").item(0));
     this.mapHeight = screenDom.height;
     this.mapWidth = screenDom.width;
-    this.calculateFiltersCoordinate();
     //console.log(window.getComputedStyle(document.getElementsByClassName("map").item(0)))
   }
   constructor(el: ElementRef) {
   }
   fillMap():void {
-    this.sizemap = 5;
+    this.sizemap = 8;
     this.map = new Array();
     for(let i=0; i<this.sizemap; i++) {
       this.map.push(new Array());
@@ -45,10 +42,5 @@ export class AppContent implements OnInit{
       }
     }
     console.log(this.map)
-  }
-  calculateFiltersCoordinate(): void {
-    let filtersDom = window.getComputedStyle(document.getElementsByClassName("header").item(0));
-    this.filtersHeight = filtersDom.height;
-    this.leftPositionShowButton = (parseFloat(this.mapWidth)/2 - 50) + 'px';
   }
 }
