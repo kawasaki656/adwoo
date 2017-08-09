@@ -41,8 +41,8 @@
     <div class="bottomNav">
     </div>
 
-    <div *ngFor="let line of map" class="line" [style.width]="cellWidth*sizemap + 'px'" [style.height]="cellHeight + 1 + 'px'">
-      <div *ngFor="let cell of line" class="cell" [style.width]="cellWidth + 'px'" [style.height]="cellHeight + 'px'">
+    <div *ngFor="let line of map" class="line" [style.width]="cellHeight*sizemap + 'px'" [style.height]="cellHeight + 1 + 'px'">
+      <div *ngFor="let cell of line" class="cell" [style.width]="cellHeight + 'px'" [style.height]="cellHeight + 'px'">
       </div>
     </div>
   </div>
