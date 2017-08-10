@@ -41,6 +41,11 @@
       <div *ngFor="let cell of line" class="cell" [style.width]="cellHeight + 'px'" [style.height]="cellHeight + 'px'">
       </div>
     </div>
+    <div class="line invisible" [style.width]="cellHeight*sizemap + 'px'" [style.height]="cellHeight + 1 + 'px'">
+      <div *ngFor="let cell of map[0]" class="cell" [style.width]="cellHeight + 'px'" [style.height]="cellHeight + 'px'">
+      </div>
+    </div>
+
   </div>
 </div>
 <div class="footer container-fluid" >

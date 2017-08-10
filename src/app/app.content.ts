@@ -18,9 +18,12 @@ export class AppContent implements OnInit, AfterViewInit{
   mapHeight: string;
   mapWidth: string;
   headerIconHeight: string;
+  leftOffsetBlock: string;
   ngAfterViewInit(): void {
     this.headerIconHeight = window.getComputedStyle(document.getElementsByClassName("icon").item(0)).height;
-    console.log(this.headerIconHeight)
+    //$('#box').width()*Math.cos(rotationAngle) + $('#box').height()*Math.sin(rotationAngle)
+    console.log(window.getComputedStyle(document.getElementsByClassName("line").item(0)))
+    console.log(window.getComputedStyle(document.getElementsByClassName("line invisible").item(0)).width)
   }
   ngOnInit(): void {
     this.fillMap();
@@ -39,7 +42,7 @@ export class AppContent implements OnInit, AfterViewInit{
   constructor(el: ElementRef) {
   }
   fillMap():void {
-    this.sizemap = 8;
+    this.sizemap = 3;
     this.map = new Array();
     for(let i=0; i<this.sizemap; i++) {
       this.map.push(new Array());
