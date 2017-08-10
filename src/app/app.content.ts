@@ -1,11 +1,12 @@
-import {Component, ElementRef, OnInit, Input} from '@angular/core';
+import {Component, ElementRef, OnInit, Input, AfterViewInit} from '@angular/core';
 
 @Component({
   selector: 'app-content',
   templateUrl: './app.content.html',
   styleUrls: ['map/map.css', 'header/header.css', 'footer/footer.css', './content.css']
 })
-export class AppContent implements OnInit{
+export class AppContent implements OnInit, AfterViewInit{
+
   sizemap:number;
   title = 'Adwoo';
   screenHeight: number;
@@ -16,6 +17,11 @@ export class AppContent implements OnInit{
   rotateMap: number;
   mapHeight: string;
   mapWidth: string;
+  headerIconHeight: string;
+  ngAfterViewInit(): void {
+    this.headerIconHeight = window.getComputedStyle(document.getElementsByClassName("icon").item(0)).height;
+    console.log(this.headerIconHeight)
+  }
   ngOnInit(): void {
     this.fillMap();
     this.screenWidth = document.documentElement.clientWidth;
