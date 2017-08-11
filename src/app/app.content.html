@@ -27,25 +27,22 @@
 </div>
 <filters></filters>
 <div class="screen container-fluid" id="screen">
-  <div class="map" id="map" [style.transform]="'rotate(' + rotateMap + 'deg)'" [style.height]="mapHeight" [style.width]="mapWidth">
-    <div class="topNav">
-    </div>
-    <div class="leftNav">
-    </div>
-    <div class="rightNav">
-    </div>
-    <div class="bottomNav">
-    </div>
-
-    <div *ngFor="let line of map" class="line" [style.width]="cellHeight*sizemap + 'px'" [style.height]="cellHeight + 1 + 'px'">
-      <div *ngFor="let cell of line" class="cell" [style.width]="cellHeight + 'px'" [style.height]="cellHeight + 'px'">
+  <div class="topNav">
+  </div>
+  <div class="leftNav">
+  </div>
+  <div class="rightNav">
+  </div>
+  <div class="bottomNav">
+  </div>
+  <div class="wrap" [style.width]="cellHeight*sizemap + 'px'" [style.height]="(cellHeight + 1)*sizemap + 'px'" [style.transform]="'rotate(' + rotateMap + 'deg)'" style="margin-top: -160px;
+    margin-left: -300px;">
+    <div class="map" id="map">
+      <div *ngFor="let line of map" class="line" [style.width]="cellHeight*sizemap + 'px'" [style.height]="cellHeight + 1 + 'px'">
+        <div *ngFor="let cell of line" class="cell" [style.width]="cellHeight + 'px'" [style.height]="cellHeight + 'px'">
+        </div>
       </div>
     </div>
-    <div class="line invisible" [style.width]="cellHeight*sizemap + 'px'" [style.height]="cellHeight + 1 + 'px'">
-      <div *ngFor="let cell of map[0]" class="cell" [style.width]="cellHeight + 'px'" [style.height]="cellHeight + 'px'">
-      </div>
-    </div>
-
   </div>
 </div>
 <div class="footer container-fluid" >

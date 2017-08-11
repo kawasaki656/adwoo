@@ -29,9 +29,9 @@ export class AppContent implements OnInit, AfterViewInit{
     this.fillMap();
     this.screenWidth = document.documentElement.clientWidth;
     this.screenHeight = document.documentElement.clientHeight;
-    this.cellHeight = this.screenHeight / 5;
-    this.cellWidth = this.screenWidth / 6;
-    //this.rotateMap = 145;
+    this.cellHeight = this.screenHeight / 3;
+    this.cellWidth = this.screenWidth / 4;
+    this.rotateMap = -41;
     document.body.style.height = this.screenHeight + 'px';
     document.body.style.width = this.screenWidth + 'px';
     let screenDom = window.getComputedStyle(document.getElementsByClassName("screen").item(0));
@@ -42,7 +42,7 @@ export class AppContent implements OnInit, AfterViewInit{
   constructor(el: ElementRef) {
   }
   fillMap():void {
-    this.sizemap = 3;
+    this.sizemap = 9;
     this.map = new Array();
     for(let i=0; i<this.sizemap; i++) {
       this.map.push(new Array());
@@ -50,6 +50,5 @@ export class AppContent implements OnInit, AfterViewInit{
         this.map[i].push(new Array());
       }
     }
-    console.log(this.map)
   }
 }

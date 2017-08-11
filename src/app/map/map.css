@@ -11,14 +11,13 @@
   -o-transform: skew(10deg);
 }
 .screen .map .line {
-  border-bottom: 1px solid #c4d6fa;
+  border-bottom: 35px solid #4e4036;
   line-height: normal;
 }
 .screen .map .cell {
   position: relative;
   display: inline-block;
-  background: rgba(215, 232, 255, 0.64);
-  border-right: 1px solid #c4d6fa;
+  border-right: 35px solid #4e4036;
 }
 .topNav, .leftNav, .rightNav, .bottomNav {
   position: absolute;
