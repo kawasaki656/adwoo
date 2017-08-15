@@ -6,18 +6,20 @@
 }
 .map {
   position: absolute;
-  -webkit-transform: skew(10deg);
-  -moz-transform: skew(10deg);
-  -o-transform: skew(10deg);
+  -webkit-transform: skew(30deg);
+  -moz-transform: skew(30deg);
+  -o-transform: skew(30deg);
 }
 .screen .map .line {
   border-bottom: 35px solid #4e4036;
-  line-height: normal;
+  line-height: 0px;
 }
 .screen .map .cell {
   position: relative;
   display: inline-block;
   border-right: 35px solid #4e4036;
+  width: 282px;
+  height: 215px;
 }
 .topNav, .leftNav, .rightNav, .bottomNav {
   position: absolute;

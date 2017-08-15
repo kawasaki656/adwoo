@@ -31,7 +31,7 @@ export class AppContent implements OnInit, AfterViewInit{
     this.screenHeight = document.documentElement.clientHeight;
     this.cellHeight = this.screenHeight / 3;
     this.cellWidth = this.screenWidth / 4;
-    this.rotateMap = -41;
+    this.rotateMap = -30;
     document.body.style.height = this.screenHeight + 'px';
     document.body.style.width = this.screenWidth + 'px';
     let screenDom = window.getComputedStyle(document.getElementsByClassName("screen").item(0));
