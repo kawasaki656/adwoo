@@ -35,14 +35,16 @@
   </div>
   <div class="bottomNav">
   </div>
-  <img src="../assets/cs-a001.png" style="position: absolute; z-index:100; left: 200px; top:200px; opacity:.5">
-  <div class="wrap" [style.width]="cellHeight*sizemap + 'px'" [style.height]="(cellHeight + 1)*sizemap + 'px'" [style.transform]="'rotate(' + rotateMap + 'deg)'" style="margin-top: -200px;
+  <img src="../assets/cs-a001.png" style="position: absolute; z-index:100; left: 174px; top:133px">
+  <div class="wrap" [style.width]="cellHeight*sizemap + 'px'" [style.height]="(cellHeight)*sizemap - 99 + 'px'" [style.transform]="'rotate(' + rotateMap + 'deg)'" style="margin-top: -200px;
     margin-left: -400px;">
     <div class="map" id="map">
       <div *ngFor="let line of map" class="line">
         <div *ngFor="let cell of line" class="cell">
           <div class="left"></div>
           <div class="top"></div>
+          <div class="right"></div>
+          <div class="bottom"></div>
         </div>
       </div>
     </div>
