@@ -11,16 +11,32 @@
   -o-transform: skew(30deg);
 }
 .screen .map .line {
-  border-bottom: 35px solid #4e4036;
+  border-bottom: 100px solid #4e4036;
   line-height: 0px;
 }
 .screen .map .cell {
   position: relative;
   display: inline-block;
-  border-right: 35px solid #4e4036;
+  border-right: 100px solid #4e4036;
   width: 282px;
   height: 215px;
 }
+.screen .map .cell .left{
+  position: absolute;
+  width: 100px;
+  height: 275px;
+  left: -100px;
+  background: url("../../assets/border-vertical.jpg");
+}
+
+.screen .map .cell .top{
+  position: absolute;
+  width: 290px;
+  height: 100px;
+  top: -100px;
+  background: url("../../assets/border-horizontal.jpg");
+}
+
 .topNav, .leftNav, .rightNav, .bottomNav {
   position: absolute;
 }
