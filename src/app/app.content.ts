@@ -1,4 +1,5 @@
 import {Component, ElementRef, OnInit, Input, AfterViewInit} from '@angular/core';
+import { NavigationService } from "./map/navigation.service";
 
 @Component({
   selector: 'app-content',
@@ -19,11 +20,16 @@ export class AppContent implements OnInit, AfterViewInit{
   mapWidth: string;
   headerIconHeight: string;
   leftOffsetBlock: string;
+  navigation: any;
+  constructor(el: ElementRef, navigation:NavigationService) {
+    this.navigation = navigation;
+  }
   ngAfterViewInit(): void {
     this.headerIconHeight = window.getComputedStyle(document.getElementsByClassName("icon").item(0)).height;
+    this.navigation.addEventHandlers();
     //$('#box').width()*Math.cos(rotationAngle) + $('#box').height()*Math.sin(rotationAngle)
-    console.log(window.getComputedStyle(document.getElementsByClassName("line").item(0)))
-    console.log(window.getComputedStyle(document.getElementsByClassName("line invisible").item(0)).width)
+    //console.log(window.getComputedStyle(document.getElementsByClassName("line").item(0)))
+    //console.log(window.getComputedStyle(document.getElementsByClassName("line invisible").item(0)).width)
   }
   ngOnInit(): void {
     this.fillMap();
@@ -38,8 +44,6 @@ export class AppContent implements OnInit, AfterViewInit{
     this.mapHeight = screenDom.height;
     this.mapWidth = screenDom.width;
     //console.log(window.getComputedStyle(document.getElementsByClassName("map").item(0)))
-  }
-  constructor(el: ElementRef) {
   }
   fillMap():void {
     this.sizemap = 9;
