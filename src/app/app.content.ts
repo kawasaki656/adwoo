@@ -19,7 +19,7 @@ export class AppContent implements OnInit, AfterViewInit{
   mapHeight: string;
   mapWidth: string;
   headerIconHeight: string;
-  leftOffsetBlock: string;
+  leftOffsetWrap: string = "-500px";
   navigation: any;
   constructor(el: ElementRef, navigation:NavigationService) {
     this.navigation = navigation;
@@ -27,9 +27,11 @@ export class AppContent implements OnInit, AfterViewInit{
   ngAfterViewInit(): void {
     this.headerIconHeight = window.getComputedStyle(document.getElementsByClassName("icon").item(0)).height;
     this.navigation.addEventHandlers();
-    //$('#box').width()*Math.cos(rotationAngle) + $('#box').height()*Math.sin(rotationAngle)
-    //console.log(window.getComputedStyle(document.getElementsByClassName("line").item(0)))
-    //console.log(window.getComputedStyle(document.getElementsByClassName("line invisible").item(0)).width)
+    let leftOffset = -500;
+    /*setInterval(()=>{
+      leftOffset--;
+      this.leftOffsetWrap = leftOffset + 'px'
+    }, 20)*/
   }
   ngOnInit(): void {
     this.fillMap();
