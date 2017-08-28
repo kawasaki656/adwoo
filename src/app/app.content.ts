@@ -19,12 +19,35 @@ export class AppContent implements OnInit, AfterViewInit{
   mapHeight: string;
   mapWidth: string;
   headerIconHeight: string;
-  leftOffsetWrap: string = "-500px";
+  leftOffsetWrap: string = "-600px";
+  topOffsetWrap: string = "-600px";
   navigation: any;
   constructor(el: ElementRef, navigation:NavigationService) {
     this.navigation = navigation;
   }
+
+
+  animate(draw, duration):void {
+  let start = performance.now();
+
+  requestAnimationFrame(function animate(time) {
+    var timePassed = time - start;
+
+    if (timePassed > duration) {
+      timePassed = duration;
+    }
+    draw(timePassed);
+
+    if (timePassed < duration) {
+      requestAnimationFrame(animate);
+    }
+
+  });
+}
+
+
   ngAfterViewInit(): void {
+    let outerThis = this;
     this.headerIconHeight = window.getComputedStyle(document.getElementsByClassName("icon").item(0)).height;
     this.navigation.addEventHandlers();
     let leftOffset = -500;
@@ -32,6 +55,18 @@ export class AppContent implements OnInit, AfterViewInit{
       leftOffset--;
       this.leftOffsetWrap = leftOffset + 'px'
     }, 20)*/
+
+    let i = -600;
+    let last=0;
+    this.animate((a)=> {
+      if((a-last) < 20 && (a-last)>10) {
+        console.log(a - last);
+        i-=40/(a-last);
+        outerThis.leftOffsetWrap = i + "px"
+      }
+      last = a;
+    }, 3000)
+
   }
   ngOnInit(): void {
     this.fillMap();

@@ -4,6 +4,17 @@
   width: 100%;
   height: 88%;
 }
+.motion {
+  left: -1200px !important;
+  top: -1200px !important;
+}
+.screen .wrap {
+  position: absolute;
+  transform: scale(.5);
+  -ms-transform: scale(.5);
+  -moz-transform: scale(.5);
+  -webkit-transform: scale(.5);
+}
 .map {
   position: absolute;
   -webkit-transform: skew(30deg);
