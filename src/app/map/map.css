@@ -4,16 +4,20 @@
   width: 100%;
   height: 88%;
 }
+.screen img {
+  position: absolute;
+}
 .motion {
-  left: -1200px !important;
-  top: -1200px !important;
+  position: absolute;
+  transition: all 2s;;
 }
 .screen .wrap {
   position: absolute;
-  transform: scale(.5);
-  -ms-transform: scale(.5);
-  -moz-transform: scale(.5);
-  -webkit-transform: scale(.5);
+  transition: all 2s;
+  transform: translate(-350px, 100px) scale(.5);
+  -ms-transform: translate(-350px, 100px) scale(.5);
+  -moz-transform: translate(-350px, 100px) scale(.5);
+  -webkit-transform: translate(-350px, 100px) scale(.5);
 }
 .map {
   position: absolute;
@@ -37,14 +41,12 @@
   width: 100px;
   height: 315px;
   left: -100px;
-  background: url("../../assets/border-vertical.jpg");
 }
 .screen .map .cell .right{
   position: absolute;
   width: 100px;
   height: 315px;
   right: -100px;
-  background: url("../../assets/border-vertical.jpg");
 }
 
 .screen .map .cell .top{
@@ -52,14 +54,12 @@
   width: 351px;
   height: 100px;
   top: -100px;
-  background: url("../../assets/border-horizontal.jpg");
 }
 .screen .map .cell .bottom{
   position: absolute;
   width: 351px;
   height: 100px;
   bottom: -100px;
-  background: url("../../assets/border-horizontal.jpg");
 }
 
 .topNav, .leftNav, .rightNav, .bottomNav {

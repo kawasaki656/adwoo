@@ -55,7 +55,7 @@ export class AppContent implements OnInit, AfterViewInit{
       leftOffset--;
       this.leftOffsetWrap = leftOffset + 'px'
     }, 20)*/
-
+    /*
     let i = -600;
     let last=0;
     this.animate((a)=> {
@@ -65,7 +65,7 @@ export class AppContent implements OnInit, AfterViewInit{
         outerThis.leftOffsetWrap = i + "px"
       }
       last = a;
-    }, 3000)
+    }, 3000)*/
 
   }
   ngOnInit(): void {
@@ -83,7 +83,7 @@ export class AppContent implements OnInit, AfterViewInit{
     //console.log(window.getComputedStyle(document.getElementsByClassName("map").item(0)))
   }
   fillMap():void {
-    this.sizemap = 9;
+    this.sizemap = 6;
     this.map = new Array();
     for(let i=0; i<this.sizemap; i++) {
       this.map.push(new Array());
@@ -91,5 +91,11 @@ export class AppContent implements OnInit, AfterViewInit{
         this.map[i].push(new Array());
       }
     }
+    for(let i=0; i<this.sizemap; i++) {
+      for(let j=0; j<this.sizemap; j++) {
+        this.map[i][j] = '../assets/City_Objects/Block_0' + (Math.floor(Math.random() * 7)+1) + '.png';
+      }
+    }
+    console.log(this.map)
   }
 }

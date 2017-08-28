@@ -35,8 +35,18 @@
   </div>
   <div class="bottomNav">
   </div>
-  <div class="wrap" >
-    <img src="../assets/City_Objects/Block_01.png">
+  <div class="wrap">
+    <div *ngFor="let line of map; let lineIndex = index">
+      <img *ngFor="let cell of line; let cellIndex = index" [src]="cell" [style.left] = "(lineIndex*267)+(cellIndex*263)+'px'" [style.top] = "(lineIndex*156)+(cellIndex*(-155))+'px'" [style.z-index] = "lineIndex-cellIndex">
+    </div>
+
+    <img src="../assets/City_Objects/Block_Road_02.png" style="left: 410px;top: 415px;z-index: 0">
+    <img src="../assets/City_Objects/Block_Road_02.png" style="left: 680px;top: 570px;z-index: 0">
+
+    <img src="../assets/City_Objects/Block_Road_01.png" style="left: 407px;top: 254px;z-index: -1">
+    <img src="../assets/City_Objects/Block_Road_01.png" style="left: 680px;top: 410px;z-index: 0">
+    <img src="../assets/City_Objects/Block_Road_01.png" style="left: 831px;top: 498px;">
+    <img src="../assets/City_Objects/Block_Road_03.png" style="left: 619px;top: 389px;z-index: 0">
   </div>
 </div>
 <div class="footer container-fluid" >
