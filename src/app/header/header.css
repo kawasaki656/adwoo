@@ -16,6 +16,7 @@
 
 .header .buttons input {
   background: rgb(86, 95, 104);
+  font-size: 11px;
   color: white;
   border: none;
   font-weight: bold;
@@ -41,7 +42,7 @@
   border: none;
   border-bottom: 1px solid rgb(87,97,106);
   color: rgb(204,207,210);
-  font-size: 11px;
+  font-size: 9px;
   font-weight: bold;
   padding-left: 10px;
   padding-right: 10px;
