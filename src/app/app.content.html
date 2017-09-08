@@ -37,16 +37,15 @@
   </div>
   <div class="wrap">
     <div *ngFor="let line of map; let lineIndex = index">
-      <img *ngFor="let cell of line; let cellIndex = index" [src]="cell" [style.left] = "(lineIndex*267)+(cellIndex*263)+'px'" [style.top] = "(lineIndex*156)+(cellIndex*(-155))+'px'" [style.z-index] = "lineIndex-cellIndex">
+      <img *ngFor="let cell of line; let cellIndex = index" [src]="cell" [style.left] = "(lineIndex*267)+(cellIndex*271)+'px'" [style.top] = "(lineIndex*156)+(cellIndex*(-158))+'px'" [style.z-index] = "lineIndex-cellIndex">
     </div>
-    <img *ngFor="let cell of map[0]; let roadIndex = index" src="../assets/City_Objects/Block_Road_01.png" [style.left] = "139 + (268*roadIndex) + 'px'" [style.top] = "411 - (157*roadIndex) + 'px'" [style.z-index] = "-1 - roadIndex">
-
-    <img src="../assets/City_Objects/Block_Road_02.png" style="left: 410px;top: 415px;z-index: 0">
+    <div *ngFor="let line of map; let lineIndex = index">
+      <img *ngFor="let img of line; let roadIndex = index" src="../assets/City_Objects/Block_Road_01.png" [style.left] = "139 + (270*roadIndex) + ((roadIndex>1) ? roadIndex : 0) + lineIndex*268 + 'px'" [style.top] = "411 - (158*roadIndex) + lineIndex*156 + 'px'" [style.z-index] = "-1 - roadIndex">
+    </div>
+    <div *ngFor="let line of map; let lineIndex = index">
+      <img *ngFor="let cell of line; let roadIndex = index" src="../assets/City_Objects/Block_Road_02.png" [style.left] = "410 + (271.5*roadIndex) + lineIndex*268 + 'px'" [style.top] = "415 - (157.5*roadIndex) + lineIndex*156 + 'px'" [style.z-index] = "-1 - roadIndex">
+    </div>
     <img src="../assets/City_Objects/Block_Road_02.png" style="left: 680px;top: 570px;z-index: 0">
-
-    <img src="../assets/City_Objects/Block_Road_01.png" style="left: 407px;top: 254px;z-index: -1">
-    <img src="../assets/City_Objects/Block_Road_01.png" style="left: 680px;top: 410px;z-index: 0">
-    <img src="../assets/City_Objects/Block_Road_01.png" style="left: 831px;top: 498px;">
     <img src="../assets/City_Objects/Block_Road_03.png" style="left: 619px;top: 389px;z-index: 0">
   </div>
 </div>
