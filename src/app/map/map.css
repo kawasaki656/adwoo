@@ -1,3 +1,17 @@
+.rightNav, .leftNav {
+  display: flex;
+  align-items: center;
+}
+.topNav, .bottomNav {
+  height: 20% !important;
+  display: flex;
+  align-items: center;
+}
+
+.leftNav img:hover, .rightNav img:hover, .topNav img:hover, .bottomNav img:hover {
+  opacity: .7 !important;
+}
+
 .screen {
   position: relative;
   overflow: hidden;
@@ -9,7 +23,8 @@
 }
 .motion {
   position: absolute;
-  transition: all 2s;;
+  transition: all 2s;
+  transform: translate(-50px, -300px);
 }
 .screen .wrap {
   position: absolute;

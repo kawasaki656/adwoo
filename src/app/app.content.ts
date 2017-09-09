@@ -12,15 +12,10 @@ export class AppContent implements OnInit, AfterViewInit{
   title = 'Adwoo';
   screenHeight: number;
   screenWidth: number;
-  cellHeight: number;
-  cellWidth: number;
   map: Array<Array<Object>>;
-  rotateMap: number;
   mapHeight: string;
   mapWidth: string;
   headerIconHeight: string;
-  leftOffsetWrap: string = "-600px";
-  topOffsetWrap: string = "-600px";
   navigation: any;
   constructor(el: ElementRef, navigation:NavigationService) {
     this.navigation = navigation;
@@ -72,9 +67,6 @@ export class AppContent implements OnInit, AfterViewInit{
     this.fillMap();
     this.screenWidth = document.documentElement.clientWidth;
     this.screenHeight = document.documentElement.clientHeight;
-    this.cellHeight = 350;
-    this.cellWidth = 283;
-    this.rotateMap = -30;
     document.body.style.height = this.screenHeight + 'px';
     document.body.style.width = this.screenWidth + 'px';
     let screenDom = window.getComputedStyle(document.getElementsByClassName("screen").item(0));

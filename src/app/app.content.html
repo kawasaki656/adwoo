@@ -28,12 +28,16 @@
 <filters></filters>
 <div class="screen container-fluid" id="screen">
   <div class="topNav">
+    <img src="../assets/navigation/array.png" style="z-index: 10000; transform: rotate(-90deg); opacity: 0.5" [style.width]="screenWidth/30 + 'px'">
   </div>
   <div class="leftNav">
+    <img src="../assets/navigation/array.png" style="z-index: 10000; transform: rotate(180deg); opacity: 0.5" [style.width]="screenWidth/30 + 'px'">
   </div>
   <div class="rightNav">
+    <img src="../assets/navigation/array.png" style="z-index: 10000; opacity: 0.5" [style.width]="screenWidth/30 + 'px'">
   </div>
   <div class="bottomNav">
+    <img src="../assets/navigation/array.png" style="z-index: 10000; transform: rotate(90deg); opacity: 0.5" [style.width]="screenWidth/30 + 'px'">
   </div>
   <div class="wrap">
     <div *ngFor="let line of map; let lineIndex = index">
@@ -43,10 +47,10 @@
       <img *ngFor="let img of line; let roadIndex = index" src="../assets/City_Objects/Block_Road_01.png" [style.left] = "139 + (270*roadIndex) + ((roadIndex>1) ? roadIndex : 0) + lineIndex*268 + 'px'" [style.top] = "411 - (158*roadIndex) + lineIndex*156 + 'px'" [style.z-index] = "-1 - roadIndex">
     </div>
     <div *ngFor="let line of map; let lineIndex = index">
-      <img *ngFor="let cell of line; let roadIndex = index" src="../assets/City_Objects/Block_Road_02.png" [style.left] = "410 + (271.5*roadIndex) + lineIndex*268 + 'px'" [style.top] = "415 - (157.5*roadIndex) + lineIndex*156 + 'px'" [style.z-index] = "-1 - roadIndex">
+      <img *ngFor="let cell of line; let roadIndex = index" src="../assets/City_Objects/Block_Road_02.png" [style.left] = "410 + (271.5*roadIndex) + lineIndex*268 + 'px'" [style.top] = "415 - (158*roadIndex) + lineIndex*156 + 'px'" [style.z-index] = "0 - roadIndex">
     </div>
-    <img src="../assets/City_Objects/Block_Road_02.png" style="left: 680px;top: 570px;z-index: 0">
     <img src="../assets/City_Objects/Block_Road_03.png" style="left: 619px;top: 389px;z-index: 0">
+    <img src="../assets/City_Objects/Block_13.png" style="left:0px; top:0px">
   </div>
 </div>
 <div class="footer container-fluid" >
