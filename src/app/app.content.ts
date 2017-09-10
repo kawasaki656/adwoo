@@ -17,8 +17,25 @@ export class AppContent implements OnInit, AfterViewInit{
   mapWidth: string;
   headerIconHeight: string;
   navigation: any;
+  navigationX: number;
+  navigationY: number;
   constructor(el: ElementRef, navigation:NavigationService) {
     this.navigation = navigation;
+    this.navigationX = 0;
+    this.navigationY = -30;
+  }
+
+  navRight():void {
+    this.navigationX -= this.screenWidth/2;
+  }
+  navLeft():void {
+    this.navigationX += this.screenWidth/2;
+  }
+  navTop():void {
+    this.navigationY += this.screenHeight/2;
+  }
+  navBottom():void {
+    this.navigationY -= this.screenHeight/2;
   }
 
 
@@ -75,7 +92,7 @@ export class AppContent implements OnInit, AfterViewInit{
     //console.log(window.getComputedStyle(document.getElementsByClassName("map").item(0)))
   }
   fillMap():void {
-    this.sizemap = 6;
+    this.sizemap = 10;
     this.map = new Array();
     for(let i=0; i<this.sizemap; i++) {
       this.map.push(new Array());

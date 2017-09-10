@@ -1,11 +1,13 @@
 .rightNav, .leftNav {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .topNav, .bottomNav {
   height: 20% !important;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .leftNav img:hover, .rightNav img:hover, .topNav img:hover, .bottomNav img:hover {
@@ -89,7 +91,7 @@
   width: 9%;
 }
 .bottomNav {
-  top: 90%;
+  top: 80%;
 }.rightNav {
   left: 91%;
 }
