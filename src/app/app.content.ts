@@ -1,5 +1,7 @@
 import {Component, ElementRef, OnInit, Input, AfterViewInit} from '@angular/core';
 import { NavigationService } from "./map/navigation.service";
+import {DialogService} from "ng2-bootstrap-modal";
+import {ConfirmComponent} from "./addBlockModal/addBlockModal";
 
 @Component({
   selector: 'app-content',
@@ -19,7 +21,7 @@ export class AppContent implements OnInit, AfterViewInit{
   navigation: any;
   navigationX: number;
   navigationY: number;
-  constructor(el: ElementRef, navigation:NavigationService) {
+  constructor(el: ElementRef, navigation:NavigationService, private dialogService:DialogService) {
     this.navigation = navigation;
     this.navigationX = 0;
     this.navigationY = -30;
@@ -56,6 +58,21 @@ export class AppContent implements OnInit, AfterViewInit{
 
   });
 }
+  showConfirm() {
+    let disposable = this.dialogService.addDialog(ConfirmComponent, {
+      title: 'Confirm title',
+      message: 'Confirm message'
+    })
+      .subscribe((isConfirmed) => {
+        //We get dialog result
+        if (isConfirmed) {
+          alert('accepted');
+        }
+        else {
+          alert('declined');
+        }
+      });
+  }
 
 
   ngAfterViewInit(): void {
