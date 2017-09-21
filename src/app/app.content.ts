@@ -60,7 +60,7 @@ export class AppContent implements OnInit, AfterViewInit{
 }
   showConfirm() {
     let disposable = this.dialogService.addDialog(ConfirmComponent, {
-      title: 'Confirm title',
+      title: 'Add a new building',
       message: 'Confirm message'
     })
       .subscribe((isConfirmed) => {

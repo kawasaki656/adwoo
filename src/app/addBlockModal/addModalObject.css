@@ -1,0 +1,21 @@
+.modal-dialog .modal-body {
+  text-align: center;
+}
+.modal-dialog .modal-body img {
+  width: 50%;
+}
+.modal-dialog .modal-body .left, .modal-dialog .modal-body .objects, .modal-dialog .modal-body .right {
+  display: inline-block;
+  width: 10%;
+  vertical-align: middle;
+}
+.modal-dialog .modal-body .objects {
+  width: 70% !important;
+  overflow: hidden;
+}
+.modal-dialog .modal-body .left, .modal-dialog .modal-body .right {
+  opacity: .5;
+}
+.modal-dialog .modal-body .right img {
+  transform: rotate(180deg);
+}
