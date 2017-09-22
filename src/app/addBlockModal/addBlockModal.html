@@ -6,13 +6,21 @@
     </div>
     <div class="modal-body">
       <div class="left">
-        <img src="../../assets/AddObject/arrow-left.png">
+        <img src="../../assets/AddObject/arrow-left.png" (click)="moveLeft()">
       </div>
       <div class="objects">
-        <img src="../../assets/City_Objects/Block_01.png">
+        <div class="rotator" [ngStyle]="{'transform': 'translate(' + rotatorPosition +'px)'}">
+          <img src="../../assets/City_Objects/Block_01.png">
+          <img src="../../assets/City_Objects/Block_02.png">
+          <img src="../../assets/City_Objects/Block_03.png">
+          <img src="../../assets/City_Objects/Block_04.png">
+          <img src="../../assets/City_Objects/Block_05.png">
+          <img src="../../assets/City_Objects/Block_06.png">
+          <img src="../../assets/City_Objects/Block_07.png">
+        </div>
       </div>
       <div class="right">
-        <img src="../../assets/AddObject/arrow-left.png">
+        <img src="../../assets/AddObject/arrow-left.png" (click)="moveRight()">
       </div>
     </div>
     <div class="modal-footer">

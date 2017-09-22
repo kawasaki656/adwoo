@@ -4,6 +4,10 @@
 .modal-dialog .modal-body img {
   width: 50%;
 }
+.modal-dialog .modal-body .objects img {
+  width: 250px;
+  margin-right: 60px;
+}
 .modal-dialog .modal-body .left, .modal-dialog .modal-body .objects, .modal-dialog .modal-body .right {
   display: inline-block;
   width: 10%;
@@ -12,9 +16,19 @@
 .modal-dialog .modal-body .objects {
   width: 70% !important;
   overflow: hidden;
+  text-align: left;
+}
+.modal-dialog .modal-body .objects .rotator {
+  width: 10000px;
+  height: 200px;
+  transition: all 1s;
 }
 .modal-dialog .modal-body .left, .modal-dialog .modal-body .right {
   opacity: .5;
+  cursor: pointer;
+}
+.modal-dialog .modal-body .left:hover, .modal-dialog .modal-body .right:hover {
+  opacity: .7;
 }
 .modal-dialog .modal-body .right img {
   transform: rotate(180deg);
