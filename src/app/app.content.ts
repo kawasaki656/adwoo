@@ -25,8 +25,8 @@ export class AppContent implements OnInit {
     this.sectionSample = {
       draw:true,
       width: 1,
-      height: 1
-      
+      height: 1,
+      src:1
     }
   }
 
