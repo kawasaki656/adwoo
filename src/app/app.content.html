@@ -3,7 +3,7 @@
   <div class="empty1">
   </div>
   <div class="buttons">
-    <input type="button" value="AdWoo">
+    <input type="button" value="AdWoo" (click)="showConfirm()">
     <input type="button" value="World" style="margin-left: 3px">
     <i class="fa fa-caret-down" aria-hidden="true"></i>
   </div>
@@ -28,16 +28,16 @@
 <filters></filters>
 <div class="screen container-fluid" id="screen" >
   <div class="topNav">
-    <img (click)="navTop()" src="../assets/navigation/array.png" style="z-index: 10000; transform: rotate(-90deg); opacity: 0.5" [style.width]="screenWidth/30 + 'px'">
+    <img (click)="navTop()" src="../assets/navigation/array.png" style="z-index: 1; transform: rotate(-90deg); opacity: 0.5" [style.width]="screenWidth/30 + 'px'">
   </div>
   <div class="leftNav">
-    <img (click)="navLeft()" src="../assets/navigation/array.png" style="z-index: 10000; transform: rotate(180deg); opacity: 0.5" [style.width]="screenWidth/30 + 'px'">
+    <img (click)="navLeft()" src="../assets/navigation/array.png" style="z-index: 1; transform: rotate(180deg); opacity: 0.5" [style.width]="screenWidth/30 + 'px'">
   </div>
   <div class="rightNav">
-    <img (click)="navRight()" src="../assets/navigation/array.png" style="z-index: 10000; opacity: 0.5" [style.width]="screenWidth/30 + 'px'">
+    <img (click)="navRight()" src="../assets/navigation/array.png" style="z-index: 1; opacity: 0.5" [style.width]="screenWidth/30 + 'px'">
   </div>
   <div class="bottomNav">
-    <img (click)="navBottom()" src="../assets/navigation/array.png" style="z-index: 10000; transform: rotate(90deg); opacity: 0.5" [style.width]="screenWidth/30 + 'px'">
+    <img (click)="navBottom()" src="../assets/navigation/array.png" style="z-index: 1; transform: rotate(90deg); opacity: 0.5" [style.width]="screenWidth/30 + 'px'">
   </div>
   <div class="wrap" [ngStyle]="{'transform': 'translate(' + navigationX + 'px,' + navigationY + 'px' + ') scale(0.5)'}">
     <div *ngFor="let line of map; let lineIndex = index">
