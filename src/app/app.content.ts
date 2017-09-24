@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, Input, AfterViewInit} from '@angular/core';
+import {Component, ElementRef, OnInit} from '@angular/core';
 import { NavigationService } from "./map/navigation.service";
 
 @Component({
@@ -6,7 +6,7 @@ import { NavigationService } from "./map/navigation.service";
   templateUrl: './app.content.html',
   styleUrls: ['map/map.css', 'header/header.css', 'footer/footer.css', './content.css']
 })
-export class AppContent implements OnInit, AfterViewInit{
+export class AppContent implements OnInit {
 
   sizemap:number;
   title = 'Adwoo';
@@ -15,13 +15,12 @@ export class AppContent implements OnInit, AfterViewInit{
   map: Array<Array<Object>>;
   mapHeight: string;
   mapWidth: string;
-  headerIconHeight: string;
   navigation: any;
   navigationX: number;
   navigationY: number;
   constructor(el: ElementRef, navigation:NavigationService) {
     this.navigation = navigation;
-    this.navigationX = 0;
+    this.navigationX = -700;
     this.navigationY = -30;
   }
 
@@ -39,7 +38,7 @@ export class AppContent implements OnInit, AfterViewInit{
   }
 
 
-  animate(draw, duration):void {
+  /*animate(draw, duration):void {
   let start = performance.now();
 
   requestAnimationFrame(function animate(time) {
@@ -55,31 +54,9 @@ export class AppContent implements OnInit, AfterViewInit{
     }
 
   });
-}
+}*/
 
 
-  ngAfterViewInit(): void {
-    let outerThis = this;
-    this.headerIconHeight = window.getComputedStyle(document.getElementsByClassName("icon").item(0)).height;
-    this.navigation.addEventHandlers();
-    let leftOffset = -500;
-    /*setInterval(()=>{
-      leftOffset--;
-      this.leftOffsetWrap = leftOffset + 'px'
-    }, 20)*/
-    /*
-    let i = -600;
-    let last=0;
-    this.animate((a)=> {
-      if((a-last) < 20 && (a-last)>10) {
-        console.log(a - last);
-        i-=40/(a-last);
-        outerThis.leftOffsetWrap = i + "px"
-      }
-      last = a;
-    }, 3000)*/
-
-  }
   ngOnInit(): void {
     this.fillMap();
     this.screenWidth = document.documentElement.clientWidth;
@@ -89,7 +66,6 @@ export class AppContent implements OnInit, AfterViewInit{
     let screenDom = window.getComputedStyle(document.getElementsByClassName("screen").item(0));
     this.mapHeight = screenDom.height;
     this.mapWidth = screenDom.width;
-    //console.log(window.getComputedStyle(document.getElementsByClassName("map").item(0)))
   }
   fillMap():void {
     this.sizemap = 10;
