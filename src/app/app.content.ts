@@ -7,7 +7,7 @@ import { NavigationService } from "./map/navigation.service";
   styleUrls: ['map/map.css', 'header/header.css', 'footer/footer.css', './content.css']
 })
 export class AppContent implements OnInit {
-
+  sectionSample:Object;
   sizemap:number;
   title = 'Adwoo';
   screenHeight: number;
@@ -22,6 +22,12 @@ export class AppContent implements OnInit {
     this.navigation = navigation;
     this.navigationX = -700;
     this.navigationY = -30;
+    this.sectionSample = {
+      draw:true,
+      width: 1,
+      height: 1
+      
+    }
   }
 
   navRight():void {
