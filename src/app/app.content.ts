@@ -32,6 +32,22 @@ export class AppContent implements OnInit {
     }
   }
 
+  showConfirm() {
+    let disposable = this.dialogService.addDialog(ConfirmComponent, {
+        title: 'Add a new building',
+        message: 'Confirm message'
+      })
+      .subscribe((isConfirmed) => {
+        //We get dialog result
+        if (isConfirmed) {
+          alert('accepted');
+        }
+        else {
+          alert('declined');
+        }
+      });
+  }
+
   navRight():void {
     this.navigationX -= this.screenWidth/2;
   }
