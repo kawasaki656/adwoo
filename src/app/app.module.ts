@@ -6,6 +6,7 @@ import { FilterComponent } from "./filters/filter.component";
 import { NavigationService } from "./map/navigation.service"
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import {ConfirmComponent} from "./addBlockModal/addBlockModal";
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {ConfirmComponent} from "./addBlockModal/addBlockModal";
   ],
   imports: [
     BrowserModule,
-    BootstrapModalModule
+    BootstrapModalModule,
+    HttpClientModule
   ],
   entryComponents: [ConfirmComponent],
   providers: [NavigationService],

@@ -2,6 +2,7 @@ import {Component, ElementRef, OnInit} from '@angular/core';
 import { NavigationService } from "./map/navigation.service";
 import {DialogService} from "ng2-bootstrap-modal";
 import {ConfirmComponent} from "./addBlockModal/addBlockModal";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-content',
@@ -10,6 +11,7 @@ import {ConfirmComponent} from "./addBlockModal/addBlockModal";
 })
 export class AppContent implements OnInit {
   sectionSample:Object;
+  jsonData : JSON;
   sizemap:number;
   title = 'Adwoo';
   screenHeight: number;
@@ -20,7 +22,7 @@ export class AppContent implements OnInit {
   navigation: any;
   navigationX: number;
   navigationY: number;
-  constructor(el: ElementRef, navigation:NavigationService, private dialogService:DialogService) {
+  constructor(el: ElementRef, navigation:NavigationService, private dialogService:DialogService, private http: HttpClient) {
     this.navigation = navigation;
     this.navigationX = -700;
     this.navigationY = -30;
@@ -90,6 +92,9 @@ export class AppContent implements OnInit {
     let screenDom = window.getComputedStyle(document.getElementsByClassName("screen").item(0));
     this.mapHeight = screenDom.height;
     this.mapWidth = screenDom.width;
+    this.http.get('/assets/json/objects.json').subscribe(data => {
+      console.log(data)
+    });
   }
   fillMap():void {
     this.sizemap = 10;
