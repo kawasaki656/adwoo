@@ -11,7 +11,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class AppContent implements OnInit {
   sectionSample:Object;
-  jsonData : JSON;
+  jsonData : any;
   sizemap:number;
   title = 'Adwoo';
   screenHeight: number;
@@ -93,7 +93,8 @@ export class AppContent implements OnInit {
     this.mapHeight = screenDom.height;
     this.mapWidth = screenDom.width;
     this.http.get('/assets/json/objects.json').subscribe(data => {
-      console.log(data)
+      this.jsonData = data;
+      console.log(this.jsonData)
     });
   }
   fillMap():void {
