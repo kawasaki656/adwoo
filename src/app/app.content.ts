@@ -10,8 +10,7 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['map/map.css', 'header/header.css', 'footer/footer.css', './content.css']
 })
 export class AppContent implements OnInit {
-  sectionSample:Object;
-  jsonData : any;
+  jsonSections : any;
   sizemap:number;
   title = 'Adwoo';
   screenHeight: number;
@@ -26,12 +25,6 @@ export class AppContent implements OnInit {
     this.navigation = navigation;
     this.navigationX = -700;
     this.navigationY = -30;
-    this.sectionSample = {
-      draw:true,
-      width: 1,
-      height: 1,
-      src:1
-    }
   }
 
   showConfirm() {
@@ -71,7 +64,7 @@ export class AppContent implements OnInit {
     this.mapHeight = screenDom.height;
     this.mapWidth = screenDom.width;
     this.http.get('/assets/json/objects.json').subscribe(data => {
-      this.jsonData = data;
+      this.jsonSections = data;
     });
   }
   fillMap() {
