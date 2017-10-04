@@ -40,7 +40,6 @@ export class AppContent implements OnInit {
         message: 'Confirm message'
       })
       .subscribe((isConfirmed) => {
-        //We get dialog result
         if (isConfirmed) {
           alert('accepted');
         }
@@ -62,27 +61,6 @@ export class AppContent implements OnInit {
   navBottom():void {
     this.navigationY -= this.screenHeight/2;
   }
-
-
-  /*animate(draw, duration):void {
-  let start = performance.now();
-
-  requestAnimationFrame(function animate(time) {
-    var timePassed = time - start;
-
-    if (timePassed > duration) {
-      timePassed = duration;
-    }
-    draw(timePassed);
-
-    if (timePassed < duration) {
-      requestAnimationFrame(animate);
-    }
-
-  });
-}*/
-
-
   ngOnInit(): void {
     this.fillMap();
     this.screenWidth = document.documentElement.clientWidth;
@@ -94,10 +72,9 @@ export class AppContent implements OnInit {
     this.mapWidth = screenDom.width;
     this.http.get('/assets/json/objects.json').subscribe(data => {
       this.jsonData = data;
-      console.log(this.jsonData)
     });
   }
-  fillMap():void {
+  fillMap() {
     this.sizemap = 10;
     this.map = new Array();
     for(let i=0; i<this.sizemap; i++) {
@@ -111,6 +88,5 @@ export class AppContent implements OnInit {
         this.map[i][j] = '../assets/City_Objects/Block_0' + (Math.floor(Math.random() * 7)+1) + '.png';
       }
     }
-    console.log(this.map)
   }
 }
