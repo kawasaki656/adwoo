@@ -65,21 +65,22 @@ export class AppContent implements OnInit {
     this.mapWidth = screenDom.width;
     this.http.get('/assets/json/objects.json').subscribe(data => {
       this.jsonSections = data;
+      console.log(data);
     });
   }
   fillMap() {
-    this.sizemap = 10;
-    this.map = new Array();
-    for(let i=0; i<this.sizemap; i++) {
+    this.sizemap = 3;
+    //this.map = new Array();
+    /*for(let i=0; i<this.sizemap; i++) {
       this.map.push(new Array());
       for(let j=0; j<this.sizemap; j++) {
         this.map[i].push(new Array());
       }
-    }
-    for(let i=0; i<this.sizemap; i++) {
+    }*/
+    /*for(let i=0; i<this.sizemap; i++) {
       for(let j=0; j<this.sizemap; j++) {
         this.map[i][j] = '../assets/City_Objects/Block_0' + (Math.floor(Math.random() * 7)+1) + '.png';
       }
-    }
+    }*/
   }
 }
