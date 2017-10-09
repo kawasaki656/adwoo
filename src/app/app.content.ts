@@ -23,7 +23,7 @@ export class AppContent implements OnInit {
   navigationY: number;
   constructor(el: ElementRef, navigation:NavigationService, private dialogService:DialogService, private http: HttpClient) {
     this.navigation = navigation;
-    this.navigationX = -700;
+    this.navigationX = -200;
     this.navigationY = -30;
   }
 
