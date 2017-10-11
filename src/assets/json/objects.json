@@ -18,7 +18,7 @@
   "height": 1
 },{
   "id": 3,
-  "name":13,
+  "name":31,
   "draw":true,
   "width": 2,
   "height": 1
@@ -42,15 +42,15 @@
   "height": 1
 }],[{
   "id": 4,
-  "name":1,
+  "name":2,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": 5,
-  "name":2,
-  "draw":false,
-  "width": 1,
+  "name":13,
+  "draw":true,
+  "width": 2,
   "height": 1
 },{
   "id": 6,
