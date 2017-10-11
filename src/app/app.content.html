@@ -51,7 +51,12 @@
         <img *ngIf="cell.draw" src="../assets/City_Objects/Block_Road_01.png" [style.left] = "145 + (267*roadIndex)  + lineIndex*267 + 'px'" [style.top] = "407 - (154*roadIndex)  + lineIndex*156 + 'px'" [style.z-index] = "-1 - roadIndex">
       </ng-container>
     </ng-container>
-
+    <ng-container *ngFor="let line of jsonSections; let lineIndex = index">
+      <ng-container *ngFor="let cell of line; let roadIndex = index">
+        <img  *ngIf="cell.draw && cell.width == 1" src="../assets/City_Objects/Block_Road_02.png" [style.left] = "412 + (267*roadIndex) + lineIndex*267 + 'px'" [style.top] = "413 - (154*roadIndex) + lineIndex*154 + 'px'" [style.z-index] = "0 - roadIndex">
+        <img  *ngIf="cell.draw && cell.width == 2" src="../assets/City_Objects/Block_Road_Long_02.png" [style.left] = "410 + (267*roadIndex) + lineIndex*267 + 'px'" [style.top] = "250 - (154*roadIndex) + lineIndex*154 + 'px'" [style.z-index] = "0 - roadIndex">
+      </ng-container>
+    </ng-container>
   </div>
 </div>
 <div class="footer container-fluid" >
