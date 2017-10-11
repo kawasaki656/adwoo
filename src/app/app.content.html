@@ -42,13 +42,13 @@
   <div class="wrap" [ngStyle]="{'transform': 'translate(' + navigationX + 'px,' + navigationY + 'px' + ') scale(1)'}">
     <ng-container *ngFor="let line of jsonSections; let lineIndex = index">
       <ng-container *ngFor="let cell of line; let cellIndex = index">
-        <img *ngIf="cell.draw && cell.width == 1" [src]="'../assets/City_Objects/Block_0' + cell.name +'.png'" [style.left] = "(lineIndex*267)+(cellIndex*263.5)  +'px'" [style.top] = "(lineIndex*156)+(cellIndex*(-154))+ ((cellIndex>1) ? 0.3*cellIndex : 0)  +'px'" [style.z-index] = "lineIndex-cellIndex">
+        <img *ngIf="cell.draw && cell.width == 1" [src]="'../assets/City_Objects/Block_0' + cell.name +'.png'" [style.left] = "(lineIndex*267)+(cellIndex*267)  +'px'" [style.top] = "(lineIndex*156)+(cellIndex*(-154))  +'px'" [style.z-index] = "lineIndex-cellIndex">
         <img *ngIf="cell.draw && cell.width == 2" [src]="'../assets/City_Objects/Block_' + cell.name +'.png'" [style.left] = "(lineIndex*336)+(cellIndex*267) +'px'" [style.top] = "(lineIndex*130)+(cellIndex*(-159)) +'px'" [style.z-index] = "lineIndex-cellIndex">
       </ng-container>
     </ng-container>
     <ng-container *ngFor="let line of jsonSections; let lineIndex = index">
       <ng-container *ngFor="let cell of line; let roadIndex = index">
-        <img *ngIf="cell.draw" src="../assets/City_Objects/Block_Road_01.png" [style.left] = "145 + (264*roadIndex) - ((roadIndex>1) ? roadIndex-2 : 0) + lineIndex*267 + 'px'" [style.top] = "407 - (154*roadIndex) + ((roadIndex>1) ? roadIndex-3 : 0) + lineIndex*156 + 'px'" [style.z-index] = "-1 - roadIndex">
+        <img *ngIf="cell.draw" src="../assets/City_Objects/Block_Road_01.png" [style.left] = "145 + (267*roadIndex)  + lineIndex*267 + 'px'" [style.top] = "407 - (154*roadIndex)  + lineIndex*156 + 'px'" [style.z-index] = "-1 - roadIndex">
       </ng-container>
     </ng-container>
 
