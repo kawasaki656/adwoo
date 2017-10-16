@@ -39,7 +39,7 @@
   <div class="bottomNav">
     <img (click)="navBottom()" src="../assets/navigation/array.png" style="z-index: 1; transform: rotate(90deg); opacity: 0.5" [style.width]="screenWidth/30 + 'px'">
   </div>
-  <div class="wrap" [ngStyle]="{'transform': 'translate(' + navigationX + 'px,' + navigationY + 'px' + ') scale(1)'}">
+  <div class="wrap" [ngStyle]="{'transform': 'translate(' + navigationX + 'px,' + navigationY + 'px' + ') scale(.5)'}">
     <ng-container *ngFor="let line of jsonSections; let lineIndex = index">
       <ng-container *ngFor="let cell of line; let cellIndex = index">
         <img *ngIf="cell.draw && cell.width == 1" [src]="'../assets/City_Objects/Block_0' + cell.name +'.png'" [style.left] = "(lineIndex*266)+(cellIndex*267)  +'px'" [style.top] = "(lineIndex*152)+(cellIndex*(-154))  +'px'" [style.z-index] = "lineIndex-cellIndex">

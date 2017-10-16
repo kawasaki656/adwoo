@@ -7,6 +7,7 @@ import { NavigationService } from "./map/navigation.service"
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import {ConfirmComponent} from "./addBlockModal/addBlockModal";
 import {HttpClientModule} from '@angular/common/http';
+import {ScreenService} from "./screen/screen.service";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule
   ],
   entryComponents: [ConfirmComponent],
-  providers: [NavigationService],
+  providers: [NavigationService, ScreenService],
   bootstrap: [AppContent]
 })
 export class AppModule {}

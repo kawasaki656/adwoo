@@ -1,8 +1,9 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { NavigationService } from "./map/navigation.service";
-import {DialogService} from "ng2-bootstrap-modal";
-import {ConfirmComponent} from "./addBlockModal/addBlockModal";
-import {HttpClient} from "@angular/common/http";
+import { ScreenService } from "./screen/screen.service";
+import { DialogService } from "ng2-bootstrap-modal";
+import { ConfirmComponent } from "./addBlockModal/addBlockModal";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-content',
@@ -18,13 +19,11 @@ export class AppContent implements OnInit {
   map: Array<Array<Object>>;
   mapHeight: string;
   mapWidth: string;
-  navigation: any;
   navigationX: number;
   navigationY: number;
   constructor(el: ElementRef, navigation:NavigationService, private dialogService:DialogService, private http: HttpClient) {
-    this.navigation = navigation;
-    this.navigationX = -250;
-    this.navigationY = -90;
+    this.navigationX = navigation.left;
+    this.navigationY = navigation.top;
   }
 
   showConfirm() {
@@ -65,7 +64,6 @@ export class AppContent implements OnInit {
     this.mapWidth = screenDom.width;
     this.http.get('/assets/json/objects.json').subscribe(data => {
       this.jsonSections = data;
-      console.log(data);
     });
   }
   fillMap() {
