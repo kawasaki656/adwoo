@@ -8,12 +8,14 @@ import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import {ConfirmComponent} from "./addBlockModal/addBlockModal";
 import {HttpClientModule} from '@angular/common/http';
 import {ScreenService} from "./screen/screen.service";
+import {NavigationComponent} from "./map/navigation.component";
 
 @NgModule({
   declarations: [
     AppContent,
     FilterComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

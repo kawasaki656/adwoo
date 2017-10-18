@@ -15,6 +15,5 @@ export class NavigationService {
 
   addEventHandlers(): void {
     this.leftNav = document.getElementsByClassName("leftNav")[0];
-    console.log(this.leftNav)
   }
 }
