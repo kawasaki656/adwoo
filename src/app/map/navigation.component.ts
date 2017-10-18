@@ -11,15 +11,35 @@ import {isUndefined} from "util";
 export class NavigationComponent {
   screen:any;
   navigation:any;
-  lastMove: MouseEvent;
+  lastMouseMove: MouseEvent;
+  lastTouchMove: TouchEvent;
+
+  getTouchPos(canvasDom, touchEvent):Object {
+    var rect = canvasDom.getBoundingClientRect();
+    return {
+      x: touchEvent.touches[0].clientX - rect.left,
+      y: touchEvent.touches[0].clientY - rect.top
+    };
+  }
 
   @HostListener('mousemove', ['$event'])
   onMousemove(event: MouseEvent) {
-    if(!isUndefined(this.lastMove) && this.navigation.mouseDown) {
-      this.navigation.x += event.clientX - this.lastMove.clientX;
-      this.navigation.y += event.clientY - this.lastMove.clientY;
+    if(!isUndefined(this.lastMouseMove) && this.navigation.mouseDown) {
+      this.navigation.x += event.clientX - this.lastMouseMove.clientX;
+      console.log(event.clientX - this.lastMouseMove.clientX)
+      this.navigation.y += event.clientY - this.lastMouseMove.clientY;
     }
-    this.lastMove = event;
+    this.lastMouseMove = event;
+  }
+
+  @HostListener('touchmove', ['$event'])
+  onTouchMove(event: TouchEvent) {
+    if(!isUndefined(this.lastTouchMove)) {
+      this.navigation.x += event.changedTouches[0].pageX- this.lastTouchMove.touches[0].pageX;
+      console.log(event)
+      this.navigation.y += event.changedTouches[0].pageY - this.lastTouchMove.touches[0].pageY;
+    }
+    this.lastTouchMove = event;
   }
   @HostListener('mouseup')
   onMouseup() {
