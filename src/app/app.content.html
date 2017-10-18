@@ -27,7 +27,7 @@
 </div>
 <filters></filters>
 <div class="screen container-fluid" id="screen" >
-  <div class="wrap" [ngStyle]="{'transform': 'translate(' + navigation.left + 'px,' + navigation.top + 'px' + ') scale(.5)'}">
+  <div class="wrap" [ngStyle]="{'transform': 'translate(' + navigation.left + 'px,' + navigation.top + 'px' + ') scale(' + navigation.scale + ')'}">
     <ng-container *ngFor="let line of jsonSections; let lineIndex = index">
       <ng-container *ngFor="let cell of line; let cellIndex = index">
         <img *ngIf="cell.draw && cell.width == 1" [src]="'../assets/City_Objects/Block_0' + cell.name +'.png'" [style.left] = "(lineIndex*266)+(cellIndex*267)  +'px'" [style.top] = "(lineIndex*152)+(cellIndex*(-154))  +'px'" [style.z-index] = "lineIndex-cellIndex">
