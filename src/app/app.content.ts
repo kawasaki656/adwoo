@@ -37,6 +37,10 @@ export class AppContent implements OnInit {
       });
   }
 
+  selectSection(section): void {
+    console.log(section);
+  }
+
   ngOnInit(): void {
     let screenDom = window.getComputedStyle(document.getElementsByClassName("screen").item(0));
     this.mapHeight = screenDom.height;

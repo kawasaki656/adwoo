@@ -20,7 +20,14 @@
   width: 100%;
   height: 88%;
 }
-
+.figure1 {
+  width: 240px;
+  height: 210px;
+  background: green;
+  transform: rotate(30deg) skew(-30deg);
+  position: absolute;
+  z-index: 3;
+}
 .move-area {
   position: absolute;
   width: 100%;

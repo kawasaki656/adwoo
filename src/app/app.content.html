@@ -52,9 +52,14 @@
         <img *ngIf="cell.draw" src="../assets/City_Objects/Block_Road_03.png" [style.left] = "352 + lineIndex*266 + (267*roadIndex) + 'px'" [style.top] = "539 + lineIndex*152 - (154*roadIndex) + 'px'" [style.z-index] = "-1 - roadIndex">
       </ng-container>
     </ng-container>
+    <ng-container *ngFor="let line of jsonSections; let lineIndex = index">
+      <ng-container *ngFor="let cell of line; let roadIndex = index">
+        <div class="figure1" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 1" [style.left] = "290 + lineIndex*266 + (267*roadIndex) + 'px'" [style.top] = "315 + lineIndex*152 - (154*roadIndex) + 'px'"></div>
+      </ng-container>
+    </ng-container>
   </div>
   <navigation></navigation>
-  <div id="figure"></div>
+
 </div>
 <div class="footer container-fluid" >
 </div>

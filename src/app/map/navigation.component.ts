@@ -21,16 +21,6 @@ export class NavigationComponent {
       y: touchEvent.touches[0].clientY - rect.top
     };
   }
-  /*
-  STYLES for the first figure
-   width: 117px;
-   height: 106px;
-   background: green;
-   transform: rotate(30deg) skew(-31deg);
-   position: absolute;
-   left: 149px;
-   top: 159px;
-  */
 
   @HostListener('mousemove', ['$event'])
   onMousemove(event: MouseEvent) {
@@ -55,8 +45,8 @@ export class NavigationComponent {
   onMouseup() {
     this.navigation.mouseDown = false;
   }
-  @HostListener('mousedown')
-  onMousedown() {
+  @HostListener('mousedown', ['$event'])
+  onMousedown(event) {
     this.navigation.mouseDown = true;
   }
   constructor(navigation:NavigationService, screen:ScreenService) {
