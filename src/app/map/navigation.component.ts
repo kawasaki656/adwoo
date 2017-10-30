@@ -11,8 +11,6 @@ import {isUndefined} from "util";
 export class NavigationComponent {
   screen:any;
   navigation:any;
-  lastMouseMove: MouseEvent;
-  lastTouchMove: TouchEvent;
 
   getTouchPos(canvasDom, touchEvent):Object {
     var rect = canvasDom.getBoundingClientRect();
@@ -22,33 +20,6 @@ export class NavigationComponent {
     };
   }
 
-  @HostListener('mousemove', ['$event'])
-  onMousemove(event: MouseEvent) {
-    if(!isUndefined(this.lastMouseMove) && this.navigation.mouseDown) {
-      this.navigation.x += event.clientX - this.lastMouseMove.clientX;
-      console.log(event.clientX - this.lastMouseMove.clientX)
-      this.navigation.y += event.clientY - this.lastMouseMove.clientY;
-    }
-    this.lastMouseMove = event;
-  }
-
-  @HostListener('touchmove', ['$event'])
-  onTouchMove(event: TouchEvent) {
-    if(!isUndefined(this.lastTouchMove)) {
-      this.navigation.x += event.changedTouches[0].pageX- this.lastTouchMove.touches[0].pageX;
-      console.log(event)
-      this.navigation.y += event.changedTouches[0].pageY - this.lastTouchMove.touches[0].pageY;
-    }
-    this.lastTouchMove = event;
-  }
-  @HostListener('mouseup')
-  onMouseup() {
-    this.navigation.mouseDown = false;
-  }
-  @HostListener('mousedown', ['$event'])
-  onMousedown(event) {
-    this.navigation.mouseDown = true;
-  }
   constructor(navigation:NavigationService, screen:ScreenService) {
     this.screen = screen;
     this.navigation = navigation;

@@ -26,7 +26,7 @@
   </div>
 </div>
 <filters></filters>
-<div class="screen container-fluid" id="screen" >
+<div class="screen container-fluid" id="screen" (mousedown)="onMousedown($event)" (mouseup)="onMouseup($event)" >
   <div class="wrap" [ngStyle]="{'transform': 'translate(' + navigation.left + 'px,' + navigation.top + 'px' + ') scale(' + navigation.scale + ')'}" [style.left]="navigation.x + 'px'" [style.top]="navigation.y + 'px'">
     <ng-container *ngFor="let line of jsonSections; let lineIndex = index">
       <ng-container *ngFor="let cell of line; let cellIndex = index">
@@ -57,6 +57,7 @@
         <div class="figure1" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 1" [style.left] = "290 + lineIndex*266 + (267*roadIndex) + 'px'" [style.top] = "315 + lineIndex*152 - (154*roadIndex) + 'px'"></div>
       </ng-container>
     </ng-container>
+    <div style="background-image: url('../assets/City_Objects/Block_01.png'); width:100%;height:100%;position:absolute"></div>
   </div>
   <navigation></navigation>
 

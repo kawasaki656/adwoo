@@ -30,8 +30,13 @@
 }
 .move-area {
   position: absolute;
+  background: green;
+  width: 1000px;
+  height: 1000px;
   width: 100%;
   height: 100%;
+  transform: rotate(30deg) skew(-30deg);
+  z-index: 2;
 }
 .screen img {
   position: absolute;
