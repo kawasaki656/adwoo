@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit,  HostListener } from '@angular/core';
+import {Component, ElementRef, OnInit, HostListener} from '@angular/core';
 import { NavigationService } from "./map/navigation.service";
 import { ScreenService } from "./screen/screen.service";
 import { DialogService } from "ng2-bootstrap-modal";
@@ -24,42 +24,12 @@ export class AppContent implements OnInit {
   constructor(el: ElementRef, private dialogService:DialogService, private http: HttpClient, screen:ScreenService, navigation:NavigationService) {
     this.navigation = navigation;
   }
-  
-  onMousemove(event: MouseEvent) {
-    if(!isUndefined(this.lastMouseMove) && this.navigation.mouseDown) {
-      this.navigation.x += event.clientX - this.lastMouseMove.clientX;
-      console.log(event.clientX - this.lastMouseMove.clientX)
-      this.navigation.y += event.clientY - this.lastMouseMove.clientY;
-    }
-    this.lastMouseMove = event;
-  }
-  
-  onTouchMove(event: TouchEvent) {
-    if(!isUndefined(this.lastTouchMove)) {
-      this.navigation.x += event.changedTouches[0].pageX- this.lastTouchMove.touches[0].pageX;
-      console.log(event)
-      this.navigation.y += event.changedTouches[0].pageY - this.lastTouchMove.touches[0].pageY;
-    }
-    this.lastTouchMove = event;
-  }
-  onMouseup(event) {
-    console.log("mouseUp")
-    this.navigation.mouseDown = false;
-  }
-  onMousedown(event) {
-    console.log("mouseDown")
-    this.navigation.mouseDown = true;
-  }
-
-  click():void {
-    console.log("CLICK CLICK CLICK")
-  }
 
   showConfirm() {
     let disposable = this.dialogService.addDialog(ConfirmComponent, {
-        title: 'Add a new building',
-        message: 'Confirm message'
-      })
+      title: 'Add a new building',
+      message: 'Confirm message'
+    })
       .subscribe((isConfirmed) => {
         if (isConfirmed) {
           alert('accepted');
@@ -70,8 +40,37 @@ export class AppContent implements OnInit {
       });
   }
 
-  selectSection(section): void {
-    console.log(section);
+  @HostListener('mousemove', ['$event'])
+  onMousemove(event: MouseEvent) {
+    if(!isUndefined(this.lastMouseMove) && this.navigation.mouseDown) {
+      this.navigation.x += event.clientX - this.lastMouseMove.clientX;
+      console.log(event.clientX - this.lastMouseMove.clientX)
+      this.navigation.y += event.clientY - this.lastMouseMove.clientY;
+    }
+    this.lastMouseMove = event;
+  }
+
+  @HostListener('touchmove', ['$event'])
+  onTouchMove(event: TouchEvent) {
+    if(!isUndefined(this.lastTouchMove)) {
+      this.navigation.x += event.changedTouches[0].pageX- this.lastTouchMove.touches[0].pageX;
+      console.log(event)
+      this.navigation.y += event.changedTouches[0].pageY - this.lastTouchMove.touches[0].pageY;
+    }
+    this.lastTouchMove = event;
+  }
+  @HostListener('mouseup')
+  onMouseup() {
+    this.navigation.mouseDown = false;
+  }
+  @HostListener('mousedown', ['$event'])
+  onMousedown(event) {
+    console.log(event)
+    this.navigation.mouseDown = true;
+  }
+
+  selectSection(section):void {
+    alert(section.id);
   }
 
   ngOnInit(): void {

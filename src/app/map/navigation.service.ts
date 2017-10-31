@@ -7,8 +7,6 @@ export class NavigationService {
   top: number;
   x: number;
   y: number;
-  deltaX:number;
-  deltaY:number;
   mouseDown : boolean;
   constructor() {
     this.left = 1;

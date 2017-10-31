@@ -1,110 +1,96 @@
 [[{
-  "id": 1,
+  "id": "Дом Васи",
   "name":1,
   "draw":true,
   "width": 1,
   "height": 1
 },{
-  "id": 2,
-  "name":2,
-  "draw":true,
-  "width": 1,
-  "height": 1
-},{
-  "id": 3,
+  "id": "Дом Пети",
   "name":1,
   "draw":true,
   "width": 1,
   "height": 1
 },{
-  "id": 3,
-  "name":31,
-  "draw":true,
-  "width": 2,
-  "height": 1
-},{
-  "id": 3,
-  "name":1,
-  "draw":false,
-  "width": 1,
-  "height": 1
-},{
-  "id": 3,
+  "id": "Дом Никиты",
   "name":1,
   "draw":true,
   "width": 1,
   "height": 1
 },{
-  "id": 3,
+  "id": "Дом Андрея",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Антона",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Александра",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Алексея",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Игоря",
   "name":1,
   "draw":true,
   "width": 1,
   "height": 1
 }],[{
-  "id": 4,
-  "name":2,
-  "draw":true,
-  "width": 1,
-  "height": 1
-},{
-  "id": 5,
-  "name":13,
-  "draw":true,
-  "width": 2,
-  "height": 1
-},{
-  "id": 6,
-  "name":3,
-  "draw":false,
-  "width": 1,
-  "height": 1
-},{
-  "id": 6,
-  "name":4,
-  "draw":false,
-  "width": 1,
-  "height": 1
-}],[{
-  "id": 7,
-  "name":13,
-  "draw":true,
-  "width": 2,
-  "height": 1
-},{
-  "draw":false
-},{
-  "id": 9,
-  "name":3,
-  "draw":true,
-  "width": 1,
-  "height": 1
-},{
-  "id": 9,
-  "name":9,
-  "draw":true,
-  "width": 1,
-  "height": 1
-}],[{
-  "id": 7,
+  "id": "Дом Джона",
   "name":1,
   "draw":true,
   "width": 1,
   "height": 1
 },{
-  "id": 8,
-  "name":2,
+  "id": "Дом Майкла",
+  "name":1,
   "draw":true,
   "width": 1,
   "height": 1
 },{
-  "id": 9,
-  "name":8,
+  "id": "Дом 50 сента",
+  "name":1,
   "draw":true,
   "width": 1,
   "height": 1
 },{
-  "id": 9,
-  "name":9,
+  "id": "Дом Леонтьева",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кличко",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":1,
   "draw":true,
   "width": 1,
   "height": 1
