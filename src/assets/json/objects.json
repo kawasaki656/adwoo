@@ -12,85 +12,85 @@
   "height": 1
 },{
   "id": "Дом Никиты",
-  "name":1,
+  "name":2,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Андрея",
-  "name":1,
+  "name":2,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Антона",
-  "name":1,
+  "name":3,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Александра",
-  "name":1,
+  "name":3,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Алексея",
-  "name":1,
+  "name":3,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Игоря",
-  "name":1,
+  "name":3,
   "draw":true,
   "width": 1,
   "height": 1
 }],[{
   "id": "Дом Джона",
-  "name":1,
+  "name":4,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Майкла",
-  "name":1,
+  "name":4,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом 50 сента",
-  "name":1,
+  "name":4,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Леонтьева",
-  "name":1,
+  "name":5,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Баскова",
-  "name":1,
+  "name":5,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Кадышевой",
-  "name":1,
+  "name":6,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Кличко",
-  "name":1,
+  "name":6,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Лепса",
-  "name":1,
+  "name":6,
   "draw":true,
   "width": 1,
   "height": 1
@@ -102,37 +102,37 @@
   "height": 1
 },{
   "id": "Дом Майкла",
-  "name":1,
+  "name":8,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом 50 сента",
-  "name":1,
+  "name":8,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Леонтьева",
-  "name":1,
+  "name":9,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Баскова",
-  "name":1,
+  "name":8,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Кадышевой",
-  "name":1,
+  "name":9,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Кличко",
-  "name":1,
+  "name":9,
   "draw":true,
   "width": 1,
   "height": 1
