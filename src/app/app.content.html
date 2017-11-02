@@ -33,7 +33,7 @@
       <ng-container *ngFor="let cell of line; let cellIndex = index">
         <div class="section1" *ngIf="cell.draw && cell.width == 1 && cell.height == 1" [style.background-image]="'url(../assets/City_Objects/Block_' + cell.name +'.png)'" [style.left] = "(lineIndex*268)+(cellIndex*267)  +'px'" [style.top] = "(lineIndex*155)+(cellIndex*(-155))  +'px'" [style.z-index] = "lineIndex-cellIndex"></div>
         <div class="section2-horizontal" *ngIf="cell.draw && cell.width == 2 && cell.height == 1" [style.background-image]="'url(../assets/City_Objects/Block_' + cell.name +'.png)'" [style.left] = "138+(lineIndex*267)+(cellIndex*267) +'px'" [style.top] = "-51+(lineIndex*155)+(cellIndex*(-155)) +'px'" [style.z-index] = "lineIndex-cellIndex"></div>
-        <div class="section2-vertical" *ngIf="cell.draw && cell.width == 1 && cell.height == 2" [style.background-image]="'url(../assets/City_Objects/Block_' + cell.name +'.png)'" [style.left] = "140+(lineIndex*268)+(cellIndex*267) +'px'" [style.top] = "131+(lineIndex*155)+(cellIndex*(-155)) +'px'" [style.z-index] = "1+lineIndex-cellIndex"></div>
+        <div class="section2-vertical" *ngIf="cell.draw && cell.width == 1 && cell.height == 2" [style.background-image]="'url(../assets/City_Objects/Block_' + cell.name +'.png)'" [style.left] = "130+(lineIndex*268)+(cellIndex*267) +'px'" [style.top] = "-430+(lineIndex*155)+(cellIndex*(-155)) +'px'" [style.z-index] = "1+lineIndex-cellIndex"></div>
       </ng-container>
     </ng-container>
     <ng-container *ngFor="let line of jsonSections; let lineIndex = index">

@@ -23,9 +23,13 @@
 .section1, .section2-horizontal, .section2-vertical, .road-vertical, .road-horizontal, .road-horizontal-long, .road-vertical-long, .road-cross {
   position: absolute;
 }
-.section1, .section2-horizontal, .section2-vertical {
+.section1, .section2-horizontal {
   width:800px;
   height:600px;
+}
+.section2-vertical {
+  width: 850px;
+  height: 1275px;
 }
 .road-vertical {
   width:270px;
