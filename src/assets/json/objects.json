@@ -132,14 +132,14 @@
   "height": 1
 },{
   "id": "Дом Кличко",
-  "name":9,
+  "name":13,
   "draw":true,
-  "width": 1,
+  "width": 2,
   "height": 1
 },{
   "id": "Дом Лепса",
   "name":1,
-  "draw":true,
+  "draw":false,
   "width": 1,
   "height": 1
 }], [{
