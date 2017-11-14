@@ -14,6 +14,33 @@
   height: 70%;
 }
 
+.header #menu {
+  display: flex;
+  height: 100%;
+  width: 25%;
+  background: green;
+
+}
+.header #my-property {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 10%;
+  background: rgb(237, 113, 83);
+}
+.header #my-property .icon {
+  width: 100%;
+  height: 70%;
+}
+.header #my-property .text {
+  width: 100%;
+  height: 30%;
+  color: white;
+  text-transform: uppercase;
+  font-size: 9px;
+  text-align: center;
+}
+
 .header .buttons input {
   background: rgb(86, 95, 104);
   font-size: 11px;

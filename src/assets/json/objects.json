@@ -1,5 +1,119 @@
 [[{
   "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}, {
+  "id": "Дом Васи",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Пети",
+  "name":28,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Никиты",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Андрея",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Антона",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Александра",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Алексея",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Игоря",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}, {
+  "id": "Дом Васи",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Пети",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Никиты",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Андрея",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Антона",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Александра",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Алексея",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Игоря",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}, {
+  "id": "Дом Васи",
   "name":33,
   "draw":true,
   "width": 1,
@@ -47,6 +161,12 @@
   "width": 1,
   "height": 1
 }],[{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
   "id": "Дом Джона",
   "name":2,
   "draw":false,
@@ -94,9 +214,123 @@
   "draw":true,
   "width": 1,
   "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":5,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
 }], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
   "id": "Дом Джона",
-  "name":13,
+  "name":7,
   "draw":true,
   "width": 2,
   "height": 1
@@ -142,7 +376,121 @@
   "draw":false,
   "width": 1,
   "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":36,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":36,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
 }], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
   "id": "Дом Джона",
   "name":13,
   "draw":true,
@@ -174,23 +522,137 @@
   "height": 1
 },{
   "id": "Дом Кадышевой",
-  "name":1,
+  "name":33,
   "draw":true,
   "width": 1,
-  "height": 1
+  "height": 2
 },{
   "id": "Дом Кличко",
-  "name":1,
+  "name":6,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Лепса",
-  "name":1,
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
   "draw":true,
   "width": 1,
   "height": 1
 }], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
   "id": "Дом Джона",
   "name":35,
   "draw":true,
@@ -210,37 +672,151 @@
   "height": 1
 },{
   "id": "Дом Леонтьева",
-  "name":1,
+  "name":4,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Баскова",
-  "name":1,
+  "name":34,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Кадышевой",
-  "name":1,
-  "draw":true,
+  "name":4,
+  "draw":false,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Кличко",
-  "name":1,
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":2,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":37,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Лепса",
-  "name":1,
+  "name":26,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
   "draw":true,
   "width": 1,
   "height": 1
 }], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
   "id": "Дом Джона",
-  "name":1,
+  "name":2,
   "draw":false,
   "width": 1,
   "height": 1
@@ -248,6 +824,654 @@
   "id": "Дом Майкла",
   "name":1,
   "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":7,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":3,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":38,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кличко",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":7,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":7,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}],[{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}, {
+  "id": "Дом Васи",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Пети",
+  "name":28,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Никиты",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Андрея",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Антона",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Александра",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Алексея",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Игоря",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}, {
+  "id": "Дом Васи",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Пети",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Никиты",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Андрея",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Антона",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Александра",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Алексея",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Игоря",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}, {
+  "id": "Дом Васи",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Пети",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Никиты",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Андрея",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Антона",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Александра",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Алексея",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Игоря",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}],[{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":2,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Майкла",
+  "name":4,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":4,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кличко",
+  "name":6,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":5,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":7,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Майкла",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кличко",
+  "name":13,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":1,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":36,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":36,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":13,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Майкла",
+  "name":1,
+  "draw":false,
   "width": 1,
   "height": 1
 },{
@@ -270,19 +1494,3367 @@
   "height": 1
 },{
   "id": "Дом Кадышевой",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Кличко",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Майкла",
   "name":1,
   "draw":true,
   "width": 1,
   "height": 1
 },{
+  "id": "Дом 50 сента",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":4,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":4,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
   "id": "Дом Кличко",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":2,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":37,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":26,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":2,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Майкла",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":7,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":3,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":38,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кличко",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":7,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":7,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}],[{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}, {
+  "id": "Дом Васи",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Пети",
+  "name":28,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Никиты",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Андрея",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Антона",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Александра",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Алексея",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Игоря",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}, {
+  "id": "Дом Васи",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Пети",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Никиты",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Андрея",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Антона",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Александра",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Алексея",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Игоря",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}, {
+  "id": "Дом Васи",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Пети",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Никиты",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Андрея",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Антона",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Александра",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Алексея",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Игоря",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}],[{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":2,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Майкла",
+  "name":4,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":4,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кличко",
+  "name":6,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":5,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":7,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Майкла",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кличко",
+  "name":13,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":1,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":36,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":36,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
   "name":1,
   "draw":true,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Лепса",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
   "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":13,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Майкла",
+  "name":1,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Кличко",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Майкла",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":4,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":4,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кличко",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":2,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":37,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":26,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":2,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Майкла",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":7,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":3,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":38,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кличко",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":7,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":7,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}],[{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}, {
+  "id": "Дом Васи",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Пети",
+  "name":28,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Никиты",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Андрея",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Антона",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Александра",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Алексея",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Игоря",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}, {
+  "id": "Дом Васи",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Пети",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Никиты",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Андрея",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Антона",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Александра",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Алексея",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Игоря",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}, {
+  "id": "Дом Васи",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Пети",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Никиты",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Андрея",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Антона",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Александра",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Алексея",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Игоря",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}],[{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":2,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Майкла",
+  "name":4,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":4,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кличко",
+  "name":6,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":5,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":7,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Майкла",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кличко",
+  "name":13,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":1,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":36,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":36,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":13,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Майкла",
+  "name":1,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Кличко",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Майкла",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":4,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":4,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кличко",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":2,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":37,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":26,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":2,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Майкла",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":7,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":3,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":38,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кличко",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":7,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":7,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}],[{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}, {
+  "id": "Дом Васи",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Пети",
+  "name":28,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Никиты",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Андрея",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Антона",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Александра",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Алексея",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Игоря",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}, {
+  "id": "Дом Васи",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Пети",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Никиты",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Андрея",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Антона",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Александра",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Алексея",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Игоря",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}, {
+  "id": "Дом Васи",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Пети",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Никиты",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Андрея",
+  "name":2,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Антона",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Александра",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Алексея",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Игоря",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}],[{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":2,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Майкла",
+  "name":4,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":4,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кличко",
+  "name":6,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":5,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":34,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":7,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Майкла",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кличко",
+  "name":13,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":1,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":36,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":36,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":13,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Майкла",
+  "name":1,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":33,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Кличко",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":13,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":35,
+  "draw":true,
+  "width": 1,
+  "height": 2
+},{
+  "id": "Дом Майкла",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":4,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":34,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":4,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кличко",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":2,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":37,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":26,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":27,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+}], [{
+  "id": "Дом Васи",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Джона",
+  "name":2,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Майкла",
+  "name":1,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом 50 сента",
+  "name":3,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Леонтьева",
+  "name":7,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Баскова",
+  "name":3,
+  "draw":false,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кадышевой",
+  "name":38,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Кличко",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":5,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":6,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":7,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":7,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":true,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":24,
+  "draw":false,
+  "width": 2,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":9,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":10,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
+  "draw":true,
+  "width": 1,
+  "height": 1
+},{
+  "id": "Дом Лепса",
+  "name":8,
   "draw":true,
   "width": 1,
   "height": 1
