@@ -3,6 +3,7 @@ import { NavigationService } from "./map/navigation.service";
 import { ScreenService } from "./screen/screen.service";
 import { DialogService } from "ng2-bootstrap-modal";
 import { ConfirmComponent } from "./addBlockModal/addBlockModal";
+import { MyProperty } from "./my-property/myProperty";
 import { HttpClient } from "@angular/common/http";
 import {isUndefined} from "util";
 
@@ -36,6 +37,19 @@ export class AppContent implements OnInit {
         }
         else {
           alert('declined');
+        }
+      });
+  }
+
+  showMyProperty() {
+    let disposable = this.dialogService.addDialog(MyProperty, {
+      title: ' ',
+      message: '  '
+    })
+      .subscribe((isConfirmed) => {
+        if (isConfirmed) {
+        }
+        else {
         }
       });
   }

@@ -8,12 +8,11 @@
     <i class="fa fa-caret-down" aria-hidden="true"></i>
   </div>
   <div id="menu"></div>
-  <div id="my-property">
+  <div id="my-property" (click)="showMyProperty()">
     <div class="icon"></div>
     <div class="text">my property</div>
   </div>
 </div>
-<filters></filters>
 <div class="screen container-fluid" id="screen" >
   <navigation></navigation>
   <div class="wrap" [ngStyle]="{'transform': 'translate(' + navigation.left + 'px,' + navigation.top + 'px' + ') scale(' + navigation.scale + ')'}" [style.left]="navigation.x + 'px'" [style.top]="navigation.y + 'px'">

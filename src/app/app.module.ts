@@ -9,20 +9,24 @@ import {ConfirmComponent} from "./addBlockModal/addBlockModal";
 import {HttpClientModule} from '@angular/common/http';
 import {ScreenService} from "./screen/screen.service";
 import {NavigationComponent} from "./map/navigation.component";
+import {CommonModule} from "@angular/common";
+import {MyProperty} from "./my-property/myProperty";
 
 @NgModule({
   declarations: [
     AppContent,
     FilterComponent,
     ConfirmComponent,
+    MyProperty,
     NavigationComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     BootstrapModalModule,
     HttpClientModule
   ],
-  entryComponents: [ConfirmComponent],
+  entryComponents: [ConfirmComponent, MyProperty],
   providers: [NavigationService, ScreenService],
   bootstrap: [AppContent]
 })

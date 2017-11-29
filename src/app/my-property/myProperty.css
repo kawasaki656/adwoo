@@ -1,0 +1,54 @@
+.modal-dialog {
+  top: 25px;
+  width: 70% !important;
+  height: 70%;
+}
+.modal-dialog .modal-header {
+  padding: 0 !important;
+}
+
+.modal-dialog .modal-body img {
+  width: 50%;
+}
+.modal-dialog .modal-body .left, .modal-dialog .modal-body .objects, .modal-dialog .modal-body .right {
+  display: inline-block;
+  width: 10%;
+  vertical-align: middle;
+}
+.modal-dialog .modal-body .objects {
+  width: 70% !important;
+  overflow: hidden;
+  text-align: left;
+}
+.modal-dialog .modal-body .left, .modal-dialog .modal-body .right {
+  opacity: .5;
+  cursor: pointer;
+}
+.modal-dialog .modal-body .left:hover, .modal-dialog .modal-body .right:hover {
+  opacity: .7;
+}
+.modal-dialog .modal-body .item {
+  display: inline-block;
+  width: 48%;
+  height:200px;
+  background: white;
+}
+.modal-dialog .modal-body .item:nth-child(even) {
+  float: right;
+}
+.modal-dialog .modal-content {
+  background: #e5e5e5;
+  padding: 15px;
+  border-radius: 0px;
+}
+.modal-dialog .modal-content .modal-header .count, .modal-dialog .modal-content .modal-header .new {
+  display: inline-block;
+  width: 49%;
+  height:40px;
+  float: left;
+  font-size: 10px;
+}
+.modal-dialog .modal-content .modal-header .new {
+  text-align: right;
+  text-transform: uppercase;
+}
