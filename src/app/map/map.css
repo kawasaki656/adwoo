@@ -20,12 +20,16 @@
   width: 100%;
   height: 88%;
 }
-.section1, .section2-horizontal, .section2-vertical, .section4-vertical, .road-vertical, .road-horizontal, .road-horizontal-long, .road-vertical-long, .road-cross {
+.section1, .section2, .section2-horizontal, .section2-vertical, .section4-vertical, .road-vertical, .road-horizontal, .road-horizontal-long, .road-vertical-long, .road-cross {
   position: absolute;
 }
 .section1, .section2-horizontal {
   width:800px;
   height:600px;
+}
+.section2 {
+  width: 1500px;
+  height: 1000px;
 }
 .section2-vertical {
   width: 850px;
