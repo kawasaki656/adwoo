@@ -64,7 +64,21 @@
   height: 210px;
   transform: rotate(30deg) skew(-30deg);
   position: absolute;
-  z-index: 3;
+  z-index: 4;
+}
+.figure12 {
+  width: 555px;
+  height: 210px;
+  transform: rotate(30deg) skew(-30deg);
+  position: absolute;
+  z-index: 4;
+}
+.figure22 {
+  width: 555px;
+  height: 477px;
+  transform: rotate(30deg) skew(-30deg);
+  position: absolute;
+  z-index: 4;
 }
 .move-area {
   position: absolute;

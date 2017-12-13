@@ -11,7 +11,7 @@ export class NavigationService {
   constructor() {
     this.left = -500;
     this.top = 100;
-    this.scale = 1;
+    this.scale = .5;
 
     this.x = 0;
     this.y = 0;
