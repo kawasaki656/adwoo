@@ -14,10 +14,10 @@ import {isUndefined} from "util";
 })
 export class AppContent implements OnInit {
   jsonSections : any;
-  sizemap:number;
   title = 'Adwoo';
   map: Array<Array<Object>>;
   headerHeight: Number;
+  bodyHeight: Number;
   navigation:any;
   lastMouseMove: MouseEvent;
   lastTouchMove: TouchEvent;
@@ -41,9 +41,12 @@ export class AppContent implements OnInit {
   }
 
   showMyProperty() {
+    let bodyDom = window.getComputedStyle(document.getElementsByTagName("body").item(0));
+    let heightForPropertyModal = parseFloat(bodyDom.height)*0.7 + 'px';
+    let widthForPropertyModal = parseFloat(bodyDom.height)*0.9 + 'px';
     let disposable = this.dialogService.addDialog(MyProperty, {
-      title: ' ',
-      message: '  '
+      title: heightForPropertyModal,
+      message: widthForPropertyModal
     })
       .subscribe((isConfirmed) => {
         if (isConfirmed) {
