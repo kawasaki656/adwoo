@@ -3,23 +3,45 @@
   position: relative;
   align-items: center;
   height: 6%;
-  background-color: rgb(56, 67, 78);
+  background-color: #38434e;
   z-index: 4;
 }
 
 .header .buttons {
   display: flex;
+  color: white;
+  font-weight: bold;
   align-items: center;
   width: 15%;
   height: 70%;
+}
+.header .buttons #logo {
+  height: 75%;
+  padding-right: 10%;
 }
 
 .header #menu {
   display: flex;
   height: 100%;
-  width: 27%;
-  background: green;
-
+  width: 25%;
+}
+.header #menu .item {
+  display: flex;
+  background: #404c58;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  border-right: 2px solid #38434e;;
+}
+.header #menu .item.selected {
+  background: #323d47;
+}
+.header #menu .item .wrap{
+  height: 50%;
+  width: 100%;
+}
+.header #menu .item .wrap img{
+  height: 100%;
 }
 .header #my-property {
   display: flex;
@@ -32,13 +54,18 @@
 .header #my-property .icon {
   width: 100%;
   height: 70%;
+  text-align: center;
+  padding-top: 10%;
+}
+.header #my-property .icon img {
+  height: 80%;
 }
 .header #my-property .text {
   width: 100%;
   height: 30%;
   color: white;
   text-transform: uppercase;
-  font-size: 9px;
+  font-size: 8px;
   text-align: center;
 }
 

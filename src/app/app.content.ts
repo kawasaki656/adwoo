@@ -17,8 +17,7 @@ export class AppContent implements OnInit {
   sizemap:number;
   title = 'Adwoo';
   map: Array<Array<Object>>;
-  mapHeight: string;
-  mapWidth: string;
+  headerHeight: Number;
   navigation:any;
   lastMouseMove: MouseEvent;
   lastTouchMove: TouchEvent;
@@ -88,9 +87,8 @@ export class AppContent implements OnInit {
   }
 
   ngOnInit(): void {
-    let screenDom = window.getComputedStyle(document.getElementsByClassName("screen").item(0));
-    this.mapHeight = screenDom.height;
-    this.mapWidth = screenDom.width;
+    let headerDom = window.getComputedStyle(document.getElementsByClassName("header").item(0));
+    this.headerHeight = parseFloat(headerDom.height);
     this.http.get('/assets/json/objects.json').subscribe(data => {
       this.jsonSections = data;
     });
