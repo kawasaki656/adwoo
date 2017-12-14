@@ -1,3 +1,12 @@
+a:active {
+  color: white;
+}
+a:visited {
+  color: white;
+}
+a:hover {
+  color: white;
+}
 .header {
   display: flex;
   position: relative;
@@ -19,6 +28,9 @@
   height: 75%;
   padding-right: 10%;
 }
+.header .buttons #logo img {
+  height: 100%;
+}
 
 .header #menu {
   display: flex;
@@ -31,9 +43,13 @@
   align-items: center;
   height: 100%;
   text-align: center;
-  border-right: 2px solid #38434e;;
+  border-right: 2px solid #38434e;
+  cursor: pointer;
 }
 .header #menu .item.selected {
+  background: #323d47;
+}
+.header #menu .item:hover {
   background: #323d47;
 }
 .header #menu .item .wrap{
@@ -69,14 +85,41 @@
   text-align: center;
 }
 
-.header .buttons input {
-  background: rgb(86, 95, 104);
-  font-size: 11px;
+.header #account {
+  display: flex;
+  height: 100%;
+  width: 44%;
   color: white;
-  border: none;
-  font-weight: bold;
-  padding-left: 10px;
-  padding-right: 10px;
+  font-size: 11px;
+}
+.header #account .empty {
+  display: flex;
+  width: 50%;
+}
+.header #account .item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+.header #account .item .wrap{
+  height: 40%;
+  width: 100%;
+}
+.header #account .item.user .wrap{
+  height: 60%;
+  width: 100%;
+}
+.header #account .item.user-name i{
+  margin-left: 5px;
+}
+.header #account .item .wrap img{
+  height: 100%;
+  opacity: .6;
+}
+.header #account .item:hover .wrap > img{
+  opacity: 9;
 }
 
 .header .empty1, .header .empty2 {

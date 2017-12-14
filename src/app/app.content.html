@@ -3,9 +3,8 @@
   <div class="empty1">
   </div>
   <div class="buttons">
-    <img id="logo" src="../assets/icons/adwoo.png" (click)="showConfirm()">
-    <span>AdWoo</span>
-    <i class="fa fa-caret-down" aria-hidden="true"></i>
+    <a href="/" id="logo" style="display: inline"><img src="../assets/icons/adwoo.png" (click)="showConfirm()"></a>
+    <a href="/"><span>AdWoo</span></a>
   </div>
   <div id="menu">
     <div class="item selected" [style.width]="headerHeight + 'px'">
@@ -31,7 +30,31 @@
     <div class="text">my property</div>
   </div>
   <div id="account">
-
+    <div class="empty"></div>
+    <div class="item" [style.width]="headerHeight + 'px'">
+      <div class="wrap">
+        <img src="../assets/icons/home-symbol.png">
+      </div>
+    </div>
+    <div class="item" [style.width]="headerHeight + 'px'">
+      <div class="wrap">
+        <img src="../assets/icons/speech.png">
+      </div>
+    </div>
+    <div class="item" [style.width]="headerHeight + 'px'">
+      <div class="wrap">
+        <img src="../assets/icons/ring.png">
+      </div>
+    </div>
+    <div class="item user" [style.width]="headerHeight*1.5 + 'px'">
+      <div class="wrap">
+        <img src="../assets/icons/user.png">
+      </div>
+    </div>
+    <div class="item user-name">
+      <span>Unnamed user</span>
+      <i class="fa fa-caret-down" aria-hidden="true"></i>
+    </div>
   </div>
 </div>
 <div class="screen container-fluid" id="screen" >
