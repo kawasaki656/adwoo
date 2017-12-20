@@ -18,14 +18,14 @@
   "height": 1
 },{
   "id": "Дом Андрея",
-  "name":2,
+  "name":30,
   "draw":true,
-  "width": 1,
-  "height": 1
+  "width": 2,
+  "height": 4
 },{
   "id": "Дом Антона",
   "name":3,
-  "draw":true,
+  "draw":false,
   "width": 1,
   "height": 1
 },{
@@ -67,13 +67,13 @@
 },{
   "id": "Дом Леонтьева",
   "name":5,
-  "draw":true,
+  "draw":false,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Баскова",
   "name":5,
-  "draw":true,
+  "draw":false,
   "width": 1,
   "height": 1
 },{
@@ -115,13 +115,13 @@
 },{
   "id": "Дом Леонтьева",
   "name":9,
-  "draw":true,
+  "draw":false,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Баскова",
   "name":8,
-  "draw":true,
+  "draw":false,
   "width": 1,
   "height": 1
 },{
@@ -163,13 +163,13 @@
 },{
   "id": "Дом Леонтьева",
   "name":1,
-  "draw":true,
+  "draw":false,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Баскова",
   "name":1,
-  "draw":true,
+  "draw":false,
   "width": 1,
   "height": 1
 },{
@@ -211,13 +211,13 @@
 },{
   "id": "Дом Леонтьева",
   "name":1,
-  "draw":true,
+  "draw":false,
   "width": 1,
   "height": 1
 },{
   "id": "Дом Баскова",
   "name":1,
-  "draw":true,
+  "draw":false,
   "width": 1,
   "height": 1
 },{
