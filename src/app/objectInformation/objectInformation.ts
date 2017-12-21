@@ -23,4 +23,8 @@ export class ObjectInformation extends DialogComponent<ConfirmModel, boolean> im
     this.result = true;
     this.close();
   }
+  cancel() {
+    this.result = false;
+    this.close();
+  }
 }

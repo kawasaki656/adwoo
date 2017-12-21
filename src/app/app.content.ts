@@ -89,7 +89,8 @@ export class AppContent implements OnInit {
   selectSection(section):void {
     this.dialogService.addDialog(ObjectInformation, {
       height: this.heightModal,
-      width: this.widthModal
+      width: this.widthModal,
+      name: section.name
     })
       .subscribe((isConfirmed) => {
         if (isConfirmed) {

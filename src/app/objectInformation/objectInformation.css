@@ -1,3 +1,6 @@
+.modal-content {
+  border-radius: 0;
+}
 .modal-dialog {
   top: 25px;
 }
@@ -22,24 +25,90 @@
   border-right: 1px solid #e4e4e4;
 }
 .modal-dialog .modal-body .left .item.img {
-  height: 40%;
+  height: 50%;
   padding: 15px;
+  overflow: hidden;
   border-bottom: 1px solid #e4e4e4;
 }
 .modal-dialog .modal-body .left .item.actions {
   height: 14%;
   border-bottom: 1px solid #e4e4e4;
 }
+.modal-dialog .modal-body .left .item.actions .item {
+  display: inline-block;
+  float: left;
+  border-right: 1px solid #e4e4e4;
+  width: 33%;
+  text-align: center;
+  height: 100%;
+  padding: 2px;
+  padding-top: 10px;
+  font-size: 12px;
+}
+.modal-dialog .modal-body .left .item.actions .item i {
+  opacity: .6;
+}
+.modal-dialog .modal-body .left .item.actions .item:last-child {
+  border-right: none;
+}
+.modal-dialog .modal-body .left .item.actions .item span {
+  font-size: 9px;
+}
 .modal-dialog .modal-body .left .item.favorites, .modal-dialog .modal-body .left .item.discover {
   height: 18%;
-  padding: 15px;
+  padding: 10px 15px;
+  font-size: 9px;
   border-bottom: 1px solid #e4e4e4;
 }
 .modal-dialog .modal-body .left .item.img img {
   width: 100%;
-  height: 100%;
 }
 .modal-dialog .modal-body .right {
   width: 70%;
   height: 85%;
+}
+.modal-dialog .modal-body .right .item {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #e4e4e4;
+}
+.modal-dialog .modal-body .right .item.information {
+  display: flex;
+  align-items: center;
+  height: 20%;
+}
+.modal-dialog .modal-body .right .item.information span {
+  display: inline-block;
+  width: 90%;
+  padding-left: 15px;
+}
+.modal-dialog .modal-body .right .item.information i {
+  display: inline-block;
+  width: 10%;
+  opacity: .3;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+.modal-dialog .modal-body .right .item.information i:hover {
+  opacity: .5;
+}
+.modal-dialog .modal-body .right .item.menu {
+  height: 10%;
+  padding-left: 15px;
+}
+.modal-dialog .modal-body .right .item.menu .item {
+  display:inline;
+  align-items: center;
+  height: 100%;
+  font-size: 10px;
+  padding-right: 5px;
+  vertical-align: sub;
+  cursor: pointer;
+}
+.modal-dialog .modal-body .right .item.menu .item.active {
+  border-bottom: 2px solid rgb(236, 113, 80);
+}
+.modal-dialog .modal-body .right .item.content {
+  height: 70%;
 }
