@@ -73,6 +73,7 @@
       <ng-container *ngFor="let cell of line; let roadIndex = index">
         <div class="road-vertical" *ngIf="cell.draw && (cell.width == 1 || cell.width == 2) && cell.height == 1" [style.background-image]="'url(../assets/City_Objects/Block_Road_Vertical.png)'" [style.left] = "140 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "406 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "0 - roadIndex"></div>
         <div class="road-vertical-long" *ngIf="cell.draw && cell.height == 2" [style.background-image]="'url(../assets/City_Objects/Block_Road_Vertical_Long.png)'" [style.left] = "137 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "404 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "0 - roadIndex"></div>
+        <div class="road-vertical-very-long" *ngIf="cell.draw && cell.height == 5" [style.background-image]="'url(../assets/City_Objects/Block_Road_Vertical_Very_Long.png)'" [style.left] = "100 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "372 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "0 - roadIndex"></div>
       </ng-container>
     </ng-container>
 
@@ -97,6 +98,7 @@
         <div class="figure1" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 1" [style.left] = "290 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "315 + lineIndex*155 - (155*roadIndex) + 'px'"></div>
         <div class="figure12" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 1 && cell.height == 2" [style.left] = "267 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "392 + lineIndex*155 - (155*roadIndex) + 'px'"></div>
         <div class="figure22" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 2 && cell.height == 2" [style.left] = "399 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "180 + lineIndex*155 - (155*roadIndex) + 'px'"></div>
+        <div class="figure52" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 2 && cell.height == 5" [style.left] = "340 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "410 + lineIndex*155 - (155*roadIndex) + 'px'"></div>
       </ng-container>
     </ng-container>
 

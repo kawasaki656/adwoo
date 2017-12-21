@@ -4,6 +4,7 @@ import { ScreenService } from "./screen/screen.service";
 import { DialogService } from "ng2-bootstrap-modal";
 import { ConfirmComponent } from "./addBlockModal/addBlockModal";
 import { MyProperty } from "./my-property/myProperty";
+import { ObjectInformation } from "./objectInformation/objectInformation";
 import { HttpClient } from "@angular/common/http";
 import {isUndefined} from "util";
 
@@ -17,10 +18,13 @@ export class AppContent implements OnInit {
   title = 'Adwoo';
   map: Array<Array<Object>>;
   headerHeight: Number;
-  bodyHeight: Number;
   navigation:any;
+  bodyDom: any;
+  heightModal:any;
+  widthModal:any;
   lastMouseMove: MouseEvent;
   lastTouchMove: TouchEvent;
+
   constructor(el: ElementRef, private dialogService:DialogService, private http: HttpClient, screen:ScreenService, navigation:NavigationService) {
     this.navigation = navigation;
   }
@@ -41,12 +45,9 @@ export class AppContent implements OnInit {
   }
 
   showMyProperty() {
-    let bodyDom = window.getComputedStyle(document.getElementsByTagName("body").item(0));
-    let heightForPropertyModal = parseFloat(bodyDom.height)*0.7 + 'px';
-    let widthForPropertyModal = parseFloat(bodyDom.height)*0.9 + 'px';
-    let disposable = this.dialogService.addDialog(MyProperty, {
-      title: heightForPropertyModal,
-      message: widthForPropertyModal
+    this.dialogService.addDialog(MyProperty, {
+      height: this.heightModal,
+      width: this.widthModal
     })
       .subscribe((isConfirmed) => {
         if (isConfirmed) {
@@ -86,10 +87,22 @@ export class AppContent implements OnInit {
   }
 
   selectSection(section):void {
-    alert(section.id);
+    this.dialogService.addDialog(ObjectInformation, {
+      height: this.heightModal,
+      width: this.widthModal
+    })
+      .subscribe((isConfirmed) => {
+        if (isConfirmed) {
+        }
+        else {
+        }
+      });
   }
 
   ngOnInit(): void {
+    this.bodyDom = window.getComputedStyle(document.getElementsByTagName("body").item(0));
+    this.heightModal = parseFloat(this.bodyDom.height)*0.7 + 'px';
+    this.widthModal = parseFloat(this.bodyDom.height)*0.9 + 'px';
     let headerDom = window.getComputedStyle(document.getElementsByClassName("header").item(0));
     this.headerHeight = parseFloat(headerDom.height);
     this.http.get('/assets/json/objects.json').subscribe(data => {

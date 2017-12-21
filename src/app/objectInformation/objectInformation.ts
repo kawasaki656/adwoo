@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 import { DialogComponent, DialogService } from "ng2-bootstrap-modal";
 export interface ConfirmModel {
-  width:string;
+  name:string;
   height:string;
+  width:string;
 }
 @Component({
-  selector: 'myProperty',
-  styleUrls: ['myProperty.css'],
-  templateUrl: 'myProperty.html'
+  selector: 'object-information',
+  styleUrls: ['objectInformation.css'],
+  templateUrl: 'objectInformation.html'
 })
-export class MyProperty extends DialogComponent<ConfirmModel, boolean> implements ConfirmModel {
-  width: string;
-  height: string;
+export class ObjectInformation extends DialogComponent<ConfirmModel, boolean> implements ConfirmModel {
+  name:string;
+  height:string;
+  width:string;
   constructor(dialogService: DialogService) {
     super(dialogService);
   }

@@ -5,12 +5,13 @@ import { AppContent } from './app.content';
 import { FilterComponent } from "./filters/filter.component";
 import { NavigationService } from "./map/navigation.service"
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
-import {ConfirmComponent} from "./addBlockModal/addBlockModal";
-import {HttpClientModule} from '@angular/common/http';
-import {ScreenService} from "./screen/screen.service";
-import {NavigationComponent} from "./map/navigation.component";
-import {CommonModule} from "@angular/common";
-import {MyProperty} from "./my-property/myProperty";
+import { ConfirmComponent } from "./addBlockModal/addBlockModal";
+import { HttpClientModule } from '@angular/common/http';
+import { ScreenService } from "./screen/screen.service";
+import { NavigationComponent } from "./map/navigation.component";
+import { CommonModule } from "@angular/common";
+import { MyProperty } from "./my-property/myProperty";
+import { ObjectInformation } from "./objectInformation/objectInformation";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {MyProperty} from "./my-property/myProperty";
     FilterComponent,
     ConfirmComponent,
     MyProperty,
+    ObjectInformation,
     NavigationComponent
   ],
   imports: [
@@ -26,7 +28,7 @@ import {MyProperty} from "./my-property/myProperty";
     BootstrapModalModule,
     HttpClientModule
   ],
-  entryComponents: [ConfirmComponent, MyProperty],
+  entryComponents: [ConfirmComponent, MyProperty, ObjectInformation],
   providers: [NavigationService, ScreenService],
   bootstrap: [AppContent]
 })
