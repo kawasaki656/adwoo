@@ -62,6 +62,7 @@
 }
 .modal-dialog .modal-body .left .item.img img {
   width: 100%;
+  max-height: 115%;
 }
 .modal-dialog .modal-body .right {
   width: 70%;

@@ -68,28 +68,35 @@
   height: 210px;
   transform: rotate(30deg) skew(-30deg);
   position: absolute;
-  z-index: 4;
+  z-index: 40;
 }
 .figure12 {
   width: 555px;
   height: 210px;
   transform: rotate(30deg) skew(-30deg);
   position: absolute;
-  z-index: 4;
+  z-index: 40;
+}
+.figure21 {
+  width: 240px;
+  height: 477px;
+  transform: rotate(30deg) skew(-30deg);
+  position: absolute;
+  z-index: 40;
 }
 .figure22 {
   width: 555px;
   height: 477px;
   transform: rotate(30deg) skew(-30deg);
   position: absolute;
-  z-index: 4;
+  z-index: 40;
 }
 .figure52 {
   width: 1470px;
   height: 477px;
   transform: rotate(30deg) skew(-30deg);
   position: absolute;
-  z-index: 4;
+  z-index: 40;
 }
 .move-area {
   position: absolute;
