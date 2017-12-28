@@ -22,6 +22,7 @@ export class AppContent implements OnInit {
   bodyDom: any;
   heightModal:any;
   widthModal:any;
+  lastHovered:any;
   lastMouseMove: MouseEvent;
   lastTouchMove: TouchEvent;
 
@@ -98,6 +99,17 @@ export class AppContent implements OnInit {
         else {
         }
       });
+  }
+
+  hoverSection(id):void {
+    if(this.lastHovered) {
+      this.lastHovered.style.filter = "brightness(0.8)";
+    }
+
+    let hovered = document.getElementById(id);
+    hovered.style.filter = "brightness(1)";
+
+    this.lastHovered = hovered;
   }
 
   ngOnInit(): void {
