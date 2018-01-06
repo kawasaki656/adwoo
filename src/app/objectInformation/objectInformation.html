@@ -30,17 +30,34 @@
       </div>
       <div class="right">
         <div class="item information">
-          <span>Name of object and information</span>
+          <div class="logo">
+            <img src="../../assets/icons/answer_icon.png">
+          </div>
+          <div class="text">
+            <div class="inner">
+              <span>Good Guys Burger / Restaurant</span>
+              <span style="font-size: 9px">What is a most important thing is User Experience and UI</span>
+            </div>
+          </div>
           <i class="fa fa-close" (click)="cancel()"></i>
         </div>
         <div class="item menu">
-          <span class="item active">Information</span>
-          <span class="item">Menu</span>
-          <span class="item">Reviews</span>
-          <span class="item">Special offer</span>
-          <span class="item">Details</span>
+          <div class="inner">
+            <span class="item" (click)="selectMenu(1)">Information</span>
+            <span class="item" (click)="selectMenu(2)">Menu</span>
+            <span class="item" (click)="selectMenu(3)">Reviews</span>
+            <span class="item" (click)="selectMenu(4)">Special offer</span>
+            <span class="item" (click)="selectMenu(5)">Details</span>
+          </div>
+          <div class="cursor"></div>
         </div>
-        <div class="item content"></div>
+        <div class="item content">
+          Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues.
+          <br>
+          Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es.Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc.
+          <br>
+          Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es.
+        </div>
       </div>
     </div>
     <div class="modal-footer">

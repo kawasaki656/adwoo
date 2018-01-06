@@ -68,10 +68,18 @@
   width: 70%;
   height: 85%;
 }
-.modal-dialog .modal-body .right .item {
+.modal-dialog .modal-body .right>.item {
   display: block;
   width: 100%;
   border-bottom: 1px solid #e4e4e4;
+}
+.modal-dialog .modal-body .right .cursor {
+  position: absolute;
+  display: block;
+  width: 52px;
+  height: 2px;
+  top: 98%;
+  background: rgb(236, 113, 80);
 }
 .modal-dialog .modal-body .right .item.information {
   display: flex;
@@ -81,7 +89,6 @@
 .modal-dialog .modal-body .right .item.information span {
   display: inline-block;
   width: 90%;
-  padding-left: 15px;
 }
 .modal-dialog .modal-body .right .item.information i {
   display: inline-block;
@@ -95,21 +102,53 @@
   opacity: .5;
 }
 .modal-dialog .modal-body .right .item.menu {
+  position: relative;
   height: 10%;
   padding-left: 15px;
 }
+.modal-dialog .modal-body .right .item.information .logo {
+  position: relative;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+}
+.modal-dialog .modal-body .right .item.information .logo img {
+  position: absolute;
+  height: 70%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.modal-dialog .modal-body .right .item.information .text {
+  position: relative;
+  width: 70%;
+  height: 100%;
+  font-size: 12px;
+}
+.modal-dialog .modal-body .right .item.information .text>.inner {
+  position: absolute;
+  height: 45%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.modal-dialog .modal-body .right .item.menu>.inner {
+  position: absolute;
+  top: 48%;
+  transform: translateY(-50%);
+}
 .modal-dialog .modal-body .right .item.menu .item {
   display:inline;
-  align-items: center;
-  height: 100%;
   font-size: 10px;
   padding-right: 5px;
-  vertical-align: sub;
   cursor: pointer;
-}
-.modal-dialog .modal-body .right .item.menu .item.active {
-  border-bottom: 2px solid rgb(236, 113, 80);
 }
 .modal-dialog .modal-body .right .item.content {
   height: 70%;
+  font-size: 9px;
+  padding: 10px 15px;
 }

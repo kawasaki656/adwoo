@@ -14,8 +14,13 @@ export class ObjectInformation extends DialogComponent<ConfirmModel, boolean> im
   name:string;
   height:string;
   width:string;
+  menuItem:number;
   constructor(dialogService: DialogService) {
     super(dialogService);
+  }
+  selectMenu(item) {
+    this.menuItem = item;
+    console.log(this.menuItem)
   }
   confirm() {
     // we set dialog result as true on click on confirm button,
