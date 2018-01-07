@@ -31,7 +31,7 @@
   overflow: hidden;
   border-bottom: 1px solid #e4e4e4;
 }
-.modal-dialog .modal-body .left .item.img .block-label {
+.modal-dialog .block-label {
   position: absolute;
   display: block;
   width: 66%;
@@ -41,7 +41,7 @@
   top: 80%;
   left: 17%;
 }
-.modal-dialog .modal-body .left .item.img .block-label .inner {
+.modal-dialog .block-label .inner {
   position: absolute;
   display: block;
   width: 60%;
@@ -54,12 +54,12 @@
   color: white;
   text-align: center;
 }
-.modal-dialog .modal-body .left .item.img .block-label .inner img {
+.modal-dialog .block-label .inner img {
   height: 50%;
-  width: auto;
+  width: auto !important;
   margin-top: -2px;
 }
-.modal-dialog .modal-body .left .item.img .block-label .last {
+.modal-dialog .block-label .last {
   position: absolute;
   display: block;
   width: 40%;
@@ -238,6 +238,38 @@
   height: 100%;
   text-align: center;
 }
-.modal-dialog .modal-body .right .close img{
+.modal-dialog .modal-body .right .close img {
   width: 13px;
+}
+.modal-dialog .footer {
+  display: block;
+  height: 15%;
+  width: 100%;
+  float: left;
+  background: #f7f7f7;
+}
+.modal-dialog .footer .left, .modal-dialog .footer .right {
+  display: inline-block;
+  float: left;
+  height: 100%;
+}
+.modal-dialog .footer .left {
+  width: 70%;
+  border-right: 1px solid #e4e4e4;
+}
+.modal-dialog .footer .left .block-label {
+  position: relative;
+  display: inline-block;
+  top: auto !important;
+  left: auto !important;
+}
+.modal-dialog .footer .left span {
+  display: block;
+  font-size: 9px;
+  padding-left: 15px;
+  padding-top: 12px;
+  padding-bottom: 10px;
+}
+.modal-dialog .footer .right {
+  width: 70%;
 }
