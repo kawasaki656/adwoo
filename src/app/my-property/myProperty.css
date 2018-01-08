@@ -30,47 +30,84 @@
 }
 .modal-dialog .modal-body .item {
   display: inline-block;
-  width: 48%;
+  width: 49%;
   height:200px;
   background: white;
 }
 .modal-dialog .modal-body .item .img {
+  position: relative;
   display: inline-block;
-  width: 40%;
-  height: 70%;
+  width: 45%;
+  height: 75%;
   float: left;
   text-align: center;
   background: #f0f0f0;
 }
 .modal-dialog .modal-body .item .img img {
-  width: 100%;
+  position: absolute;
+  width: 150%;
+  left: -25%;
 }
 .modal-dialog .modal-body .item .data {
   display: inline-block;
-  width: 60%;
-  height: 70%;
+  width: 55%;
+  height: 75%;
   background: #f8f8f8;
   float: left;
-  border-bottom: 1px solid #e4e4e4;
 }
 .modal-dialog .modal-body .item .data .header {
   width: 100%;
-  height: 35%;
+  height: 30%;
   border-bottom: 1px solid #e4e4e4;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+.modal-dialog .modal-body .item .data .header img {
+  width: 9px;
+}
+.modal-dialog .modal-body .item .data .header span {
+  font-size: 9px;
+  font-weight: bold;
 }
 .modal-dialog .modal-body .item .data .item {
   display: inline-block;
-  height: 32.8%;
+  height: 35%;
   width: 33.3%;
   float: left;
   border-right: 1px solid #e4e4e4;
   border-bottom: 1px solid #e4e4e4;
+  text-align: center;
+}
+.modal-dialog .modal-body .item .data .item span {
+  display: block;
+}
+.modal-dialog .modal-body .item .data .item img {
+  height: 12px;
+  width: auto !important;
+}
+.modal-dialog .modal-body .item .data .item:nth-child(4), .modal-dialog .modal-body .item .data .item:nth-child(7) {
+  border-right: none !important;
 }
 .modal-dialog .modal-body .item .footer {
+  position: relative;
   display: block;
   width: 100%;
-  height: 30%;
+  height: 25%;
+  float: left;
+  padding: 5px 15px;
   background: #f8f8f8;
+}
+.modal-dialog .modal-body .item .footer .block-label {
+  top: inherit;
+  left: inherit;
+  background: #b0b9c2;
+}
+.modal-dialog .modal-body .item .footer .block-label .inner {
+  background: #b0b9c2;
+}
+.modal-dialog .modal-body .item .footer span {
+  font-size: 9px;
+  font-weight: bold;
 }
 .modal-dialog .modal-body .item:nth-child(even) {
   float: right;
@@ -85,9 +122,50 @@
   width: 49%;
   height:20px;
   float: left;
-  font-size: 10px;
+  font-size: 8px;
 }
 .modal-dialog .modal-content .modal-header .new {
   text-align: right;
   text-transform: uppercase;
+}
+
+.modal-dialog .block-label {
+  position: absolute;
+  display: block;
+  width: 74%;
+  height: 15px;
+  background: #d86545;
+  border-radius: 15px;
+  top: 80%;
+  left: 13%;
+}
+.modal-dialog .block-label .inner {
+  position: absolute;
+  display: block;
+  width: 60%;
+  height: 100%;
+  border-radius: 20px;
+  background: #eb6d4b;
+  font-size: 7px;
+  line-height: 15px;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+.modal-dialog .block-label .inner img {
+  height: 50%;
+  width: auto !important;
+  margin-top: -2px;
+}
+.modal-dialog .block-label .last {
+  position: absolute;
+  display: block;
+  width: 40%;
+  height: 100%;
+  font-size: 7px;
+  line-height: 15px;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  left: 60%
 }
