@@ -107,15 +107,16 @@
   font-size: 9px;
   padding-bottom: 10px;
 }
-.modal-dialog .modal-body .left .item.favorites .item, .modal-dialog .modal-body .left .item.discover .item {
-  display: inline-block;
-  width: 13%;
+.modal-dialog .modal-body .left .item.favorites .item, .modal-dialog .modal-body .left .item.discover .item, .modal-dialog .footer .right .item {
+  display: inline-block !important;
+  width: 13% !important;
   height: 50%;
   border-right: none;
   margin-right: 4px;
   float: left;
+  border-bottom: none !important;
 }
-.modal-dialog .modal-body .left .item.favorites .item img, .modal-dialog .modal-body .left .item.discover img {
+.modal-dialog .modal-body .left .item.favorites .item img, .modal-dialog .modal-body .left .item.discover img, .modal-dialog .footer .right .item img {
   width: 100%;
 }
 
@@ -270,7 +271,7 @@
   top: auto !important;
   left: auto !important;
 }
-.modal-dialog .footer .left span {
+.modal-dialog .footer .left span, .modal-dialog .footer .right span {
   display: block;
   font-size: 9px;
   padding-left: 15px;
@@ -278,5 +279,5 @@
   padding-bottom: 10px;
 }
 .modal-dialog .footer .right {
-  width: 70%;
+  width: 30%;
 }
