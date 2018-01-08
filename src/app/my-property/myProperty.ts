@@ -23,4 +23,8 @@ export class MyProperty extends DialogComponent<ConfirmModel, boolean> implement
     this.result = true;
     this.close();
   }
+  cancel() {
+    this.result = false;
+    this.close();
+  }
 }

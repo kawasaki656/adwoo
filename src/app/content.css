@@ -10,7 +10,16 @@
   z-index: 9000;
   border-radius: 25px;
   top: 10%;
-  left: 90%;
+  left: 94%;
   box-shadow: 0 4px 5px rgba(0,0,0,0.2);
   cursor: pointer;
+  opacity: .9;
+}
+.screen .search img {
+  height: 40%;
+  top: 30%;
+  left: 30%;
+}
+.screen .search:hover {
+  opacity: 1;
 }

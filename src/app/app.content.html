@@ -59,7 +59,9 @@
 </div>
 <div class="screen container-fluid" id="screen" >
   <navigation></navigation>
-  <div class="search"></div>
+  <div class="search">
+    <img src="../assets/icons/search.png">
+  </div>
   <div class="wrap" [ngStyle]="{'transform': 'translate(' + navigation.left + 'px,' + navigation.top + 'px' + ') scale(' + navigation.scale + ')'}" [style.left]="navigation.x + 'px'" [style.top]="navigation.y + 'px'">
     <ng-container #wasEmpty *ngFor="let line of jsonSections; let lineIndex = index">
       <ng-container *ngFor="let cell of line; let cellIndex = index">
