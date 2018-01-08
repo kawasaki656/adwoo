@@ -203,7 +203,7 @@
 .modal-dialog .modal-body .right .item.menu .item {
   display:inline;
   font-size: 10px;
-  padding-right: 5px;
+  padding-right: 10px;
   cursor: pointer;
 }
 .modal-dialog .modal-body .right .item.content {
