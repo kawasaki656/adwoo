@@ -1,5 +1,5 @@
 .modal-dialog {
-  top: 25px;
+  margin: 0 auto !important;
 }
 .modal-dialog .modal-header {
   padding: 0 !important;
@@ -168,4 +168,7 @@
   color: white;
   text-align: center;
   left: 60%
+}
+.modal-footer {
+  border: none !important;
 }

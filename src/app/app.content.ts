@@ -48,7 +48,8 @@ export class AppContent implements OnInit {
   showMyProperty() {
     this.dialogService.addDialog(MyProperty, {
       height: this.heightModal,
-      width: this.widthModal
+      width: this.widthModal,
+      headerHeight: this.headerHeight+"px"
     })
       .subscribe((isConfirmed) => {
         if (isConfirmed) {
@@ -114,7 +115,7 @@ export class AppContent implements OnInit {
 
   ngOnInit(): void {
     this.bodyDom = window.getComputedStyle(document.getElementsByTagName("body").item(0));
-    this.heightModal = parseFloat(this.bodyDom.height)*0.7 + 'px';
+    this.heightModal = parseFloat(this.bodyDom.height)*0.8 + 'px';
     this.widthModal = parseFloat(this.bodyDom.height)*0.9 + 'px';
     let headerDom = window.getComputedStyle(document.getElementsByClassName("header").item(0));
     this.headerHeight = parseFloat(headerDom.height);

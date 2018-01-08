@@ -3,6 +3,7 @@ import { DialogComponent, DialogService } from "ng2-bootstrap-modal";
 export interface ConfirmModel {
   width:string;
   height:string;
+  headerHeight:string;
 }
 @Component({
   selector: 'myProperty',
@@ -12,6 +13,7 @@ export interface ConfirmModel {
 export class MyProperty extends DialogComponent<ConfirmModel, boolean> implements ConfirmModel {
   width: string;
   height: string;
+  headerHeight: string;
   constructor(dialogService: DialogService) {
     super(dialogService);
   }
