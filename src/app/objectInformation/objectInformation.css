@@ -2,7 +2,10 @@
   border-radius: 0;
 }
 .modal-dialog {
-  top: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -245px 0 0 -375px;
 }
 .modal-dialog .modal-body {
   padding: 0 !important;
@@ -163,7 +166,7 @@
 }
 .modal-dialog .modal-body .right .item.menu {
   position: relative;
-  height: 10%;
+  height: 9%;
   padding-left: 15px;
 }
 .modal-dialog .modal-body .right .item.information .logo {
@@ -209,7 +212,7 @@
 }
 .modal-dialog .modal-body .right .item.content {
   position: relative;
-  height: 70%;
+  height: 71%;
   font-size: 9px;
   padding: 10px 15px;
 }
@@ -247,7 +250,7 @@
   text-align: center;
 }
 .modal-dialog .modal-body .right .close img {
-  width: 13px;
+  width: 12px;
 }
 .modal-dialog .footer {
   display: block;
