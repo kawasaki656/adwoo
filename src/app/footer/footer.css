@@ -1,4 +1,75 @@
 .footer {
+  display: flex;
+  position: relative;
+  align-items: center;
   height: 6%;
-  background-color: rgb(56, 67, 78);
+  background-color: #38434e;
+  z-index: 4;
+}
+
+.footer #left {
+  display: flex;
+  color: white;
+  font-weight: bold;
+  align-items: center;
+  width: 18%;
+  height: 90%;
+  border-right: 1px solid #2e353b;
+}
+.footer #center {
+  display: flex;
+  color: white;
+  font-weight: bold;
+  align-items: center;
+  width: 55%;
+  height: 90%;
+  border-right: 1px solid #2e353b;
+  border-left: 1px solid #48525c;
+}
+.footer #center .left, .footer #center .right {
+  width: 8%;
+  height: 40%;
+  text-align: center;
+  opacity: .3;
+}
+.footer #center .left:hover, .footer #center .right:hover {
+  opacity: .7;
+}
+.footer #center .left img, .footer #center .right img {
+  height: 100%;
+  cursor: pointer;
+}
+.footer #center .right img {
+  transform: rotate(180deg);
+}
+.footer #center .numbers {
+  width: 84%;
+  height: 60%;
+}
+.footer #center .numbers .item {
+  display: inline-block;
+  float: left;
+  width: 7%;
+  height: 100%;
+  text-align: center;
+  opacity: .3;
+  cursor: pointer;
+}
+.footer #center .numbers .item:hover {
+  opacity: .7;
+}
+.footer #center .numbers .item {
+  font-size: 0.7em;
+}
+.footer #center .numbers .item .digit {
+  font-size: 1.4em;
+}
+.footer #right {
+  display: flex;
+  color: white;
+  font-weight: bold;
+  align-items: center;
+  width: 27%;
+  height: 90%;
+  border-left: 1px solid #48525c;
 }
