@@ -78,14 +78,14 @@
   "height": 1
 },{
   "id": "14",
-  "name":2,
+  "name":31,
   "draw":true,
-  "width": 1,
-  "height": 1
+  "width": 2,
+  "height": 2
 },{
   "id": "15",
   "name":3,
-  "draw":true,
+  "draw":false,
   "width": 1,
   "height": 1
 },{
@@ -241,13 +241,13 @@
 },{
   "id": "41",
   "name":34,
-  "draw":true,
+  "draw":false,
   "width": 1,
   "height": 1
 },{
   "id": "42",
   "name":34,
-  "draw":true,
+  "draw":false,
   "width": 1,
   "height": 1
 },{
@@ -264,14 +264,14 @@
   "height": 1
 },{
   "id": "45",
-  "name":8,
+  "name":32,
   "draw":true,
-  "width": 1,
-  "height": 1
+  "width": 2,
+  "height": 2
 },{
   "id": "46",
   "name":8,
-  "draw":true,
+  "draw":false,
   "width": 1,
   "height": 1
 },{
@@ -427,13 +427,13 @@
 },{
   "id": "72",
   "name":10,
-  "draw":true,
+  "draw":false,
   "width": 1,
   "height": 1
 },{
   "id": "73",
   "name":10,
-  "draw":true,
+  "draw":false,
   "width": 1,
   "height": 1
 },{
