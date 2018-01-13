@@ -22,7 +22,11 @@
   background: #413a43;
 }
 .section1, .section2, .section2-horizontal, .section2-vertical, .section5 {
-  filter: brightness(0.8);
+  filter: brightness(0.85);
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
 }
 .section1, .section2, .section2-horizontal, .section2-vertical, .section5, .road-vertical, .road-horizontal, .road-horizontal-long, .road-vertical-long, .road-vertical-very-long, .road-cross {
   position: absolute;

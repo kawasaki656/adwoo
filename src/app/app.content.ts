@@ -104,7 +104,7 @@ export class AppContent implements OnInit {
 
   hoverSection(id):void {
     if(this.lastHovered) {
-      this.lastHovered.style.filter = "brightness(0.8)";
+      this.lastHovered.style.filter = "brightness(0.85)";
     }
 
     let hovered = document.getElementById(id);
@@ -119,7 +119,7 @@ export class AppContent implements OnInit {
     this.widthModal = parseFloat(this.bodyDom.height)*0.9 + 'px';
     let headerDom = window.getComputedStyle(document.getElementsByClassName("header").item(0));
     this.headerHeight = parseFloat(headerDom.height);
-    this.http.get('/assets/json/objects.json').subscribe(data => {
+    this.http.get('/assets/json/objects1.json').subscribe(data => {
       this.jsonSections = data;
     });
   }
