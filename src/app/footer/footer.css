@@ -1,10 +1,38 @@
 .footer {
+  position: fixed !important;
   display: flex;
   position: relative;
   align-items: center;
-  height: 6%;
+  height: 7%;
+  width: 100%;
+  top:93%;
   background-color: #38434e;
   z-index: 4;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+.footer.hided {
+  top:100% !important;
+}
+
+.footer #hide {
+  position: absolute;
+  display: block;
+  color: white;
+  background: #ec7150;
+  width: 50px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  left: 50%;
+  top: -18px;
+  margin-left: -25px;
+  font-size: 10px;
+  border-radius: 3px 3px 0 0;
+  cursor: pointer;
+  z-index: 10;
 }
 
 .footer #left {

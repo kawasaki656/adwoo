@@ -25,9 +25,11 @@ export class AppContent implements OnInit {
   lastHovered:any;
   lastMouseMove: MouseEvent;
   lastTouchMove: TouchEvent;
+  footerState: boolean;
 
   constructor(el: ElementRef, private dialogService:DialogService, private http: HttpClient, screen:ScreenService, navigation:NavigationService) {
     this.navigation = navigation;
+    this.footerState = true;
   }
 
   showConfirm() {
@@ -86,6 +88,10 @@ export class AppContent implements OnInit {
   onMousedown(event) {
     console.log(event)
     this.navigation.mouseDown = true;
+  }
+
+  hideFooter():void {
+    this.footerState = !this.footerState;
   }
 
   selectSection(section):void {

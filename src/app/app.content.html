@@ -109,7 +109,9 @@
   </div>
 
 </div>
-<div class="footer container-fluid" >
+<div class="footer container-fluid" [ngClass]="{'hided':!footerState}">
+  <div id="hide" (click)="hideFooter()" *ngIf="footerState">HIDE</div>
+  <div id="hide" (click)="hideFooter()" *ngIf="!footerState">SHOW</div>
   <div id="left"></div>
   <div id="center">
     <div class="left">
