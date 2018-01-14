@@ -27,6 +27,7 @@ export class AppContent implements OnInit {
   lastTouchMove: TouchEvent;
   footerState: boolean;
   cursorPosition:any;
+  myPropertyWidth:any;
 
   constructor(el: ElementRef, private dialogService:DialogService, private http: HttpClient, screen:ScreenService, navigation:NavigationService) {
     this.navigation = navigation;
@@ -130,5 +131,8 @@ export class AppContent implements OnInit {
     this.http.get('/assets/json/objects1.json').subscribe(data => {
       this.jsonSections = data;
     });
+  }
+  ngAfterViewInit(): void {
+    this.myPropertyWidth = parseFloat(window.getComputedStyle(document.getElementById("my-property")).width);
   }
 }

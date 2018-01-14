@@ -1,5 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="header container-fluid" >
+  <div class="show" [style.border]="myPropertyWidth/2 + 'px solid transparent'" [style.border-top]="'10px solid #d86648'" [style.bottom]="myPropertyWidth/-2 - 12 + 'px'"></div>
+
   <div class="empty1">
   </div>
   <div class="buttons">
@@ -27,7 +29,9 @@
     <div class="icon">
       <img src="../assets/icons/my-property.png">
     </div>
-    <div class="text">my property</div>
+    <div class="text">
+      <span>my property</span>
+    </div>
   </div>
   <div id="account">
     <div class="empty"></div>
