@@ -9,7 +9,6 @@
   align-items: center;
   justify-content: center;
 }
-
 .leftNav img:hover, .rightNav img:hover, .topNav img:hover, .bottomNav img:hover {
   opacity: .7 !important;
 }
