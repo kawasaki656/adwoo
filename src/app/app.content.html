@@ -63,6 +63,7 @@
     <img src="../assets/icons/search.png">
   </div>
   <div class="wrap" [ngStyle]="{'transform': 'translate(' + navigation.left + 'px,' + navigation.top + 'px' + ') scale(' + navigation.scale + ')'}" [style.left]="navigation.x + 'px'" [style.top]="navigation.y + 'px'">
+    <div id="get-position" [style.left]="cursorPosition.left-2*navigation.left+'px'" [style.top]="cursorPosition.top-2*navigation.top+'px'"></div>
     <ng-container #wasEmpty *ngFor="let line of jsonSections; let lineIndex = index">
       <ng-container *ngFor="let cell of line; let cellIndex = index">
         <div class="section1" *ngIf="cell.draw && cell.width == 1 && cell.height == 1" id="{{cell.id}}" [style.background-image]="'url(../assets/City_Objects/Block_' + cell.name +'.png)'" [style.left] = "(lineIndex*268)+(cellIndex*267)  +'px'" [style.top] = "(lineIndex*155)+(cellIndex*(-155))  +'px'" [style.z-index] = "lineIndex-cellIndex"></div>

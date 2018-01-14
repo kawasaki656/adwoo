@@ -26,10 +26,12 @@ export class AppContent implements OnInit {
   lastMouseMove: MouseEvent;
   lastTouchMove: TouchEvent;
   footerState: boolean;
+  cursorPosition:any;
 
   constructor(el: ElementRef, private dialogService:DialogService, private http: HttpClient, screen:ScreenService, navigation:NavigationService) {
     this.navigation = navigation;
     this.footerState = true;
+    this.cursorPosition = {left:screen.screenWidth, top:screen.screenHeight}
   }
 
   showConfirm() {

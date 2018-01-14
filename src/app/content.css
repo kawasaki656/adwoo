@@ -23,3 +23,13 @@
 .screen .search:hover {
   opacity: 1;
 }
+.screen #get-position {
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 40px;
+  left: 0px;
+  top: 0px;
+  background: blue;
+  z-index: 3000;
+}

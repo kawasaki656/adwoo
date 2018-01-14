@@ -9,8 +9,8 @@ export class NavigationService {
   y: number;
   mouseDown : boolean;
   constructor() {
-    this.left = -2500;
-    this.top = 900;
+    this.left = 0;
+    this.top = 0;
     this.scale = .5;
 
     this.x = 0;
