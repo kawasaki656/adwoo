@@ -91,6 +91,7 @@
 }
 .footer #center .numbers .item .digit {
   font-size: 1.4em;
+  font-weight: 100;
 }
 .footer #right {
   display: flex;
