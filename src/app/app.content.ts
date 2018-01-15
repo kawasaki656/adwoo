@@ -29,40 +29,30 @@ export class AppContent implements OnInit {
   cursorPosition:any;
   myPropertyWidth:any;
   myPropertyIndent:any;
+  openedPropertyState:boolean;
 
   constructor(el: ElementRef, private dialogService:DialogService, private http: HttpClient, screen:ScreenService, navigation:NavigationService) {
     this.navigation = navigation;
     this.footerState = true;
     this.cursorPosition = {left:screen.screenWidth, top:screen.screenHeight}
+    this.openedPropertyState = false;
   }
-
-  showConfirm() {
-    let disposable = this.dialogService.addDialog(ConfirmComponent, {
-      title: 'Add a new building',
-      message: 'Confirm message'
-    })
-      .subscribe((isConfirmed) => {
-        if (isConfirmed) {
-          alert('accepted');
-        }
-        else {
-          alert('declined');
-        }
-      });
-  }
-
   showMyProperty() {
-    this.dialogService.addDialog(MyProperty, {
-      height: this.heightModal,
-      width: this.widthModal,
-      headerHeight: this.headerHeight+"px"
-    })
-      .subscribe((isConfirmed) => {
-        if (isConfirmed) {
-        }
-        else {
-        }
-      });
+    if(this.openedPropertyState == false) {
+      this.openedPropertyState = true;
+      this.dialogService.addDialog(MyProperty, {
+          height: this.heightModal,
+          width: this.widthModal,
+          headerHeight: this.headerHeight+"px"
+        })
+        .subscribe((isConfirmed) => {
+          if (isConfirmed) {
+          }
+          else {
+            this.openedPropertyState = false;
+          }
+        });
+    }
   }
 
   @HostListener('mousemove', ['$event'])
