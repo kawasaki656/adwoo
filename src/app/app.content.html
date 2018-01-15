@@ -1,14 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="header container-fluid" >
-  <div class="show" [style.border]="myPropertyWidth/2 + 'px solid transparent'" [style.border-top]="'10px solid #d86648'" [style.bottom]="myPropertyWidth/-2 - 12 + 'px'"></div>
-
-  <div class="empty1">
+  <div class="show" [style.border]="myPropertyWidth/2 + 'px solid transparent'" [style.border-top]="'10px solid #d86648'" [style.bottom]="myPropertyWidth/-2 - 15 + 'px'" [style.left]="myPropertyIndent + 'px'">
   </div>
-  <div class="buttons">
+  <img src="../assets/icons/array_down.png" style="position: absolute; width: 35px; bottom: -23px; cursor:pointer" [style.left]="myPropertyIndent + myPropertyWidth/2 -17.5 + 'px'">
+
+  <div class="empty1" id="header1">
+  </div>
+  <div class="buttons" id="header2">
     <a href="/" id="logo" style="display: inline"><img src="../assets/icons/adwoo.png" (click)="showConfirm()"></a>
     <a href="/"><span>AdWoo</span></a>
   </div>
-  <div id="menu">
+  <div id="menu" >
     <div class="item selected" [style.width]="headerHeight + 'px'">
       <div class="wrap">
         <img src="../assets/icons/earth.png">

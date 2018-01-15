@@ -28,6 +28,7 @@ export class AppContent implements OnInit {
   footerState: boolean;
   cursorPosition:any;
   myPropertyWidth:any;
+  myPropertyIndent:any;
 
   constructor(el: ElementRef, private dialogService:DialogService, private http: HttpClient, screen:ScreenService, navigation:NavigationService) {
     this.navigation = navigation;
@@ -134,5 +135,9 @@ export class AppContent implements OnInit {
   }
   ngAfterViewInit(): void {
     this.myPropertyWidth = parseFloat(window.getComputedStyle(document.getElementById("my-property")).width);
+    let header1Width = parseFloat(window.getComputedStyle(document.getElementById("header1")).width);
+    let header2Width = parseFloat(window.getComputedStyle(document.getElementById("header2")).width);
+    let header3Width = parseFloat(window.getComputedStyle(document.getElementById("menu")).width);
+    this.myPropertyIndent = header1Width + header2Width + header3Width;
   }
 }
