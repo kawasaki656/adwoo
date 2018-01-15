@@ -47,16 +47,15 @@
 .footer #center {
   display: flex;
   color: white;
-  font-weight: bold;
   align-items: center;
   width: 55%;
-  height: 90%;
+  height: 100%;
   border-right: 1px solid #2e353b;
   border-left: 1px solid #48525c;
 }
 .footer #center .left, .footer #center .right {
   width: 8%;
-  height: 40%;
+  height: 35%;
   text-align: center;
   opacity: .3;
 }
