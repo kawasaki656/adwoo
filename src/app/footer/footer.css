@@ -3,9 +3,9 @@
   display: flex;
   position: relative;
   align-items: center;
-  height: 7%;
+  height: 6%;
   width: 100%;
-  top:93%;
+  top:94%;
   background-color: #38434e;
   z-index: 4;
   transition: all 0.3s ease-out;
@@ -71,7 +71,7 @@
 }
 .footer #center .numbers {
   width: 84%;
-  height: 60%;
+  height: 50%;
 }
 .footer #center .numbers .item {
   display: inline-block;

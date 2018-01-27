@@ -130,6 +130,7 @@
   padding: 15px;
   border-radius: 0px;
   overflow: hidden;
+  border: none !important;
 }
 .modal-dialog .modal-content .modal-header .count, .modal-dialog .modal-content .modal-header .new {
   display: inline-block;
@@ -185,4 +186,25 @@
 }
 .modal-footer {
   border: none !important;
+  height: 45px;
+  width: 700px;
+  left: 0px;
+  top: 455px;
+  position: absolute;
+  background: #f8f8f8;
+  padding: 0 !important;
+}
+.modal-footer .left, .modal-footer .right {
+  display: inline-block;
+  float: left;
+  height: 100%;
+  width: 50%;
+  text-align: center;
+  line-height: 45px;
+}
+.modal-footer .left img, .modal-footer .right img {
+  height: 9px;
+}
+.modal-footer .right img {
+  transform: rotate(180deg);
 }
