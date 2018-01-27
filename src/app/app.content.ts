@@ -54,6 +54,9 @@ export class AppContent implements OnInit {
         });
     }
   }
+  trackByIndex(index: number, obj: any): any {
+    return index;
+  }
 
   @HostListener('mousemove', ['$event'])
   onMousemove(event: MouseEvent) {
@@ -86,6 +89,11 @@ export class AppContent implements OnInit {
 
   hideFooter():void {
     this.footerState = !this.footerState;
+  }
+
+  moveMap():void {
+    console.log(this.navigation.left)
+    console.log(this.navigation.top)
   }
 
   selectSection(section):void {

@@ -1,7 +1,6 @@
-import {Component, HostListener} from '@angular/core';
+import {Component, HostListener, Output, EventEmitter} from '@angular/core';
 import { NavigationService } from "./navigation.service";
 import {ScreenService} from "../screen/screen.service";
-import {isUndefined} from "util";
 
 @Component({
   selector: 'navigation',
@@ -9,6 +8,7 @@ import {isUndefined} from "util";
   styleUrls: ['./map.css']
 })
 export class NavigationComponent {
+  @Output() onChanged = new EventEmitter<boolean>();
   screen:any;
   navigation:any;
 
@@ -27,14 +27,18 @@ export class NavigationComponent {
 
   navRight():void {
     this.navigation.left -= this.screen.screenWidth/2;
+    this.onChanged.emit(true);
   }
   navLeft():void {
     this.navigation.left += this.screen.screenWidth/2;
+    this.onChanged.emit(true);
   }
   navTop():void {
     this.navigation.top += this.screen.screenHeight/2;
+    this.onChanged.emit(true);
   }
   navBottom():void {
     this.navigation.top -= this.screen.screenHeight/2;
+    this.onChanged.emit(true);
   }
 }
