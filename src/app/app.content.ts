@@ -30,6 +30,7 @@ export class AppContent implements OnInit {
   myPropertyWidth:any;
   myPropertyIndent:any;
   openedPropertyState:boolean;
+  coordinatesOfSections:Array<Array<Object>>;
 
   constructor(el: ElementRef, private dialogService:DialogService, private http: HttpClient, screen:ScreenService, navigation:NavigationService) {
     this.navigation = navigation;
@@ -62,7 +63,7 @@ export class AppContent implements OnInit {
   onMousemove(event: MouseEvent) {
     if(!isUndefined(this.lastMouseMove) && this.navigation.mouseDown) {
       this.navigation.x += event.clientX - this.lastMouseMove.clientX;
-      console.log(event.clientX - this.lastMouseMove.clientX)
+      //console.log(event.clientX - this.lastMouseMove.clientX)
       this.navigation.y += event.clientY - this.lastMouseMove.clientY;
     }
     this.lastMouseMove = event;
@@ -72,28 +73,23 @@ export class AppContent implements OnInit {
   onTouchMove(event: TouchEvent) {
     if(!isUndefined(this.lastTouchMove)) {
       this.navigation.x += event.changedTouches[0].pageX- this.lastTouchMove.touches[0].pageX;
-      console.log(event)
       this.navigation.y += event.changedTouches[0].pageY - this.lastTouchMove.touches[0].pageY;
     }
     this.lastTouchMove = event;
   }
   @HostListener('mouseup')
   onMouseup() {
+    console.log("mouseup")
     this.navigation.mouseDown = false;
   }
   @HostListener('mousedown', ['$event'])
   onMousedown(event) {
-    console.log(event)
+    console.log("mousedown")
     this.navigation.mouseDown = true;
   }
 
   hideFooter():void {
     this.footerState = !this.footerState;
-  }
-
-  moveMap():void {
-    console.log(this.navigation.left)
-    console.log(this.navigation.top)
   }
 
   selectSection(section):void {
@@ -129,6 +125,17 @@ export class AppContent implements OnInit {
     this.headerHeight = parseFloat(headerDom.height);
     this.http.get('/assets/json/objects1.json').subscribe(data => {
       this.jsonSections = data;
+      let startX = 410;
+      let startY = 400;
+      for(var line in this.jsonSections) {
+        // this.coordinatesOfSections[line] = new Array(Array);
+        for(var cell in this.jsonSections[line]) {
+          //this.coordinatesOfSections[line][cell] = {left: startX + cell*267 + line*268, top: startY - cell*155 + line*155}
+          console.log(line)
+          console.log(cell)
+        }
+      }
+      console.log(this.coordinatesOfSections)
     });
   }
   ngAfterViewInit(): void {
