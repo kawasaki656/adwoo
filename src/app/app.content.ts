@@ -108,7 +108,7 @@ export class AppContent implements OnInit {
 
   hoverSection(id):void {
     if(this.lastHovered) {
-      this.lastHovered.style.filter = "brightness(0.85)";
+      this.lastHovered.style.filter = "brightness(0.89)";
     }
 
     let hovered = document.getElementById(id);
@@ -125,14 +125,13 @@ export class AppContent implements OnInit {
     this.headerHeight = parseFloat(headerDom.height);
     this.http.get('/assets/json/objects1.json').subscribe(data => {
       this.jsonSections = data;
+      this.coordinatesOfSections = new Array<Array<Object>>();
       let startX = 410;
       let startY = 400;
       for(var line in this.jsonSections) {
-        // this.coordinatesOfSections[line] = new Array(Array);
+        this.coordinatesOfSections[line] = new Array<Object>();
         for(var cell in this.jsonSections[line]) {
-          //this.coordinatesOfSections[line][cell] = {left: startX + cell*267 + line*268, top: startY - cell*155 + line*155}
-          console.log(line)
-          console.log(cell)
+          this.coordinatesOfSections[line][cell] = {left: startX + parseInt(cell)*267 + parseInt(line)*268, top: startY - parseInt(cell)*155 + parseInt(line)*155}
         }
       }
       console.log(this.coordinatesOfSections)

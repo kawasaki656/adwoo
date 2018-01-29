@@ -21,7 +21,7 @@
   background: #413a43;
 }
 .section1, .section2, .section2-horizontal, .section2-vertical, .section5 {
-  filter: brightness(0.85);
+  filter: brightness(0.89);
   transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
