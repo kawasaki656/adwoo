@@ -20,6 +20,7 @@ export class AppContent implements OnInit {
   headerHeight: Number;
   navigation:any;
   bodyDom: any;
+  screenDom: any;
   heightModal:any;
   widthModal:any;
   lastHovered:any;
@@ -117,8 +118,26 @@ export class AppContent implements OnInit {
     this.lastHovered = hovered;
   }
 
+  moveMap():void {
+    console.log("move map")
+    let width = parseInt(this.screenDom.width) * 1.1;
+    let height = parseInt(this.screenDom.height) * 1.1;
+    let cursorLeft = this.cursorPosition.left-2 * this.navigation.left;
+    let cursorTop = this.cursorPosition.top-2 * this.navigation.top;
+    for(var line in this.jsonSections) {
+      for (var cell in this.jsonSections[line]) {
+        this.jsonSections[line][cell].hide = false;
+        if ((this.coordinatesOfSections[line][cell].left > (cursorLeft + width) ) || (this.coordinatesOfSections[line][cell].left < (cursorLeft - width)) || (this.coordinatesOfSections[line][cell].top > (cursorTop + height) ) || (this.coordinatesOfSections[line][cell].top < (cursorTop - height))) {
+          this.jsonSections[line][cell].hide = true;
+        }
+      }
+    }
+    console.log(this.jsonSections)
+  }
+
   ngOnInit(): void {
     this.bodyDom = window.getComputedStyle(document.getElementsByTagName("body").item(0));
+    this.screenDom = window.getComputedStyle(document.getElementsByClassName("screen").item(0));
     this.heightModal = parseFloat(this.bodyDom.height)*0.8 + 'px';
     this.widthModal = parseFloat(this.bodyDom.height)*0.9 + 'px';
     let headerDom = window.getComputedStyle(document.getElementsByClassName("header").item(0));
