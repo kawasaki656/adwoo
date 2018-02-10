@@ -101,3 +101,26 @@
   height: 90%;
   border-left: 1px solid #48525c;
 }
+.footer #right .item.empty {
+  display: inline-block;
+  width: 10%;
+  border: none;
+}
+.footer #right .item {
+  position: relative;
+  display: inline-block;
+  width: 10%;
+  height: 70%;
+  margin-right: 5px;
+  border: 1px solid #6f7982;
+  border-radius: 5px;
+}
+
+.footer #right .item img {
+  position: absolute;
+  width: 60%;
+  left: 0;
+  top: 0;
+  margin-left: 20%;
+  margin-top: 20%;
+}
