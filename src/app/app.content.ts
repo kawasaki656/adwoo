@@ -36,7 +36,7 @@ export class AppContent implements OnInit {
   constructor(el: ElementRef, private dialogService:DialogService, private http: HttpClient, screen:ScreenService, navigation:NavigationService) {
     this.navigation = navigation;
     this.footerState = true;
-    this.cursorPosition = {left:screen.screenWidth, top:screen.screenHeight}
+    this.cursorPosition = {left:screen.screenWidth, top:screen.screenHeight};
     this.openedPropertyState = false;
   }
   showMyProperty() {
@@ -59,6 +59,17 @@ export class AppContent implements OnInit {
   trackByIndex(index: number, obj: any): any {
     return index;
   }
+  isInsideRect(x, y, z1, z2, z3, z4) {
+    let x1 = Math.min(z1, z3);
+    let x2 = Math.max(z1, z3);
+    let y1 = Math.min(z2, z4);
+    let y2 = Math.max(z2, z4);
+    if ((x1 <= x) && (x <= x2) && (y1 <= y) && (y <= y2)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   @HostListener('mousemove', ['$event'])
   onMousemove(event: MouseEvent) {
@@ -80,12 +91,10 @@ export class AppContent implements OnInit {
   }
   @HostListener('mouseup')
   onMouseup() {
-    console.log("mouseup")
     this.navigation.mouseDown = false;
   }
   @HostListener('mousedown', ['$event'])
   onMousedown(event) {
-    console.log("mousedown")
     this.navigation.mouseDown = true;
   }
 
@@ -119,16 +128,18 @@ export class AppContent implements OnInit {
   }
 
   moveMap():void {
-    console.log("move map")
-    let width = parseInt(this.screenDom.width) * 1.1;
-    let height = parseInt(this.screenDom.height) * 1.1;
+    let width = parseInt(this.screenDom.width) * 1.5;
+    let height = parseInt(this.screenDom.height) * 1.5;
     let cursorLeft = this.cursorPosition.left-2 * this.navigation.left;
     let cursorTop = this.cursorPosition.top-2 * this.navigation.top;
+
     for(var line in this.jsonSections) {
       for (var cell in this.jsonSections[line]) {
         this.jsonSections[line][cell].hide = false;
-        if ((this.coordinatesOfSections[line][cell].left > (cursorLeft + width) ) || (this.coordinatesOfSections[line][cell].left < (cursorLeft - width)) || (this.coordinatesOfSections[line][cell].top > (cursorTop + height) ) || (this.coordinatesOfSections[line][cell].top < (cursorTop - height))) {
-          this.jsonSections[line][cell].hide = true;
+        if (!this.isInsideRect(this.coordinatesOfSections[line][cell].left, this.coordinatesOfSections[line][cell].top, cursorLeft - width, cursorTop - height, cursorLeft + width, cursorTop + height)) {
+          if(this.jsonSections[line][cell] != {}) {
+            this.jsonSections[line][cell].hide = true;
+          }
         }
       }
     }
@@ -147,10 +158,33 @@ export class AppContent implements OnInit {
       this.coordinatesOfSections = new Array<Array<Object>>();
       let startX = 410;
       let startY = 400;
+      let xIncrement = 0;
+      let yIncrement = 0;
       for(var line in this.jsonSections) {
         this.coordinatesOfSections[line] = new Array<Object>();
         for(var cell in this.jsonSections[line]) {
-          this.coordinatesOfSections[line][cell] = {left: startX + parseInt(cell)*267 + parseInt(line)*268, top: startY - parseInt(cell)*155 + parseInt(line)*155}
+          if(this.jsonSections[line][cell].draw) {
+            if(this.jsonSections[line][cell].width == 2 && this.jsonSections[line][cell].height == 5) {
+              xIncrement = 790;
+              yIncrement = 250;
+            } else if(this.jsonSections[line][cell].width == 2 && this.jsonSections[line][cell].height == 2) {
+              xIncrement = 300;
+            } else if(this.jsonSections[line][cell].width == 2 && this.jsonSections[line][cell].height == 1) {
+              xIncrement = 330;
+              yIncrement = -90;
+            } else if(this.jsonSections[line][cell].width == 1 && this.jsonSections[line][cell].height == 2) {
+              xIncrement = 120;
+              yIncrement = 60;
+            }
+            this.coordinatesOfSections[line][cell] = {
+              left: startX + parseInt(cell) * 267 + parseInt(line) * 268 + xIncrement,
+              top: startY - parseInt(cell) * 155 + parseInt(line) * 155 + yIncrement
+            }
+            xIncrement = 0;
+            yIncrement = 0;
+          } else {
+            this.coordinatesOfSections[line][cell] = {};
+          }
         }
       }
       console.log(this.coordinatesOfSections)
