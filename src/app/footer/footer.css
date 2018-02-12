@@ -109,6 +109,7 @@
 .footer #right .item {
   position: relative;
   display: inline-block;
+  text-align: center;
   width: 10%;
   height: 70%;
   margin-right: 5px;
@@ -117,10 +118,7 @@
 }
 
 .footer #right .item img {
-  position: absolute;
-  width: 60%;
-  left: 0;
-  top: 0;
-  margin-left: 20%;
+  position: relative;
+  height: 60%;
   margin-top: 20%;
 }
