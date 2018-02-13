@@ -35,7 +35,7 @@ export class AppContent implements OnInit {
 
   constructor(el: ElementRef, private dialogService:DialogService, private http: HttpClient, screen:ScreenService, navigation:NavigationService) {
     this.navigation = navigation;
-    this.footerState = true;
+    this.footerState = false;
     this.cursorPosition = {left:screen.screenWidth, top:screen.screenHeight};
     this.openedPropertyState = false;
   }
@@ -126,13 +126,7 @@ export class AppContent implements OnInit {
 
     this.lastHovered = hovered;
   }
-
-  moveMap():void {
-    let width = parseInt(this.screenDom.width) * 1.5;
-    let height = parseInt(this.screenDom.height) * 1.5;
-    let cursorLeft = this.cursorPosition.left-2 * this.navigation.left;
-    let cursorTop = this.cursorPosition.top-2 * this.navigation.top;
-
+  deleteHidedSections(cursorLeft, cursorTop, width, height) {
     for(var line in this.jsonSections) {
       for (var cell in this.jsonSections[line]) {
         this.jsonSections[line][cell].hide = false;
@@ -143,7 +137,18 @@ export class AppContent implements OnInit {
         }
       }
     }
-    console.log(this.jsonSections)
+  }
+
+  moveMap():void {
+    let width = parseInt(this.screenDom.width) * 1.5;
+    let height = parseInt(this.screenDom.height) * 1.5;
+    let cursorLeft = this.cursorPosition.left-2 * this.navigation.left;
+    let cursorTop = this.cursorPosition.top-2 * this.navigation.top;
+    setTimeout(() => {
+      this.deleteHidedSections(cursorLeft, cursorTop, width, height);
+    }, 2000);
+
+    //console.log(this.jsonSections)
   }
 
   ngOnInit(): void {
@@ -153,7 +158,7 @@ export class AppContent implements OnInit {
     this.widthModal = parseFloat(this.bodyDom.height)*0.9 + 'px';
     let headerDom = window.getComputedStyle(document.getElementsByClassName("header").item(0));
     this.headerHeight = parseFloat(headerDom.height);
-    this.http.get('/assets/json/objects1.json').subscribe(data => {
+    this.http.get('/assets/json/objects.json').subscribe(data => {
       this.jsonSections = data;
       this.coordinatesOfSections = new Array<Array<Object>>();
       let startX = 410;

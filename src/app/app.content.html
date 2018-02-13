@@ -69,7 +69,7 @@
     <img src="../assets/icons/search.png">
   </div>
   <div class="wrap" [ngStyle]="{'transform': 'translate(' + navigation.left + 'px,' + navigation.top + 'px' + ') scale(' + navigation.scale + ')'}" [style.left]="navigation.x + 'px'" [style.top]="navigation.y + 'px'">
-    <div id="get-position" [style.left]="cursorPosition.left-2*navigation.left+'px'" [style.top]="cursorPosition.top-2*navigation.top+'px'"></div>
+    <!--<div id="get-position" [style.left]="cursorPosition.left-2*navigation.left+'px'" [style.top]="cursorPosition.top-2*navigation.top+'px'"></div>-->
     <ng-container #wasEmpty *ngFor="let line of jsonSections; let lineIndex = index">
       <ng-container *ngFor="let cell of line; let cellIndex = index">
         <div class="section1" *ngIf="cell.draw && cell.width == 1 && cell.height == 1 && !cell.hide" id="{{cell.id}}" [style.background-image]="'url(../assets/City_Objects/Block_' + cell.name +'.png)'" [style.left] = "(lineIndex*268)+(cellIndex*267)  +'px'" [style.top] = "(lineIndex*155)+(cellIndex*(-155))  +'px'" [style.z-index] = "lineIndex-cellIndex"></div>
@@ -99,7 +99,7 @@
 
     <ng-container *ngFor="let line of jsonSections; let lineIndex = index">
       <ng-container *ngFor="let cell of line; let roadIndex = index">
-        <div class="road-cross" [style.background-image]="'url(../assets/City_Objects/Block_Road_Cross.png)'" [style.left] = "353 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "539 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "-1 - roadIndex"></div>
+        <div class="road-cross" *ngIf="!cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Cross.png)'" [style.left] = "353 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "539 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "-1 - roadIndex"></div>
       </ng-container>
     </ng-container>
 
