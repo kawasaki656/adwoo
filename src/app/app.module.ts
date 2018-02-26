@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppContent } from './app.content';
 import { FilterComponent } from "./filters/filter.component";
@@ -12,6 +13,18 @@ import { NavigationComponent } from "./map/navigation.component";
 import { CommonModule } from "@angular/common";
 import { MyProperty } from "./my-property/myProperty";
 import { ObjectInformation } from "./objectInformation/objectInformation";
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MapComponent } from './map/map.component';
+
+const ROUTES:Routes = [
+  {
+    path: '',
+    component: MapComponent
+  }, {
+    path: 'dashboard',
+    component: DashboardComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -20,13 +33,16 @@ import { ObjectInformation } from "./objectInformation/objectInformation";
     ConfirmComponent,
     MyProperty,
     ObjectInformation,
-    NavigationComponent
+    NavigationComponent,
+    DashboardComponent,
+    MapComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
     BootstrapModalModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(ROUTES)
   ],
   entryComponents: [ConfirmComponent, MyProperty, ObjectInformation],
   providers: [NavigationService, ScreenService],

@@ -1,0 +1,218 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="header container-fluid" >
+  <div class="show" [style.border]="myPropertyWidth/2 + 'px solid transparent'" [style.border-top]="'10px solid #d86648'" [style.bottom]="myPropertyWidth/-2 - 15 + 'px'" [style.left]="myPropertyIndent + 'px'">
+  </div>
+  <img src="../assets/icons/array_down.png" style="position: absolute; width: 35px; bottom: -23px; cursor:pointer" [style.left]="myPropertyIndent + myPropertyWidth/2 -17.5 + 'px'">
+
+  <div class="empty1" id="header1">
+  </div>
+  <div class="buttons" id="header2">
+    <a href="/" id="logo" style="display: inline"><img src="../assets/icons/adwoo.png"></a>
+    <a href="/"><span>AdWoo</span></a>
+  </div>
+  <div id="menu" >
+    <div class="item selected" [style.width]="headerHeight + 'px'">
+      <div class="wrap">
+        <img src="../assets/icons/earth.png">
+      </div>
+    </div>
+    <div class="item" [style.width]="headerHeight + 'px'">
+      <div class="wrap">
+        <img src="../assets/icons/kopie.png">
+      </div>
+    </div>
+    <div class="item" [style.width]="headerHeight + 'px'">
+      <div class="wrap">
+        <img src="../assets/icons/traveler.png">
+      </div>
+    </div>
+  </div>
+  <div id="my-property" (click)="showMyProperty()">
+    <div class="icon">
+      <img src="../assets/icons/my-property.png">
+    </div>
+    <div class="text">
+      <span>my property</span>
+    </div>
+  </div>
+  <div id="account">
+    <div class="empty"></div>
+    <div class="item" [style.width]="headerHeight + 'px'">
+      <div class="wrap">
+        <img src="../assets/icons/home-symbol.png">
+      </div>
+    </div>
+    <div class="item" [style.width]="headerHeight + 'px'">
+      <div class="wrap">
+        <img src="../assets/icons/speech.png">
+      </div>
+    </div>
+    <div class="item" [style.width]="headerHeight + 'px'">
+      <div class="wrap">
+        <img src="../assets/icons/ring.png">
+      </div>
+    </div>
+    <div class="item user" [style.width]="headerHeight*1.5 + 'px'">
+      <div class="wrap">
+        <img src="../assets/icons/user.png">
+      </div>
+    </div>
+    <div class="item user-name">
+      <a href="/dashboard"><span>Unnamed user</span></a>
+      <i class="fa fa-caret-down" aria-hidden="true"></i>
+    </div>
+  </div>
+</div>
+<div class="screen container-fluid" id="screen">
+  <navigation (onChanged)="moveMap($event)"></navigation>
+  <div class="search">
+    <img src="../assets/icons/search.png">
+  </div>
+  <div class="wrap" [ngStyle]="{'transform': 'translate(' + navigation.left + 'px,' + navigation.top + 'px' + ') scale(' + navigation.scale + ')'}" [style.left]="navigation.x + 'px'" [style.top]="navigation.y + 'px'">
+    <!--<div id="get-position" [style.left]="cursorPosition.left-2*navigation.left+'px'" [style.top]="cursorPosition.top-2*navigation.top+'px'"></div>-->
+    <ng-container #wasEmpty *ngFor="let line of jsonSections; let lineIndex = index">
+      <ng-container *ngFor="let cell of line; let cellIndex = index">
+        <div class="section1" *ngIf="cell.draw && cell.width == 1 && cell.height == 1 && !cell.hide" id="{{cell.id}}" [style.background-image]="'url(../assets/City_Objects/Block_' + cell.name +'.png)'" [style.left] = "(lineIndex*268)+(cellIndex*267)  +'px'" [style.top] = "(lineIndex*155)+(cellIndex*(-155))  +'px'" [style.z-index] = "lineIndex-cellIndex"></div>
+        <div class="section2-horizontal" *ngIf="cell.draw && cell.width == 2 && cell.height == 1 && !cell.hide" id="{{cell.id}}" [style.background-image]="'url(../assets/City_Objects/Block_' + cell.name +'.png)'" [style.left] = "138+(lineIndex*267)+(cellIndex*267) +'px'" [style.top] = "-51+(lineIndex*155)+(cellIndex*(-155)) +'px'" [style.z-index] = "lineIndex-cellIndex"></div>
+        <div class="section2-vertical" *ngIf="cell.draw && cell.width == 1 && cell.height == 2 && !cell.hide" id="{{cell.id}}" [style.background-image]="'url(../assets/City_Objects/Block_' + cell.name +'.png)'" [style.left] = "130+(lineIndex*268)+(cellIndex*267) +'px'" [style.top] = "-430+(lineIndex*155)+(cellIndex*(-155)) +'px'" [style.z-index] = "lineIndex-cellIndex"></div>
+        <div class="section2" *ngIf="cell.draw && cell.width == 2 && cell.height == 2 && !cell.hide" id="{{cell.id}}" [style.background-image]="'url(../assets/City_Objects/Block_' + cell.name +'.png)'" [style.left] = "-77+(lineIndex*268)+(cellIndex*267) +'px'" [style.top] = "-85+(lineIndex*155)+(cellIndex*(-155)) +'px'" [style.z-index] = "lineIndex-cellIndex"></div>
+        <div class="section5" *ngIf="cell.draw && cell.width == 2 && cell.height == 5 && !cell.hide" id="{{cell.id}}" [style.background-image]="'url(../assets/City_Objects/Block_' + cell.name +'.png)'" [style.left] = "193+(lineIndex*268)+(cellIndex*267) +'px'" [style.top] = "134+(lineIndex*155)+(cellIndex*(-155)) +'px'" [style.z-index] = "lineIndex-cellIndex"></div>
+      </ng-container>
+    </ng-container>
+    <ng-container *ngFor="let line of jsonSections; let lineIndex = index">
+      <ng-container *ngFor="let cell of line; let roadIndex = index">
+        <div class="road-vertical" *ngIf="cell.draw && (cell.width == 1 || cell.width == 2) && cell.height == 1 && !cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Vertical.png)'" [style.left] = "140 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "406 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "0 - roadIndex"></div>
+        <div class="road-vertical-long" *ngIf="cell.draw && cell.height == 2 && !cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Vertical_Long.png)'" [style.left] = "137 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "404 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "0 - roadIndex"></div>
+        <div class="road-vertical-very-long" *ngIf="cell.draw && cell.height == 5 && !cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Vertical_Very_Long.png)'" [style.left] = "100 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "372 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "0 - roadIndex"></div>
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngFor="let line of jsonSections; let lineIndex = index">
+      <ng-container *ngFor="let cell of line; let roadIndex = index">
+        <div class="road-horizontal" *ngIf="cell.draw && cell.width == 1 && cell.height == 1 && !cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Horizontal.png)'" [style.left] = "412 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "408 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "0 - roadIndex"></div>
+        <div class="road-horizontal" *ngIf="cell.draw && cell.width == 1 && cell.height == 2 && !cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Horizontal.png)'" [style.left] = "679 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "562 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "0 - roadIndex"></div>
+        <div class="road-horizontal-long" *ngIf="cell.draw && cell.width == 2 && cell.height == 1 && !cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Horizontal_Long.png)'" [style.left] = "408 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "253 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "-1 - roadIndex"></div>
+        <div class="road-horizontal-long" *ngIf="cell.draw && cell.width == 2 && cell.height == 2 && !cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Horizontal_Long.png)'" [style.left] = "675 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "410 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "-1 - roadIndex"></div>
+        <div class="road-horizontal-long" *ngIf="cell.draw && cell.width == 2 && cell.height == 5 && !cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Horizontal_Long.png)'" [style.left] = "1478 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "876 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "-1 - roadIndex"></div>
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngFor="let line of jsonSections; let lineIndex = index">
+      <ng-container *ngFor="let cell of line; let roadIndex = index">
+        <div class="road-cross" *ngIf="!cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Cross.png)'" [style.left] = "353 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "539 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "-1 - roadIndex"></div>
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngFor="let line of jsonSections; let lineIndex = index">
+      <ng-container *ngFor="let cell of line; let cellIndex = index">
+        <div class="figure1" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 1 && !cell.hide" [style.left] = "290 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "315 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
+        <div class="figure12" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 1 && cell.height == 2 && !cell.hide" [style.left] = "267 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "392 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
+        <div class="figure21" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 2 && cell.height == 1 && !cell.hide" [style.left] = "422 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "102 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
+        <div class="figure22" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 2 && cell.height == 2 && !cell.hide" [style.left] = "399 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "180 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
+        <div class="figure52" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 2 && cell.height == 5 && !cell.hide" [style.left] = "340 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "410 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
+      </ng-container>
+    </ng-container>
+
+  </div>
+
+</div>
+<div class="footer container-fluid" [ngClass]="{'hided':!footerState}">
+  <div id="hide" (click)="hideFooter()" *ngIf="footerState">HIDE</div>
+  <div id="hide" (click)="hideFooter()" *ngIf="!footerState">SHOW</div>
+  <div id="left"></div>
+  <div id="center">
+    <div class="left">
+      <img src="../assets/icons/footer-array.png">
+    </div>
+    <div class="numbers">
+      <div class="item" style="width:1%"></div>
+      <div class="item">
+        <span>MON</span>
+        <br>
+        <span class="digit">01</span>
+      </div>
+      <div class="item">
+        <span>TUES</span>
+        <br>
+        <span class="digit">02</span>
+      </div>
+      <div class="item">
+        <span>WEN</span>
+        <br>
+        <span class="digit">03</span>
+      </div>
+      <div class="item">
+        <span>FRI</span>
+        <br>
+        <span class="digit">04</span>
+      </div>
+      <div class="item">
+        <span>SAT</span>
+        <br>
+        <span class="digit">05</span>
+      </div>
+      <div class="item">
+        <span>TUES</span>
+        <br>
+        <span class="digit">06</span>
+      </div>
+      <div class="item">
+        <span>FRI</span>
+        <br>
+        <span class="digit">07</span>
+      </div>
+      <div class="item">
+        <span>SAT</span>
+        <br>
+        <span class="digit">08</span>
+      </div>
+      <div class="item">
+        <span>SUN</span>
+        <br>
+        <span class="digit">09</span>
+      </div>
+      <div class="item">
+        <span>TUES</span>
+        <br>
+        <span class="digit">10</span>
+      </div>
+      <div class="item">
+        <span>MON</span>
+        <br>
+        <span class="digit">11</span>
+      </div>
+      <div class="item">
+        <span>WED</span>
+        <br>
+        <span class="digit">12</span>
+      </div>
+      <div class="item">
+        <span>FRI</span>
+        <br>
+        <span class="digit">13</span>
+      </div>
+      <div class="item">
+        <span>TUES</span>
+        <br>
+        <span class="digit">14</span>
+      </div>
+      <div class="item" style="width:1%"></div>
+    </div>
+    <div class="right">
+      <img src="../assets/icons/footer-array.png">
+    </div>
+  </div>
+  <div id="right">
+    <div class="item empty"></div>
+    <div class="item">
+
+    </div>
+    <div class="item">
+      <img src="../assets/icons/footer/clock(1).png">
+    </div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+</div>
