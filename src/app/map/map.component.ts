@@ -2,7 +2,6 @@ import {Component, ElementRef, OnInit, HostListener} from '@angular/core';
 import { NavigationService } from "../map/navigation.service";
 import { ScreenService } from "../screen/screen.service";
 import { DialogService } from "ng2-bootstrap-modal";
-import { ConfirmComponent } from "../addBlockModal/addBlockModal";
 import { MyProperty } from "../my-property/myProperty";
 import { ObjectInformation } from "../objectInformation/objectInformation";
 import { HttpClient } from "@angular/common/http";
