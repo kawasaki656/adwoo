@@ -1,4 +1,79 @@
 .container-fluid {
   padding-left: 0 !important;
   padding-right: 0 !important;
+  font-size: 11px;
+  color: rgb(119, 119, 119);
+}
+.row {
+  margin: 0 !important;
+}
+.col-lg-2 .item {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border-bottom: 1px solid rgb(234, 234, 234);
+}
+.col-lg-2 .item#adwoo {
+  font-size: 15px;
+  font-weight: bold;
+}
+.col-lg-2 .item #avatar {
+  display: inline-block;
+  float: left;
+  height: 40px;
+}
+.col-lg-2 .item#balance {
+  text-align: center;
+}
+.col-lg-2 .item#balance p {
+  margin-bottom: 0!important;
+}
+.col-lg-2 .item#balance span {
+  font-size: 20px;
+  color: rgb(253, 136, 109);
+  font-weight: bold;
+}
+.col-lg-2 .item #name {
+  display: inline-block;
+  height: 40px;
+  padding-left: 10px;
+  padding-top: 3px;
+  line-height: 10px;
+}
+.row > .col-lg-2 {
+  height: 800px;
+  padding-right: 0px;
+  padding-left: 0px;
+  background: rgb(253, 253, 253);
+  border-right: 1px solid rgb(234, 234, 234);
+}
+.col-lg-2 .item:first-child {
+  height: 50px;
+}
+.col-lg-2 .item img {
+  height: 100%;
+}
+.col-lg-10 {
+  padding: 0;
+}
+
+.col-lg-10 #statistic {
+  width: 100%;
+  height: 70px;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgb(234, 234, 234);
+}
+.col-lg-10 #statistic p {
+  font-size: 20px;
+  color: rgb(253, 136, 109);
+  font-weight: bold;
+}
+.col-lg-10 #statistic p>span {
+  font-size: 12px;
+}
+
+.col-lg-10 #content {
+  width: 100%;
+  height: 730px;
+  background: rgb(237, 237, 237);
 }
