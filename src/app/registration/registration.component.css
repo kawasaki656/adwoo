@@ -26,6 +26,9 @@ button {
   border: none;
   background: linear-gradient(to left, #fc7858, #fd4e75);
 }
+button:hover {
+  opacity: .8;
+}
 a {
   color: rgb(130, 130, 130);
   font-size: 15px;
