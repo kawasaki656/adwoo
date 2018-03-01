@@ -20,7 +20,7 @@
 
 button {
   color: white;
-  border-radius: 10px;
+  border-radius: 12px !important;
   height: 25px;
   line-height: 24px;
   border: none;
@@ -69,4 +69,16 @@ button#login {
 .input {
   width: 230px;
   height: 30px;
+  border-radius: 4px;
+}
+.input[type="text"] {
+  border: 1px solid rgba(0, 0, 0, .2);
+  padding-left: 15px;
+}
+#facebook {
+  background: rgb(50, 90, 162);
+  line-height: 30px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
