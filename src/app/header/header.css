@@ -26,11 +26,11 @@ a:hover {
   height: 70%;
 }
 .header .buttons #logo {
-  height: 75%;
-  padding-right: 10%;
+  height: 23px;
+  padding-right: 5px;
 }
 .header .buttons #logo img {
-  height: 100%;
+  height: 23px;
 }
 
 .header #menu {
