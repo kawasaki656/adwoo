@@ -76,9 +76,26 @@ button#login {
   padding-left: 15px;
 }
 #facebook {
-  background: rgb(50, 90, 162);
+  background: rgba(50, 90, 162, 1);
   line-height: 30px;
   color: white;
   font-weight: bold;
   cursor: pointer;
+}
+#facebook:hover {
+  background: rgba(50, 90, 162, .8);
+}
+#agreement {
+  display: inline-block;
+  float: left;
+  width: 190px;
+  padding-top: 8px;
+  text-align: left;
+  font-size: 11px;
+}
+input[type=checkbox] {
+  display: none;
+}
+label {
+  float: left;
 }
