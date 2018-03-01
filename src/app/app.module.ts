@@ -15,6 +15,7 @@ import { MyProperty } from "./my-property/myProperty";
 import { ObjectInformation } from "./objectInformation/objectInformation";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MapComponent } from './map/map.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 const ROUTES:Routes = [
   {
@@ -23,6 +24,9 @@ const ROUTES:Routes = [
   }, {
     path: 'dashboard',
     component: DashboardComponent
+  }, {
+    path: 'join',
+    component: RegistrationComponent
   }
 ];
 
@@ -35,7 +39,8 @@ const ROUTES:Routes = [
     ObjectInformation,
     NavigationComponent,
     DashboardComponent,
-    MapComponent
+    MapComponent,
+    RegistrationComponent
   ],
   imports: [
     CommonModule,
