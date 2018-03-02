@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppContent } from './app.content';
 import { FilterComponent } from "./filters/filter.component";
@@ -47,6 +48,7 @@ const ROUTES:Routes = [
     BrowserModule,
     BootstrapModalModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   entryComponents: [ConfirmComponent, MyProperty, ObjectInformation],

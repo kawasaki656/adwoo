@@ -1,5 +1,6 @@
 <div id="screen">
-  <div id="inner">
+  <div id="inner1">
+    <div class="color" [class.visible]="checkAgreements"></div>
     <button id="login">Login</button>
     <div id="form">
       <a href="/" id="logo" style="display: inline"><img src="../assets/icons/adwoo.png"></a>
@@ -13,7 +14,7 @@
         Sign in with Facebook
       </div>
       <p style="margin-top: 10px; font-size: 12px; color: rgb(130, 130, 130); font-weight: bold">show all</p>
-      <input type="checkbox" id="rules">
+      <input type="checkbox" id="rules" [(ngModel)]="checkAgreements">
       <label for="rules" style="display: inline-block; width: 50px"></label>
       <div id="agreement">
         By clicking Create Account, you agree to our Terms and that you have read our Data Policy, including our Cookie Use.
