@@ -34,7 +34,13 @@
   -o-transition: all 0.5s ease-out;
   opacity: 0;
 }
-.visible {
+.visible33 {
+  opacity: .33;
+}
+.visible66 {
+  opacity: .66;
+}
+.visible100 {
   opacity: 1;
 }
 
@@ -112,7 +118,7 @@ button#login {
   display: inline-block;
   float: left;
   width: 190px;
-  padding-top: 8px;
+  padding-top: 13px;
   text-align: left;
   font-size: 11px;
 }
@@ -121,4 +127,7 @@ input[type=checkbox] {
 }
 label {
   float: left;
+}
+.gray-input {
+  background: #acacac !important;
 }

@@ -47,3 +47,7 @@ input[type=checkbox]:checked+label:before {
 input[type=checkbox]:checked+label:after {
   left: 22px;
 }
+button:active, button:focus {
+  outline: none;
+  border: none;
+}
