@@ -58,10 +58,12 @@
       </div>
     </div>
     <div class="item user-name">
-      <a href="/dashboard"><span>Unnamed user</span></a>
+      <a routerLink="/join"><span>REGISTRATION</span></a>
       <i class="fa fa-caret-down" aria-hidden="true"></i>
     </div>
   </div>
+</div>
+<div class="screen1 container-fluid" [class.overlay] = "isAnimation">
 </div>
 <div class="screen container-fluid" id="screen">
   <navigation (onChanged)="moveMap($event)"></navigation>

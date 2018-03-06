@@ -31,12 +31,14 @@ export class MapComponent implements OnInit {
   myPropertyIndent:any;
   openedPropertyState:boolean;
   coordinatesOfSections:Array<Array<Object>>;
+  isAnimation: boolean;
 
   constructor(el: ElementRef, private dialogService:DialogService, private http: HttpClient, screen:ScreenService, navigation:NavigationService) {
     this.navigation = navigation;
     this.footerState = false;
     this.cursorPosition = {left:screen.screenWidth, top:screen.screenHeight};
     this.openedPropertyState = false;
+    this.isAnimation = false;
   }
   showMyProperty() {
     if(this.openedPropertyState == false) {
@@ -143,11 +145,13 @@ export class MapComponent implements OnInit {
     let height = parseInt(this.screenDom.height) * 1.5;
     let cursorLeft = this.cursorPosition.left-2 * this.navigation.left;
     let cursorTop = this.cursorPosition.top-2 * this.navigation.top;
+    this.isAnimation = true;
     setTimeout(() => {
       this.deleteHidedSections(cursorLeft, cursorTop, width, height);
-    }, 2000);
-
-    //console.log(this.jsonSections)
+    }, 600);
+    setTimeout(() => {
+      this.isAnimation = false;
+    }, 2100);
   }
 
   ngOnInit(): void {

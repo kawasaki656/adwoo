@@ -19,6 +19,17 @@
   width: 100%;
   height: 94%;
   background: #413a43;
+  z-index: 1;
+}
+.screen1 {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 94%;
+  background: none;
+}
+.screen1.overlay {
+  z-index: 2;
 }
 .section1, .section2, .section2-horizontal, .section2-vertical, .section5 {
   filter: brightness(0.89);

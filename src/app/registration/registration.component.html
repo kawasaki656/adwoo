@@ -1,25 +1,27 @@
 <div id="screen">
-  <div id="inner1">
-    <div class="color" [class.visible33]="step === 1" [class.visible66]="step === 2" [class.visible100]="step === 3"></div>
+  <div id="inner">
+    <div class="color" [class.visible33]="login.valid" [class.visible66]="login.valid && password.valid" [class.visible100]="login.valid && password.valid && rules.viewModel"></div>
     <button id="login">Login</button>
-    <div id="form">
-      <a href="/" id="logo" style="display: inline"><img src="../assets/icons/adwoo.png"></a>
+    <form id="form">
+      <a href="/" id="logo" style="display: inline"><img src="assets/icons/adwoo.png"></a>
       <a href="/"><span>AdWoo</span></a>
       <p class="grayBold" style="margin-top: 20px">Create a new Account</p>
       <p style="margin-top: -10px; margin-bottom: 20px">It's free</p>
-      <input type="text" class="input" placeholder="Email or Phone" [(ngModel)]="login" (keyup)="changeInput('login')">
-      <input *ngIf="step > 0" type="text" class="input" placeholder="Password" style="margin-top: 15px" (keyup)="changeInput('password')">
-      <p *ngIf="step === 0" style="margin-top: 10px; margin-bottom: 10px">or</p>
-      <div *ngIf="step === 0" class="input" id="facebook" style="margin-left: 10px">
+      <input ngModel name="login" #login="ngModel" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="text" class="input" placeholder="Email or Phone">
+      <input ngModel name="password" #password="ngModel" required minlength="6" [hidden]="login.invalid" type="password" class="input" placeholder="Password" style="margin-top: 15px">
+      <p [hidden]="login.valid" style="margin-top: 10px; margin-bottom: 10px">or</p>
+      <div [hidden]="login.valid" class="input" id="facebook" style="margin-left: 10px">
         Sign in with Facebook
       </div>
-      <p *ngIf="step === 0" style="margin-top: 10px; font-size: 12px; color: rgb(130, 130, 130); font-weight: bold">show all</p>
-      <input *ngIf="step > 1" type="checkbox" id="rules" [(ngModel)]="checkAgreements">
-      <label *ngIf="step > 1" for="rules" style="display: inline-block; width: 50px; margin-top: 5px" (click)="changeInput('rules')"></label>
-      <div *ngIf="step > 1" id="agreement">
-        By clicking Create Account, you agree to our Terms and that you have read our Data Policy, including our Cookie Use.
+      <p [hidden]="login.valid" style="margin-top: 10px; font-size: 12px; color: rgb(130, 130, 130); font-weight: bold">show all</p>
+      <div [hidden]="login.invalid">
+        <input ngModel name="rules" #rules="ngModel" type="checkbox" id="rules">
+        <label for="rules" style="display: inline-block; width: 50px; margin-top: 5px"></label>
+        <div id="agreement">
+          By clicking Create Account, you agree to our Terms and that you have read our Data Policy, including our Cookie Use.
+        </div>
       </div>
-      <button *ngIf="step > 1" class="input" style="margin-top: 15px" [class.gray-input]="step < 3">Create Account</button>
-    </div>
+      <button [hidden]="login.invalid" [disabled]="password.invalid || !rules.viewModel" class="input" style="margin-top: 15px" [class.gray-input]="password.invalid || !rules.viewModel">Create Account</button>
+    </form>
   </div>
 </div>
