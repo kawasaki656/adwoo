@@ -148,10 +148,10 @@ export class MapComponent implements OnInit {
     this.isAnimation = true;
     setTimeout(() => {
       this.deleteHidedSections(cursorLeft, cursorTop, width, height);
-    }, 600);
+    }, 100);
     setTimeout(() => {
       this.isAnimation = false;
-    }, 2100);
+    }, 2500);
   }
 
   ngOnInit(): void {

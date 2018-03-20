@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="item user-name">
-      <a routerLink="/join"><span>REGISTRATION</span></a>
+      <a routerLink="/dashboard"><span>REGISTRATION</span></a>
       <i class="fa fa-caret-down" aria-hidden="true"></i>
     </div>
   </div>
@@ -105,15 +105,7 @@
       </ng-container>
     </ng-container>
 
-    <ng-container *ngFor="let line of jsonSections; let lineIndex = index">
-      <ng-container *ngFor="let cell of line; let cellIndex = index">
-        <div class="figure1" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 1 && !cell.hide" [style.left] = "290 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "315 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
-        <div class="figure12" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 1 && cell.height == 2 && !cell.hide" [style.left] = "267 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "392 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
-        <div class="figure21" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 2 && cell.height == 1 && !cell.hide" [style.left] = "422 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "102 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
-        <div class="figure22" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 2 && cell.height == 2 && !cell.hide" [style.left] = "399 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "180 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
-        <div class="figure52" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 2 && cell.height == 5 && !cell.hide" [style.left] = "340 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "410 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
-      </ng-container>
-    </ng-container>
+
 
   </div>
 

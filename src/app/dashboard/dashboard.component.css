@@ -56,7 +56,7 @@ a span {
   display: inline-block;
   height: 40px;
   padding-left: 10px;
-  padding-top: 3px;
+  padding-top: 8px;
   line-height: 10px;
 }
 .row > .col-md-2 {
@@ -69,7 +69,7 @@ a span {
 .col-md-2 .item:first-child {
   height: 50px;
 }
-.col-md-2 .item img {
+.col-md-2 #adwoo img {
   height: 23px;
   vertical-align: bottom;
 }
@@ -127,3 +127,36 @@ a span {
   background: rgb(253, 253, 253);
   border: 1px solid rgb(234, 234, 234);
 }
+#content #points #inner {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+#content #points #inner b {
+  font-size: 14px;
+}
+#content #points #inner span {
+  font-size: 12px;
+}
+#content #points #inner .item {
+  display: inline-block;
+  float: left;
+  margin-top: 10px;
+  width: 200px;
+  height: 50px;
+  border: 1px solid rgb(234, 234, 234);
+  padding-top: 12px;
+  padding-left: 15px;
+  text-align: left;
+}
+#content #points #inner .item:nth-child(2n+1) {
+  margin-right: 19px;
+}
+#content #points #inner .item span {
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 5px;
+  vertical-align: top;
+}
+

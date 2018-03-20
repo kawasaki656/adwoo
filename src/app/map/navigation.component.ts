@@ -26,19 +26,27 @@ export class NavigationComponent {
   }
 
   navRight():void {
-    this.navigation.left -= this.screen.screenWidth/2;
     this.onChanged.emit(true);
+    setTimeout(() => {
+      this.navigation.left -= this.screen.screenWidth/2;
+    }, 500);
   }
   navLeft():void {
-    this.navigation.left += this.screen.screenWidth/2;
     this.onChanged.emit(true);
+    setTimeout(() => {
+      this.navigation.left += this.screen.screenWidth/2;
+    }, 500);
   }
   navTop():void {
-    this.navigation.top += this.screen.screenHeight/2;
     this.onChanged.emit(true);
+    setTimeout(() => {
+      this.navigation.top += this.screen.screenHeight/2;
+    }, 500);
   }
   navBottom():void {
-    this.navigation.top -= this.screen.screenHeight/2;
     this.onChanged.emit(true);
+    setTimeout(() => {
+      this.navigation.top -= this.screen.screenHeight/2;
+    }, 500);
   }
 }
