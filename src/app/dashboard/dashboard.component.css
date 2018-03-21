@@ -140,23 +140,50 @@ a span {
   font-size: 12px;
 }
 #content #points #inner .item {
+  position: relative;
   display: inline-block;
   float: left;
   margin-top: 10px;
-  width: 200px;
+  width: 49%;
   height: 50px;
   border: 1px solid rgb(234, 234, 234);
-  padding-top: 12px;
+  border-radius: 4px;
+  padding-top: 13px;
   padding-left: 15px;
   text-align: left;
 }
-#content #points #inner .item:nth-child(2n+1) {
-  margin-right: 19px;
+#content #points #inner .devider {
+  display: inline-block;
+  float: left;
+  width: 2%;
+  height: 50px;
 }
 #content #points #inner .item span {
   font-size: 14px;
   font-weight: 500;
-  padding-left: 5px;
+  padding-left: 25px;
   vertical-align: top;
 }
-
+#content #points #inner .item input {
+  display: none;
+}
+#content #points #inner .item label {
+  position: absolute;
+  margin-left: 15px;
+  margin-top: 6px;
+  padding: 0;
+  content: '';
+  display: block;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  top: 11px;
+  left: 0px;
+  border: 1px solid #d9d8d8;
+  background: white;
+}
+#content #points #inner .item label.active {
+  border: 4px solid #f44d73;
+}
