@@ -7,7 +7,7 @@
       </div>
       <div class="item">
         <div id="avatar">
-          <img _ngcontent-c3="" src="../../assets/icons/rec1.png">
+          <img src="../../assets/icons/rec1.png">
         </div>
         <div id="name">
           <p>
@@ -61,6 +61,7 @@
       <div id="content">
         <div class="col-md-6" id="points">
           <div id="inner">
+            <button>take a look</button>
             <b>Buy points</b>
             <br>
             <span>and be in the spotlight</span>
@@ -101,10 +102,34 @@
               <label for="500" [class.active]="points === '500'"></label>
               <span>500 Points</span>
             </div>
+            <div class="item full">
+              <input id="manually" name="points" value="manually" type="radio" [(ngModel)]="points" [class.active]="points === 'manually'">
+              <label for="manually" [class.active]="points === 'manually'"></label>
+              <span>Decide yourself</span>
+              <input type="text">
+              <span style="padding-left: 10px">Points</span>
+            </div>
+            <div id="hr"></div>
           </div>
         </div>
         <div class="col-md-6" id="information">
           <div id="carousel1">
+            <div id="text">
+              <b>Live life full</b>
+              <br>
+              <span>Buy exclusive things for your appartment and stand out among the rest.</span>
+              <br>
+              <button>take a look</button>
+            </div>
+            <div id="main">
+              <img src="../assets/galery/galery1.jpg">
+            </div>
+            <div id="dots">
+              <div class="dot active"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
           </div>
           <div id="carousel2">
           </div>
