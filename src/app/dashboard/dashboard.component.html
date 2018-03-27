@@ -25,6 +25,7 @@
         <button>Buy cashpoints</button>
       </div>
       <div class="item" style="font-size: 13px">
+        <input type="checkbox" [(ngModel)]="account">
         <b>Account settings</b>
       </div>
     </div>
@@ -60,7 +61,7 @@
           <span>+ Manage widgets</span>
         </div>
        </div>
-      <div id="content">
+      <div id="content" *ngIf="!account">
         <div class="col-md-6" id="points">
           <div id="inner">
             <button>take a look</button>
@@ -149,6 +150,7 @@
                 <li class="item"></li>
                 <li class="devider"></li>
                 <li class="item"></li>
+                <li class="devider"></li>
               </ul>
               <div class="dots">
                 <div class="dot active"></div>
@@ -157,6 +159,50 @@
                 <div class="dot"></div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div id="content" *ngIf="account">
+        <div class="col-md-3" id="left">
+          <div id="inner">
+            <form id="form">
+              <b style="margin-top: 0">First name:</b>
+              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
+              <br>
+              <b>Last name:</b>
+              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
+              <br>
+              <b>Gender:</b>
+              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
+              <br>
+              <b>Username:</b>
+              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
+              <br>
+              <b>Email:</b>
+              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
+              <br>
+              <b>Password:</b>
+              <input ngModel name="firstname" #firstname="ngModel" type="password" class="input" placeholder="First name">
+              <br>
+              <b>Password confirmation:</b>
+              <input ngModel name="firstname" #firstname="ngModel" type="password" class="input" placeholder="First name">
+              <br>
+              <b>Language:</b>
+              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
+              <br>
+              <b>Birthday:</b>
+              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
+              <button class="input" id="cancel">Cancel</button>
+              <button class="input">Save</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6" id="center">
+          <div id="inner">
+          </div>
+        </div>
+        <div class="col-md-3" id="right">
+          <div id="inner">
           </div>
         </div>
       </div>

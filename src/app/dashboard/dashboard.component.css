@@ -5,6 +5,22 @@ a {
 a span {
   padding-left: 5px;
 }
+input[type="text"], input[type="password"] {
+  height: 30px;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 1px solid rgb(234, 234, 234);
+  border-radius: 3px;
+}
+form {
+  text-align: left;
+}
+form b {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 4px;
+}
 button {
   width: 80%;
   margin-top: 8px;
@@ -113,7 +129,7 @@ button:hover {
   height: 930px;
   background: rgb(237, 237, 237);
 }
-.col-md-10 #content .col-md-6 {
+.col-md-6, .col-md-3 {
   padding-left: 0;
   padding-right: 0;
 }
@@ -132,7 +148,7 @@ button:hover {
   background: rgb(253, 253, 253);
   border: 1px solid rgb(234, 234, 234);
 }
-#content #points #inner {
+#inner {
   padding-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
@@ -292,18 +308,49 @@ button:hover {
 }
 
 #carousel2 #switcher li.item {
-  background: #ccc;
+  background: #f8f8f8;
   font-size: 16px; /* возвращаем размер шрифта */
   display: inline-block; /* позволяем vertical-align выравнивать себя по вертикали */
-  float: left;
   width: 25%;
   height: 150px;
   vertical-align: middle; /* и выравниваем */
 }
 #carousel2 #switcher li.devider {
   display: inline-block; /* позволяем vertical-align выравнивать себя по вертикали */
-  float: left;
   width: 5%;
   height: 150px;
   background: white;
+}
+
+#content #left #inner, #content #center #inner, #content #right #inner {
+  background: white;
+  height: 200px;
+}
+#content #left #inner {
+  margin-left: 25px;
+  margin-top: 25px;
+  margin-right: 25px;
+  height: 750px;
+}
+#content #left #inner button {
+  display: inline-block;
+  float: left;
+  width: 40%;
+}
+#content #left #inner button#cancel {
+  margin-left: 10%;
+  margin-right: 10%;
+  border: 1px solid rgb(234, 234, 234);
+  background: white;
+  color: #d9d8d8;
+}
+#content #center #inner {
+  margin-top: 25px;
+  margin-right: 25px;
+  height: 690px;
+}
+#content #right #inner {
+  margin-top: 25px;
+  margin-right: 25px;
+  height: 680px;
 }
