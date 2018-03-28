@@ -129,7 +129,7 @@ button:hover {
   height: 930px;
   background: rgb(237, 237, 237);
 }
-.col-md-6, .col-md-3 {
+.col-md-12, .col-md-6, .col-md-3 {
   padding-left: 0;
   padding-right: 0;
 }
@@ -349,6 +349,27 @@ button:hover {
   margin-right: 25px;
   height: 690px;
 }
+#content #center #inner .social .inner {
+  height: 115px;
+  background: white;
+}
+#content #center #inner .social:nth-child(2n+1) {
+  padding-right: 12.5px;
+}
+#content #center #inner .social:nth-child(2n) {
+  padding-left: 12.5px;
+}
+#content #center #inner .social:nth-child(3), #content #center #inner .social:nth-child(4) {
+  padding-top: 25px;
+}
+#content #center .settings {
+  padding-top: 25px;
+}
+#content #center .settings .inner {
+  height: 415px;
+  background: white;
+}
+
 #content #right #inner {
   margin-top: 25px;
   margin-right: 25px;
