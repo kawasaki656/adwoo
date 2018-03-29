@@ -63,10 +63,7 @@
     </div>
   </div>
 </div>
-<div class="screen1 container-fluid" [class.overlay] = "isAnimation">
-</div>
 <div class="screen container-fluid" id="screen">
-  <navigation (onChanged)="moveMap($event)"></navigation>
   <div class="search">
     <img src="../assets/icons/search.png">
   </div>
@@ -104,11 +101,21 @@
         <div class="road-cross" *ngIf="!cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Cross.png)'" [style.left] = "353 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "539 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "-1 - roadIndex"></div>
       </ng-container>
     </ng-container>
-
-
-
   </div>
-
+</div>
+<div class="screen1 container-fluid" [class.overlay] = "isAnimation">
+  <navigation (onChanged)="moveMap($event)"></navigation>
+  <div class="wrap" [ngStyle]="{'transform': 'translate(' + navigation.left + 'px,' + navigation.top + 'px' + ') scale(' + navigation.scale + ')'}">
+    <ng-container *ngFor="let line of jsonSections; let lineIndex = index">
+      <ng-container *ngFor="let cell of line; let cellIndex = index">
+        <div class="figure1" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 1 && !cell.hide" [style.left] = "290 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "315 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
+        <div class="figure12" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 1 && cell.height == 2 && !cell.hide" [style.left] = "267 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "392 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
+        <div class="figure21" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 2 && cell.height == 1 && !cell.hide" [style.left] = "422 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "102 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
+        <div class="figure22" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 2 && cell.height == 2 && !cell.hide" [style.left] = "399 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "180 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
+        <div class="figure52" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 2 && cell.height == 5 && !cell.hide" [style.left] = "340 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "410 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
+      </ng-container>
+    </ng-container>
+  </div>
 </div>
 <div class="footer container-fluid" [ngClass]="{'hided':!footerState}">
   <div id="hide" (click)="hideFooter()" *ngIf="footerState">HIDE</div>

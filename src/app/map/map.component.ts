@@ -145,12 +145,12 @@ export class MapComponent implements OnInit {
     let height = parseInt(this.screenDom.height) * 1.5;
     let cursorLeft = this.cursorPosition.left-2 * this.navigation.left;
     let cursorTop = this.cursorPosition.top-2 * this.navigation.top;
-    this.isAnimation = true;
+    this.isAnimation = false;
     setTimeout(() => {
       this.deleteHidedSections(cursorLeft, cursorTop, width, height);
     }, 100);
     setTimeout(() => {
-      this.isAnimation = false;
+      this.isAnimation = true;
     }, 2500);
   }
 
