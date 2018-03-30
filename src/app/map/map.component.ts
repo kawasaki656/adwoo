@@ -32,6 +32,8 @@ export class MapComponent implements OnInit {
   openedPropertyState:boolean;
   coordinatesOfSections:Array<Array<Object>>;
   isAnimation: boolean;
+  widthScreen: number;
+  heightScreen: number;
 
   constructor(el: ElementRef, private dialogService:DialogService, private http: HttpClient, screen:ScreenService, navigation:NavigationService) {
     this.navigation = navigation;
@@ -140,15 +142,13 @@ export class MapComponent implements OnInit {
     }
   }
 
-  moveMap():void {
-    let width = parseInt(this.screenDom.width) * 1.5;
-    let height = parseInt(this.screenDom.height) * 1.5;
-    let cursorLeft = this.cursorPosition.left-2 * this.navigation.left;
-    let cursorTop = this.cursorPosition.top-2 * this.navigation.top;
+  moveMap(event):void {
+    let cursorLeft = this.cursorPosition.left-2 * (event.direction === 'left' ? event.value : this.navigation.left);
+    let cursorTop = this.cursorPosition.top-2 * (event.direction === 'top' ? event.value : this.navigation.top);
     this.isAnimation = false;
     setTimeout(() => {
-      this.deleteHidedSections(cursorLeft, cursorTop, width, height);
-    }, 100);
+      this.deleteHidedSections(cursorLeft, cursorTop, this.widthScreen*2, this.heightScreen*2);
+    }, 10);
     setTimeout(() => {
       this.isAnimation = true;
     }, 2500);
@@ -157,6 +157,8 @@ export class MapComponent implements OnInit {
   ngOnInit(): void {
     this.bodyDom = window.getComputedStyle(document.getElementsByTagName("body").item(0));
     this.screenDom = window.getComputedStyle(document.getElementsByClassName("screen").item(0));
+    this.widthScreen = parseInt(this.screenDom.width);
+    this.heightScreen = parseInt(this.screenDom.height);
     this.heightModal = parseFloat(this.bodyDom.height)*0.8 + 'px';
     this.widthModal = parseFloat(this.bodyDom.height)*0.9 + 'px';
     let headerDom = window.getComputedStyle(document.getElementsByClassName("header").item(0));
@@ -187,7 +189,7 @@ export class MapComponent implements OnInit {
             this.coordinatesOfSections[line][cell] = {
               left: startX + parseInt(cell) * 267 + parseInt(line) * 268 + xIncrement,
               top: startY - parseInt(cell) * 155 + parseInt(line) * 155 + yIncrement
-            }
+            };
             xIncrement = 0;
             yIncrement = 0;
           } else {

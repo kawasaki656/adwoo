@@ -8,7 +8,7 @@ import {ScreenService} from "../screen/screen.service";
   styleUrls: ['./map.css']
 })
 export class NavigationComponent {
-  @Output() onChanged = new EventEmitter<boolean>();
+  @Output() onChanged = new EventEmitter<Object>();
   screen:any;
   navigation:any;
 
@@ -26,27 +26,27 @@ export class NavigationComponent {
   }
 
   navRight():void {
-    this.onChanged.emit(true);
+    this.onChanged.emit({value: this.navigation.left - this.screen.screenWidth/2, direction: 'left'});
     setTimeout(() => {
       this.navigation.left -= this.screen.screenWidth/2;
-    }, 500);
+    }, 100);
   }
   navLeft():void {
-    this.onChanged.emit(true);
+    this.onChanged.emit({value: this.navigation.left + this.screen.screenWidth/2, direction: 'left'});
     setTimeout(() => {
       this.navigation.left += this.screen.screenWidth/2;
-    }, 500);
+    }, 100);
   }
   navTop():void {
-    this.onChanged.emit(true);
+    this.onChanged.emit({value: this.navigation.top + this.screen.screenHeight/2, direction: 'top'});
     setTimeout(() => {
       this.navigation.top += this.screen.screenHeight/2;
-    }, 500);
+    }, 100);
   }
   navBottom():void {
-    this.onChanged.emit(true);
+    this.onChanged.emit({value: this.navigation.top - this.screen.screenHeight/2, direction: 'top'});
     setTimeout(() => {
       this.navigation.top -= this.screen.screenHeight/2;
-    }, 500);
+    }, 100);
   }
 }
