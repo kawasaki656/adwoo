@@ -34,13 +34,14 @@ export class MapComponent implements OnInit {
   isAnimation: boolean;
   widthScreen: number;
   heightScreen: number;
+  navigationTmp: any;
 
   constructor(el: ElementRef, private dialogService:DialogService, private http: HttpClient, screen:ScreenService, navigation:NavigationService) {
     this.navigation = navigation;
     this.footerState = false;
     this.cursorPosition = {left:screen.screenWidth, top:screen.screenHeight};
     this.openedPropertyState = false;
-    this.isAnimation = false;
+    this.isAnimation = true;
   }
   showMyProperty() {
     if(this.openedPropertyState == false) {
@@ -94,11 +95,21 @@ export class MapComponent implements OnInit {
   }
   @HostListener('mouseup')
   onMouseup() {
+    this.navigation.left+=this.navigation.x - this.navigationTmp.x;
+    this.navigation.top+=this.navigation.y - this.navigationTmp.y;
+    this.navigationTmp.x = this.navigation.x;
+    this.navigationTmp.y = this.navigation.y;
     this.navigation.mouseDown = false;
+    setTimeout(() => {
+      this.isAnimation = true;
+    }, 3500);
   }
   @HostListener('mousedown', ['$event'])
   onMousedown(event) {
-    this.navigation.mouseDown = true;
+    if(this.isAnimation) {
+      this.navigation.mouseDown = true;
+      this.isAnimation = false;
+    }
   }
 
   hideFooter():void {
@@ -143,18 +154,19 @@ export class MapComponent implements OnInit {
   }
 
   moveMap(event):void {
-    let cursorLeft = this.cursorPosition.left-2 * (event.direction === 'left' ? event.value : this.navigation.left);
-    let cursorTop = this.cursorPosition.top-2 * (event.direction === 'top' ? event.value : this.navigation.top);
+    /*let cursorLeft = this.cursorPosition.left-2 * (event.direction === 'left' ? event.value : this.navigation.left);
+    let cursorTop = this.cursorPosition.top-2 * (event.direction === 'top' ? event.value : this.navigation.top);*/
     this.isAnimation = false;
-    setTimeout(() => {
+    /*setTimeout(() => {
       this.deleteHidedSections(cursorLeft, cursorTop, this.widthScreen*2, this.heightScreen*2);
-    }, 10);
+    }, 10);*/
     setTimeout(() => {
       this.isAnimation = true;
     }, 2500);
   }
 
   ngOnInit(): void {
+    this.navigationTmp = Object.assign({}, this.navigation);
     this.bodyDom = window.getComputedStyle(document.getElementsByTagName("body").item(0));
     this.screenDom = window.getComputedStyle(document.getElementsByClassName("screen").item(0));
     this.widthScreen = parseInt(this.screenDom.width);
