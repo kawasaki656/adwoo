@@ -97,18 +97,20 @@ export class MapComponent implements OnInit {
   onMouseup() {
     this.navigation.left+=this.navigation.x - this.navigationTmp.x;
     this.navigation.top+=this.navigation.y - this.navigationTmp.y;
+    if(Math.abs(this.navigation.x - this.navigationTmp.x) > 10 && Math.abs(this.navigation.y - this.navigationTmp.y) > 10) {
+      this.isAnimation = false;
+    }
     this.navigationTmp.x = this.navigation.x;
     this.navigationTmp.y = this.navigation.y;
     this.navigation.mouseDown = false;
     setTimeout(() => {
       this.isAnimation = true;
-    }, 3500);
+    }, 2700);
   }
   @HostListener('mousedown', ['$event'])
   onMousedown(event) {
     if(this.isAnimation) {
       this.navigation.mouseDown = true;
-      this.isAnimation = false;
     }
   }
 
