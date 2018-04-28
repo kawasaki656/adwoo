@@ -63,60 +63,8 @@
     </div>
   </div>
 </div>
-<div class="screen container-fluid" id="screen">
-  <div class="search">
-    <img src="../assets/icons/search.png">
-  </div>
-  <div class="wrap" [ngStyle]="{'transform': 'translate(' + navigation.left + 'px,' + navigation.top + 'px' + ') scale(' + navigation.scale + ')'}" >
-    <!--<div id="get-position" [style.left]="cursorPosition.left-2*navigation.left+'px'" [style.top]="cursorPosition.top-2*navigation.top+'px'"></div>-->
-    <ng-container #wasEmpty *ngFor="let line of jsonSections; let lineIndex = index">
-      <ng-container *ngFor="let cell of line; let cellIndex = index">
-        <div class="section1" *ngIf="cell.draw && cell.width == 1 && cell.height == 1 && !cell.hide" id="{{cell.id}}" [style.background-image]="'url(../assets/City_Objects/Block_' + cell.name +'.png)'" [style.left] = "(lineIndex*268)+(cellIndex*267)  +'px'" [style.top] = "(lineIndex*155)+(cellIndex*(-155))  +'px'" [style.z-index] = "lineIndex-cellIndex"></div>
-        <div class="section2-horizontal" *ngIf="cell.draw && cell.width == 2 && cell.height == 1 && !cell.hide" id="{{cell.id}}" [style.background-image]="'url(../assets/City_Objects/Block_' + cell.name +'.png)'" [style.left] = "138+(lineIndex*267)+(cellIndex*267) +'px'" [style.top] = "-51+(lineIndex*155)+(cellIndex*(-155)) +'px'" [style.z-index] = "lineIndex-cellIndex"></div>
-        <div class="section2-vertical" *ngIf="cell.draw && cell.width == 1 && cell.height == 2 && !cell.hide" id="{{cell.id}}" [style.background-image]="'url(../assets/City_Objects/Block_' + cell.name +'.png)'" [style.left] = "130+(lineIndex*268)+(cellIndex*267) +'px'" [style.top] = "-430+(lineIndex*155)+(cellIndex*(-155)) +'px'" [style.z-index] = "lineIndex-cellIndex"></div>
-        <div class="section2" *ngIf="cell.draw && cell.width == 2 && cell.height == 2 && !cell.hide" id="{{cell.id}}" [style.background-image]="'url(../assets/City_Objects/Block_' + cell.name +'.png)'" [style.left] = "-77+(lineIndex*268)+(cellIndex*267) +'px'" [style.top] = "-85+(lineIndex*155)+(cellIndex*(-155)) +'px'" [style.z-index] = "lineIndex-cellIndex"></div>
-        <div class="section5" *ngIf="cell.draw && cell.width == 2 && cell.height == 5 && !cell.hide" id="{{cell.id}}" [style.background-image]="'url(../assets/City_Objects/Block_' + cell.name +'.png)'" [style.left] = "193+(lineIndex*268)+(cellIndex*267) +'px'" [style.top] = "134+(lineIndex*155)+(cellIndex*(-155)) +'px'" [style.z-index] = "lineIndex-cellIndex"></div>
-      </ng-container>
-    </ng-container>
-    <ng-container *ngFor="let line of jsonSections; let lineIndex = index">
-      <ng-container *ngFor="let cell of line; let roadIndex = index">
-        <div class="road-vertical" *ngIf="cell.draw && (cell.width == 1 || cell.width == 2) && cell.height == 1 && !cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Vertical.png)'" [style.left] = "140 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "406 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "0 - roadIndex"></div>
-        <div class="road-vertical-long" *ngIf="cell.draw && cell.height == 2 && !cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Vertical_Long.png)'" [style.left] = "137 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "404 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "0 - roadIndex"></div>
-        <div class="road-vertical-very-long" *ngIf="cell.draw && cell.height == 5 && !cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Vertical_Very_Long.png)'" [style.left] = "100 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "372 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "0 - roadIndex"></div>
-      </ng-container>
-    </ng-container>
 
-    <ng-container *ngFor="let line of jsonSections; let lineIndex = index">
-      <ng-container *ngFor="let cell of line; let roadIndex = index">
-        <div class="road-horizontal" *ngIf="cell.draw && cell.width == 1 && cell.height == 1 && !cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Horizontal.png)'" [style.left] = "412 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "408 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "0 - roadIndex"></div>
-        <div class="road-horizontal" *ngIf="cell.draw && cell.width == 1 && cell.height == 2 && !cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Horizontal.png)'" [style.left] = "679 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "562 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "0 - roadIndex"></div>
-        <div class="road-horizontal-long" *ngIf="cell.draw && cell.width == 2 && cell.height == 1 && !cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Horizontal_Long.png)'" [style.left] = "408 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "253 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "-1 - roadIndex"></div>
-        <div class="road-horizontal-long" *ngIf="cell.draw && cell.width == 2 && cell.height == 2 && !cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Horizontal_Long.png)'" [style.left] = "675 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "410 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "-1 - roadIndex"></div>
-        <div class="road-horizontal-long" *ngIf="cell.draw && cell.width == 2 && cell.height == 5 && !cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Horizontal_Long.png)'" [style.left] = "1478 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "876 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "-1 - roadIndex"></div>
-      </ng-container>
-    </ng-container>
 
-    <ng-container *ngFor="let line of jsonSections; let lineIndex = index">
-      <ng-container *ngFor="let cell of line; let roadIndex = index">
-        <div class="road-cross" *ngIf="!cell.hide" [style.background-image]="'url(../assets/City_Objects/Block_Road_Cross.png)'" [style.left] = "353 + lineIndex*268 + (267*roadIndex) + 'px'" [style.top] = "539 + lineIndex*155 - (155*roadIndex) + 'px'" [style.z-index] = "-1 - roadIndex"></div>
-      </ng-container>
-    </ng-container>
-  </div>
-</div>
-<div class="screen1 container-fluid" [class.overlay] = "isAnimation">
-  <navigation (onChanged)="moveMap($event)"></navigation>
-  <div class="wrap" [ngStyle]="{'transform': 'translate(' + navigation.left + 'px,' + navigation.top + 'px' + ') scale(' + navigation.scale + ')'}">
-    <ng-container *ngFor="let line of jsonSections; let lineIndex = index">
-      <ng-container *ngFor="let cell of line; let cellIndex = index">
-        <div class="figure1" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 1 && !cell.hide" [style.left] = "290 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "315 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
-        <div class="figure12" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 1 && cell.height == 2 && !cell.hide" [style.left] = "267 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "392 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
-        <div class="figure21" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 2 && cell.height == 1 && !cell.hide" [style.left] = "422 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "102 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
-        <div class="figure22" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 2 && cell.height == 2 && !cell.hide" [style.left] = "399 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "180 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
-        <div class="figure52" (mouseenter)="hoverSection(cell.id)" (click)="selectSection(cell)" *ngIf="cell.draw && cell.width == 2 && cell.height == 5 && !cell.hide" [style.left] = "340 + lineIndex*268 + (267*cellIndex) + 'px'" [style.top] = "410 + lineIndex*155 - (155*cellIndex) + 'px'"></div>
-      </ng-container>
-    </ng-container>
-  </div>
-</div>
 <div class="footer container-fluid" [ngClass]="{'hided':!footerState}">
   <div id="hide" (click)="hideFooter()" *ngIf="footerState">HIDE</div>
   <div id="hide" (click)="hideFooter()" *ngIf="!footerState">SHOW</div>

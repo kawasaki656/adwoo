@@ -6,6 +6,7 @@ import { MyProperty } from "../my-property/myProperty";
 import { ObjectInformation } from "../objectInformation/objectInformation";
 import { HttpClient } from "@angular/common/http";
 import {isUndefined} from "util";
+import * as Pixi from "pixi.js";
 
 @Component({
   selector: 'app-map',
@@ -42,6 +43,7 @@ export class MapComponent implements OnInit {
     this.cursorPosition = {left:screen.screenWidth, top:screen.screenHeight};
     this.openedPropertyState = false;
     this.isAnimation = true;
+
   }
   showMyProperty() {
     if(this.openedPropertyState == false) {
