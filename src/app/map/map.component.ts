@@ -20,6 +20,7 @@ export class MapComponent implements OnInit {
   headerHeight: Number;
   navigation:any;
   bodyDom: any;
+  screen: any;
   screenDom: any;
   heightModal:any;
   widthModal:any;
@@ -44,9 +45,6 @@ export class MapComponent implements OnInit {
     this.cursorPosition = {left:screen.screenWidth, top:screen.screenHeight};
     this.openedPropertyState = false;
     this.isAnimation = true;
-
-    this.pixi = new PIXI.Application(800,600);
-
   }
   showMyProperty() {
     if(this.openedPropertyState == false) {
@@ -175,7 +173,8 @@ export class MapComponent implements OnInit {
   ngOnInit(): void {
     this.navigationTmp = Object.assign({}, this.navigation);
     this.bodyDom = window.getComputedStyle(document.getElementsByTagName("body").item(0));
-    this.screenDom = window.getComputedStyle(document.getElementsByClassName("screen").item(0));
+    this.screen = document.getElementsByClassName("screen").item(0);
+    this.screenDom = window.getComputedStyle(this.screen);
     this.widthScreen = parseInt(this.screenDom.width);
     this.heightScreen = parseInt(this.screenDom.height);
     this.heightModal = parseFloat(this.bodyDom.height)*0.8 + 'px';
@@ -218,11 +217,25 @@ export class MapComponent implements OnInit {
       }
     });
   }
+
   ngAfterViewInit(): void {
     this.myPropertyWidth = parseFloat(window.getComputedStyle(document.getElementById("my-property")).width);
     let header1Width = parseFloat(window.getComputedStyle(document.getElementById("header1")).width);
     let header2Width = parseFloat(window.getComputedStyle(document.getElementById("header2")).width);
     let header3Width = parseFloat(window.getComputedStyle(document.getElementById("menu")).width);
     this.myPropertyIndent = header1Width + header2Width + header3Width;
+
+    this.pixi = new PIXI.Application(1200,800);
+
+    this.screen.appendChild(this.pixi.view);
+    PIXI.loader
+      .add("../assets/City_Objects/Block_Road_Horizontal.png")
+      .load(this.setup);
+  }
+
+  setup(): void {
+    let sprite = new PIXI.Sprite(PIXI.loader.resources["../assets/City_Objects/Block_Road_Horizontal.png"].texture);
+
+    this.pixi.addChild(sprite);
   }
 }
