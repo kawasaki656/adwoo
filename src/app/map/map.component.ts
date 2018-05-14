@@ -6,7 +6,7 @@ import { MyProperty } from "../my-property/myProperty";
 import { ObjectInformation } from "../objectInformation/objectInformation";
 import { HttpClient } from "@angular/common/http";
 import {isUndefined} from "util";
-import * as Pixi from "pixi.js";
+import * as PIXI from "pixi.js";
 
 @Component({
   selector: 'app-map',
@@ -36,6 +36,7 @@ export class MapComponent implements OnInit {
   widthScreen: number;
   heightScreen: number;
   navigationTmp: any;
+  pixi: any;
 
   constructor(el: ElementRef, private dialogService:DialogService, private http: HttpClient, screen:ScreenService, navigation:NavigationService) {
     this.navigation = navigation;
@@ -43,6 +44,8 @@ export class MapComponent implements OnInit {
     this.cursorPosition = {left:screen.screenWidth, top:screen.screenHeight};
     this.openedPropertyState = false;
     this.isAnimation = true;
+
+    this.pixi = new PIXI.Application(800,600);
 
   }
   showMyProperty() {
@@ -213,7 +216,6 @@ export class MapComponent implements OnInit {
           }
         }
       }
-      console.log(this.coordinatesOfSections)
     });
   }
   ngAfterViewInit(): void {
