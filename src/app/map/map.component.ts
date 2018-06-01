@@ -37,7 +37,17 @@ export class MapComponent implements OnInit {
   widthScreen: number;
   heightScreen: number;
   navigationTmp: any;
-  pixi: any;
+
+  private static appPixi;
+
+  private static createContainer(sprites) {
+    let container = new PIXI.Container();
+    for(var index in sprites) {
+      container.addChild(sprites[index]);
+    }
+
+    return container;
+  }
 
   constructor(el: ElementRef, private dialogService:DialogService, private http: HttpClient, screen:ScreenService, navigation:NavigationService) {
     this.navigation = navigation;
@@ -225,17 +235,44 @@ export class MapComponent implements OnInit {
     let header3Width = parseFloat(window.getComputedStyle(document.getElementById("menu")).width);
     this.myPropertyIndent = header1Width + header2Width + header3Width;
 
-    this.pixi = new PIXI.Application(1200,800);
+    MapComponent.appPixi = new PIXI.Application({width:1200, height:800, antialias: false, transparent: false, resolution: 1});
+    MapComponent.appPixi.renderer.backgroundColor = "413a43";
 
-    this.screen.appendChild(this.pixi.view);
+    this.screen.appendChild(MapComponent.appPixi.view);
     PIXI.loader
-      .add("../assets/City_Objects/Block_Road_Horizontal.png")
+      .add("../assets/City_Objects/Block_1.png")
+      .add("../assets/City_Objects/Block_2.png")
+      .add("../assets/City_Objects/Block_3.png")
+      .add("../assets/City_Objects/Block_4.png")
+      .add("../assets/City_Objects/Block_5.png")
+      .add("../assets/City_Objects/Block_6.png")
+      .add("../assets/City_Objects/Block_7.png")
+      .add("../assets/City_Objects/Block_8.png")
+      .add("../assets/City_Objects/Block_9.png")
+      .add("../assets/City_Objects/Block_10.png")
       .load(this.setup);
   }
 
   setup(): void {
-    let sprite = new PIXI.Sprite(PIXI.loader.resources["../assets/City_Objects/Block_Road_Horizontal.png"].texture);
+    let sprite1 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_1.png"].texture
+    );
+    let sprite2 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_2.png"].texture
+    );
 
-    this.pixi.addChild(sprite);
+    sprite1.x = 0;
+    sprite1.y = 0;
+    sprite2.x = 215;
+    sprite2.y = 125;
+
+    let sprites: Array<Object>;
+    sprites = new Array();
+    sprites.push(sprite1);
+    sprites.push(sprite2);
+    let map = MapComponent.createContainer(sprites);
+
+
+    MapComponent.appPixi.stage.addChild(map);
   }
 }
