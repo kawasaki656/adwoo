@@ -272,6 +272,11 @@ export class MapComponent implements OnInit {
     sprites.push(sprite2);
     let map = MapComponent.createContainer(sprites);
 
+    //map.x = 400;
+    //map.y = 400;
+
+    //map.localTransform.scale(0.5, 0.5);
+
 
     MapComponent.appPixi.stage.addChild(map);
   }
