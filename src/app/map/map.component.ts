@@ -250,6 +250,7 @@ export class MapComponent implements OnInit {
       .add("../assets/City_Objects/Block_8.png")
       .add("../assets/City_Objects/Block_9.png")
       .add("../assets/City_Objects/Block_10.png")
+      .add("../assets/City_Objects/Block_11.png")
       .load(this.setup);
   }
 
@@ -260,22 +261,61 @@ export class MapComponent implements OnInit {
     let sprite2 = new PIXI.Sprite(
       PIXI.loader.resources["../assets/City_Objects/Block_2.png"].texture
     );
+    let sprite3 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_3.png"].texture
+    );
+    let sprite4 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_4.png"].texture
+    );
+    let sprite5 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_5.png"].texture
+    );
+    let sprite6 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_6.png"].texture
+    );
+    let sprite7 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_7.png"].texture
+    );
+    let sprite8 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_8.png"].texture
+    );
+    let sprite9 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_9.png"].texture
+    );
+    let sprite10 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_10.png"].texture
+    );
+    let sprite11 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_11.png"].texture
+    );
 
     sprite1.x = 0;
     sprite1.y = 0;
     sprite2.x = 215;
     sprite2.y = 125;
+    sprite3.x = 430;
+    sprite3.y = 250;
+    sprite4.x = 645;
+    sprite4.y = 375;
+    sprite5.x = 250;
+    sprite5.y = -125;
+    sprite6.x = 250;
+    sprite6.y = -125;
 
     let sprites: Array<Object>;
     sprites = new Array();
+    sprites.push(sprite5);
     sprites.push(sprite1);
     sprites.push(sprite2);
+    sprites.push(sprite3);
+    sprites.push(sprite4);
+    console.log(sprite1);
     let map = MapComponent.createContainer(sprites);
 
     //map.x = 400;
     //map.y = 400;
 
-    //map.localTransform.scale(0.5, 0.5);
+    map.localTransform.scale(0.5, 0.5);
 
 
     MapComponent.appPixi.stage.addChild(map);
