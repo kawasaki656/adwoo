@@ -65,6 +65,7 @@ export class MapComponent implements OnInit {
     this.cursorPosition = {left:screen.screenWidth, top:screen.screenHeight};
     this.openedPropertyState = false;
     this.isAnimation = true;
+    console.log(this);
   }
   showMyProperty() {
     if(this.openedPropertyState == false) {
@@ -204,8 +205,8 @@ export class MapComponent implements OnInit {
     this.http.get('/assets/json/objects.json').subscribe(data => {
       this.jsonSections = data;
       this.coordinatesOfSections = new Array<Array<Object>>();
-      let startX = 410;
-      let startY = 400;
+      let startX = 0;
+      let startY = 0;
       let xIncrement = 0;
       let yIncrement = 0;
       for(var line in this.jsonSections) {
@@ -213,16 +214,17 @@ export class MapComponent implements OnInit {
         for(var cell in this.jsonSections[line]) {
           if(this.jsonSections[line][cell].draw) {
             if(this.jsonSections[line][cell].width == 2 && this.jsonSections[line][cell].height == 5) {
-              xIncrement = 790;
-              yIncrement = 250;
+              xIncrement = 193;
+              yIncrement = 134;
             } else if(this.jsonSections[line][cell].width == 2 && this.jsonSections[line][cell].height == 2) {
-              xIncrement = 300;
+              xIncrement = -77;
+              yIncrement = -85;
             } else if(this.jsonSections[line][cell].width == 2 && this.jsonSections[line][cell].height == 1) {
-              xIncrement = 330;
-              yIncrement = -90;
+              xIncrement = 138;
+              yIncrement = -51;
             } else if(this.jsonSections[line][cell].width == 1 && this.jsonSections[line][cell].height == 2) {
-              xIncrement = 120;
-              yIncrement = 60;
+              xIncrement = 130;
+              yIncrement = -430;
             }
             this.coordinatesOfSections[line][cell] = {
               left: startX + parseInt(cell) * 267 + parseInt(line) * 268 + xIncrement,
