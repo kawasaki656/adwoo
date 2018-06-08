@@ -42,11 +42,21 @@ export class MapComponent implements OnInit {
 
   private static createContainer(sprites) {
     let container = new PIXI.Container();
+
     for(var index in sprites) {
       container.addChild(sprites[index]);
     }
 
     return container;
+  }
+
+  private static setPosition(container) {
+
+  }
+
+  private static defineLayers(container) {
+    //Use layers
+    //container.addChildAt(sprites[index], 0);
   }
 
   constructor(el: ElementRef, private dialogService:DialogService, private http: HttpClient, screen:ScreenService, navigation:NavigationService) {
@@ -288,6 +298,10 @@ export class MapComponent implements OnInit {
     let sprite11 = new PIXI.Sprite(
       PIXI.loader.resources["../assets/City_Objects/Block_11.png"].texture
     );
+    sprite1.name = "1"
+    sprite2.name = "2"
+    sprite3.name = "3"
+    sprite4.name = "4"
 
     sprite1.x = 0;
     sprite1.y = 0;
@@ -319,5 +333,6 @@ export class MapComponent implements OnInit {
 
 
     MapComponent.appPixi.stage.addChild(map);
+
   }
 }
