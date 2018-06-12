@@ -14,7 +14,6 @@ import * as PIXI from "pixi.js";
   styleUrls: ['../map/map.css', '../header/header.css', '../footer/footer.css', './map.component.css']
 })
 export class MapComponent implements OnInit {
-  jsonSections : any;
   title = 'Adwoo';
   map: Array<Array<Object>>;
   headerHeight: Number;
@@ -32,25 +31,42 @@ export class MapComponent implements OnInit {
   myPropertyWidth:any;
   myPropertyIndent:any;
   openedPropertyState:boolean;
-  coordinatesOfSections:Array<Array<Object>>;
   isAnimation: boolean;
   widthScreen: number;
   heightScreen: number;
   navigationTmp: any;
 
+  private static jsonSections : any;
+
+  private static coordinatesOfSections:Array<Array<Object>>;
+
   private static appPixi;
 
-  private static createContainer(sprites) {
+  private static createContainer(json, sprites) {
     let container = new PIXI.Container();
+    let i=0;
 
-    for(var index in sprites) {
-      container.addChild(sprites[index]);
+    for(let line in json) {
+      for (let cell in json[line]) {
+        container.addChildAt(Object.create(sprites[parseInt(json[line][cell].name)]), i);
+      }
     }
-
     return container;
   }
 
-  private static setPosition(container) {
+  private static setPositions(json, container) {
+    let index = 0;
+    for(let line in MapComponent.coordinatesOfSections) {
+      for(let cell in MapComponent.coordinatesOfSections[line]) {
+        if(MapComponent.coordinatesOfSections[line][cell]["left"]) {
+          console.log(MapComponent.coordinatesOfSections[line][cell])
+          container.children[index].x = MapComponent.coordinatesOfSections[line][cell]["left"];
+          container.children[index].y = MapComponent.coordinatesOfSections[line][cell]["top"];
+        }
+
+        index++;
+      }
+    }
 
   }
 
@@ -65,7 +81,6 @@ export class MapComponent implements OnInit {
     this.cursorPosition = {left:screen.screenWidth, top:screen.screenHeight};
     this.openedPropertyState = false;
     this.isAnimation = true;
-    console.log(this);
   }
   showMyProperty() {
     if(this.openedPropertyState == false) {
@@ -156,29 +171,6 @@ export class MapComponent implements OnInit {
       });
   }
 
-  hoverSection(id):void {
-    if(this.lastHovered) {
-      this.lastHovered.style.filter = "brightness(0.89)";
-    }
-
-    let hovered = document.getElementById(id);
-    hovered.style.filter = "brightness(1)";
-
-    this.lastHovered = hovered;
-  }
-  deleteHidedSections(cursorLeft, cursorTop, width, height) {
-    for(var line in this.jsonSections) {
-      for (var cell in this.jsonSections[line]) {
-        this.jsonSections[line][cell].hide = false;
-        if (!this.isInsideRect(this.coordinatesOfSections[line][cell].left, this.coordinatesOfSections[line][cell].top, cursorLeft - width, cursorTop - height, cursorLeft + width, cursorTop + height)) {
-          if(this.jsonSections[line][cell] != {}) {
-            this.jsonSections[line][cell].hide = true;
-          }
-        }
-      }
-    }
-  }
-
   moveMap(event):void {
     /*let cursorLeft = this.cursorPosition.left-2 * (event.direction === 'left' ? event.value : this.navigation.left);
     let cursorTop = this.cursorPosition.top-2 * (event.direction === 'top' ? event.value : this.navigation.top);*/
@@ -203,37 +195,37 @@ export class MapComponent implements OnInit {
     let headerDom = window.getComputedStyle(document.getElementsByClassName("header").item(0));
     this.headerHeight = parseFloat(headerDom.height);
     this.http.get('/assets/json/objects.json').subscribe(data => {
-      this.jsonSections = data;
-      this.coordinatesOfSections = new Array<Array<Object>>();
+      MapComponent.jsonSections = data;
+      MapComponent.coordinatesOfSections = new Array<Array<Object>>();
       let startX = 0;
       let startY = 0;
       let xIncrement = 0;
       let yIncrement = 0;
-      for(var line in this.jsonSections) {
-        this.coordinatesOfSections[line] = new Array<Object>();
-        for(var cell in this.jsonSections[line]) {
-          if(this.jsonSections[line][cell].draw) {
-            if(this.jsonSections[line][cell].width == 2 && this.jsonSections[line][cell].height == 5) {
+      for(var line in MapComponent.jsonSections) {
+        MapComponent.coordinatesOfSections[line] = new Array<Object>();
+        for(var cell in MapComponent.jsonSections[line]) {
+          if(MapComponent.jsonSections[line][cell].draw) {
+            if(MapComponent.jsonSections[line][cell].width == 2 && MapComponent.jsonSections[line][cell].height == 5) {
               xIncrement = 193;
               yIncrement = 134;
-            } else if(this.jsonSections[line][cell].width == 2 && this.jsonSections[line][cell].height == 2) {
+            } else if(MapComponent.jsonSections[line][cell].width == 2 && MapComponent.jsonSections[line][cell].height == 2) {
               xIncrement = -77;
               yIncrement = -85;
-            } else if(this.jsonSections[line][cell].width == 2 && this.jsonSections[line][cell].height == 1) {
+            } else if(MapComponent.jsonSections[line][cell].width == 2 && MapComponent.jsonSections[line][cell].height == 1) {
               xIncrement = 138;
               yIncrement = -51;
-            } else if(this.jsonSections[line][cell].width == 1 && this.jsonSections[line][cell].height == 2) {
+            } else if(MapComponent.jsonSections[line][cell].width == 1 && MapComponent.jsonSections[line][cell].height == 2) {
               xIncrement = 130;
               yIncrement = -430;
             }
-            this.coordinatesOfSections[line][cell] = {
+            MapComponent.coordinatesOfSections[line][cell] = {
               left: startX + parseInt(cell) * 267 + parseInt(line) * 268 + xIncrement,
               top: startY - parseInt(cell) * 155 + parseInt(line) * 155 + yIncrement
             };
             xIncrement = 0;
             yIncrement = 0;
           } else {
-            this.coordinatesOfSections[line][cell] = {};
+            MapComponent.coordinatesOfSections[line][cell] = {};
           }
         }
       }
@@ -263,6 +255,30 @@ export class MapComponent implements OnInit {
       .add("../assets/City_Objects/Block_9.png")
       .add("../assets/City_Objects/Block_10.png")
       .add("../assets/City_Objects/Block_11.png")
+      .add("../assets/City_Objects/Block_12.png")
+      .add("../assets/City_Objects/Block_13.png")
+      .add("../assets/City_Objects/Block_14.png")
+      .add("../assets/City_Objects/Block_15.png")
+      .add("../assets/City_Objects/Block_16.png")
+      .add("../assets/City_Objects/Block_17.png")
+      .add("../assets/City_Objects/Block_18.png")
+      .add("../assets/City_Objects/Block_19.png")
+      .add("../assets/City_Objects/Block_23.png")
+      .add("../assets/City_Objects/Block_24.png")
+      .add("../assets/City_Objects/Block_25.png")
+      .add("../assets/City_Objects/Block_26.png")
+      .add("../assets/City_Objects/Block_27.png")
+      .add("../assets/City_Objects/Block_28.png")
+      .add("../assets/City_Objects/Block_30.png")
+      .add("../assets/City_Objects/Block_31.png")
+      .add("../assets/City_Objects/Block_32.png")
+      .add("../assets/City_Objects/Block_33.png")
+      .add("../assets/City_Objects/Block_34.png")
+      .add("../assets/City_Objects/Block_35.png")
+      .add("../assets/City_Objects/Block_36.png")
+      .add("../assets/City_Objects/Block_37.png")
+      .add("../assets/City_Objects/Block_38.png")
+      .add("../assets/City_Objects/Block_39.png")
       .load(this.setup);
   }
 
@@ -300,12 +316,87 @@ export class MapComponent implements OnInit {
     let sprite11 = new PIXI.Sprite(
       PIXI.loader.resources["../assets/City_Objects/Block_11.png"].texture
     );
+    let sprite12 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_12.png"].texture
+    );
+    let sprite13 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_13.png"].texture
+    );
+    let sprite14 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_14.png"].texture
+    );
+    let sprite15 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_15.png"].texture
+    );
+    let sprite16 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_16.png"].texture
+    );
+    let sprite17 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_17.png"].texture
+    );
+    let sprite18 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_18.png"].texture
+    );
+    let sprite19 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_19.png"].texture
+    );
+    let sprite23 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_23.png"].texture
+    );
+    let sprite24 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_24.png"].texture
+    );
+    let sprite25 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_25.png"].texture
+    );
+    let sprite26 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_26.png"].texture
+    );
+    let sprite27 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_27.png"].texture
+    );
+    let sprite28 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_28.png"].texture
+    );
+    let sprite30 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_30.png"].texture
+    );
+    let sprite31 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_31.png"].texture
+    );
+    let sprite32 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_32.png"].texture
+    );
+    let sprite33 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_33.png"].texture
+    );
+    let sprite34 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_34.png"].texture
+    );
+    let sprite35 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_35.png"].texture
+    );
+    let sprite36 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_36.png"].texture
+    );
+    let sprite37 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_37.png"].texture
+    );
+    let sprite38 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_38.png"].texture
+    );
+    let sprite39 = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_39.png"].texture
+    );
+
+    /*
     sprite1.name = "1"
     sprite2.name = "2"
     sprite3.name = "3"
     sprite4.name = "4"
+    */
 
-    sprite1.x = 0;
+    /*sprite1.x = 0;
     sprite1.y = 0;
     sprite2.x = 215;
     sprite2.y = 125;
@@ -316,17 +407,53 @@ export class MapComponent implements OnInit {
     sprite5.x = 250;
     sprite5.y = -125;
     sprite6.x = 250;
-    sprite6.y = -125;
+    sprite6.y = -125;*/
 
     let sprites: Array<Object>;
     sprites = new Array();
-    sprites.push(sprite5);
+    sprites.push({});
     sprites.push(sprite1);
     sprites.push(sprite2);
     sprites.push(sprite3);
     sprites.push(sprite4);
-    console.log(sprite1);
-    let map = MapComponent.createContainer(sprites);
+    sprites.push(sprite5);
+    sprites.push(sprite6);
+    sprites.push(sprite7);
+    sprites.push(sprite8);
+    sprites.push(sprite9);
+    sprites.push(sprite10);
+    sprites.push(sprite11);
+    sprites.push(sprite12);
+    sprites.push(sprite13);
+    sprites.push(sprite14);
+    sprites.push(sprite15);
+    sprites.push(sprite16);
+    sprites.push(sprite17);
+    sprites.push(sprite18);
+    sprites.push(sprite19);
+    sprites.push({});
+    sprites.push({});
+    sprites.push({});
+    sprites.push(sprite23);
+    sprites.push(sprite24);
+    sprites.push(sprite25);
+    sprites.push(sprite26);
+    sprites.push(sprite27);
+    sprites.push(sprite28);
+    sprites.push({});
+    sprites.push(sprite30);
+    sprites.push(sprite31);
+    sprites.push(sprite32);
+    sprites.push(sprite33);
+    sprites.push(sprite34);
+    sprites.push(sprite35);
+    sprites.push(sprite36);
+    sprites.push(sprite37);
+    sprites.push(sprite38);
+    sprites.push(sprite39);
+
+    let map = MapComponent.createContainer(MapComponent.jsonSections, sprites);
+    MapComponent.setPositions(MapComponent.jsonSections, map);
 
     //map.x = 400;
     //map.y = 400;
