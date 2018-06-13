@@ -54,16 +54,19 @@ export class MapComponent implements OnInit {
     return container;
   }
 
-  private static setPositions(json, container) {
+  private static setPositions(container) {
+    //console.log(MapComponent.jsonSections)
+    //console.log(MapComponent.coordinatesOfSections)
+    console.log(container)
     let index = 0;
     for(let line in MapComponent.coordinatesOfSections) {
       for(let cell in MapComponent.coordinatesOfSections[line]) {
-        if(MapComponent.coordinatesOfSections[line][cell]["left"]) {
-          console.log(MapComponent.coordinatesOfSections[line][cell])
-          container.children[index].x = MapComponent.coordinatesOfSections[line][cell]["left"];
-          container.children[index].y = MapComponent.coordinatesOfSections[line][cell]["top"];
-        }
-
+        //if(MapComponent.jsonSections[line][cell]["draw"]) {
+          if (MapComponent.coordinatesOfSections[line][cell]["left"]) {
+            container.children[index].x = MapComponent.coordinatesOfSections[line][cell]["left"];
+            container.children[index].y = MapComponent.coordinatesOfSections[line][cell]["top"];
+          }
+        //}
         index++;
       }
     }
@@ -81,6 +84,9 @@ export class MapComponent implements OnInit {
     this.cursorPosition = {left:screen.screenWidth, top:screen.screenHeight};
     this.openedPropertyState = false;
     this.isAnimation = true;
+
+    this.myPropertyIndent = 0;
+    this.myPropertyWidth = 0;
   }
   showMyProperty() {
     if(this.openedPropertyState == false) {
@@ -184,6 +190,11 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.myPropertyWidth = parseFloat(window.getComputedStyle(document.getElementById("my-property")).width);
+    let header1Width = parseFloat(window.getComputedStyle(document.getElementById("header1")).width);
+    let header2Width = parseFloat(window.getComputedStyle(document.getElementById("header2")).width);
+    let header3Width = parseFloat(window.getComputedStyle(document.getElementById("menu")).width);
+    this.myPropertyIndent = header1Width + header2Width + header3Width;
     this.navigationTmp = Object.assign({}, this.navigation);
     this.bodyDom = window.getComputedStyle(document.getElementsByTagName("body").item(0));
     this.screen = document.getElementsByClassName("screen").item(0);
@@ -233,11 +244,6 @@ export class MapComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    this.myPropertyWidth = parseFloat(window.getComputedStyle(document.getElementById("my-property")).width);
-    let header1Width = parseFloat(window.getComputedStyle(document.getElementById("header1")).width);
-    let header2Width = parseFloat(window.getComputedStyle(document.getElementById("header2")).width);
-    let header3Width = parseFloat(window.getComputedStyle(document.getElementById("menu")).width);
-    this.myPropertyIndent = header1Width + header2Width + header3Width;
 
     MapComponent.appPixi = new PIXI.Application({width:1200, height:800, antialias: false, transparent: false, resolution: 1});
     MapComponent.appPixi.renderer.backgroundColor = "413a43";
@@ -453,7 +459,7 @@ export class MapComponent implements OnInit {
     sprites.push(sprite39);
 
     let map = MapComponent.createContainer(MapComponent.jsonSections, sprites);
-    MapComponent.setPositions(MapComponent.jsonSections, map);
+    MapComponent.setPositions(map);
 
     //map.x = 400;
     //map.y = 400;
