@@ -42,35 +42,41 @@ export class MapComponent implements OnInit {
 
   private static appPixi;
 
+  private static createSprite(number) {
+    let sprite = new PIXI.Sprite(
+      PIXI.loader.resources["../assets/City_Objects/Block_"+ number + ".png"].texture
+    );
+
+    return sprite;
+  }
+
   private static createContainer(json, sprites) {
     let container = new PIXI.Container();
-    let i=0;
 
     for(let line in json) {
       for (let cell in json[line]) {
-        container.addChildAt(Object.create(sprites[parseInt(json[line][cell].name)]), i);
+        if(json[line][cell]["draw"]) {
+          let sprite = MapComponent.createSprite(json[line][cell].name);
+          container.addChild(sprite);
+        }
       }
     }
+
     return container;
   }
 
   private static setPositions(container) {
-    //console.log(MapComponent.jsonSections)
-    //console.log(MapComponent.coordinatesOfSections)
-    console.log(container)
     let index = 0;
     for(let line in MapComponent.coordinatesOfSections) {
       for(let cell in MapComponent.coordinatesOfSections[line]) {
-        //if(MapComponent.jsonSections[line][cell]["draw"]) {
-          if (MapComponent.coordinatesOfSections[line][cell]["left"]) {
+          if (MapComponent.jsonSections[line][cell]["draw"]) {
             container.children[index].x = MapComponent.coordinatesOfSections[line][cell]["left"];
             container.children[index].y = MapComponent.coordinatesOfSections[line][cell]["top"];
+            console.log(MapComponent.coordinatesOfSections[line][cell]["left"])
+            index++;
           }
-        //}
-        index++;
       }
     }
-
   }
 
   private static defineLayers(container) {
