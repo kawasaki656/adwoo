@@ -50,7 +50,7 @@ export class MapComponent implements OnInit {
     return sprite;
   }
 
-  private static createContainer(json, sprites) {
+  private static createContainer(json) {
     let container = new PIXI.Container();
 
     for(let line in json) {
@@ -72,7 +72,6 @@ export class MapComponent implements OnInit {
           if (MapComponent.jsonSections[line][cell]["draw"]) {
             container.children[index].x = MapComponent.coordinatesOfSections[line][cell]["left"];
             container.children[index].y = MapComponent.coordinatesOfSections[line][cell]["top"];
-            console.log(MapComponent.coordinatesOfSections[line][cell]["left"])
             index++;
           }
       }
@@ -251,7 +250,7 @@ export class MapComponent implements OnInit {
 
   ngAfterViewInit(): void {
 
-    MapComponent.appPixi = new PIXI.Application({width:1200, height:800, antialias: false, transparent: false, resolution: 1});
+    MapComponent.appPixi = new PIXI.Application({width:parseInt(this.bodyDom.width), height:parseInt(this.bodyDom.height), antialias: false, transparent: false, resolution: 1});
     MapComponent.appPixi.renderer.backgroundColor = "413a43";
 
     this.screen.appendChild(MapComponent.appPixi.view);
@@ -295,180 +294,9 @@ export class MapComponent implements OnInit {
   }
 
   setup(): void {
-    let sprite1 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_1.png"].texture
-    );
-    let sprite2 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_2.png"].texture
-    );
-    let sprite3 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_3.png"].texture
-    );
-    let sprite4 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_4.png"].texture
-    );
-    let sprite5 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_5.png"].texture
-    );
-    let sprite6 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_6.png"].texture
-    );
-    let sprite7 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_7.png"].texture
-    );
-    let sprite8 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_8.png"].texture
-    );
-    let sprite9 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_9.png"].texture
-    );
-    let sprite10 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_10.png"].texture
-    );
-    let sprite11 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_11.png"].texture
-    );
-    let sprite12 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_12.png"].texture
-    );
-    let sprite13 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_13.png"].texture
-    );
-    let sprite14 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_14.png"].texture
-    );
-    let sprite15 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_15.png"].texture
-    );
-    let sprite16 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_16.png"].texture
-    );
-    let sprite17 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_17.png"].texture
-    );
-    let sprite18 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_18.png"].texture
-    );
-    let sprite19 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_19.png"].texture
-    );
-    let sprite23 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_23.png"].texture
-    );
-    let sprite24 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_24.png"].texture
-    );
-    let sprite25 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_25.png"].texture
-    );
-    let sprite26 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_26.png"].texture
-    );
-    let sprite27 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_27.png"].texture
-    );
-    let sprite28 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_28.png"].texture
-    );
-    let sprite30 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_30.png"].texture
-    );
-    let sprite31 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_31.png"].texture
-    );
-    let sprite32 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_32.png"].texture
-    );
-    let sprite33 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_33.png"].texture
-    );
-    let sprite34 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_34.png"].texture
-    );
-    let sprite35 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_35.png"].texture
-    );
-    let sprite36 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_36.png"].texture
-    );
-    let sprite37 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_37.png"].texture
-    );
-    let sprite38 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_38.png"].texture
-    );
-    let sprite39 = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_39.png"].texture
-    );
 
-    /*
-    sprite1.name = "1"
-    sprite2.name = "2"
-    sprite3.name = "3"
-    sprite4.name = "4"
-    */
-
-    /*sprite1.x = 0;
-    sprite1.y = 0;
-    sprite2.x = 215;
-    sprite2.y = 125;
-    sprite3.x = 430;
-    sprite3.y = 250;
-    sprite4.x = 645;
-    sprite4.y = 375;
-    sprite5.x = 250;
-    sprite5.y = -125;
-    sprite6.x = 250;
-    sprite6.y = -125;*/
-
-    let sprites: Array<Object>;
-    sprites = new Array();
-    sprites.push({});
-    sprites.push(sprite1);
-    sprites.push(sprite2);
-    sprites.push(sprite3);
-    sprites.push(sprite4);
-    sprites.push(sprite5);
-    sprites.push(sprite6);
-    sprites.push(sprite7);
-    sprites.push(sprite8);
-    sprites.push(sprite9);
-    sprites.push(sprite10);
-    sprites.push(sprite11);
-    sprites.push(sprite12);
-    sprites.push(sprite13);
-    sprites.push(sprite14);
-    sprites.push(sprite15);
-    sprites.push(sprite16);
-    sprites.push(sprite17);
-    sprites.push(sprite18);
-    sprites.push(sprite19);
-    sprites.push({});
-    sprites.push({});
-    sprites.push({});
-    sprites.push(sprite23);
-    sprites.push(sprite24);
-    sprites.push(sprite25);
-    sprites.push(sprite26);
-    sprites.push(sprite27);
-    sprites.push(sprite28);
-    sprites.push({});
-    sprites.push(sprite30);
-    sprites.push(sprite31);
-    sprites.push(sprite32);
-    sprites.push(sprite33);
-    sprites.push(sprite34);
-    sprites.push(sprite35);
-    sprites.push(sprite36);
-    sprites.push(sprite37);
-    sprites.push(sprite38);
-    sprites.push(sprite39);
-
-    let map = MapComponent.createContainer(MapComponent.jsonSections, sprites);
+    let map = MapComponent.createContainer(MapComponent.jsonSections);
     MapComponent.setPositions(map);
-
-    //map.x = 400;
-    //map.y = 400;
 
     map.localTransform.scale(0.5, 0.5);
 
