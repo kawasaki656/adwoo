@@ -294,14 +294,45 @@ export class MapComponent implements OnInit {
   }
 
   setup(): void {
-
     let map = MapComponent.createContainer(MapComponent.jsonSections);
+    map.interactive = true;
+    map
+      .on('mousedown', onDragStart)
+      .on('touchstart', onDragStart)
+      .on('mouseup', onDragEnd)
+      .on('mouseupoutside', onDragEnd)
+      .on('touchend', onDragEnd)
+      .on('touchendoutside', onDragEnd)
+      .on('mousemove', onDragMove)
+      .on('touchmove', onDragMove);
+
     MapComponent.setPositions(map);
 
-    map.localTransform.scale(0.5, 0.5);
-
-
     MapComponent.appPixi.stage.addChild(map);
+    MapComponent.appPixi.stage.interactive = true;
+
+    function onDragStart(event) {
+      this.data = event.data;
+      this.dragging = true;
+      const originalEvent = event.data.originalEvent;
+      this.differenceX = originalEvent.x - this.position.x;
+      this.differenceY = originalEvent.y - this.position.y;
+    }
+
+    function onDragEnd() {
+      this.dragging = false;
+      this.data = null;
+      this.differenceX = null;
+      this.differenceY = null;
+    }
+
+    function onDragMove(event) {
+      if (this.dragging) {
+        const originalEvent = event.data.originalEvent;
+        this.position.x = originalEvent.x - this.differenceX;
+        this.position.y = originalEvent.y - this.differenceY;
+      }
+    }
 
   }
 }
