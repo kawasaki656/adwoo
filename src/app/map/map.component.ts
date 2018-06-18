@@ -1,12 +1,13 @@
 import {Component, ElementRef, OnInit, HostListener} from '@angular/core';
-import { NavigationService } from "../map/navigation.service";
-import { ScreenService } from "../screen/screen.service";
-import { DialogService } from "ng2-bootstrap-modal";
-import { MyProperty } from "../my-property/myProperty";
-import { ObjectInformation } from "../objectInformation/objectInformation";
-import { HttpClient } from "@angular/common/http";
-import {isUndefined} from "util";
-import * as PIXI from "pixi.js";
+import {NavigationService} from '../map/navigation.service';
+import {ScreenService} from '../screen/screen.service';
+import {DialogService} from 'ng2-bootstrap-modal';
+import {MyProperty} from '../my-property/myProperty';
+import {ObjectInformation} from '../objectInformation/objectInformation';
+import {HttpClient} from '@angular/common/http';
+import {isUndefined} from 'util';
+import * as PIXI from 'pixi.js';
+import * as Viewport from 'pixi-viewport/dist/viewport.js';
 
 @Component({
   selector: 'app-map',
@@ -17,45 +18,50 @@ export class MapComponent implements OnInit {
   title = 'Adwoo';
   map: Array<Array<Object>>;
   headerHeight: Number;
-  navigation:any;
+  navigation: any;
   bodyDom: any;
   screen: any;
   screenDom: any;
-  heightModal:any;
-  widthModal:any;
-  lastHovered:any;
+  heightModal: any;
+  widthModal: any;
+  lastHovered: any;
   lastMouseMove: MouseEvent;
   lastTouchMove: TouchEvent;
   footerState: boolean;
-  cursorPosition:any;
-  myPropertyWidth:any;
-  myPropertyIndent:any;
-  openedPropertyState:boolean;
+  cursorPosition: any;
+  myPropertyWidth: any;
+  myPropertyIndent: any;
+  openedPropertyState: boolean;
   isAnimation: boolean;
   widthScreen: number;
   heightScreen: number;
   navigationTmp: any;
 
-  private static jsonSections : any;
+  private static jsonSections: any;
 
-  private static coordinatesOfSections:Array<Array<Object>>;
+  private static coordinatesOfSections: Array<Array<Object>>;
 
   private static appPixi;
 
   private static createSprite(number) {
     let sprite = new PIXI.Sprite(
-      PIXI.loader.resources["../assets/City_Objects/Block_"+ number + ".png"].texture
+      PIXI.loader.resources['../assets/City_Objects/Block_' + number + '.png'].texture
     );
 
     return sprite;
   }
 
-  private static createContainer(json) {
-    let container = new PIXI.Container();
+  private static createBaseLayer(json) {
+    let container = new Viewport({
+      screenWidth: window.innerWidth,
+      screenHeight: window.innerHeight,
+      worldWidth: window.innerWidth,
+      worldHeight: window.innerHeight
+    });
 
-    for(let line in json) {
+    for (let line in json) {
       for (let cell in json[line]) {
-        if(json[line][cell]["draw"]) {
+        if (json[line][cell]['draw']) {
           let sprite = MapComponent.createSprite(json[line][cell].name);
           container.addChild(sprite);
         }
@@ -67,13 +73,13 @@ export class MapComponent implements OnInit {
 
   private static setPositions(container) {
     let index = 0;
-    for(let line in MapComponent.coordinatesOfSections) {
-      for(let cell in MapComponent.coordinatesOfSections[line]) {
-          if (MapComponent.jsonSections[line][cell]["draw"]) {
-            container.children[index].x = MapComponent.coordinatesOfSections[line][cell]["left"];
-            container.children[index].y = MapComponent.coordinatesOfSections[line][cell]["top"];
-            index++;
-          }
+    for (let line in MapComponent.coordinatesOfSections) {
+      for (let cell in MapComponent.coordinatesOfSections[line]) {
+        if (MapComponent.jsonSections[line][cell]['draw']) {
+          container.children[index].x = MapComponent.coordinatesOfSections[line][cell]['left'];
+          container.children[index].y = MapComponent.coordinatesOfSections[line][cell]['top'];
+          index++;
+        }
       }
     }
   }
@@ -83,23 +89,24 @@ export class MapComponent implements OnInit {
     //container.addChildAt(sprites[index], 0);
   }
 
-  constructor(el: ElementRef, private dialogService:DialogService, private http: HttpClient, screen:ScreenService, navigation:NavigationService) {
+  constructor(el: ElementRef, private dialogService: DialogService, private http: HttpClient, screen: ScreenService, navigation: NavigationService) {
     this.navigation = navigation;
     this.footerState = false;
-    this.cursorPosition = {left:screen.screenWidth, top:screen.screenHeight};
+    this.cursorPosition = {left: screen.screenWidth, top: screen.screenHeight};
     this.openedPropertyState = false;
     this.isAnimation = true;
 
     this.myPropertyIndent = 0;
     this.myPropertyWidth = 0;
   }
+
   showMyProperty() {
-    if(this.openedPropertyState == false) {
+    if (this.openedPropertyState == false) {
       this.openedPropertyState = true;
       this.dialogService.addDialog(MyProperty, {
         height: this.heightModal,
         width: this.widthModal,
-        headerHeight: this.headerHeight+"px"
+        headerHeight: this.headerHeight + 'px'
       })
         .subscribe((isConfirmed) => {
           if (isConfirmed) {
@@ -110,9 +117,11 @@ export class MapComponent implements OnInit {
         });
     }
   }
+
   trackByIndex(index: number, obj: any): any {
     return index;
   }
+
   isInsideRect(x, y, z1, z2, z3, z4) {
     let x1 = Math.min(z1, z3);
     let x2 = Math.max(z1, z3);
@@ -127,7 +136,7 @@ export class MapComponent implements OnInit {
 
   @HostListener('mousemove', ['$event'])
   onMousemove(event: MouseEvent) {
-    if(!isUndefined(this.lastMouseMove) && this.navigation.mouseDown) {
+    if (!isUndefined(this.lastMouseMove) && this.navigation.mouseDown) {
       this.navigation.x += event.clientX - this.lastMouseMove.clientX;
       //console.log(event.clientX - this.lastMouseMove.clientX)
       this.navigation.y += event.clientY - this.lastMouseMove.clientY;
@@ -137,17 +146,18 @@ export class MapComponent implements OnInit {
 
   @HostListener('touchmove', ['$event'])
   onTouchMove(event: TouchEvent) {
-    if(!isUndefined(this.lastTouchMove)) {
-      this.navigation.x += event.changedTouches[0].pageX- this.lastTouchMove.touches[0].pageX;
+    if (!isUndefined(this.lastTouchMove)) {
+      this.navigation.x += event.changedTouches[0].pageX - this.lastTouchMove.touches[0].pageX;
       this.navigation.y += event.changedTouches[0].pageY - this.lastTouchMove.touches[0].pageY;
     }
     this.lastTouchMove = event;
   }
+
   @HostListener('mouseup')
   onMouseup() {
-    this.navigation.left+=this.navigation.x - this.navigationTmp.x;
-    this.navigation.top+=this.navigation.y - this.navigationTmp.y;
-    if(Math.abs(this.navigation.x - this.navigationTmp.x) > 10 && Math.abs(this.navigation.y - this.navigationTmp.y) > 10) {
+    this.navigation.left += this.navigation.x - this.navigationTmp.x;
+    this.navigation.top += this.navigation.y - this.navigationTmp.y;
+    if (Math.abs(this.navigation.x - this.navigationTmp.x) > 10 && Math.abs(this.navigation.y - this.navigationTmp.y) > 10) {
       this.isAnimation = false;
     }
     this.navigationTmp.x = this.navigation.x;
@@ -157,18 +167,19 @@ export class MapComponent implements OnInit {
       this.isAnimation = true;
     }, 2700);
   }
+
   @HostListener('mousedown', ['$event'])
   onMousedown(event) {
-    if(this.isAnimation) {
+    if (this.isAnimation) {
       this.navigation.mouseDown = true;
     }
   }
 
-  hideFooter():void {
+  hideFooter(): void {
     this.footerState = !this.footerState;
   }
 
-  selectSection(section):void {
+  selectSection(section): void {
     this.dialogService.addDialog(ObjectInformation, {
       height: this.heightModal,
       width: this.widthModal,
@@ -182,7 +193,7 @@ export class MapComponent implements OnInit {
       });
   }
 
-  moveMap(event):void {
+  moveMap(event): void {
     /*let cursorLeft = this.cursorPosition.left-2 * (event.direction === 'left' ? event.value : this.navigation.left);
     let cursorTop = this.cursorPosition.top-2 * (event.direction === 'top' ? event.value : this.navigation.top);*/
     this.isAnimation = false;
@@ -195,20 +206,20 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.myPropertyWidth = parseFloat(window.getComputedStyle(document.getElementById("my-property")).width);
-    let header1Width = parseFloat(window.getComputedStyle(document.getElementById("header1")).width);
-    let header2Width = parseFloat(window.getComputedStyle(document.getElementById("header2")).width);
-    let header3Width = parseFloat(window.getComputedStyle(document.getElementById("menu")).width);
+    this.myPropertyWidth = parseFloat(window.getComputedStyle(document.getElementById('my-property')).width);
+    let header1Width = parseFloat(window.getComputedStyle(document.getElementById('header1')).width);
+    let header2Width = parseFloat(window.getComputedStyle(document.getElementById('header2')).width);
+    let header3Width = parseFloat(window.getComputedStyle(document.getElementById('menu')).width);
     this.myPropertyIndent = header1Width + header2Width + header3Width;
     this.navigationTmp = Object.assign({}, this.navigation);
-    this.bodyDom = window.getComputedStyle(document.getElementsByTagName("body").item(0));
-    this.screen = document.getElementsByClassName("screen").item(0);
+    this.bodyDom = window.getComputedStyle(document.getElementsByTagName('body').item(0));
+    this.screen = document.getElementsByClassName('screen').item(0);
     this.screenDom = window.getComputedStyle(this.screen);
     this.widthScreen = parseInt(this.screenDom.width);
     this.heightScreen = parseInt(this.screenDom.height);
-    this.heightModal = parseFloat(this.bodyDom.height)*0.8 + 'px';
-    this.widthModal = parseFloat(this.bodyDom.height)*0.9 + 'px';
-    let headerDom = window.getComputedStyle(document.getElementsByClassName("header").item(0));
+    this.heightModal = parseFloat(this.bodyDom.height) * 0.8 + 'px';
+    this.widthModal = parseFloat(this.bodyDom.height) * 0.9 + 'px';
+    let headerDom = window.getComputedStyle(document.getElementsByClassName('header').item(0));
     this.headerHeight = parseFloat(headerDom.height);
     this.http.get('/assets/json/objects.json').subscribe(data => {
       MapComponent.jsonSections = data;
@@ -217,20 +228,20 @@ export class MapComponent implements OnInit {
       let startY = 0;
       let xIncrement = 0;
       let yIncrement = 0;
-      for(var line in MapComponent.jsonSections) {
+      for (var line in MapComponent.jsonSections) {
         MapComponent.coordinatesOfSections[line] = new Array<Object>();
-        for(var cell in MapComponent.jsonSections[line]) {
-          if(MapComponent.jsonSections[line][cell].draw) {
-            if(MapComponent.jsonSections[line][cell].width == 2 && MapComponent.jsonSections[line][cell].height == 5) {
+        for (var cell in MapComponent.jsonSections[line]) {
+          if (MapComponent.jsonSections[line][cell].draw) {
+            if (MapComponent.jsonSections[line][cell].width == 2 && MapComponent.jsonSections[line][cell].height == 5) {
               xIncrement = 193;
               yIncrement = 134;
-            } else if(MapComponent.jsonSections[line][cell].width == 2 && MapComponent.jsonSections[line][cell].height == 2) {
+            } else if (MapComponent.jsonSections[line][cell].width == 2 && MapComponent.jsonSections[line][cell].height == 2) {
               xIncrement = -77;
               yIncrement = -85;
-            } else if(MapComponent.jsonSections[line][cell].width == 2 && MapComponent.jsonSections[line][cell].height == 1) {
+            } else if (MapComponent.jsonSections[line][cell].width == 2 && MapComponent.jsonSections[line][cell].height == 1) {
               xIncrement = 138;
               yIncrement = -51;
-            } else if(MapComponent.jsonSections[line][cell].width == 1 && MapComponent.jsonSections[line][cell].height == 2) {
+            } else if (MapComponent.jsonSections[line][cell].width == 1 && MapComponent.jsonSections[line][cell].height == 2) {
               xIncrement = 130;
               yIncrement = -430;
             }
@@ -250,89 +261,71 @@ export class MapComponent implements OnInit {
 
   ngAfterViewInit(): void {
 
-    MapComponent.appPixi = new PIXI.Application({width:parseInt(this.bodyDom.width), height:parseInt(this.bodyDom.height), antialias: false, transparent: false, resolution: 1});
-    MapComponent.appPixi.renderer.backgroundColor = "413a43";
+    MapComponent.appPixi = new PIXI.Application({
+      width: parseInt(this.bodyDom.width),
+      height: parseInt(this.bodyDom.height),
+      antialias: false,
+      transparent: false,
+      resolution: 1,
+      autoResize: true
+    });
+    MapComponent.appPixi.renderer.backgroundColor = '413a43';
 
     this.screen.appendChild(MapComponent.appPixi.view);
     PIXI.loader
-      .add("../assets/City_Objects/Block_1.png")
-      .add("../assets/City_Objects/Block_2.png")
-      .add("../assets/City_Objects/Block_3.png")
-      .add("../assets/City_Objects/Block_4.png")
-      .add("../assets/City_Objects/Block_5.png")
-      .add("../assets/City_Objects/Block_6.png")
-      .add("../assets/City_Objects/Block_7.png")
-      .add("../assets/City_Objects/Block_8.png")
-      .add("../assets/City_Objects/Block_9.png")
-      .add("../assets/City_Objects/Block_10.png")
-      .add("../assets/City_Objects/Block_11.png")
-      .add("../assets/City_Objects/Block_12.png")
-      .add("../assets/City_Objects/Block_13.png")
-      .add("../assets/City_Objects/Block_14.png")
-      .add("../assets/City_Objects/Block_15.png")
-      .add("../assets/City_Objects/Block_16.png")
-      .add("../assets/City_Objects/Block_17.png")
-      .add("../assets/City_Objects/Block_18.png")
-      .add("../assets/City_Objects/Block_19.png")
-      .add("../assets/City_Objects/Block_23.png")
-      .add("../assets/City_Objects/Block_24.png")
-      .add("../assets/City_Objects/Block_25.png")
-      .add("../assets/City_Objects/Block_26.png")
-      .add("../assets/City_Objects/Block_27.png")
-      .add("../assets/City_Objects/Block_28.png")
-      .add("../assets/City_Objects/Block_30.png")
-      .add("../assets/City_Objects/Block_31.png")
-      .add("../assets/City_Objects/Block_32.png")
-      .add("../assets/City_Objects/Block_33.png")
-      .add("../assets/City_Objects/Block_34.png")
-      .add("../assets/City_Objects/Block_35.png")
-      .add("../assets/City_Objects/Block_36.png")
-      .add("../assets/City_Objects/Block_37.png")
-      .add("../assets/City_Objects/Block_38.png")
-      .add("../assets/City_Objects/Block_39.png")
+      .add('../assets/City_Objects/Block_1.png')
+      .add('../assets/City_Objects/Block_2.png')
+      .add('../assets/City_Objects/Block_3.png')
+      .add('../assets/City_Objects/Block_4.png')
+      .add('../assets/City_Objects/Block_5.png')
+      .add('../assets/City_Objects/Block_6.png')
+      .add('../assets/City_Objects/Block_7.png')
+      .add('../assets/City_Objects/Block_8.png')
+      .add('../assets/City_Objects/Block_9.png')
+      .add('../assets/City_Objects/Block_10.png')
+      .add('../assets/City_Objects/Block_11.png')
+      .add('../assets/City_Objects/Block_12.png')
+      .add('../assets/City_Objects/Block_13.png')
+      .add('../assets/City_Objects/Block_14.png')
+      .add('../assets/City_Objects/Block_15.png')
+      .add('../assets/City_Objects/Block_16.png')
+      .add('../assets/City_Objects/Block_17.png')
+      .add('../assets/City_Objects/Block_18.png')
+      .add('../assets/City_Objects/Block_19.png')
+      .add('../assets/City_Objects/Block_23.png')
+      .add('../assets/City_Objects/Block_24.png')
+      .add('../assets/City_Objects/Block_25.png')
+      .add('../assets/City_Objects/Block_26.png')
+      .add('../assets/City_Objects/Block_27.png')
+      .add('../assets/City_Objects/Block_28.png')
+      .add('../assets/City_Objects/Block_30.png')
+      .add('../assets/City_Objects/Block_31.png')
+      .add('../assets/City_Objects/Block_32.png')
+      .add('../assets/City_Objects/Block_33.png')
+      .add('../assets/City_Objects/Block_34.png')
+      .add('../assets/City_Objects/Block_35.png')
+      .add('../assets/City_Objects/Block_36.png')
+      .add('../assets/City_Objects/Block_37.png')
+      .add('../assets/City_Objects/Block_38.png')
+      .add('../assets/City_Objects/Block_39.png')
       .load(this.setup);
   }
 
   setup(): void {
-    let map = MapComponent.createContainer(MapComponent.jsonSections);
-    map.interactive = true;
-    map
-      .on('mousedown', onDragStart)
-      .on('touchstart', onDragStart)
-      .on('mouseup', onDragEnd)
-      .on('mouseupoutside', onDragEnd)
-      .on('touchend', onDragEnd)
-      .on('touchendoutside', onDragEnd)
-      .on('mousemove', onDragMove)
-      .on('touchmove', onDragMove);
+    let map = MapComponent.createBaseLayer(MapComponent.jsonSections);
 
     MapComponent.setPositions(map);
 
     MapComponent.appPixi.stage.addChild(map);
-    MapComponent.appPixi.stage.interactive = true;
 
-    function onDragStart(event) {
-      this.data = event.data;
-      this.dragging = true;
-      const originalEvent = event.data.originalEvent;
-      this.differenceX = originalEvent.x - this.position.x;
-      this.differenceY = originalEvent.y - this.position.y;
+    map
+      .drag()
+      .pinch()
+      .wheel()
+      .decelerate();
+
+    window.onresize = () => {
+      MapComponent.appPixi.renderer.resize(window.innerWidth, window.innerHeight)
     }
-
-    function onDragEnd() {
-      this.dragging = false;
-      this.data = null;
-      this.differenceX = null;
-      this.differenceY = null;
-    }
-
-    function onDragMove(event) {
-      if (this.dragging) {
-        const originalEvent = event.data.originalEvent;
-        this.position.x = originalEvent.x - this.differenceX;
-        this.position.y = originalEvent.y - this.differenceY;
-      }
-    }
-
   }
 }
