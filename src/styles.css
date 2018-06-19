@@ -17,6 +17,9 @@ label {
   margin: 0;
   cursor: pointer;
 }
+a {
+  color: white;
+}
 label.checkbox:before {
   content: '';
   display: block;

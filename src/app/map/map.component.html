@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="header container-fluid" >
+<div class="header container-fluid disable-text-select" >
   <div class="show" [style.border]="myPropertyWidth/2 + 'px solid transparent'" [style.border-top]="'10px solid #d86648'" [style.bottom]="myPropertyWidth/-2 - 15 + 'px'" [style.left]="myPropertyIndent + 'px'">
   </div>
   <img src="../assets/icons/array_down.png" style="position: absolute; width: 35px; bottom: -23px; cursor:pointer" [style.left]="myPropertyIndent + myPropertyWidth/2 -17.5 + 'px'">
@@ -68,7 +68,7 @@
 </div>
 
 
-<div class="footer container-fluid" [ngClass]="{'hided':!footerState}">
+<div class="footer container-fluid disable-text-select" [ngClass]="{'hided':!footerState}">
   <div id="hide" (click)="hideFooter()" *ngIf="footerState">HIDE</div>
   <div id="hide" (click)="hideFooter()" *ngIf="!footerState">SHOW</div>
   <div id="left"></div>
