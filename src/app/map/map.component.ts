@@ -84,6 +84,20 @@ export class MapComponent implements OnInit {
     }
   }
 
+  public static normalizePositions(container) {
+    let bounds = container.parent ? container.parent._bounds : {};
+
+    let offsetY = bounds.minY < 0 ? -bounds.minY : 0;
+    let offsetX = bounds.minX < 0 ? -bounds.minY : 0;
+
+    container.children.forEach(function (child) {
+      child.x += offsetX;
+      child.y += offsetY;
+    })
+
+    console.log(offsetY)
+  }
+
   private static defineLayers(container) {
     //Use layers
     //container.addChildAt(sprites[index], 0);
@@ -318,6 +332,9 @@ export class MapComponent implements OnInit {
 
     MapComponent.appPixi.stage.addChild(map);
 
+    map.worldHeight = map.parent.height;
+    map.worldWidth = map.parent.width;
+
     const wheelConfig = {
       percent: 0.03
     };
@@ -334,14 +351,18 @@ export class MapComponent implements OnInit {
       minWidth: 1600
     };
 
+    MapComponent.normalizePositions(map);
+
     map
       .drag()
       .wheel(wheelConfig)
       .decelerate()
-      .clampZoom(zoomConfig);
+      .clampZoom(zoomConfig)
+      .clamp()
+      .bounce();
 
     window.onresize = () => {
       MapComponent.appPixi.renderer.resize(window.innerWidth, window.innerHeight);
-    }
+    };
   }
 }
