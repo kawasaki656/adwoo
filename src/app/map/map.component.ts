@@ -281,6 +281,10 @@ export class MapComponent implements OnInit {
       minWidth: 3000
     };
 
+    const bounceConfig = {
+        time: 450
+    };
+
     MapComponent.normalizePositions(map);
 
     map
@@ -289,7 +293,7 @@ export class MapComponent implements OnInit {
       .decelerate()
       .clampZoom(zoomConfig)
       .clamp()
-      .bounce();
+      .bounce(bounceConfig);
 
     map.on('drag-start', () => {
       document.body.classList.add('disable-text-select');
