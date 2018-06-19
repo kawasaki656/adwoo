@@ -24,9 +24,6 @@ export class MapComponent implements OnInit {
   screenDom: any;
   heightModal: any;
   widthModal: any;
-  lastHovered: any;
-  lastMouseMove: MouseEvent;
-  lastTouchMove: TouchEvent;
   footerState: boolean;
   cursorPosition: any;
   myPropertyWidth: any;
@@ -132,67 +129,11 @@ export class MapComponent implements OnInit {
     }
   }
 
-  trackByIndex(index: number, obj: any): any {
-    return index;
-  }
-
-  isInsideRect(x, y, z1, z2, z3, z4) {
-    let x1 = Math.min(z1, z3);
-    let x2 = Math.max(z1, z3);
-    let y1 = Math.min(z2, z4);
-    let y2 = Math.max(z2, z4);
-    if ((x1 <= x) && (x <= x2) && (y1 <= y) && (y <= y2)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  @HostListener('mousemove', ['$event'])
-  onMousemove(event: MouseEvent) {
-    if (!isUndefined(this.lastMouseMove) && this.navigation.mouseDown) {
-      this.navigation.x += event.clientX - this.lastMouseMove.clientX;
-      //console.log(event.clientX - this.lastMouseMove.clientX)
-      this.navigation.y += event.clientY - this.lastMouseMove.clientY;
-    }
-    this.lastMouseMove = event;
-  }
-
-  @HostListener('touchmove', ['$event'])
-  onTouchMove(event: TouchEvent) {
-    if (!isUndefined(this.lastTouchMove)) {
-      this.navigation.x += event.changedTouches[0].pageX - this.lastTouchMove.touches[0].pageX;
-      this.navigation.y += event.changedTouches[0].pageY - this.lastTouchMove.touches[0].pageY;
-    }
-    this.lastTouchMove = event;
-  }
-
-  @HostListener('mouseup')
-  onMouseup() {
-    this.navigation.left += this.navigation.x - this.navigationTmp.x;
-    this.navigation.top += this.navigation.y - this.navigationTmp.y;
-    if (Math.abs(this.navigation.x - this.navigationTmp.x) > 10 && Math.abs(this.navigation.y - this.navigationTmp.y) > 10) {
-      this.isAnimation = false;
-    }
-    this.navigationTmp.x = this.navigation.x;
-    this.navigationTmp.y = this.navigation.y;
-    this.navigation.mouseDown = false;
-    setTimeout(() => {
-      this.isAnimation = true;
-    }, 2700);
-  }
-
-  @HostListener('mousedown', ['$event'])
-  onMousedown(event) {
-    if (this.isAnimation) {
-      this.navigation.mouseDown = true;
-    }
-  }
-
   hideFooter(): void {
     this.footerState = !this.footerState;
   }
 
+  //to rewrite for the web gl handler
   selectSection(section): void {
     this.dialogService.addDialog(ObjectInformation, {
       height: this.heightModal,
@@ -207,23 +148,12 @@ export class MapComponent implements OnInit {
       });
   }
 
-  moveMap(event): void {
-    /*let cursorLeft = this.cursorPosition.left-2 * (event.direction === 'left' ? event.value : this.navigation.left);
-    let cursorTop = this.cursorPosition.top-2 * (event.direction === 'top' ? event.value : this.navigation.top);*/
-    this.isAnimation = false;
-    /*setTimeout(() => {
-      this.deleteHidedSections(cursorLeft, cursorTop, this.widthScreen*2, this.heightScreen*2);
-    }, 10);*/
-    setTimeout(() => {
-      this.isAnimation = true;
-    }, 2500);
-  }
-
   ngOnInit(): void {
     this.myPropertyWidth = parseFloat(window.getComputedStyle(document.getElementById('my-property')).width);
     let header1Width = parseFloat(window.getComputedStyle(document.getElementById('header1')).width);
     let header2Width = parseFloat(window.getComputedStyle(document.getElementById('header2')).width);
     let header3Width = parseFloat(window.getComputedStyle(document.getElementById('menu')).width);
+
     this.myPropertyIndent = header1Width + header2Width + header3Width;
     this.navigationTmp = Object.assign({}, this.navigation);
     this.bodyDom = window.getComputedStyle(document.getElementsByTagName('body').item(0));
@@ -233,8 +163,10 @@ export class MapComponent implements OnInit {
     this.heightScreen = parseInt(this.screenDom.height);
     this.heightModal = parseFloat(this.bodyDom.height) * 0.8 + 'px';
     this.widthModal = parseFloat(this.bodyDom.height) * 0.9 + 'px';
+
     let headerDom = window.getComputedStyle(document.getElementsByClassName('header').item(0));
     this.headerHeight = parseFloat(headerDom.height);
+
     this.http.get('/assets/json/objects.json').subscribe(data => {
       MapComponent.jsonSections = data;
       MapComponent.coordinatesOfSections = new Array<Array<Object>>();
