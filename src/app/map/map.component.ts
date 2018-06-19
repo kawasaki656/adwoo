@@ -268,7 +268,7 @@ export class MapComponent implements OnInit {
     map.worldWidth = map.parent.width;
 
     const wheelConfig = {
-      percent: 0.03
+      percent: 0.1
     };
 
     const mapSize = {
@@ -277,10 +277,10 @@ export class MapComponent implements OnInit {
     };
 
     const zoomConfig = {
-      maxHeight: mapSize.height > 10000 ? 10000 : mapSize.height,
-      minHeight: 800,
-      maxWidth: mapSize.width > 10000 ? 10000 : mapSize.width,
-      minWidth: 1600
+      maxHeight: mapSize.height > 7000 ? 7000 : mapSize.height,
+      minHeight: 1500,
+      maxWidth: mapSize.width > 7000 ? 7000 : mapSize.width,
+      minWidth: 3000
     };
 
     MapComponent.normalizePositions(map);
