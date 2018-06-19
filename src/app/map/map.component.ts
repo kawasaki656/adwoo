@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, HostListener} from '@angular/core';
+import {Component, ElementRef, OnInit, HostListener, Renderer} from '@angular/core';
 import {NavigationService} from '../map/navigation.service';
 import {ScreenService} from '../screen/screen.service';
 import {DialogService} from 'ng2-bootstrap-modal';
@@ -51,8 +51,8 @@ export class MapComponent implements OnInit {
     return sprite;
   }
 
-  private static createBaseLayer(json) {
-    let container = new Viewport({
+  private static create(json) {
+    let baseLayer = new Viewport({
       screenWidth: window.innerWidth,
       screenHeight: window.innerHeight,
       worldWidth: window.innerWidth,
@@ -63,12 +63,12 @@ export class MapComponent implements OnInit {
       for (let cell in json[line]) {
         if (json[line][cell]['draw']) {
           let sprite = MapComponent.createSprite(json[line][cell].name);
-          container.addChild(sprite);
+          baseLayer.addChild(sprite);
         }
       }
     }
 
-    return container;
+    return baseLayer;
   }
 
   private static setPositions(container) {
@@ -312,20 +312,36 @@ export class MapComponent implements OnInit {
   }
 
   setup(): void {
-    let map = MapComponent.createBaseLayer(MapComponent.jsonSections);
+    let map = MapComponent.create(MapComponent.jsonSections);
 
     MapComponent.setPositions(map);
 
     MapComponent.appPixi.stage.addChild(map);
 
+    const wheelConfig = {
+      percent: 0.03
+    };
+
+    const mapSize = {
+      height: map.parent.height,
+      width: map.parent.width
+    };
+
+    const zoomConfig = {
+      maxHeight: mapSize.height > 10000 ? 10000 : mapSize.height,
+      minHeight: 800,
+      maxWidth: mapSize.width > 10000 ? 10000 : mapSize.width,
+      minWidth: 1600
+    };
+
     map
       .drag()
-      .pinch()
-      .wheel()
-      .decelerate();
+      .wheel(wheelConfig)
+      .decelerate()
+      .clampZoom(zoomConfig);
 
     window.onresize = () => {
-      MapComponent.appPixi.renderer.resize(window.innerWidth, window.innerHeight)
+      MapComponent.appPixi.renderer.resize(window.innerWidth, window.innerHeight);
     }
   }
 }
