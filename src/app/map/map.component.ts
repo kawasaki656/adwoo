@@ -303,6 +303,11 @@ export class MapComponent implements OnInit {
       document.body.classList.remove('disable-text-select');
     });
 
+    //TODO: to handle click on the section
+    map.on('clicked', (event) => {
+      console.log(event)
+    });
+
     window.onresize = () => {
       MapComponent.appPixi.renderer.resize(window.innerWidth, window.innerHeight);
     };
