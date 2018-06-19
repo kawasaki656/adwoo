@@ -52,3 +52,9 @@ button:active, button:focus {
   outline: none;
   border: none;
 }
+.disable-text-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

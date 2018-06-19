@@ -90,9 +90,7 @@ export class MapComponent implements OnInit {
     container.children.forEach(function (child) {
       child.x += offsetX;
       child.y += offsetY;
-    })
-
-    console.log(offsetY)
+    });
   }
 
   private static defineLayers(container) {
@@ -292,6 +290,14 @@ export class MapComponent implements OnInit {
       .clampZoom(zoomConfig)
       .clamp()
       .bounce();
+
+    map.on('drag-start', () => {
+      document.body.classList.add('disable-text-select');
+    });
+
+    map.on('drag-end', () => {
+      document.body.classList.remove('disable-text-select');
+    });
 
     window.onresize = () => {
       MapComponent.appPixi.renderer.resize(window.innerWidth, window.innerHeight);
