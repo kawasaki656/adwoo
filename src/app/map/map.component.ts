@@ -9,6 +9,9 @@ import {isUndefined} from 'util';
 import * as PIXI from 'pixi.js';
 import * as Viewport from 'pixi-viewport/dist/viewport.js';
 
+import MapElement from '../Classes/MapElement';
+import ContactInformation from '../Classes/ContactInformation';
+
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -41,9 +44,9 @@ export class MapComponent implements OnInit {
   private static appPixi;
 
   private static createSprite(number) {
-    let sprite = new PIXI.Sprite(
-      PIXI.loader.resources['../assets/City_Objects/Block_' + number + '.png'].texture
-    );
+    let info = new ContactInformation(number);
+
+    let sprite = new MapElement(info);
 
     return sprite;
   }
@@ -282,7 +285,7 @@ export class MapComponent implements OnInit {
     };
 
     const bounceConfig = {
-        time: 450
+      time: 450
     };
 
     MapComponent.normalizePositions(map);
@@ -305,7 +308,7 @@ export class MapComponent implements OnInit {
 
     //TODO: to handle click on the section
     map.on('clicked', (event) => {
-      console.log(event)
+      // console.log(event)
     });
 
     window.onresize = () => {
