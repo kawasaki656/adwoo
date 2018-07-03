@@ -43,8 +43,8 @@ export class MapComponent implements OnInit {
 
   private static appPixi;
 
-  private static createSprite(number) {
-    let info = new ContactInformation(number);
+  private static createSprite(number, isRoad) {
+    let info = new ContactInformation(number, isRoad);
 
     let sprite = new MapElement(info);
 
@@ -60,28 +60,50 @@ export class MapComponent implements OnInit {
     });
 
     for (let line in json) {
-      for (let cell in json[line]) {
-        if (json[line][cell]['draw']) {
-          let sprite = MapComponent.createSprite(json[line][cell].name);
+      for (let cell = json[line].length - 1; cell >= 0; cell--) {
+        if (json[line][cell]['draw'] && json[line][cell]['width'] === 1 && json[line][cell]['height'] === 1) {
+          let sprite = MapComponent.createSprite(json[line][cell].name, false);
           baseLayer.addChild(sprite);
         }
       }
     }
 
+    for (let line in json) {
+      for (let cell = json[line].length - 1; cell >= 0; cell--) {
+        if (json[line][cell]['draw'] && (json[line][cell]['width'] > 1 || json[line][cell]['height'] > 1)) {
+          let sprite = MapComponent.createSprite(json[line][cell].name, false);
+          baseLayer.addChild(sprite);
+        }
+      }
+    }
+
+    console.log(baseLayer);
     return baseLayer;
   }
 
   private static setPositions(container) {
     let index = 0;
+
     for (let line in MapComponent.coordinatesOfSections) {
-      for (let cell in MapComponent.coordinatesOfSections[line]) {
-        if (MapComponent.jsonSections[line][cell]['draw']) {
+      for (let cell = MapComponent.coordinatesOfSections[line].length - 1; cell >= 0; cell--) {
+        if (MapComponent.jsonSections[line][cell]['draw'] && MapComponent.jsonSections[line][cell]['width'] === 1 && MapComponent.jsonSections[line][cell]['height'] === 1) {
           container.children[index].x = MapComponent.coordinatesOfSections[line][cell]['left'];
           container.children[index].y = MapComponent.coordinatesOfSections[line][cell]['top'];
           index++;
         }
       }
     }
+
+    for (let line in MapComponent.coordinatesOfSections) {
+      for (let cell = MapComponent.coordinatesOfSections[line].length - 1; cell >= 0; cell--) {
+        if (MapComponent.jsonSections[line][cell]['draw'] && (MapComponent.jsonSections[line][cell]['width'] > 1 || MapComponent.jsonSections[line][cell]['height'] > 1)) {
+          container.children[index].x = MapComponent.coordinatesOfSections[line][cell]['left'];
+          container.children[index].y = MapComponent.coordinatesOfSections[line][cell]['top'];
+          index++;
+        }
+      }
+    }
+
   }
 
   public static normalizePositions(container) {
@@ -255,6 +277,11 @@ export class MapComponent implements OnInit {
       .add('../assets/City_Objects/Block_37.png')
       .add('../assets/City_Objects/Block_38.png')
       .add('../assets/City_Objects/Block_39.png')
+      .add('../assets/City_Objects/Block_Road_Horizontal.png')
+      .add('../assets/City_Objects/Block_Road_Horizontal_Long.png')
+      .add('../assets/City_Objects/Block_Road_Vertical_Long.png')
+      .add('../assets/City_Objects/Block_Road_Vertical_Very_Long.png')
+      .add('../assets/City_Objects/Block_Road_Vertical.png')
       .load(this.setup);
   }
 
