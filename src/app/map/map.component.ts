@@ -45,8 +45,20 @@ export class MapComponent implements OnInit {
 
   private static createSprite(number, isRoad) {
     let info = new ContactInformation(number, isRoad);
-
     let sprite = new MapElement(info);
+
+    return sprite;
+  }
+  private static createRoadSprite(item, isHorizontal) {
+    let info;
+    let sprite;
+    if(item.width === 1 && (item.height === 1 || item.height === 2) && isHorizontal) {
+      info = new ContactInformation("Horizontal", true);
+      sprite = new MapElement(info);
+    } else if(item.width === 2 && (item.height === 1 || item.height === 2 || item.height === 5) && isHorizontal) {
+      info = new ContactInformation("Horizontal_Long", true);
+      sprite = new MapElement(info);
+    }
 
     return sprite;
   }
@@ -77,7 +89,18 @@ export class MapComponent implements OnInit {
       }
     }
 
-    console.log(baseLayer);
+    //add roads
+    for (let line in json) {
+      for (let cell = json[line].length - 1; cell >= 0; cell--) {
+        if (json[line][cell]['draw']) {
+          let sprite = MapComponent.createRoadSprite(json[line][cell], true);
+          //console.log(sprite);
+          baseLayer.addChild(sprite);
+        }
+      }
+    }
+
+    //console.log(baseLayer);
     return baseLayer;
   }
 
@@ -103,6 +126,8 @@ export class MapComponent implements OnInit {
         }
       }
     }
+
+    index = 0;
 
   }
 
@@ -277,11 +302,11 @@ export class MapComponent implements OnInit {
       .add('../assets/City_Objects/Block_37.png')
       .add('../assets/City_Objects/Block_38.png')
       .add('../assets/City_Objects/Block_39.png')
-      .add('../assets/City_Objects/Block_Road_Horizontal.png')
-      .add('../assets/City_Objects/Block_Road_Horizontal_Long.png')
-      .add('../assets/City_Objects/Block_Road_Vertical_Long.png')
-      .add('../assets/City_Objects/Block_Road_Vertical_Very_Long.png')
-      .add('../assets/City_Objects/Block_Road_Vertical.png')
+      .add('../assets/City_Objects/Block_Horizontal.png')
+      .add('../assets/City_Objects/Block_Horizontal_Long.png')
+      .add('../assets/City_Objects/Block_Vertical_Long.png')
+      .add('../assets/City_Objects/Block_Vertical_Very_Long.png')
+      .add('../assets/City_Objects/Block_Vertical.png')
       .load(this.setup);
   }
 

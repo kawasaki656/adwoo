@@ -1,19 +1,17 @@
 class ContactInformation {
-  private _pictureNumber: number;
+  private _pictureNumber: String;
   private _isRoad: boolean;
 
-  constructor(pictureNumber: number, isRoad: boolean) {
+  constructor(pictureNumber: String, isRoad: boolean) {
     this._pictureNumber = pictureNumber;
     this._isRoad = isRoad;
   }
 
-  get pictureNumber(): number {
-    if(!this._isRoad) {
-      return this._pictureNumber;
-    }
+  get pictureNumber(): String {
+    return this._pictureNumber;
   }
 
-  set pictureNumber(value: number) {
+  set pictureNumber(value: String) {
     this._pictureNumber = value;
   }
 }

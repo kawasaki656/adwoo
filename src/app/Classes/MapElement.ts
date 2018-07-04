@@ -7,7 +7,6 @@ class MapElement extends Sprite {
 
   constructor(contactInformation: ContactInformation) {
     const picturePath = '../assets/City_Objects/Block_' + contactInformation.pictureNumber + '.png';
-
     super(loader.resources[picturePath].texture);
 
     this.interactive = true;
