@@ -1,10 +1,8 @@
 class ContactInformation {
   private _pictureNumber: String;
-  private _isRoad: boolean;
 
-  constructor(pictureNumber: String, isRoad: boolean) {
+  constructor(pictureNumber: String) {
     this._pictureNumber = pictureNumber;
-    this._isRoad = isRoad;
   }
 
   get pictureNumber(): String {
