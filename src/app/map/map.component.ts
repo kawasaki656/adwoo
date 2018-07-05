@@ -9,6 +9,9 @@ import {isUndefined} from 'util';
 import * as PIXI from 'pixi.js';
 import * as Viewport from 'pixi-viewport/dist/viewport.js';
 
+import MapElement from '../Classes/MapElement';
+import ContactInformation from '../Classes/ContactInformation';
+
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -37,13 +40,33 @@ export class MapComponent implements OnInit {
   private static jsonSections: any;
 
   private static coordinatesOfSections: Array<Array<Object>>;
+  private static coordinatesOfHorizontalRoad: Array<Array<Object>>;
+  private static coordinatesOfVerticalRoad: Array<Array<Object>>;
 
   private static appPixi;
 
-  private static createSprite(number) {
-    let sprite = new PIXI.Sprite(
-      PIXI.loader.resources['../assets/City_Objects/Block_' + number + '.png'].texture
-    );
+  private static createSprite(number, isRoad) {
+    let info = new ContactInformation(number);
+    let sprite = new MapElement(info);
+
+    return sprite;
+  }
+  private static createRoadSprite(item, isHorizontal) {
+    let info;
+    let sprite;
+    if(item.width === 1 && (item.height === 1 || item.height === 2) && isHorizontal) {
+      info = new ContactInformation("Horizontal");
+    } else if(item.width === 2 && (item.height === 1 || item.height === 2 || item.height === 5) && isHorizontal) {
+      info = new ContactInformation("Horizontal_Long");
+    } else if(item.height === 1 && !isHorizontal) {
+      info = new ContactInformation("Vertical");
+    } else if(item.height === 2 && !isHorizontal) {
+      info = new ContactInformation("Vertical_Long");
+    } else if(item.height === 5 && !isHorizontal) {
+      info = new ContactInformation("Vertical_Very_Long");
+    }
+
+    sprite = new MapElement(info);
 
     return sprite;
   }
@@ -56,10 +79,39 @@ export class MapComponent implements OnInit {
       worldHeight: window.innerHeight
     });
 
+    //add roads
     for (let line in json) {
       for (let cell in json[line]) {
         if (json[line][cell]['draw']) {
-          let sprite = MapComponent.createSprite(json[line][cell].name);
+          let horizontalSprite = MapComponent.createRoadSprite(json[line][cell], true);
+          baseLayer.addChild(horizontalSprite);
+        }
+      }
+    }
+
+    //add roads
+    for (let line in json) {
+      for (let cell in json[line]) {
+        if (json[line][cell]['draw']) {
+          let verticalSprite = MapComponent.createRoadSprite(json[line][cell], false);
+          baseLayer.addChild(verticalSprite);
+        }
+      }
+    }
+
+    for (let line in json) {
+      for (let cell = json[line].length - 1; cell >= 0; cell--) {
+        if (json[line][cell]['draw'] && json[line][cell]['width'] === 1 && json[line][cell]['height'] === 1) {
+          let sprite = MapComponent.createSprite(json[line][cell].name, false);
+          baseLayer.addChild(sprite);
+        }
+      }
+    }
+
+    for (let line in json) {
+      for (let cell = json[line].length - 1; cell >= 0; cell--) {
+        if (json[line][cell]['draw'] && (json[line][cell]['width'] > 1 || json[line][cell]['height'] > 1)) {
+          let sprite = MapComponent.createSprite(json[line][cell].name, false);
           baseLayer.addChild(sprite);
         }
       }
@@ -70,15 +122,50 @@ export class MapComponent implements OnInit {
 
   private static setPositions(container) {
     let index = 0;
-    for (let line in MapComponent.coordinatesOfSections) {
-      for (let cell in MapComponent.coordinatesOfSections[line]) {
+
+    console.log(MapComponent.coordinatesOfVerticalRoad);
+    console.log(MapComponent.coordinatesOfHorizontalRoad);
+
+    for (let line in MapComponent.coordinatesOfHorizontalRoad) {
+      for (let cell in MapComponent.coordinatesOfHorizontalRoad[line]) {
         if (MapComponent.jsonSections[line][cell]['draw']) {
+          container.children[index].x = MapComponent.coordinatesOfHorizontalRoad[line][cell]['left'];
+          container.children[index].y = MapComponent.coordinatesOfHorizontalRoad[line][cell]['top'];
+          index++;
+        }
+      }
+    }
+
+    for (let line in MapComponent.coordinatesOfVerticalRoad) {
+      for (let cell in MapComponent.coordinatesOfVerticalRoad[line]) {
+        if (MapComponent.jsonSections[line][cell]['draw']) {
+          container.children[index].x = MapComponent.coordinatesOfVerticalRoad[line][cell]['left'];
+          container.children[index].y = MapComponent.coordinatesOfVerticalRoad[line][cell]['top'];
+          index++;
+        }
+      }
+    }
+
+    for (let line in MapComponent.coordinatesOfSections) {
+      for (let cell = MapComponent.coordinatesOfSections[line].length - 1; cell >= 0; cell--) {
+        if (MapComponent.jsonSections[line][cell]['draw'] && MapComponent.jsonSections[line][cell]['width'] === 1 && MapComponent.jsonSections[line][cell]['height'] === 1) {
           container.children[index].x = MapComponent.coordinatesOfSections[line][cell]['left'];
           container.children[index].y = MapComponent.coordinatesOfSections[line][cell]['top'];
           index++;
         }
       }
     }
+
+    for (let line in MapComponent.coordinatesOfSections) {
+      for (let cell = MapComponent.coordinatesOfSections[line].length - 1; cell >= 0; cell--) {
+        if (MapComponent.jsonSections[line][cell]['draw'] && (MapComponent.jsonSections[line][cell]['width'] > 1 || MapComponent.jsonSections[line][cell]['height'] > 1)) {
+          container.children[index].x = MapComponent.coordinatesOfSections[line][cell]['left'];
+          container.children[index].y = MapComponent.coordinatesOfSections[line][cell]['top'];
+          index++;
+        }
+      }
+    }
+
   }
 
   public static normalizePositions(container) {
@@ -168,35 +255,73 @@ export class MapComponent implements OnInit {
     this.http.get('/assets/json/objects.json').subscribe(data => {
       MapComponent.jsonSections = data;
       MapComponent.coordinatesOfSections = new Array<Array<Object>>();
+      MapComponent.coordinatesOfHorizontalRoad = new Array<Array<Object>>();
+      MapComponent.coordinatesOfVerticalRoad = new Array<Array<Object>>();
       let startX = 0;
       let startY = 0;
       let xIncrement = 0;
       let yIncrement = 0;
+      let xHRoadIncrement = 0;
+      let yHRoadIncrement = 0;
+      let xVRoadIncrement = 0;
+      let yVRoadIncrement = 0;
       for (var line in MapComponent.jsonSections) {
         MapComponent.coordinatesOfSections[line] = new Array<Object>();
+        MapComponent.coordinatesOfHorizontalRoad[line] = new Array<Object>();
+        MapComponent.coordinatesOfVerticalRoad[line] = new Array<Object>();
         for (var cell in MapComponent.jsonSections[line]) {
           if (MapComponent.jsonSections[line][cell].draw) {
             if (MapComponent.jsonSections[line][cell].width == 2 && MapComponent.jsonSections[line][cell].height == 5) {
               xIncrement = 193;
               yIncrement = 134;
+              xHRoadIncrement = 1066;
+              yHRoadIncrement = 468;
+              xVRoadIncrement = 40;
+              yVRoadIncrement = 34;
             } else if (MapComponent.jsonSections[line][cell].width == 2 && MapComponent.jsonSections[line][cell].height == 2) {
               xIncrement = -77;
               yIncrement = -85;
+              xHRoadIncrement = 263;
+              yHRoadIncrement = 2;
+              xVRoadIncrement = 3;
+              yVRoadIncrement = 2;
             } else if (MapComponent.jsonSections[line][cell].width == 2 && MapComponent.jsonSections[line][cell].height == 1) {
               xIncrement = 138;
               yIncrement = -51;
+              xHRoadIncrement = -4;
+              yHRoadIncrement = -155;
+              xVRoadIncrement = 0;
+              yVRoadIncrement = 0;
             } else if (MapComponent.jsonSections[line][cell].width == 1 && MapComponent.jsonSections[line][cell].height == 2) {
               xIncrement = 130;
               yIncrement = -430;
+              xHRoadIncrement = 267;
+              yHRoadIncrement = 154;
+              xVRoadIncrement = 3;
+              yVRoadIncrement = 2;
             }
             MapComponent.coordinatesOfSections[line][cell] = {
               left: startX + parseInt(cell) * 267 + parseInt(line) * 268 + xIncrement,
               top: startY - parseInt(cell) * 155 + parseInt(line) * 155 + yIncrement
             };
+            MapComponent.coordinatesOfHorizontalRoad[line][cell] = {
+              left: 412 + parseInt(cell) * 267 + parseInt(line) * 268 + xHRoadIncrement,
+              top: 408 - parseInt(cell) * 155 + parseInt(line) * 155 + yHRoadIncrement
+            };
+            MapComponent.coordinatesOfVerticalRoad[line][cell] = {
+              left: 140 + parseInt(cell) * 267 + parseInt(line) * 268 + xVRoadIncrement,
+              top: 406 - parseInt(cell) * 155 + parseInt(line) * 155 + yVRoadIncrement
+            };
             xIncrement = 0;
             yIncrement = 0;
+            xHRoadIncrement = 0;
+            yHRoadIncrement = 0;
+            xVRoadIncrement = 0;
+            yVRoadIncrement = 0;
           } else {
             MapComponent.coordinatesOfSections[line][cell] = {};
+            MapComponent.coordinatesOfHorizontalRoad[line][cell] = {};
+            MapComponent.coordinatesOfVerticalRoad[line][cell] = {};
           }
         }
       }
@@ -252,6 +377,11 @@ export class MapComponent implements OnInit {
       .add('../assets/City_Objects/Block_37.png')
       .add('../assets/City_Objects/Block_38.png')
       .add('../assets/City_Objects/Block_39.png')
+      .add('../assets/City_Objects/Block_Horizontal.png')
+      .add('../assets/City_Objects/Block_Horizontal_Long.png')
+      .add('../assets/City_Objects/Block_Vertical_Long.png')
+      .add('../assets/City_Objects/Block_Vertical_Very_Long.png')
+      .add('../assets/City_Objects/Block_Vertical.png')
       .load(this.setup);
   }
 
@@ -282,7 +412,7 @@ export class MapComponent implements OnInit {
     };
 
     const bounceConfig = {
-        time: 450
+      time: 450
     };
 
     MapComponent.normalizePositions(map);
@@ -305,7 +435,7 @@ export class MapComponent implements OnInit {
 
     //TODO: to handle click on the section
     map.on('clicked', (event) => {
-      console.log(event)
+      // console.log(event)
     });
 
     window.onresize = () => {
