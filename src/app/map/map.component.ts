@@ -8,9 +8,11 @@ import {HttpClient} from '@angular/common/http';
 import {isUndefined} from 'util';
 import * as PIXI from 'pixi.js';
 import * as Viewport from 'pixi-viewport/dist/viewport.js';
+import { StartTips } from '../education/startTips/start.tips';
 
 import MapElement from '../Classes/MapElement';
 import ContactInformation from '../Classes/ContactInformation';
+import { SuccessTip } from '../education/successTip/success.tip';
 
 @Component({
   selector: 'app-map',
@@ -194,6 +196,14 @@ export class MapComponent implements OnInit {
 
     this.myPropertyIndent = 0;
     this.myPropertyWidth = 0;
+
+    this.dialogService.addDialog(StartTips)
+      .subscribe((e) => {
+        this.dialogService.addDialog(ObjectInformation)
+          .subscribe(() => {
+            this.dialogService.addDialog(SuccessTip)
+          })
+      })
   }
 
   showMyProperty() {
