@@ -418,6 +418,7 @@ export class MapComponent implements OnInit {
     MapComponent.normalizePositions(map);
 
     map
+      .moveCenter(mapSize.width / 2, mapSize.height / 2)
       .drag()
       .wheel(wheelConfig)
       .decelerate()
@@ -435,7 +436,7 @@ export class MapComponent implements OnInit {
 
     //TODO: to handle click on the section
     map.on('clicked', (event) => {
-      // console.log(event)
+
     });
 
     window.onresize = () => {

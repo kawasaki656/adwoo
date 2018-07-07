@@ -12,7 +12,6 @@ class MapElement extends Sprite {
     this.interactive = true;
 
     this.on('click', () => {
-      console.log(this)
     })
   }
 
