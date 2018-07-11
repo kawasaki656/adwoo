@@ -44,10 +44,12 @@
   height: 133px;
   width: 133px;
   display: inline-block;
-  border-radius: 50%;
-  background: var(--gradient-purpure-color);
   margin-bottom: 26px;
   line-height: 150px;
+}
+
+.modal-body .image img {
+  display: block;
 }
 
 .modal-body b {
