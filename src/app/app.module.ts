@@ -19,6 +19,7 @@ import { MapComponent } from './map/map.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { StartTips } from './education/startTips/start.tips';
 import { SuccessTip } from './education/successTip/success.tip';
+import { StartTipsManager } from './services/startTipsManager';
 
 const ROUTES:Routes = [
   {
@@ -56,7 +57,7 @@ const ROUTES:Routes = [
     RouterModule.forRoot(ROUTES)
   ],
   entryComponents: [ConfirmComponent, MyProperty, ObjectInformation,  StartTips, SuccessTip],
-  providers: [NavigationService, ScreenService],
+  providers: [NavigationService, ScreenService, StartTipsManager],
   bootstrap: [AppContent]
 })
 export class AppModule {}

@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule, Router } from '@angular/router';
-import { DialogService } from 'ng2-bootstrap-modal';
-import { StartTips } from '../education/startTips/start.tips';
-import { ObjectInformation } from '../objectInformation/objectInformation';
-import { SuccessTip } from '../education/successTip/success.tip';
+import { Router } from '@angular/router';
+import { StartTipsManager } from '../services/startTipsManager';
 
 @Component({
   selector: 'app-registration',
@@ -15,7 +12,7 @@ export class RegistrationComponent implements OnInit {
   checkAgreements: boolean;
   login: string;
   step: number;
-  constructor(private router: Router, private dialogService: DialogService) {
+  constructor(private router: Router, private startTipsManager: StartTipsManager) {
     this.step = 0;
     this.checkAgreements = false;
   }
@@ -37,16 +34,8 @@ export class RegistrationComponent implements OnInit {
   }
 
   facebookRegistration() {
-    // window.location.href = '';
-    this.router.navigateByUrl('').then(()=>{
-      this.dialogService.addDialog(StartTips)
-        .subscribe((e) => {
-          this.dialogService.addDialog(ObjectInformation)
-            .subscribe(() => {
-              this.dialogService.addDialog(SuccessTip)
-            })
-        })
-    });
+    this.router.navigateByUrl('');
+    this.startTipsManager.educationNeed(true);
   }
 
   ngOnInit() {
