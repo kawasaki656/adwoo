@@ -7,7 +7,7 @@ export interface ConfirmModel {
 
 @Component({
   selector: 'success-tip',
-  styleUrls: ['success.tip.css'],
+  styleUrls: ['./../startTips/start.tips.css'],
   templateUrl: 'success.tip.html'
 })
 

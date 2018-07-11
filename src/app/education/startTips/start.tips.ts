@@ -13,7 +13,7 @@ export interface ConfirmModel {
 
 export class StartTips extends DialogComponent<ConfirmModel, boolean> implements ConfirmModel {
   public tip: number;
-  public
+  
   constructor(dialogService: DialogService) {
     super(dialogService);
 
