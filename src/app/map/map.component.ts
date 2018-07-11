@@ -125,9 +125,6 @@ export class MapComponent implements OnInit {
   private static setPositions(container) {
     let index = 0;
 
-    console.log(MapComponent.coordinatesOfVerticalRoad);
-    console.log(MapComponent.coordinatesOfHorizontalRoad);
-
     for (let line in MapComponent.coordinatesOfHorizontalRoad) {
       for (let cell in MapComponent.coordinatesOfHorizontalRoad[line]) {
         if (MapComponent.jsonSections[line][cell]['draw']) {
@@ -196,14 +193,6 @@ export class MapComponent implements OnInit {
 
     this.myPropertyIndent = 0;
     this.myPropertyWidth = 0;
-
-    this.dialogService.addDialog(StartTips)
-      .subscribe((e) => {
-        this.dialogService.addDialog(ObjectInformation)
-          .subscribe(() => {
-            this.dialogService.addDialog(SuccessTip)
-          })
-      })
   }
 
   showMyProperty() {
