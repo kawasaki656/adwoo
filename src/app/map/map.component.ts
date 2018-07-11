@@ -342,6 +342,7 @@ export class MapComponent implements OnInit {
 
     this.screen.appendChild(MapComponent.appPixi.view);
     PIXI.loader
+      .reset()
       .add('../assets/City_Objects/Block_1.png')
       .add('../assets/City_Objects/Block_2.png')
       .add('../assets/City_Objects/Block_3.png')
