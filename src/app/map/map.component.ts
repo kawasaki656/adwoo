@@ -102,11 +102,24 @@ export class MapComponent implements OnInit {
       }
     }
 
+    //define orders
+    let onlySections = new Array<Array<Object>>();
     for (let line in json) {
+      onlySections[line] = new Array<Object>();
       for (let cell in json[line]) {
         if (json[line][cell]['draw']) {
           let sprite = MapComponent.createSprite(json[line][cell].name, false);
-          baseLayer.addChild(sprite);
+          onlySections[line][cell] = sprite;
+        }
+      }
+    }
+
+    //onlySections
+
+    for (let line in json) {
+      for (let cell in json[line]) {
+        if (json[line][cell]['draw']) {
+          baseLayer.addChild(onlySections[line][cell]);
         }
       }
     }
@@ -436,6 +449,8 @@ export class MapComponent implements OnInit {
 
   setup(): void {
     let map = MapComponent.create(MapComponent.jsonSections);
+
+    console.log(map);
 
     MapComponent.setPositions(map);
 
