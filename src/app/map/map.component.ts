@@ -212,7 +212,7 @@ export class MapComponent implements OnInit {
     //container.addChildAt(sprites[index], 0);
   }
 
-  constructor(el: ElementRef, private dialogService: DialogService, private http: HttpClient, screen: ScreenService, navigation: NavigationService) {
+  constructor(el: ElementRef, private dialogService: DialogService, private startTipsManager: StartTipsManager, private http: HttpClient, screen: ScreenService, navigation: NavigationService) {
     this.navigation = navigation;
     this.footerState = false;
     this.cursorPosition = {left: screen.screenWidth, top: screen.screenHeight};
