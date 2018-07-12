@@ -103,24 +103,13 @@ export class MapComponent implements OnInit {
     }
 
     for (let line in json) {
-      for (let cell = json[line].length - 1; cell >= 0; cell--) {
-        if (json[line][cell]['draw'] && json[line][cell]['width'] === 1 && json[line][cell]['height'] === 1) {
+      for (let cell in json[line]) {
+        if (json[line][cell]['draw']) {
           let sprite = MapComponent.createSprite(json[line][cell].name, false);
           baseLayer.addChild(sprite);
         }
       }
     }
-
-    for (let line in json) {
-      for (let cell = json[line].length - 1; cell >= 0; cell--) {
-        if (json[line][cell]['draw'] && (json[line][cell]['width'] > 1 || json[line][cell]['height'] > 1)) {
-          let sprite = MapComponent.createSprite(json[line][cell].name, false);
-          baseLayer.addChild(sprite);
-        }
-      }
-    }
-
-
 
     for (let line in json) {
       for (let cell = json[line].length - 1; cell >= 0; cell--) {
@@ -129,7 +118,7 @@ export class MapComponent implements OnInit {
           var graphics = new PIXI.Graphics();
           graphics.beginFill('0xEE82EE', 0);
           if(json[line][cell]['width'] === 1 && json[line][cell]['height'] === 1) {
-            var polyPts = [0, 0, 215, 125, 400, 20, 200, -110];
+            var polyPts = [0, 0, 215, 125, 430, 0, 215, -120];
           } else if(json[line][cell]['width'] === 1 && json[line][cell]['height'] === 2) {
             var polyPts = [0, 0, 490, 285, 700, 160, 200, -110];
           } else if(json[line][cell]['width'] === 2 && json[line][cell]['height'] === 1) {
@@ -181,19 +170,9 @@ export class MapComponent implements OnInit {
       }
     }
 
-    for (let line in MapComponent.coordinatesOfSections) {
-      for (let cell = MapComponent.coordinatesOfSections[line].length - 1; cell >= 0; cell--) {
-        if (MapComponent.jsonSections[line][cell]['draw'] && MapComponent.jsonSections[line][cell]['width'] === 1 && MapComponent.jsonSections[line][cell]['height'] === 1) {
-          container.children[index].x = MapComponent.coordinatesOfSections[line][cell]['left'];
-          container.children[index].y = MapComponent.coordinatesOfSections[line][cell]['top'];
-          index++;
-        }
-      }
-    }
-
-    for (let line in MapComponent.coordinatesOfSections) {
-      for (let cell = MapComponent.coordinatesOfSections[line].length - 1; cell >= 0; cell--) {
-        if (MapComponent.jsonSections[line][cell]['draw'] && (MapComponent.jsonSections[line][cell]['width'] > 1 || MapComponent.jsonSections[line][cell]['height'] > 1)) {
+    for (let line in MapComponent.jsonSections) {
+      for (let cell in MapComponent.jsonSections[line]) {
+        if (MapComponent.jsonSections[line][cell]['draw']) {
           container.children[index].x = MapComponent.coordinatesOfSections[line][cell]['left'];
           container.children[index].y = MapComponent.coordinatesOfSections[line][cell]['top'];
           index++;
@@ -269,6 +248,7 @@ export class MapComponent implements OnInit {
 
   //to rewrite for the web gl handler
   selectSection(section): void {
+    console.log(MapComponent.coordinatesOfHandlers)
     this.dialogService.addDialog(ObjectInformation, {
       height: this.heightModal,
       width: this.widthModal,
