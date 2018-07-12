@@ -42,6 +42,7 @@ export class MapComponent implements OnInit {
   private static coordinatesOfSections: Array<Array<Object>>;
   private static coordinatesOfHorizontalRoad: Array<Array<Object>>;
   private static coordinatesOfVerticalRoad: Array<Array<Object>>;
+  private static coordinatesOfHandlers: Array<Array<Object>>;
 
   private static appPixi;
 
@@ -119,18 +120,38 @@ export class MapComponent implements OnInit {
       }
     }
 
-    var graphics = new PIXI.Graphics();
-    graphics.beginFill('0xEE82EE', .5);
-    var polyPts = [0,0,215,125,400,20,200,-110];
-    graphics.drawPolygon(polyPts);
-    graphics.endFill();
-    graphics.interactive = true;
 
 
-    baseLayer.addChild(graphics);
-    graphics.on('click',()=>{
-      MapComponent.scope.selectSection();
-    });
+    for (let line in json) {
+      for (let cell = json[line].length - 1; cell >= 0; cell--) {
+        if (json[line][cell]['draw']) {
+          //let sprite = MapComponent.createSprite(json[line][cell].name, false);
+          var graphics = new PIXI.Graphics();
+          graphics.beginFill('0xEE82EE', 0);
+          if(json[line][cell]['width'] === 1 && json[line][cell]['height'] === 1) {
+            var polyPts = [0, 0, 215, 125, 400, 20, 200, -110];
+          } else if(json[line][cell]['width'] === 1 && json[line][cell]['height'] === 2) {
+            var polyPts = [0, 0, 490, 285, 700, 160, 200, -110];
+          } else if(json[line][cell]['width'] === 2 && json[line][cell]['height'] === 1) {
+            var polyPts = [0, 0, 215, 125, 690, -150, 470, -270];
+          } else if(json[line][cell]['width'] === 2 && json[line][cell]['height'] === 5) {
+            var polyPts = [0, 0, 1280, 740, 1760, 465, 480, -275];
+          } else if(json[line][cell]['width'] === 2 && json[line][cell]['height'] === 2) {
+            var polyPts = [0, 0, 490, 275, 960, 0, 490, -277];
+          }
+
+          graphics.drawPolygon(polyPts);
+          graphics.endFill();
+          graphics.interactive = true;
+
+          baseLayer.addChild(graphics);
+          graphics.on('click',()=>{
+            MapComponent.scope.selectSection(json[line][cell]);
+          });
+          baseLayer.addChild(graphics);
+        }
+      }
+    }
     return baseLayer;
   }
 
@@ -180,8 +201,18 @@ export class MapComponent implements OnInit {
       }
     }
 
-    container.children[index].x = 195;
-    container.children[index].y = 418;
+    for (let line in MapComponent.coordinatesOfHandlers) {
+      for (let cell = MapComponent.coordinatesOfHandlers[line].length - 1; cell >= 0; cell--) {
+        if (MapComponent.jsonSections[line][cell]['draw']) {
+          container.children[index].x = MapComponent.coordinatesOfHandlers[line][cell]['left'];
+          container.children[index].y = MapComponent.coordinatesOfHandlers[line][cell]['top'];
+          index++;
+        }
+      }
+    }
+
+    /*container.children[index].x = 195;
+    container.children[index].y = 418;*/
 
   }
 
@@ -275,6 +306,7 @@ export class MapComponent implements OnInit {
       MapComponent.coordinatesOfSections = new Array<Array<Object>>();
       MapComponent.coordinatesOfHorizontalRoad = new Array<Array<Object>>();
       MapComponent.coordinatesOfVerticalRoad = new Array<Array<Object>>();
+      MapComponent.coordinatesOfHandlers = new Array<Array<Object>>();
       let startX = 0;
       let startY = 0;
       let xIncrement = 0;
@@ -283,10 +315,13 @@ export class MapComponent implements OnInit {
       let yHRoadIncrement = 0;
       let xVRoadIncrement = 0;
       let yVRoadIncrement = 0;
+      let xHandlerIncrement = 0;
+      let yHandlerIncrement = 0;
       for (var line in MapComponent.jsonSections) {
         MapComponent.coordinatesOfSections[line] = new Array<Object>();
         MapComponent.coordinatesOfHorizontalRoad[line] = new Array<Object>();
         MapComponent.coordinatesOfVerticalRoad[line] = new Array<Object>();
+        MapComponent.coordinatesOfHandlers[line] = new Array<Object>();
         for (var cell in MapComponent.jsonSections[line]) {
           if (MapComponent.jsonSections[line][cell].draw) {
             if (MapComponent.jsonSections[line][cell].width == 2 && MapComponent.jsonSections[line][cell].height == 5) {
@@ -294,8 +329,10 @@ export class MapComponent implements OnInit {
               yIncrement = 134;
               xHRoadIncrement = 1066;
               yHRoadIncrement = 468;
-              xVRoadIncrement = 40;
-              yVRoadIncrement = 34;
+              xVRoadIncrement = -36;
+              yVRoadIncrement = -31;
+              xHandlerIncrement = 0;
+              yHandlerIncrement = 0;
             } else if (MapComponent.jsonSections[line][cell].width == 2 && MapComponent.jsonSections[line][cell].height == 2) {
               xIncrement = -77;
               yIncrement = -85;
@@ -303,6 +340,8 @@ export class MapComponent implements OnInit {
               yHRoadIncrement = 2;
               xVRoadIncrement = 3;
               yVRoadIncrement = 2;
+              xHandlerIncrement = 0;
+              yHandlerIncrement = 0;
             } else if (MapComponent.jsonSections[line][cell].width == 2 && MapComponent.jsonSections[line][cell].height == 1) {
               xIncrement = 138;
               yIncrement = -51;
@@ -310,6 +349,8 @@ export class MapComponent implements OnInit {
               yHRoadIncrement = -155;
               xVRoadIncrement = 0;
               yVRoadIncrement = 0;
+              xHandlerIncrement = 0;
+              yHandlerIncrement = 0;
             } else if (MapComponent.jsonSections[line][cell].width == 1 && MapComponent.jsonSections[line][cell].height == 2) {
               xIncrement = 130;
               yIncrement = -430;
@@ -317,6 +358,8 @@ export class MapComponent implements OnInit {
               yHRoadIncrement = 154;
               xVRoadIncrement = 3;
               yVRoadIncrement = 2;
+              xHandlerIncrement = -10;
+              yHandlerIncrement = -5;
             }
             MapComponent.coordinatesOfSections[line][cell] = {
               left: startX + parseInt(cell) * 267 + parseInt(line) * 268 + xIncrement,
@@ -330,16 +373,23 @@ export class MapComponent implements OnInit {
               left: 140 + parseInt(cell) * 267 + parseInt(line) * 268 + xVRoadIncrement,
               top: 406 - parseInt(cell) * 155 + parseInt(line) * 155 + yVRoadIncrement
             };
+            MapComponent.coordinatesOfHandlers[line][cell] = {
+              left: 197 + parseInt(cell) * 267 + parseInt(line) * 268 + xHandlerIncrement,
+              top: 418 - parseInt(cell) * 155 + parseInt(line) * 155 + yHandlerIncrement
+            };
             xIncrement = 0;
             yIncrement = 0;
             xHRoadIncrement = 0;
             yHRoadIncrement = 0;
             xVRoadIncrement = 0;
             yVRoadIncrement = 0;
+            xHandlerIncrement = 0;
+            yHandlerIncrement = 0;
           } else {
             MapComponent.coordinatesOfSections[line][cell] = {};
             MapComponent.coordinatesOfHorizontalRoad[line][cell] = {};
             MapComponent.coordinatesOfVerticalRoad[line][cell] = {};
+            MapComponent.coordinatesOfHandlers[line][cell] = {};
           }
         }
       }
