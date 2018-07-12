@@ -45,6 +45,8 @@ export class MapComponent implements OnInit {
 
   private static appPixi;
 
+  private static scope;
+
   private static createSprite(number, isRoad) {
     let info = new ContactInformation(number);
     let sprite = new MapElement(info);
@@ -122,10 +124,13 @@ export class MapComponent implements OnInit {
     var polyPts = [0,0,215,125,400,20,200,-110];
     graphics.drawPolygon(polyPts);
     graphics.endFill();
+    graphics.interactive = true;
 
-    graphics.on('click', ()=>{console.log('asd')})
+
     baseLayer.addChild(graphics);
-
+    graphics.on('click',()=>{
+      MapComponent.scope.selectSection();
+    });
     return baseLayer;
   }
 
@@ -206,6 +211,7 @@ export class MapComponent implements OnInit {
 
     this.myPropertyIndent = 0;
     this.myPropertyWidth = 0;
+    MapComponent.scope = this;
   }
 
   showMyProperty() {
@@ -231,8 +237,8 @@ export class MapComponent implements OnInit {
   }
 
   //to rewrite for the web gl handler
-  private static selectSection(section): void {
-    /*this.dialogService.addDialog(ObjectInformation, {
+  selectSection(section): void {
+    this.dialogService.addDialog(ObjectInformation, {
       height: this.heightModal,
       width: this.widthModal,
       name: section.name
@@ -242,8 +248,7 @@ export class MapComponent implements OnInit {
         }
         else {
         }
-      });*/
-    console.log("click");
+      });
   }
 
   ngOnInit(): void {
