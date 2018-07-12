@@ -117,6 +117,15 @@ export class MapComponent implements OnInit {
       }
     }
 
+    var graphics = new PIXI.Graphics();
+    graphics.beginFill('0xEE82EE', .5);
+    var polyPts = [0,0,215,125,400,20,200,-110];
+    graphics.drawPolygon(polyPts);
+    graphics.endFill();
+
+    graphics.on('click', ()=>{console.log('asd')})
+    baseLayer.addChild(graphics);
+
     return baseLayer;
   }
 
@@ -165,6 +174,9 @@ export class MapComponent implements OnInit {
         }
       }
     }
+
+    container.children[index].x = 195;
+    container.children[index].y = 418;
 
   }
 
@@ -219,8 +231,8 @@ export class MapComponent implements OnInit {
   }
 
   //to rewrite for the web gl handler
-  selectSection(section): void {
-    this.dialogService.addDialog(ObjectInformation, {
+  private static selectSection(section): void {
+    /*this.dialogService.addDialog(ObjectInformation, {
       height: this.heightModal,
       width: this.widthModal,
       name: section.name
@@ -230,7 +242,8 @@ export class MapComponent implements OnInit {
         }
         else {
         }
-      });
+      });*/
+    console.log("click");
   }
 
   ngOnInit(): void {
