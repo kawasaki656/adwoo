@@ -1,0 +1,147 @@
+.modal-dialog {
+  --button-height: 55px;
+}
+
+.modal-dialog {
+  width: auto;
+  height: auto;
+  margin-top: 100px !important;
+  display: inline-block;
+  font-family: sans-serif;
+  padding: 0;
+}
+
+.modal-dialog.first {
+  --window-height: 390px;
+  --window-width: 300px;
+
+  width: var(--window-width);
+  height: var(--window-height);
+  margin: calc(25% - var(--window-height) / 2) calc(50% - var(--window-width) / 2) !important;
+}
+
+.modal-dialog.second {
+  --window-height: 487px;
+  --window-width: 465px;
+
+  width: var(--window-width);
+  height: var(--window-height);
+  margin: calc(25% - var(--window-height) / 2) calc(50% - var(--window-width) / 2) !important;
+}
+
+.modal-dialog .modal-content {
+  height: 100%;
+}
+
+.modal-body {
+  text-align: center;
+  padding: 30px;
+  height: calc(100% - var(--button-height));
+  font-size: 14px;
+}
+
+.modal-body .image {
+  height: 133px;
+  width: 133px;
+  display: inline-block;
+  margin-bottom: 26px;
+  line-height: 150px;
+}
+
+.modal-body .image img {
+  display: block;
+}
+
+.modal-body b {
+  font-size: 15px;
+  margin-bottom: 7px;
+  display: inline-block;
+}
+
+.modal-body .tip-text {
+  width: 100%;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.modal-body .tip-text span {
+  width: 235px;
+  display: inline-block;
+}
+
+.modal-body .reward {
+  --reward-height: 27px;
+
+  background: var(--gradient-purpure-color);
+  border-radius: calc(var(--reward-height) / 2);
+  margin-top: 15px;
+  width: 100px;
+  height: var(--reward-height);
+  display: inline-block;
+  text-transform: uppercase;
+  color: white;
+  line-height: var(--reward-height);
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.modal-footer {
+  padding: 0;
+}
+
+.modal-footer button {
+  width: 100%;
+  border-radius: 0 0 4px 4px;
+  background: var(--gradient-purpure-color);
+  color: white;
+  font-weight: bold;
+  height: var(--button-height);
+}
+
+input[type="text"], input[type="password"] {
+  height: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 1px solid rgb(234, 234, 234);
+  border-radius: 3px;
+}
+
+form {
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  margin-top: 23px;
+}
+
+form input {
+  height: 34px;
+  width: 100%;
+  font-size: 13px;
+}
+
+.modal-body form .form-row {
+  white-space: nowrap;
+  margin: 0;
+  display: flex;
+}
+
+.modal-body form .form-row:first-child {
+  margin-bottom: 15px;
+}
+
+.modal-body form .form-row .col {
+  display: inline-block;
+  width: 50%;
+}
+
+.modal-body form .form-row .col:first-child {
+  margin-right: 15px;
+}
+
+.modal-body form b {
+  display: block;
+  margin-bottom: 5px;
+  color: #655f68;
+  text-align: left;
+  font-size: 13px;
+}
+

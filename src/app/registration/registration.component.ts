@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { StartTipsManager } from '../services/startTipsManager';
 
 @Component({
   selector: 'app-registration',
@@ -10,7 +12,7 @@ export class RegistrationComponent implements OnInit {
   checkAgreements: boolean;
   login: string;
   step: number;
-  constructor() {
+  constructor(private router: Router, private startTipsManager: StartTipsManager) {
     this.step = 0;
     this.checkAgreements = false;
   }
@@ -29,6 +31,11 @@ export class RegistrationComponent implements OnInit {
       }
     }
     console.log(this.step)
+  }
+
+  facebookRegistration() {
+    this.router.navigateByUrl('');
+    this.startTipsManager.educationNeed(true);
   }
 
   ngOnInit() {

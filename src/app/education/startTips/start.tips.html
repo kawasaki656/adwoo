@@ -1,0 +1,74 @@
+<div class="modal-dialog" [ngClass]="{'first': tip === 1, 'second': tip === 2}">
+  <div class="modal-content">
+    <div class="modal-body">
+      <ng-container ngSwitch="{{ tip }}">
+        <ng-container *ngSwitchCase="1">
+          <ng-container *ngTemplateOutlet="tip_1"></ng-container>
+        </ng-container>
+        <ng-container *ngSwitchCase="2">
+          <ng-container *ngTemplateOutlet="tip_2"></ng-container>
+        </ng-container>
+      </ng-container>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn" (click)="next()">
+        <i class="fa fa-arrow-right"></i>
+        Next step
+      </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #tip_1>
+  <div class="image">
+    <img src="../../../assets/tips/tip_1.png">
+  </div>
+  <br>
+  <b>Congratulations!</b>
+  <div class="tip-text first-tip">
+    Thank for registering and welcome to the city!
+    Get us your first 200 points as a gift.
+  </div>
+
+  <span class="reward">
+    <i class="fa fa-bitcoin"></i>
+    +200 cp
+  </span>
+</ng-template>
+
+<ng-template #tip_2>
+  <div class="image">
+    <img src="../../../assets/tips/tip_2.png">
+  </div>
+  <br>
+  <b>Almost there!</b>
+  <div class="tip-text">
+    <span>
+      Tell us a little more about yourself and get the next 200 points.
+    </span>
+  </div>
+  <form>
+    <div class="form-row">
+      <div class="col">
+        <b>First name:</b>
+        <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
+      </div>
+
+      <div class="col">
+        <b>Gender:</b>
+        <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="Gender">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col">
+        <b>Last name:</b>
+        <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="Last name">
+      </div>
+
+      <div class="col">
+        <b>Birthday:</b>
+        <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="Birthday">
+      </div>
+    </div>
+  </form>
+</ng-template>

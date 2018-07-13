@@ -10,7 +10,7 @@
       <input ngModel name="login" #login="ngModel" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="text" class="input" placeholder="Email or Phone">
       <input ngModel name="password" #password="ngModel" required minlength="6" [hidden]="login.invalid" type="password" class="input" placeholder="Password" style="margin-top: 15px">
       <p [hidden]="login.valid" style="margin-top: 10px; margin-bottom: 10px">or</p>
-      <div [hidden]="login.valid" class="input" id="facebook" style="margin-left: 10px">
+      <div [hidden]="login.valid" class="input" id="facebook" style="margin-left: 10px" (click)="facebookRegistration()">
         Sign in with Facebook
       </div>
       <p [hidden]="login.valid" style="margin-top: 10px; font-size: 12px; color: rgb(130, 130, 130); font-weight: bold">show all</p>

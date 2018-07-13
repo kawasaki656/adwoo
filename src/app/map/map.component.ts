@@ -8,9 +8,12 @@ import {HttpClient} from '@angular/common/http';
 import {isUndefined} from 'util';
 import * as PIXI from 'pixi.js';
 import * as Viewport from 'pixi-viewport/dist/viewport.js';
+import { StartTips } from '../education/startTips/start.tips';
 
 import MapElement from '../Classes/MapElement';
 import ContactInformation from '../Classes/ContactInformation';
+import { SuccessTip } from '../education/successTip/success.tip';
+import { StartTipsManager } from '../services/startTipsManager';
 
 @Component({
   selector: 'app-map',
@@ -160,9 +163,6 @@ export class MapComponent implements OnInit {
   private static setPositions(container) {
     let index = 0;
 
-    console.log(MapComponent.coordinatesOfVerticalRoad);
-    console.log(MapComponent.coordinatesOfHorizontalRoad);
-
     for (let line in MapComponent.coordinatesOfHorizontalRoad) {
       for (let cell in MapComponent.coordinatesOfHorizontalRoad[line]) {
         if (MapComponent.jsonSections[line][cell]['draw']) {
@@ -225,7 +225,7 @@ export class MapComponent implements OnInit {
     //container.addChildAt(sprites[index], 0);
   }
 
-  constructor(el: ElementRef, private dialogService: DialogService, private http: HttpClient, screen: ScreenService, navigation: NavigationService) {
+  constructor(el: ElementRef, private dialogService: DialogService, private startTipsManager: StartTipsManager, private http: HttpClient, screen: ScreenService, navigation: NavigationService) {
     this.navigation = navigation;
     this.footerState = false;
     this.cursorPosition = {left: screen.screenWidth, top: screen.screenHeight};
@@ -235,6 +235,19 @@ export class MapComponent implements OnInit {
     this.myPropertyIndent = 0;
     this.myPropertyWidth = 0;
     MapComponent.scope = this;
+
+    if (this.startTipsManager.isEducationNeeded()) {
+      this.dialogService.addDialog(StartTips)
+        .subscribe((e) => {
+          this.dialogService.addDialog(ObjectInformation)
+            .subscribe(() => {
+              this.dialogService.addDialog(SuccessTip)
+                .subscribe(() => {
+                  this.startTipsManager.complite();
+                })
+            })
+        })
+    }
   }
 
   showMyProperty() {

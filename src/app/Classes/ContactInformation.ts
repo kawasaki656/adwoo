@@ -1,15 +1,15 @@
 class ContactInformation {
-  private _pictureNumber: String;
+  private _pictureNumber: string;
 
-  constructor(pictureNumber: String) {
+  constructor(pictureNumber: string) {
     this._pictureNumber = pictureNumber;
   }
 
-  get pictureNumber(): String {
+  get pictureNumber(): string {
     return this._pictureNumber;
   }
 
-  set pictureNumber(value: String) {
+  set pictureNumber(value: string) {
     this._pictureNumber = value;
   }
 }

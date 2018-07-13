@@ -17,6 +17,9 @@ import { ObjectInformation } from "./objectInformation/objectInformation";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MapComponent } from './map/map.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { StartTips } from './education/startTips/start.tips';
+import { SuccessTip } from './education/successTip/success.tip';
+import { StartTipsManager } from './services/startTipsManager';
 
 const ROUTES:Routes = [
   {
@@ -41,7 +44,9 @@ const ROUTES:Routes = [
     NavigationComponent,
     DashboardComponent,
     MapComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    StartTips,
+    SuccessTip
   ],
   imports: [
     CommonModule,
@@ -51,8 +56,8 @@ const ROUTES:Routes = [
     FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  entryComponents: [ConfirmComponent, MyProperty, ObjectInformation],
-  providers: [NavigationService, ScreenService],
+  entryComponents: [ConfirmComponent, MyProperty, ObjectInformation,  StartTips, SuccessTip],
+  providers: [NavigationService, ScreenService, StartTipsManager],
   bootstrap: [AppContent]
 })
 export class AppModule {}
