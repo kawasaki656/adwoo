@@ -13,7 +13,8 @@ import { StartTips } from '../education/startTips/start.tips';
 import MapElement from '../Classes/MapElement';
 import ContactInformation from '../Classes/ContactInformation';
 import { SuccessTip } from '../education/successTip/success.tip';
-import { StartTipsManager } from '../services/startTipsManager';
+import { StartTutorialManager } from '../services/startTutorialManager';
+import { PopUpTip } from '../education/popUpTip';
 
 @Component({
   selector: 'app-map',
@@ -132,7 +133,7 @@ export class MapComponent implements OnInit {
         if (json[line][cell]['draw']) {
           //let sprite = MapComponent.createSprite(json[line][cell].name, false);
           var graphics = new PIXI.Graphics();
-          graphics.beginFill('0xEE82EE', 0);
+          graphics.beginFill('0xEE82EE', 10);
           if(json[line][cell]['width'] === 1 && json[line][cell]['height'] === 1) {
             var polyPts = [0, 0, 215, 125, 430, 0, 215, -120];
           } else if(json[line][cell]['width'] === 1 && json[line][cell]['height'] === 2) {
@@ -148,10 +149,10 @@ export class MapComponent implements OnInit {
           graphics.drawPolygon(polyPts);
           graphics.endFill();
           graphics.interactive = true;
-
           baseLayer.addChild(graphics);
-          graphics.on('click',()=>{
+          graphics.on('click', (e)=>{
             MapComponent.scope.selectSection(json[line][cell]);
+            console.log(graphics);
           });
           baseLayer.addChild(graphics);
         }
@@ -225,7 +226,7 @@ export class MapComponent implements OnInit {
     //container.addChildAt(sprites[index], 0);
   }
 
-  constructor(el: ElementRef, private dialogService: DialogService, private startTipsManager: StartTipsManager, private http: HttpClient, screen: ScreenService, navigation: NavigationService) {
+  constructor(el: ElementRef, private dialogService: DialogService, private startTipsManager: StartTutorialManager, private http: HttpClient, screen: ScreenService, navigation: NavigationService) {
     this.navigation = navigation;
     this.footerState = false;
     this.cursorPosition = {left: screen.screenWidth, top: screen.screenHeight};
@@ -248,6 +249,8 @@ export class MapComponent implements OnInit {
             })
         })
     }
+
+
   }
 
   showMyProperty() {
@@ -274,7 +277,6 @@ export class MapComponent implements OnInit {
 
   //to rewrite for the web gl handler
   selectSection(section): void {
-    console.log(MapComponent.coordinatesOfHandlers)
     this.dialogService.addDialog(ObjectInformation, {
       height: this.heightModal,
       width: this.widthModal,
@@ -492,10 +494,15 @@ export class MapComponent implements OnInit {
       time: 450
     };
 
+    let tip  = new PopUpTip();
+
+    map.addChild(tip.container);
+
     MapComponent.normalizePositions(map);
 
     map
-      .moveCenter(mapSize.width / 2, mapSize.height / 2)
+      // .moveCenter(mapSize.width / 2, mapSize.height / 2)
+      .moveCenter(0, mapSize.height / 4)
       .drag()
       .wheel(wheelConfig)
       .decelerate()

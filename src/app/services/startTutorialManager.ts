@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class StartTipsManager {
+export class StartTutorialManager {
   private tipsComplete: boolean;
   private education: boolean;
 
-  constructor() {
-    console.log(this)
-  }
+  constructor() {}
 
   educationNeed(need: boolean): void {
     this.education = need;

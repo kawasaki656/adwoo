@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StartTipsManager } from '../services/startTipsManager';
+import { StartTutorialManager } from '../services/startTutorialManager';
 
 @Component({
   selector: 'app-registration',
@@ -12,7 +12,7 @@ export class RegistrationComponent implements OnInit {
   checkAgreements: boolean;
   login: string;
   step: number;
-  constructor(private router: Router, private startTipsManager: StartTipsManager) {
+  constructor(private router: Router, private startTipsManager: StartTutorialManager) {
     this.step = 0;
     this.checkAgreements = false;
   }
