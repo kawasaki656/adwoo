@@ -15,6 +15,7 @@ import ContactInformation from '../Classes/ContactInformation';
 import { SuccessTip } from '../education/successTip/success.tip';
 import { StartTutorialManager } from '../services/startTutorialManager';
 import { PopUpTip } from '../education/popUpTip';
+import { Self } from '../education/self';
 
 @Component({
   selector: 'app-map',
@@ -499,7 +500,7 @@ export class MapComponent implements OnInit {
     tip.revers();
 
     map.addChild(tip.container);
-
+    map.addChild(new Self());
 
     MapComponent.normalizePositions(map);
 
