@@ -50,5 +50,8 @@ export class PopUpTip {
   }
 
   revers() {
+    this.background.setTransform(300);
+    this.clickableArea.texture = new PIXI.Texture.fromImage('../../assets/tips/pop_up_tip_reversed.png');
+    this.clickableArea.x = 480;
   }
 }
