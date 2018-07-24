@@ -59,6 +59,38 @@ export class MapComponent implements OnInit {
 
     return sprite;
   }
+
+  private static sortByY(array) {
+    let lineSections = new Array<MapElement>();
+    let index = 0;
+    let finishArray;
+
+    for (let line in array) {
+      for (let cell in array[line]) {
+        lineSections[index] = array[line][cell];
+        lineSections[index].x = MapComponent.coordinatesOfSections[line][cell]['left'];
+        lineSections[index].y = MapComponent.coordinatesOfSections[line][cell]['top'];
+        index++;
+      }
+    }
+
+    lineSections.sort((a, b) => {
+      return a.y - b.y;
+    });
+
+    index = 0;
+
+    finishArray = new Array<Array<Object>>();
+    for (let line in array) {
+      finishArray[line] = new Array<Object>();
+      for (let cell in array[line]) {
+        finishArray[line][cell] = lineSections[index];
+        index++;
+      }
+    }
+
+    return finishArray;
+  }
   private static createRoadSprite(item, isHorizontal) {
     let info;
     let sprite;
@@ -119,6 +151,7 @@ export class MapComponent implements OnInit {
       }
     }
 
+    //onlySections = MapComponent.sortByY(onlySections);
     //onlySections
 
     for (let line in json) {
@@ -134,7 +167,7 @@ export class MapComponent implements OnInit {
         if (json[line][cell]['draw']) {
           //let sprite = MapComponent.createSprite(json[line][cell].name, false);
           var graphics = new PIXI.Graphics();
-          graphics.beginFill('0xEE82EE', 10);
+          graphics.beginFill('0xEE82EE', 0);
           if(json[line][cell]['width'] === 1 && json[line][cell]['height'] === 1) {
             var polyPts = [0, 0, 215, 125, 430, 0, 215, -120];
           } else if(json[line][cell]['width'] === 1 && json[line][cell]['height'] === 2) {
@@ -184,6 +217,9 @@ export class MapComponent implements OnInit {
         }
       }
     }
+
+    //MapComponent.jsonSections = MapComponent.sortByY(MapComponent.jsonSections);
+    //MapComponent.coordinatesOfSections = MapComponent.sortByY(MapComponent.coordinatesOfSections);
 
     for (let line in MapComponent.jsonSections) {
       for (let cell in MapComponent.jsonSections[line]) {

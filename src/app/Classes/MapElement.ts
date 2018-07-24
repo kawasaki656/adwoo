@@ -4,6 +4,8 @@ import ContactInformation from './ContactInformation';
 class MapElement extends Sprite {
   public interactive: boolean;
   public on: any;
+  public x: number;
+  public y: number;
 
   constructor(contactInformation: ContactInformation) {
     const picturePath = '../assets/City_Objects/Block_' + contactInformation.pictureNumber + '.png';
@@ -18,6 +20,8 @@ class MapElement extends Sprite {
   public onClick(event): void {
     this.on('click', event);
   }
+
+
 }
 
 export default MapElement;

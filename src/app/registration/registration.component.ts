@@ -12,7 +12,7 @@ export class RegistrationComponent implements OnInit {
   checkAgreements: boolean;
   login: string;
   step: number;
-  constructor(private router: Router, private startTipsManager: StartTutorialManager) {
+  constructor(private router: Router, private startTutorialManager: StartTutorialManager) {
     this.step = 0;
     this.checkAgreements = false;
   }
@@ -30,12 +30,11 @@ export class RegistrationComponent implements OnInit {
         case 'password': this.step = 1; break;
       }
     }
-    console.log(this.step)
   }
 
   facebookRegistration() {
     this.router.navigateByUrl('');
-    this.startTipsManager.educationNeed(true);
+    this.startTutorialManager.educationNeed(true);
   }
 
   ngOnInit() {
