@@ -2,7 +2,6 @@
 <div class="header container-fluid disable-text-select" >
   <div class="show" [style.border]="myPropertyWidth/2 + 'px solid transparent'" [style.border-top]="'10px solid #d86648'" [style.bottom]="myPropertyWidth/-2 - 15 + 'px'" [style.left]="myPropertyIndent + 'px'">
   </div>
-  <img src="../assets/icons/array_down.png" style="position: absolute; width: 35px; bottom: -23px; cursor:pointer" [style.left]="myPropertyIndent + myPropertyWidth/2 -17.5 + 'px'">
 
   <div class="empty1" id="header1">
   </div>
@@ -11,58 +10,54 @@
     <a href="/"><span>AdWoo</span></a>
   </div>
   <div id="menu" >
-    <div class="item selected" [style.width]="headerHeight + 'px'">
+    <div class="item selected">
       <div class="wrap">
         <img src="../assets/icons/earth.png">
       </div>
     </div>
-    <div class="item" [style.width]="headerHeight + 'px'">
-      <div class="wrap">
-        <img src="../assets/icons/kopie.png">
-      </div>
-    </div>
-    <div class="item" [style.width]="headerHeight + 'px'">
-      <div class="wrap">
-        <img src="../assets/icons/traveler.png">
-      </div>
-    </div>
   </div>
-  <div id="my-property" (click)="showMyProperty()">
-    <div class="icon">
-      <img src="../assets/icons/my-property.png">
-    </div>
-    <div class="text">
-      <span>my property</span>
+  <div id="purpose">
+    <div class="wrapper">
+      <div class="line">
+        <div class="icon"></div>
+        <div class="information">
+          First 1.000.000 Citizens
+        </div>
+        <div class="count">
+          12.050/2%
+        </div>
+        <div class="progress">
+          <div class="count" [style.width]="'2%'">
+
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div id="account">
     <div class="empty"></div>
-    <div class="item" [style.width]="headerHeight + 'px'">
+    <div class="item">
       <div class="wrap">
         <img src="../assets/icons/home-symbol.png">
       </div>
     </div>
-    <div class="item" [style.width]="headerHeight + 'px'">
-      <div class="wrap">
-        <img src="../assets/icons/speech.png">
-      </div>
-    </div>
-    <div class="item" [style.width]="headerHeight + 'px'">
+    <div class="item">
       <div class="wrap">
         <img src="../assets/icons/ring.png">
       </div>
     </div>
-    <div class="item user" [style.width]="headerHeight*1.5 + 'px'">
+    <div class="item user">
       <div class="wrap">
         <img src="../assets/icons/user.png">
       </div>
     </div>
     <div class="item user-name">
-      <a routerLink="/dashboard"><span>REGISTRATION</span></a>
       <i class="fa fa-caret-down" aria-hidden="true"></i>
     </div>
   </div>
 </div>
+
+<invite-people-component></invite-people-component>
 
 <div class="screen container-fluid" id="screen">
 </div>

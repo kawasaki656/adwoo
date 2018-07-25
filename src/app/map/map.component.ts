@@ -151,7 +151,7 @@ export class MapComponent implements OnInit {
       }
     }
 
-    //onlySections = MapComponent.sortByY(onlySections);
+    onlySections = MapComponent.sortByY(onlySections);
     //onlySections
 
     for (let line in json) {
@@ -328,12 +328,7 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.myPropertyWidth = parseFloat(window.getComputedStyle(document.getElementById('my-property')).width);
-    let header1Width = parseFloat(window.getComputedStyle(document.getElementById('header1')).width);
-    let header2Width = parseFloat(window.getComputedStyle(document.getElementById('header2')).width);
-    let header3Width = parseFloat(window.getComputedStyle(document.getElementById('menu')).width);
 
-    this.myPropertyIndent = header1Width + header2Width + header3Width;
     this.navigationTmp = Object.assign({}, this.navigation);
     this.bodyDom = window.getComputedStyle(document.getElementsByTagName('body').item(0));
     this.screen = document.getElementsByClassName('screen').item(0);
@@ -346,7 +341,7 @@ export class MapComponent implements OnInit {
     let headerDom = window.getComputedStyle(document.getElementsByClassName('header').item(0));
     this.headerHeight = parseFloat(headerDom.height);
 
-    this.http.get('/assets/json/objects.json').subscribe(data => {
+    this.http.get('/assets/json/test.json').subscribe(data => {
       MapComponent.jsonSections = data;
       MapComponent.coordinatesOfSections = new Array<Array<Object>>();
       MapComponent.coordinatesOfHorizontalRoad = new Array<Array<Object>>();
@@ -501,8 +496,6 @@ export class MapComponent implements OnInit {
 
   setup(): void {
     let map = MapComponent.create(MapComponent.jsonSections);
-
-    console.log(map);
 
     MapComponent.setPositions(map);
 

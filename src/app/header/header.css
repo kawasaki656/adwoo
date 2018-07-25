@@ -43,6 +43,7 @@ a:hover {
   background: #404c58;
   align-items: center;
   height: 100%;
+  width: 60px;
   text-align: center;
   border-right: 2px solid #38434e;
   cursor: pointer;
@@ -60,14 +61,49 @@ a:hover {
 .header #menu .item .wrap img{
   height: 90%;
 }
-.header #my-property {
+.header #purpose {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 6%;
-  background: rgb(237, 113, 83);
+  height: 70%;
+  width: 40%;
   cursor: pointer;
+  color: white;
 }
+
+.header #purpose .line .icon {
+  display: inline-block;
+  width: 5%;
+  height: 30px;
+  float: left;
+}
+
+.header #purpose .line .information{
+  display: inline-block;
+  width: 65%;
+  height: 30px;
+  float: left;
+}
+
+.header #purpose .line .count{
+  display: inline-block;
+  width: 30%;
+  height: 30px;
+  float: left;
+  text-align: right;
+  padding-right: 10px;
+}
+.header #purpose .line .progress {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: rgb(42, 50, 60);
+  border-radius: 2px;
+}
+.header #purpose .line .progress .count{
+  height: 100%;
+  background-color: rgb(231, 115, 75);
+}
+
 .header #my-property .icon {
   width: 100%;
   height: 70%;
@@ -104,22 +140,29 @@ a:hover {
 }
 .header #account .empty {
   display: flex;
-  width: 50%;
+  width: 60%;
 }
 .header #account .item {
   display: flex;
   align-items: center;
   height: 100%;
+  width: 35px;
   text-align: center;
   cursor: pointer;
 }
 .header #account .item .wrap{
-  height: 40%;
+  height: 30%;
   width: 100%;
+}
+.header #account .item.user {
+  width: 50px;
 }
 .header #account .item.user .wrap{
   height: 60%;
   width: 100%;
+}
+.header #account .item.user-name {
+  width: 15px;
 }
 .header #account .item.user-name i{
   margin-left: 5px;
