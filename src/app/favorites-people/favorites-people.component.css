@@ -80,21 +80,26 @@ i {
 .item .wrapper .information .line {
   line-height: 24px;
 }
+.item .wrapper .other .line {
+  line-height: 24px;
+}
 
 .item .wrapper .information .line.first {
   font-weight: bold;
 }
 
-.item .wrapper .social {
+.item .wrapper .other {
   display: inline-block;
   float: left;
   width: 37.5%;
   height: 100%;
   text-align: right;
 }
-.item .wrapper .social button {
-  float: right;
-  display: inline-block;
-  margin-top: 12px;
-  margin-left: 10px;
+.item .wrapper .other .first {
+  line-height: 22px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.item .wrapper .other .second {
+  line-height: 26px;
 }

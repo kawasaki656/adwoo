@@ -36,7 +36,7 @@ a:hover {
 .header #menu {
   display: flex;
   height: 100%;
-  width: 27%;
+  width: 12%;
 }
 .header #menu .item {
   display: flex;
@@ -65,9 +65,13 @@ a:hover {
   display: flex;
   flex-direction: column;
   height: 70%;
-  width: 40%;
+  width: 35%;
   cursor: pointer;
   color: white;
+}
+
+.header #purpose .wrapper {
+  height: 100%;
 }
 
 .header #purpose .line .icon {
@@ -133,8 +137,10 @@ a:hover {
 
 .header #account {
   display: flex;
+  justify-content: flex-end;
   height: 100%;
-  width: 44%;
+  width: 33%;
+  padding-right: 30px;
   color: white;
   font-size: 11px;
 }

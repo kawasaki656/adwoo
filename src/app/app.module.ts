@@ -21,6 +21,7 @@ import { StartTips } from './education/startTips/start.tips';
 import { SuccessTip } from './education/successTip/success.tip';
 import { StartTutorialManager } from './services/startTutorialManager';
 import { InvitePeopleComponent } from './invite-people/invite-people.component';
+import { FavouritesPeopleComponent } from './favorites-people/favorites-people.component';
 
 const ROUTES:Routes = [
   {
@@ -48,7 +49,8 @@ const ROUTES:Routes = [
     RegistrationComponent,
     StartTips,
     SuccessTip,
-    InvitePeopleComponent
+    InvitePeopleComponent,
+    FavouritesPeopleComponent
   ],
   imports: [
     CommonModule,

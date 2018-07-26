@@ -16,7 +16,7 @@
       </div>
     </div>
   </div>
-  <div id="purpose">
+  <div id="purpose" (click)="showInviteModal()">
     <div class="wrapper">
       <div class="line">
         <div class="icon"></div>
@@ -35,10 +35,9 @@
     </div>
   </div>
   <div id="account">
-    <div class="empty"></div>
     <div class="item">
       <div class="wrap">
-        <img src="../assets/icons/home-symbol.png">
+        <img src="../assets/icons/home-symbol.png" (click)="showFavoriteModal()">
       </div>
     </div>
     <div class="item">
@@ -57,7 +56,8 @@
   </div>
 </div>
 
-<invite-people-component></invite-people-component>
+<invite-people-component *ngIf="inviteModalState"></invite-people-component>
+<favorites-people-component *ngIf="favoriteModalState"></favorites-people-component>
 
 <div class="screen container-fluid" id="screen">
 </div>
