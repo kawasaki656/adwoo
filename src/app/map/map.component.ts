@@ -41,9 +41,6 @@ export class MapComponent implements OnInit {
   widthScreen: number;
   heightScreen: number;
   navigationTmp: any;
-  //header
-  inviteModalState: boolean;
-  favoriteModalState: boolean;
 
   private static jsonSections: any;
 
@@ -266,14 +263,13 @@ export class MapComponent implements OnInit {
     //container.addChildAt(sprites[index], 0);
   }
 
-  constructor(el: ElementRef, private dialogService: DialogService, private startTipsManager: StartTutorialManager, private http: HttpClient, screen: ScreenService, navigation: NavigationService) {
+  constructor(el: ElementRef, private dialogService: DialogService, private startTipsManager: StartTutorialManager,
+              private http: HttpClient, screen: ScreenService, navigation: NavigationService ) {
     this.navigation = navigation;
     this.footerState = false;
     this.cursorPosition = {left: screen.screenWidth, top: screen.screenHeight};
     this.openedPropertyState = false;
     this.isAnimation = true;
-    this.inviteModalState = false;
-    this.favoriteModalState = false;
 
     this.myPropertyIndent = 0;
     this.myPropertyWidth = 0;
@@ -293,14 +289,6 @@ export class MapComponent implements OnInit {
     }
 
 
-  }
-
-  showInviteModal() {
-    this.inviteModalState = !this.inviteModalState;
-  }
-
-  showFavoriteModal() {
-    this.favoriteModalState = !this.favoriteModalState;
   }
 
   showMyProperty() {

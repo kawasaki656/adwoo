@@ -5,11 +5,10 @@ import { FormsModule } from '@angular/forms';
 
 import { AppContent } from './app.content';
 import { FilterComponent } from "./filters/filter.component";
-import { NavigationService } from "./map/navigation.service"
+
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { ConfirmComponent } from "./addBlockModal/addBlockModal";
 import { HttpClientModule } from '@angular/common/http';
-import { ScreenService } from "./screen/screen.service";
 import { NavigationComponent } from "./map/navigation.component";
 import { CommonModule } from "@angular/common";
 import { MyProperty } from "./my-property/myProperty";
@@ -19,9 +18,15 @@ import { MapComponent } from './map/map.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { StartTips } from './education/startTips/start.tips';
 import { SuccessTip } from './education/successTip/success.tip';
-import { StartTutorialManager } from './services/startTutorialManager';
 import { InvitePeopleComponent } from './invite-people/invite-people.component';
-import { FavouritesPeopleComponent } from './favorites-people/favorites-people.component';
+import { FavoritesPeopleComponent } from './favorites-people/favorites-people.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { HeaderComponent } from './header/header.component';
+
+import { ScreenService } from "./screen/screen.service";
+import { NavigationService } from "./map/navigation.service";
+import { StartTutorialManager } from './services/startTutorialManager';
+import { NotificationsService } from './services/notifications.service'
 
 const ROUTES:Routes = [
   {
@@ -50,7 +55,9 @@ const ROUTES:Routes = [
     StartTips,
     SuccessTip,
     InvitePeopleComponent,
-    FavouritesPeopleComponent
+    FavoritesPeopleComponent,
+    NotificationsComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
@@ -61,7 +68,7 @@ const ROUTES:Routes = [
     RouterModule.forRoot(ROUTES)
   ],
   entryComponents: [ConfirmComponent, MyProperty, ObjectInformation,  StartTips, SuccessTip],
-  providers: [NavigationService, ScreenService, StartTutorialManager],
+  providers: [NavigationService, ScreenService, StartTutorialManager, NotificationsService],
   bootstrap: [AppContent]
 })
 export class AppModule {}

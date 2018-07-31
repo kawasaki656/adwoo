@@ -5,6 +5,12 @@ h4 {
   line-height: 30px;
   font-size: 16px;
 }
+i {
+  margin-left: 0 !important;
+  margin-right: 5px !important;
+  line-height: inherit !important;
+  font-size: 12px !important;
+}
 button {
   color: white;
   border-radius: 12px !important;
@@ -76,33 +82,37 @@ i {
 .item .wrapper .information {
   display: inline-block;
   float: left;
-  width: 37.5%;
+  width: 50.5%;
   height: 100%;
 }
 
 .item .wrapper .information .line {
   line-height: 24px;
 }
-.item .wrapper .other .line {
-  line-height: 24px;
-}
 
 .item .wrapper .information .line.first {
   font-weight: bold;
 }
+.item .wrapper .information .line.second {
+  color: gray;
+  font-size: 12px;
+}
+.item .wrapper .information .line.second .fa-clock-o {
+  margin-left: 12px !important;
+}
 
-.item .wrapper .other {
+.item .wrapper .cashpoints {
   display: inline-block;
   float: left;
-  width: 37.5%;
+  width: 25%;
   height: 100%;
   text-align: right;
 }
-.item .wrapper .other .first {
-  line-height: 22px;
+.item .wrapper .cashpoints button {
+  float: right;
+  display: inline-block;
+  margin-top: 12px;
+  margin-left: 10px;
+  font-size: 12px;
   font-weight: bold;
-  font-size: 15px;
-}
-.item .wrapper .other .second {
-  line-height: 26px;
 }

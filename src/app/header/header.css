@@ -237,4 +237,41 @@ a:hover {
   cursor: pointer;
 }
 
+invite-people-component {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  margin-left: -250px;
+  width: 500px;
+  background: white;
+  display: block;
+  z-index: 1000;
+  border-radius: 4px;
+  color: rgb(86, 80, 92);
+}
+favorites-people-component {
+  position: absolute;
+  top: 60px;
+  right: 145px;
+  margin-left: -250px;
+  width: 450px;
+  background: white;
+  display: block;
+  z-index: 1000;
+  border-radius: 4px;
+  color: rgb(86, 80, 92);
+}
+notifications-component {
+  position: absolute;
+  top: 60px;
+  right: 115px;
+  margin-left: -250px;
+  width: 450px;
+  background: white;
+  display: block;
+  z-index: 1000;
+  border-radius: 4px;
+  color: rgb(86, 80, 92);
+}
+
 
