@@ -45,6 +45,8 @@ i {
   width: 100%;
 }
 .item.button {
+  width: 100%;
+  border-radius: 0!important;
   background: linear-gradient(to left, #fc7858, #fd4e75);
   text-align: center;
   border-bottom: none;
