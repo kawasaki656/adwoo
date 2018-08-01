@@ -1,0 +1,25 @@
+.calendar {
+  --input-height: 30px;
+
+  border: solid 1px #eaeaea;
+  height:  var(--input-height);
+  border-radius: 3px;
+}
+
+.calendar input[ng-reflect-mat-datepicker] {
+  width: calc(100% -  var(--input-height) - 5px) !important;
+  outline: none;
+  padding-left: 15px;
+  border: none;
+  height: 100%;
+  float: left;
+}
+.calendar button.mat-icon-button {
+  height: var(--input-height);
+  width: var(--input-height);
+  line-height: var(--input-height);
+}
+
+.calendar .mat-button-wrapper {
+  line-height: var(--input-height);
+}

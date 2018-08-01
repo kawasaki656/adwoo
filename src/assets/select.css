@@ -1,0 +1,13 @@
+mat-select {
+  --input-height: 30px;
+
+  height: var(--input-height);
+  line-height: var(--input-height);
+  width: 100%;
+  border: solid 1px #eaeaea;
+  border-radius: 3px;
+}
+
+mat-select .mat-select-value {
+  padding: 0 5px 0 15px;
+}

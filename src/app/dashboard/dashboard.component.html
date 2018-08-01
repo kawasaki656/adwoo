@@ -165,36 +165,7 @@
       <div id="content" *ngIf="account">
         <div class="col-md-3" id="left">
           <div id="inner">
-            <form id="form">
-              <b style="margin-top: 0">First name:</b>
-              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
-              <br>
-              <b>Last name:</b>
-              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
-              <br>
-              <b>Gender:</b>
-              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
-              <br>
-              <b>Username:</b>
-              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
-              <br>
-              <b>Email:</b>
-              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
-              <br>
-              <b>Password:</b>
-              <input ngModel name="firstname" #firstname="ngModel" type="password" class="input" placeholder="First name">
-              <br>
-              <b>Password confirmation:</b>
-              <input ngModel name="firstname" #firstname="ngModel" type="password" class="input" placeholder="First name">
-              <br>
-              <b>Language:</b>
-              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
-              <br>
-              <b>Birthday:</b>
-              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
-              <button class="input" id="cancel">Cancel</button>
-              <button class="input">Save</button>
-            </form>
+            <personal-data-form></personal-data-form>
           </div>
         </div>
         <div class="col-md-6" id="center">

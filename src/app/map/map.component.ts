@@ -531,13 +531,6 @@ export class MapComponent implements OnInit {
       time: 450
     };
 
-    let tip  = new PopUpTip();
-
-    tip.revers();
-
-    map.addChild(tip.container);
-    map.addChild(new Self());
-
     MapComponent.normalizePositions(map);
 
     map

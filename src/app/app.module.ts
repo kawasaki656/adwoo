@@ -21,6 +21,9 @@ import { StartTips } from './education/startTips/start.tips';
 import { SuccessTip } from './education/successTip/success.tip';
 import { StartTutorialManager } from './services/startTutorialManager';
 
+import { UserModule } from './user/user.module';
+import { MaterialModule } from './material.module';
+
 const ROUTES:Routes = [
   {
     path: '',
@@ -54,7 +57,10 @@ const ROUTES:Routes = [
     BootstrapModalModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(ROUTES)
+    UserModule,
+    RouterModule.forRoot(ROUTES),
+  ],
+  exports: [
   ],
   entryComponents: [ConfirmComponent, MyProperty, ObjectInformation,  StartTips, SuccessTip],
   providers: [NavigationService, ScreenService, StartTutorialManager],

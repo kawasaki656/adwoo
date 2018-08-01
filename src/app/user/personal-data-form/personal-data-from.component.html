@@ -1,0 +1,51 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <b style="margin-top: 0">First name:</b>
+  <input name="firstname" type="text" class="input" placeholder="First name">
+  <br>
+
+  <b>Last name:</b>
+  <input name="lastname" type="text" class="input" placeholder="Last name" ngModel>
+  <br>
+
+  <b>Gender:</b>
+  <mat-select [(value)]="selected"  ngModel name="gender">
+    <mat-option value="m">Man</mat-option>
+    <mat-option value="w">Woman</mat-option>
+    <mat-option>Other</mat-option>
+  </mat-select>
+  <br>
+
+  <b>Username:</b>
+  <input name="username" type="text" class="input" placeholder="Username" ngModel>
+  <br>
+
+  <b>Email:</b>
+  <input name="mail" type="text" class="input" placeholder="Email" ngModel>
+  <br>
+
+  <b>Password:</b>
+  <input name="password" type="password" class="input" placeholder="Password" ngModel>
+  <br>
+
+  <b>Password confirmation:</b>
+  <input name="confirm_password" type="password" class="input" placeholder="Password confirmation" ngModel>
+  <br>
+
+  <b>Language:</b>
+  <input name="language" type="text" class="input" placeholder="Language" ngModel>
+  <br>
+
+  <b>Birthday:</b>
+  <div class="calendar">
+    <input [matDatepicker]="myDatepicker">
+    <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
+    <mat-datepicker #myDatepicker></mat-datepicker>
+  </div>
+  <br>
+
+  <div class="from-control">
+    <button type="reset" class="cancel">Cancel</button>
+    <button type="submit" class="save">Save</button>
+  </div>
+
+</form>
