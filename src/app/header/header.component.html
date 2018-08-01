@@ -32,14 +32,17 @@
         </div>
     </div>
     <div id="account">
-        <div class="item">
+        <div class="item" (click)="showFavoriteModal()">
             <div class="wrap">
-                <img src="../assets/icons/home-symbol.png" (click)="showFavoriteModal()">
+                <img src="../assets/icons/home-symbol.png">
             </div>
         </div>
-        <div class="item">
+        <div class="item" (click)="showNotificationsModal()">
             <div class="wrap">
-                <img src="../assets/icons/ring.png" (click)="showNotificationsModal()">
+                <img src="../assets/icons/ring.png">
+                <div class="unread">
+                    3
+                </div>
             </div>
         </div>
         <div class="item user">
@@ -53,6 +56,6 @@
     </div>
 </div>
 
-<invite-people-component *ngIf="inviteModalState"></invite-people-component>
+<invite-people-component *ngIf="inviteModalState" [ngClass]="{'animate-in':inviteModalState}"></invite-people-component>
 <favorites-people-component *ngIf="favoriteModalState"></favorites-people-component>
 <notifications-component *ngIf="notificationsModalState"></notifications-component>

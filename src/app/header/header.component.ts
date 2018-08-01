@@ -25,14 +25,25 @@ export class HeaderComponent implements OnInit {
 
     showInviteModal() {
         this.inviteModalState = !this.inviteModalState;
+        this.hideOpenModal("invite");
     }
 
     showFavoriteModal() {
         this.favoriteModalState = !this.favoriteModalState;
+        this.hideOpenModal("favorite");
     }
 
     showNotificationsModal() {
         this.notificationsModalState = !this.notificationsModalState;
+        this.hideOpenModal("notifications");
+    }
+
+    hideOpenModal(clickedModal) {
+        switch(clickedModal) {
+            case "invite": this.favoriteModalState = false; this.notificationsModalState = false; break;
+            case "favorite": this.inviteModalState = false; this.notificationsModalState = false; break;
+            case "notifications": this.inviteModalState = false; this.favoriteModalState = false; break;
+        }
     }
 
 }

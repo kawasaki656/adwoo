@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvitePeopleComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
+
 
   ngOnInit() {
+      console.log(document.getElementsByTagName('invite-people-component').item(0));
   }
 
 }

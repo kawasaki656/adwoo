@@ -156,9 +156,21 @@ a:hover {
   text-align: center;
   cursor: pointer;
 }
-.header #account .item .wrap{
+.header #account .item .wrap {
+  position: relative;
   height: 30%;
   width: 100%;
+}
+.header #account .item .wrap .unread {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  line-height: 17px;
+  left: 18px;
+  top: -7px;
+  border-radius: 10px;
+  background: linear-gradient(to left, #fc7858, #fd4e75);
+  color: white;
 }
 .header #account .item.user {
   width: 50px;
@@ -239,7 +251,7 @@ a:hover {
 
 invite-people-component {
   position: absolute;
-  top: 60px;
+  top: 0px;
   left: 50%;
   margin-left: -250px;
   width: 500px;
@@ -248,6 +260,8 @@ invite-people-component {
   z-index: 1000;
   border-radius: 4px;
   color: rgb(86, 80, 92);
+  opacity: 0;
+  transition: .5s;
 }
 favorites-people-component {
   position: absolute;
@@ -272,6 +286,11 @@ notifications-component {
   z-index: 1000;
   border-radius: 4px;
   color: rgb(86, 80, 92);
+}
+
+.animate-in {
+  top: 60px;
+  opacity: 1;
 }
 
 

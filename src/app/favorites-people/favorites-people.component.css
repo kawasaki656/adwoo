@@ -36,7 +36,7 @@ i {
 .item {
   display: flex;
   align-items: center;
-  height:70px;
+  height:65px;
   border-bottom: 1px solid rgb(237, 237, 237);;
 }
 .item .wrapper {
@@ -70,7 +70,7 @@ i {
   height: 100%;
 }
 .item .wrapper .photo img {
-  height: 50px;
+  height: 45px;
 }
 
 .item .wrapper .information {
