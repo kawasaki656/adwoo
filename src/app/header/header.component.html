@@ -45,7 +45,8 @@
                 </div>
             </div>
         </div>
-        <div class="item user">
+        <div class="item user" (click)="showProfileModalState()">
+
             <div class="wrap">
                 <img src="../assets/icons/user.png">
             </div>
@@ -59,3 +60,4 @@
 <invite-people-component *ngIf="inviteModalState"></invite-people-component>
 <favorites-people-component *ngIf="favoriteModalState"></favorites-people-component>
 <notifications-component *ngIf="notificationsModalState"></notifications-component>
+<profile-component *ngIf="profileModalState"></profile-component>

@@ -291,6 +291,20 @@ notifications-component {
   opacity: 0;
   transition: .5s;
 }
+profile-component {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  margin-left: -250px;
+  width: 250px;
+  background: white;
+  display: block;
+  z-index: 1000;
+  border-radius: 4px;
+  color: rgb(86, 80, 92);
+  opacity: 0;
+  transition: .5s;
+}
 
 .animate-in {
   top: 60px;

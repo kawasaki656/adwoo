@@ -9,15 +9,17 @@ import {NavigationService} from "../map/navigation.service";
     styleUrls: ['./header.css']
 })
 export class HeaderComponent implements OnInit {
-    //header
-    inviteModalState: boolean;
-    favoriteModalState: boolean;
-    notificationsModalState: boolean;
+    //modals
+    private inviteModalState: boolean;
+    private favoriteModalState: boolean;
+    private notificationsModalState: boolean;
+    private profileModalState: boolean;
 
     constructor(private notificationsService: NotificationsService) {
         this.inviteModalState = false;
         this.favoriteModalState = false;
         this.notificationsModalState = false;
+        this.profileModalState = false;
     }
 
     ngOnInit() {
@@ -38,11 +40,17 @@ export class HeaderComponent implements OnInit {
         this.hideOpenModal("notifications");
     }
 
-    hideOpenModal(clickedModal) {
-        switch(clickedModal) {
-            case "invite": this.favoriteModalState = false; this.notificationsModalState = false; break;
-            case "favorite": this.inviteModalState = false; this.notificationsModalState = false; break;
-            case "notifications": this.inviteModalState = false; this.favoriteModalState = false; break;
+    showProfileModalState() {
+        this.profileModalState = !this.profileModalState;
+        this.hideOpenModal("profile");
+    }
+
+    hideOpenModal(clickedModalOpener) {
+        switch(clickedModalOpener) {
+            case "invite": this.favoriteModalState = false; this.notificationsModalState = false; this.profileModalState = false; break;
+            case "favorite": this.inviteModalState = false; this.notificationsModalState = false; this.profileModalState = false; break;
+            case "notifications": this.inviteModalState = false; this.favoriteModalState = false; this.profileModalState = false; break;
+            case "profile": this.inviteModalState = false; this.favoriteModalState = false; this.notificationsModalState = false; break;
         }
     }
 

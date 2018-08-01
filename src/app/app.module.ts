@@ -26,7 +26,8 @@ import { HeaderComponent } from './header/header.component';
 import { ScreenService } from "./screen/screen.service";
 import { NavigationService } from "./map/navigation.service";
 import { StartTutorialManager } from './services/startTutorialManager';
-import { NotificationsService } from './services/notifications.service'
+import { NotificationsService } from './services/notifications.service';
+import { ProfileComponent } from './profile/profile.component'
 
 const ROUTES:Routes = [
   {
@@ -57,7 +58,8 @@ const ROUTES:Routes = [
     InvitePeopleComponent,
     FavoritesPeopleComponent,
     NotificationsComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,

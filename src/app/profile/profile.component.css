@@ -1,0 +1,120 @@
+h4 {
+    font-weight: bold;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    line-height: 30px;
+    font-size: 16px;
+}
+i {
+    margin-left: 0 !important;
+    margin-right: 5px !important;
+    line-height: inherit !important;
+    font-size: 12px !important;
+}
+button {
+    color: white;
+    border-radius: 12px !important;
+    height: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 24px;
+    border: none;
+    background: linear-gradient(to left, #fc7858, #fd4e75);
+}
+button:hover {
+    opacity: .8;
+}
+i {
+    line-height: 50px;
+    margin-left: 10px;
+}
+.avatar {
+    height: 150px;
+    overflow: hidden;
+}
+.avatar img {
+    border-radius: 200px;
+    width: 100%;
+    margin-top: -35px;
+}
+.information {
+    width: 200px;
+    margin: 0 auto;
+}
+.item {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    border-bottom: 1px solid rgb(237, 237, 237);;
+}
+.item .wrapper {
+    display: block;
+    height: 70%;
+    width: 100%;
+}
+.item.button {
+    background: linear-gradient(to left, #fc7858, #fd4e75);
+    text-align: center;
+    border-bottom: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.item.button .wrapper {
+    height:auto;
+}
+
+.item .wrapper .padding {
+    display: inline-block;
+    float: left;
+    width: 5%;
+    height: 100%;
+}
+
+.item .wrapper .photo {
+    display: inline-block;
+    float: left;
+    width: 15%;
+    height: 100%;
+}
+.item .wrapper .photo img {
+    height: 45px;
+}
+
+.item .wrapper .information {
+    display: inline-block;
+    float: left;
+    width: 50.5%;
+    height: 100%;
+}
+
+.item .wrapper .information .line {
+    line-height: 24px;
+}
+
+.item .wrapper .information .line.first {
+    font-weight: bold;
+}
+.item .wrapper .information .line.second {
+    color: gray;
+    font-size: 12px;
+}
+.item .wrapper .information .line.second .fa-clock-o {
+    margin-left: 12px !important;
+}
+
+.item .wrapper .cashpoints {
+    display: inline-block;
+    float: left;
+    width: 25%;
+    height: 100%;
+    text-align: right;
+}
+.item .wrapper .cashpoints button {
+    float: right;
+    display: inline-block;
+    margin-top: 12px;
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
