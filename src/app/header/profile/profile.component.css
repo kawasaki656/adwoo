@@ -40,6 +40,37 @@ i {
 .information {
     width: 200px;
     margin: 0 auto;
+    text-align: center;
+}
+.information h4 {
+    font-weight: 400;
+}
+.information p {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.information p.addition {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+}
+.information button {
+    margin-top: 10px;
+    font-weight: bold;
+}
+.stats {
+    width: 80%;
+    margin: 0 auto;
+    color: gray;
+    font-size: 13px;
+    font-weight: bold;
+}
+.stats .line {
+    display: block;
+    width: 100%;
+}
+.stats .line span {
+    line-height: 28px;
 }
 .item {
     display: flex;
@@ -62,6 +93,13 @@ i {
 }
 .item.button .wrapper {
     height:auto;
+}
+.item.button .wrapper button {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    background: none;
+    text-align: center;
 }
 
 .item .wrapper .padding {

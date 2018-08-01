@@ -18,16 +18,16 @@ import { MapComponent } from './map/map.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { StartTips } from './education/startTips/start.tips';
 import { SuccessTip } from './education/successTip/success.tip';
-import { InvitePeopleComponent } from './invite-people/invite-people.component';
-import { FavoritesPeopleComponent } from './favorites-people/favorites-people.component';
-import { NotificationsComponent } from './notifications/notifications.component';
+import { InvitePeopleComponent } from './header/invite-people/invite-people.component';
+import { FavoritesPeopleComponent } from './header/favorites-people/favorites-people.component';
+import { NotificationsComponent } from './header/notifications/notifications.component';
 import { HeaderComponent } from './header/header.component';
 
 import { ScreenService } from "./screen/screen.service";
 import { NavigationService } from "./map/navigation.service";
 import { StartTutorialManager } from './services/startTutorialManager';
 import { NotificationsService } from './services/notifications.service';
-import { ProfileComponent } from './profile/profile.component'
+import { ProfileComponent } from './header/profile/profile.component'
 
 const ROUTES:Routes = [
   {

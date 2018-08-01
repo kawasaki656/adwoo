@@ -262,6 +262,7 @@ invite-people-component {
   color: rgb(86, 80, 92);
   opacity: 0;
   transition: .5s;
+  overflow: hidden;
 }
 favorites-people-component {
   position: absolute;
@@ -276,6 +277,7 @@ favorites-people-component {
   color: rgb(86, 80, 92);
   opacity: 0;
   transition: .5s;
+  overflow: hidden;
 }
 notifications-component {
   position: absolute;
@@ -290,6 +292,7 @@ notifications-component {
   color: rgb(86, 80, 92);
   opacity: 0;
   transition: .5s;
+  overflow: hidden;
 }
 profile-component {
   position: absolute;
@@ -304,6 +307,7 @@ profile-component {
   color: rgb(86, 80, 92);
   opacity: 0;
   transition: .5s;
+  overflow: hidden;
 }
 
 .animate-in {
