@@ -13,7 +13,7 @@ a:hover {
   align-items: center;
   height: 6%;
   background-color: #38434e;
-  z-index: 1051;
+  z-index: 999;
   font-family: "Lato", sans-serif !important;
 }
 
@@ -251,7 +251,7 @@ a:hover {
 
 invite-people-component {
   position: absolute;
-  top: 0px;
+  top: 30px;
   left: 50%;
   margin-left: -250px;
   width: 500px;
@@ -265,7 +265,7 @@ invite-people-component {
 }
 favorites-people-component {
   position: absolute;
-  top: 60px;
+  top: 30px;
   right: 145px;
   margin-left: -250px;
   width: 450px;
@@ -274,10 +274,12 @@ favorites-people-component {
   z-index: 1000;
   border-radius: 4px;
   color: rgb(86, 80, 92);
+  opacity: 0;
+  transition: .5s;
 }
 notifications-component {
   position: absolute;
-  top: 60px;
+  top: 30px;
   right: 115px;
   margin-left: -250px;
   width: 450px;
@@ -286,6 +288,8 @@ notifications-component {
   z-index: 1000;
   border-radius: 4px;
   color: rgb(86, 80, 92);
+  opacity: 0;
+  transition: .5s;
 }
 
 .animate-in {

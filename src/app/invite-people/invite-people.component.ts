@@ -1,17 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import {
+    AfterViewInit,
+    Component,
+    ElementRef,
+    OnInit,
+    Renderer2
+} from '@angular/core';
 
 @Component({
   selector: 'invite-people-component',
   templateUrl: './invite-people.component.html',
   styleUrls: ['./invite-people.component.css']
 })
-export class InvitePeopleComponent implements OnInit {
+export class InvitePeopleComponent implements AfterViewInit {
 
-  constructor() {}
+  private currentElement: ElementRef;
+  private renderer: Renderer2;
 
+  constructor(currentElement: ElementRef, renderer: Renderer2) {
+    this.currentElement = currentElement;
+    this.renderer = renderer;
+  }
 
-  ngOnInit() {
-      console.log(document.getElementsByTagName('invite-people-component').item(0));
+  ngAfterViewInit() {
+    setTimeout(()=> {
+        this.renderer.addClass(this.currentElement.nativeElement, "animate-in");
+    }, 10);
   }
 
 }
