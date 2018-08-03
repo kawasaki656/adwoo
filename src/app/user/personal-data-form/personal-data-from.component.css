@@ -108,4 +108,18 @@ button.cancel {
   color: #d9d8d8;
   margin-right: 9%;
 }
+.feedback {
+  font-size: 14px;
+  height: 20px;
+}
+.feedback i {
+  margin-right: 5px;
+}
 
+.invalid {
+  color: #f72332;
+}
+
+.valid {
+  color: #00b742;
+}
