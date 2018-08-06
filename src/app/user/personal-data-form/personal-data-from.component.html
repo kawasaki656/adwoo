@@ -1,67 +1,82 @@
-<form #form="ngForm" (ngSubmit)="onSubmit(form)">
-  <b style="margin-top: 0">First name:</b>
-  <input name="firstname" type="text" class="input" placeholder="First name" [(ngModel)]="user.firstName" #firstName="ngModel">
-  <br>
-
-  <b>Last name:</b>
-  <input name="lastname" type="text" class="input" placeholder="Last name" [(ngModel)]="user.lastName" #lastName="ngModel">
-  <br>
-
-  <b>Gender:</b>
-  <mat-select name="gender" [(value)]="selected" [(ngModel)]="user.gender" #gender="ngModel">
-    <mat-option value="m">Man</mat-option>
-    <mat-option value="w">Woman</mat-option>
-    <mat-option>Other</mat-option>
-  </mat-select>
-  <br>
-
-  <b>Username:</b>
-  <input name="username" type="text" class="input" placeholder="Username" [(ngModel)]="user.userName" #userName="ngModel">
-  <br>
-
-  <b>Email:</b>
-  <input name="mail" type="text" class="input" placeholder="Email" [(ngModel)]="user.mail" #mail="ngModel">
-  <br>
-
-  <b>Password:</b>
-  <input name="password" type="password" class="input" minlength="8" placeholder="Password" [(ngModel)]="user.password" #password="ngModel">
-  <div class="feedback valid" *ngIf="password.valid && password.touched && password.value">
-    <i class="fa fa-check-circle"></i>
-    Password is correct
+<form #form="ngForm" (ngSubmit)="onSubmit(form)" class="adwoo">
+  <div class="form-group">
+    <label>First name:</label>
+    <input name="firstname" type="text" class="input" placeholder="First name" [(ngModel)]="user.firstName"
+           #firstName="ngModel">
   </div>
-  <div class="feedback invalid" *ngIf="password.invalid && password.touched || !password.value">
-    <i class="fa fa-times-circle"></i>
-    Password does not match
-  </div>
-  <br>
 
-  <b>Password confirmation:</b>
-  <input name="password-confirmation" type="password" class="input" minlength="8" placeholder="Password confirmation" [(ngModel)]="user.passwordConfirmation" #passwordConfirmation="ngModel">
-  <div class="feedback valid" *ngIf="passwordConfirmation.valid && passwordConfirmation.touched && passwordConfirmation.value">
-    <i class="fa fa-check-circle"></i>
-    Password is correct
+  <div class="form-group">
+    <label>Last name:</label>
+    <input name="lastname" type="text" class="input" placeholder="Last name" [(ngModel)]="user.lastName"
+           #lastName="ngModel">
   </div>
-  <div class="feedback invalid" *ngIf="passwordConfirmation.invalid && passwordConfirmation.touched || !passwordConfirmation.value">
-    <i class="fa fa-times-circle"></i>
-    Password does not match
+
+  <div class="form-group">
+    <label>Gender:</label>
+    <mat-select name="gender" [(value)]="user.gender" [(ngModel)]="user.gender" #gender="ngModel">
+      <mat-option value="m">Man</mat-option>
+      <mat-option value="w">Woman</mat-option>
+      <mat-option>Other</mat-option>
+    </mat-select>
   </div>
-  <br>
 
-  <b>Language:</b>
-  <input name="language" type="text" class="input" placeholder="Language" [(ngModel)]="user.language">
-  <br>
-
-  <b>Birthday:</b>
-  <div class="calendar">
-    <input name="birthday" [matDatepicker]="myDatepicker" placeholder="Birthday" [(ngModel)]="user.birthday">
-    <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
-    <mat-datepicker #myDatepicker></mat-datepicker>
+  <div class="form-group">
+    <label>Username:</label>
+    <input name="username" type="text" class="input" placeholder="Username" [(ngModel)]="user.userName"
+           #userName="ngModel">
   </div>
-  <br>
 
-  <div class="from-control">
+  <div class="form-group">
+    <label>Email:</label>
+    <input name="mail" type="text" class="input" placeholder="Email" [(ngModel)]="user.mail" #mail="ngModel">
+  </div>
+
+  <div class="form-group">
+    <label>Password:</label>
+    <input name="password" type="password" class="input" minlength="8" placeholder="Password"
+           [(ngModel)]="user.password"
+           #password="ngModel">
+    <div class="feedback valid" *ngIf="password.valid && password.dirty && password.value">
+      <i class="fa fa-check-circle"></i>
+      Password is correct
+    </div>
+    <div class="feedback invalid" *ngIf="password.invalid && password.dirty">
+      <i class="fa fa-times-circle"></i>
+      Password does not match
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Password confirmation:</label>
+    <input name="password-confirmation" type="password" class="input" minlength="8" placeholder="Password confirmation"
+           [(ngModel)]="user.passwordConfirmation" #passwordConfirmation="ngModel">
+    <div class="feedback valid"
+         *ngIf="passwordConfirmation.valid && passwordConfirmation.dirty && passwordConfirmation.value">
+      <i class="fa fa-check-circle"></i>
+      Password is correct
+    </div>
+    <div class="feedback invalid" *ngIf="passwordConfirmation.invalid && passwordConfirmation.dirty">
+      <i class="fa fa-times-circle"></i>
+      Password does not match
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Language:</label>
+    <input name="language" type="text" class="input" placeholder="Language" [(ngModel)]="user.language">
+  </div>
+
+  <div class="form-group">
+    <label>Birthday:</label>
+    <div class="calendar">
+      <input name="birthday" [matDatepicker]="myDatepicker" placeholder="Birthday" [(ngModel)]="user.birthday">
+      <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
+      <mat-datepicker #myDatepicker></mat-datepicker>
+    </div>
+  </div>
+
+  <div class="buttons-group">
+    <button type="submit" class="submit">Save</button>
     <button type="reset" class="cancel">Cancel</button>
-    <button type="submit" class="save">Save</button>
   </div>
-
 </form>

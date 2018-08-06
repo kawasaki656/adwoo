@@ -148,12 +148,6 @@ button:hover {
   background: rgb(253, 253, 253);
   border: 1px solid rgb(234, 234, 234);
 }
-#inner {
-  padding-top: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
-  text-align: center;
-}
 #content #points #inner b {
   font-size: 14px;
 }
@@ -330,7 +324,7 @@ button:hover {
   margin-left: 25px;
   margin-top: 25px;
   margin-right: 25px;
-  height: 750px;
+  height: auto;
 }
 #content #left #inner button {
   display: inline-block;
