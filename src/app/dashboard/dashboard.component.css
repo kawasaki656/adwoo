@@ -13,6 +13,12 @@ input[type="text"], input[type="password"] {
   border: 1px solid rgb(234, 234, 234);
   border-radius: 3px;
 }
+.left, .right {
+  display: inline-block;
+}
+.clearfix {
+  clear: both;
+}
 form {
   text-align: left;
 }
@@ -42,14 +48,41 @@ button:hover {
   font-size: 11px;
   color: rgb(119, 119, 119);
 }
+.wrapper {
+    height: 100%;
+}
 .row {
+    height: 100%;
   margin: 0 !important;
+}
+.clear {
+  clear: both;
 }
 .col-md-2 .item {
   display: block;
   width: 100%;
   padding: 15px;
   border-bottom: 1px solid rgb(234, 234, 234);
+}
+.col-md-2 .item input{
+  display: none;
+}
+.col-md-2 .item label img {
+  height: 19px;
+  margin-right: 5px;
+}
+.col-md-2 .item label {
+  padding-left: 0;
+}
+.col-md-2 .item label span {
+  font-size: 13px;
+  font-weight: bold;
+  vertical-align: -webkit-baseline-middle;
+}
+.col-md-2 .item h4 {
+  margin-top: 0px;
+  font-size: 14px;
+  font-weight: bold;
 }
 .col-md-2 .item#adwoo {
   font-size: 15px;
@@ -80,12 +113,38 @@ button:hover {
   padding-top: 8px;
   line-height: 10px;
 }
+.col-md-2 .item.sections .line {
+    padding-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.col-md-2 .item.sections .line.active {
+    background: #efefef;
+}
+.col-md-2 .item.sections .line .picture {
+    display: inline-block;
+    float: left;
+    height: 60px;
+    width: 55px;
+}
+.col-md-2 .item.sections .line .picture img {
+  height: 100%;
+  margin-left: -19px;
+}
+.col-md-2 .item.sections .line .description {
+  display: inline-block;
+  float: left;
+  width: auto;
+  padding-top: 16px;
+}
+.col-md-2 .item.sections .line .description p {
+  margin-bottom: 2px;
+  font-weight: bold;
+}
 .row > .col-md-2 {
-  height: 1000px;
   padding-right: 0px;
   padding-left: 0px;
   background: rgb(253, 253, 253);
-  border-right: 1px solid rgb(234, 234, 234);
 }
 .col-md-2 .item:first-child {
   height: 50px;
@@ -94,15 +153,20 @@ button:hover {
   height: 23px;
   vertical-align: bottom;
 }
-.col-md-10 {
-  padding: 0;
+.row > .col-md-10 {
+    height: 100%;
+    padding: 0;
+    border-left: 1px solid rgb(234, 234, 234);
 }
 
 .col-md-10 #statistic {
+  position: absolute;
   width: 100%;
   height: 70px;
   padding: 15px 20px;
   border-bottom: 1px solid rgb(234, 234, 234);
+  z-index: 10;
+  background: white;
 }
 .col-md-10 #statistic p {
   font-size: 20px;
@@ -124,16 +188,17 @@ button:hover {
   cursor: pointer;
 }
 
-.col-md-10 #content {
+.col-md-10 .content {
   width: 100%;
-  height: 930px;
+  height: 100%;
+  padding-top: 70px;
   background: rgb(237, 237, 237);
 }
 .col-md-12, .col-md-6, .col-md-3 {
   padding-left: 0;
   padding-right: 0;
 }
-.col-md-10 #content .col-md-6#points #inner {
+.col-md-10 .content .col-md-6#points #inner {
   margin-right: 25px;
   margin-top: 25px;
   margin-left: 25px;
@@ -141,7 +206,7 @@ button:hover {
   background: rgb(253, 253, 253);
   border: 1px solid rgb(234, 234, 234);
 }
-.col-md-10 #content #carousel1, .col-md-10 #content #carousel2 {
+.col-md-10 .content #carousel1, .col-md-10 .content #carousel2 {
   height: 390px;
   margin-top: 25px;
   margin-right: 25px;
@@ -154,13 +219,13 @@ button:hover {
   padding-right: 30px;
   text-align: center;
 }
-#content #points #inner b {
+.content #points #inner b {
   font-size: 14px;
 }
-#content #points #inner span {
+.content #points #inner span {
   font-size: 12px;
 }
-#content #points #inner .item {
+.content #points #inner .item {
   position: relative;
   display: inline-block;
   float: left;
@@ -173,24 +238,24 @@ button:hover {
   padding-left: 15px;
   text-align: left;
 }
-#content #points #inner .item.full {
+.content #points #inner .item.full {
   width: 100%;
 }
-#content #points #inner .devider {
+.content #points #inner .devider {
   display: inline-block;
   float: left;
   width: 2%;
   height: 50px;
 }
-#content #points #inner .item span {
+.content #points #inner .item span {
   font-size: 14px;
   font-weight: 500;
   padding-left: 25px;
 }
-#content #points #inner .item input[type='radio'] {
+.content #points #inner .item input[type='radio'] {
   display: none;
 }
-#content #points #inner .item input[type='text'] {
+.content #points #inner .item input[type='text'] {
   height: 25px;
   width: 80px;
   margin-left: 5px;
@@ -199,14 +264,14 @@ button:hover {
   border: 1px solid #d9d8d8;
   border-radius: 5%;
 }
-#content #points #inner button {
+.content #points #inner button {
   position: absolute;
   width: 110px;
   left: 100%;
   top: 40px;
   margin-left: -160px;
 }
-#content #points #inner .item label {
+.content #points #inner .item label {
   position: absolute;
   margin-left: 15px;
   margin-top: 8px;
@@ -223,7 +288,7 @@ button:hover {
   border: 1px solid #d9d8d8;
   background: white;
 }
-#content #points #inner .item label.active {
+.content #points #inner .item label.active {
   border: 4px solid #f44d73;
 }
 #hr {
@@ -322,56 +387,210 @@ button:hover {
   background: white;
 }
 
-#content #left #inner, #content #center #inner, #content #right #inner {
+.content #left #inner, .content #center #inner, .content #right #inner {
   background: white;
   height: 200px;
 }
-#content #left #inner {
+.content #left #inner {
   margin-left: 25px;
   margin-top: 25px;
   margin-right: 25px;
   height: 750px;
 }
-#content #left #inner button {
+.content #left #inner button {
   display: inline-block;
   float: left;
   width: 40%;
 }
-#content #left #inner button#cancel {
+.content #left #inner button#cancel {
   margin-left: 10%;
   margin-right: 10%;
   border: 1px solid rgb(234, 234, 234);
   background: white;
   color: #d9d8d8;
 }
-#content #center #inner {
+.content #center #inner {
   margin-top: 25px;
   margin-right: 25px;
   height: 690px;
 }
-#content #center #inner .social .inner {
+.content #center #inner .social .inner {
   height: 115px;
   background: white;
 }
-#content #center #inner .social:nth-child(2n+1) {
+.content #center #inner .social:nth-child(2n+1) {
   padding-right: 12.5px;
 }
-#content #center #inner .social:nth-child(2n) {
+.content #center #inner .social:nth-child(2n) {
   padding-left: 12.5px;
 }
-#content #center #inner .social:nth-child(3), #content #center #inner .social:nth-child(4) {
+.content #center #inner .social:nth-child(3), .content #center #inner .social:nth-child(4) {
   padding-top: 25px;
 }
-#content #center .settings {
+.content #center .settings {
   padding-top: 25px;
 }
-#content #center .settings .inner {
+.content #center .settings .inner {
   height: 415px;
   background: white;
 }
 
-#content #right #inner {
+.content #right #inner {
   margin-top: 25px;
   margin-right: 25px;
   height: 680px;
+}
+.content .property {
+  padding: 25px;
+}
+.content .property .wrapper {
+  display: block;
+  background: white;
+}
+.content .property .wrapper .header {
+  border-bottom: 1px solid rgb(234, 234, 234)
+}
+
+.content .property .wrapper .header .picture {
+  display: inline-block;
+  float: left;
+  height: 60px;
+  width: 55px;
+}
+.content .property .wrapper .header .left {
+  padding-left: 20px;
+  border-right: 1px solid rgb(234, 234, 234)
+}
+.content .property .wrapper .header .picture img {
+  height: 100%;
+  margin-left: -19px;
+}
+.content .property .wrapper .header .description {
+  display: inline-block;
+  float: left;
+  width: auto;
+  padding-top: 16px;
+}
+.content .property .wrapper .header .description p {
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+.content .property .wrapper .header .right {
+  padding-left: 35px;
+  padding-top: 22px;
+}
+.content .property .wrapper .header .right button {
+  width: auto;
+  height: 30px;
+  line-height: 28px;
+  float: right;
+  margin-top: -6px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.content .property .wrapper .header .right img {
+  height: 15px;
+  float: left;
+  margin-right: 10px;
+}
+.content .property .wrapper .header .right span {
+  line-height: 16px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.content .property .wrapper .card .left {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  padding: 20px;
+  border-right: 1px solid rgb(234, 234, 234);
+}
+.content .property .wrapper .card .right {
+  display: inline-block;
+  float: left;
+  width: 50%;
+}
+.content .property .wrapper .card .left span {
+  display: block;
+  font-weight: bold;
+  font-size: 12px;
+}
+.content .property .wrapper .card .left .gallery {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(234, 234, 234);
+}
+.content .property .wrapper .card .left .gallery .item {
+  display: inline-block;
+  float: left;
+  height: 117px;
+  width: 21%;
+  background: #e9e9e9;;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 7px solid white
+}
+.content .property .wrapper .card .left .gallery .item.main {
+  width: 37%;
+  height: 234px;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-left: none;
+}
+.content .property .wrapper .card .left .gallery .item span {
+  padding-top: 60px;
+  font-size: 12px;
+  color: white;
+  text-align: center;
+}
+.content .property .wrapper .card .left .gallery .item.add {
+  background: linear-gradient(to left, #fc7858, #fd4e75);
+  border-radius: 14px;
+}
+.content .property .wrapper .card .left .gallery .item.main img {
+  transform: translate(-50%, -50%) scale(.7);
+  margin-top: 80px;
+  margin-left: 70px;
+}
+.content .property .wrapper .card .left .gallery .item img {
+  transform: translate(-50%, -50%) scale(.4);
+  margin-top: 35px;
+  margin-left: 40px;
+}
+
+.content .property .wrapper .card .left .interests {
+  padding-top: 20px;
+}
+.content .property .wrapper .card .left .interests .add-input {
+  display: block;
+  width: 100%;
+}
+.content .property .wrapper .card .left .interests .add-input input {
+  display: inline-block;
+  width: calc(100% - 30px);
+  float: left;
+  border: 1px solid rgb(234, 234, 234);
+  border-left: none;
+  outline: none;
+}
+.content .property .wrapper .card .left .interests .add-input {
+  margin-bottom: 10px;
+}
+.content .property .wrapper .card .left .interests .add-input button {
+  display: inline-block;
+  float: left;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 0;
+  background: linear-gradient(to left, #fc7858, #fd4e75);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.content .property .wrapper .card .left .interests .list button {
+  display: inline-block;
+  float: left;
+  margin-right: 20px;
+  width: auto;
+  padding-left: 30px;
+  padding-right: 30px;
 }

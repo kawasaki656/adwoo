@@ -7,11 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  account: boolean;
-  constructor() { }
+  state: string;
+  ifAccountChecked: boolean;
+  constructor() {}
+
 
   ngOnInit() {
-    this.account = true;
+      this.state = "account";
+      this.ifAccountChecked = true;
+  }
+
+  navigate(item) {
+    if(item === "accountChange") {
+      if(this.state === "account") {
+        this.state = "cashpoints";
+      } else {
+        this.state = "account"
+      }
+    } else {
+      this.state = "property";
+    }
   }
 
 }
