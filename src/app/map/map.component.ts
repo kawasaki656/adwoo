@@ -42,6 +42,8 @@ export class MapComponent implements OnInit {
   heightScreen: number;
   navigationTmp: any;
 
+  private static dragOn: boolean;
+
   private static jsonSections: any;
 
   private static coordinatesOfSections: Array<Array<Object>>;
@@ -184,10 +186,15 @@ export class MapComponent implements OnInit {
           graphics.endFill();
           graphics.interactive = true;
           baseLayer.addChild(graphics);
-          graphics.on('click', (e)=>{
+
+          graphics.on('click', () => {
+            if (MapComponent.dragOn) {
+              return ;
+            }
+
             MapComponent.scope.selectSection(json[line][cell]);
-            console.log(graphics);
           });
+
           baseLayer.addChild(graphics);
         }
       }
@@ -502,8 +509,6 @@ export class MapComponent implements OnInit {
   setup(): void {
     let map = MapComponent.create(MapComponent.jsonSections);
 
-    console.log(map);
-
     MapComponent.setPositions(map);
 
     MapComponent.appPixi.stage.addChild(map);
@@ -545,15 +550,17 @@ export class MapComponent implements OnInit {
 
     map.on('drag-start', () => {
       document.body.classList.add('disable-text-select');
+      MapComponent.dragOn = true;
     });
 
     map.on('drag-end', () => {
       document.body.classList.remove('disable-text-select');
+      MapComponent.dragOn = false;
     });
 
     //TODO: to handle click on the section
     map.on('clicked', (event) => {
-
+      console.log('clicked');
     });
 
     window.onresize = () => {
