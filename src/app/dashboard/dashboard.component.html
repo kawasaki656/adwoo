@@ -4,6 +4,7 @@
       <div class="item" id="adwoo">
         <a href="/" id="logo" style="display: inline"><img src="../assets/icons/adwoo.png"></a>
         <a href="/"><span>AdWoo</span></a>
+        <span id="back">back</span>
       </div>
       <div class="item">
         <div id="avatar">
@@ -183,36 +184,7 @@
       <div class="content" *ngIf="state === 'account'">
         <div class="col-md-3" id="left">
           <div id="inner">
-            <form id="form">
-              <b style="margin-top: 0">First name:</b>
-              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
-              <br>
-              <b>Last name:</b>
-              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
-              <br>
-              <b>Gender:</b>
-              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
-              <br>
-              <b>Username:</b>
-              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
-              <br>
-              <b>Email:</b>
-              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
-              <br>
-              <b>Password:</b>
-              <input ngModel name="firstname" #firstname="ngModel" type="password" class="input" placeholder="First name">
-              <br>
-              <b>Password confirmation:</b>
-              <input ngModel name="firstname" #firstname="ngModel" type="password" class="input" placeholder="First name">
-              <br>
-              <b>Language:</b>
-              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
-              <br>
-              <b>Birthday:</b>
-              <input ngModel name="firstname" #firstname="ngModel" type="text" class="input" placeholder="First name">
-              <button class="input" id="cancel">Cancel</button>
-              <button class="input">Save</button>
-            </form>
+            <personal-data-form></personal-data-form>
           </div>
         </div>
         <div class="col-md-6" id="center">
@@ -317,16 +289,63 @@
                 </div>
 
                 <div class="settings">
+
                   <div class="setting">
                     <span>Status:</span>
-                    <input type="text">
+                      <mat-select name="status" [(value)]="property.status" [(ngModel)]="property.status" #property="ngModel">
+                          <mat-option value="m">1</mat-option>
+                          <mat-option value="w">2</mat-option>
+                          <mat-option>3</mat-option>
+                      </mat-select>
+                  </div>
+                  <div class="setting">
+                    <span>Current city:</span>
+                      <mat-select name="status" [(value)]="property.city" [(ngModel)]="property.city" #property="ngModel">
+                          <mat-option value="m">1</mat-option>
+                          <mat-option value="w">2</mat-option>
+                          <mat-option>3</mat-option>
+                      </mat-select>
+                  </div>
+                  <div class="setting">
+                    <span>Language:</span>
+                      <mat-select name="status" [(value)]="property.language" [(ngModel)]="property.language" #property="ngModel">
+                          <mat-option value="m">1</mat-option>
+                          <mat-option value="w">2</mat-option>
+                          <mat-option>3</mat-option>
+                      </mat-select>
+                  </div>
+                  <div class="setting">
+                    <span>Hometown:</span>
+                      <mat-select name="status" [(value)]="property.hometown" [(ngModel)]="property.hometown" #property="ngModel">
+                          <mat-option value="m">1</mat-option>
+                          <mat-option value="w">2</mat-option>
+                          <mat-option>3</mat-option>
+                      </mat-select>
+                  </div>
+                  <div class="setting full">
+                    <span>Profession:</span>
+                    <mat-form-field class="example-full-width">
+                      <input matInput [(value)]="property.profession" [(ngModel)]="property.profession" #property="ngModel">
+                    </mat-form-field>
+                  </div>
+                  <div class="setting">
+                    <mat-checkbox>Show my birthday</mat-checkbox>
                   </div>
                 </div>
               </div>
               <div class="right">
-
+                <div class="information">
+                  <span>Information:</span>
+                  <div class="text">
+                    Infromation text
+                  </div>
+                </div>
               </div>
               <div class="clearfix"></div>
+            </div>
+            <div class="footer">
+              <button>Save</button>
+              <button class="cancel">Cancel</button>
             </div>
           </div>
 

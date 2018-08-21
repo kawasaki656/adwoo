@@ -29,6 +29,9 @@ import { StartTutorialManager } from './services/startTutorialManager';
 import { NotificationsService } from './services/notifications.service';
 import { ProfileComponent } from './header/profile/profile.component';
 
+import { UserModule } from './user/user.module';
+import { MaterialModule } from './material.module';
+
 const ROUTES:Routes = [
   {
     path: '',
@@ -67,7 +70,11 @@ const ROUTES:Routes = [
     BootstrapModalModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(ROUTES)
+    UserModule,
+    MaterialModule,
+    RouterModule.forRoot(ROUTES),
+  ],
+  exports: [
   ],
   entryComponents: [ConfirmComponent, MyProperty, ObjectInformation,  StartTips, SuccessTip],
   providers: [NavigationService, ScreenService, StartTutorialManager, NotificationsService],

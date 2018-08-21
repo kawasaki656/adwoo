@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
+interface Property {
+    status: String
+}
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +14,12 @@ export class DashboardComponent implements OnInit {
 
   state: string;
   ifAccountChecked: boolean;
-  constructor() {}
+  property: Property;
+  constructor() {
+    this.property = {
+      status: "new"
+    }
+  }
 
 
   ngOnInit() {

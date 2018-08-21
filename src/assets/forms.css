@@ -1,0 +1,82 @@
+form.adwoo {
+  --font-size: 14px;
+
+  width: 100%;
+  font-family: sans-serif;
+}
+
+form.adwoo .form-group > label {
+  padding: 0;
+  position: static;
+  font-size: var(--font-size);
+  color: var(--dark-text-color);
+  font-weight: 400;
+  display: block;
+  height: auto;
+  line-height: normal;
+  margin: 0 0 9px 0;
+  cursor: default;
+  text-align: left;
+}
+
+form.adwoo .form-group input {
+  height: 35px;
+  font-size: var(--font-size);
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 1px solid rgb(234, 234, 234);
+  border-radius: 3px;
+}
+
+form.adwoo .form-group > .feedback {
+  font-size: 14px;
+  height: 15px;
+  margin-top: 5px;
+  text-align: left;
+}
+
+form.adwoo .form-group > .feedback > i {
+  margin-right: 5px;
+}
+
+form.adwoo .form-group > .feedback.valid {
+  color: #00b742;
+}
+
+form.adwoo .form-group > .feedback.invalid {
+  color: #f72332;
+}
+
+form.adwoo .buttons-group {
+  height: 65px;
+  border-top: solid 1px #ededed;
+  padding-top: 17px;
+}
+
+form.adwoo .buttons-group button {
+  width: 30%;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  float: right;
+}
+
+form.adwoo .buttons-group button.submit {
+  color: white;
+  background: linear-gradient(to left, #fc7858, #fd4e75);
+  margin-right: 9%;
+}
+
+form.adwoo .buttons-group button.cancel {
+  border: 1px solid rgb(234, 234, 234);
+  background: white;
+  color: #d9d8d8;
+  margin-right: 3%;
+}
+
+button:hover {
+  opacity: .8;
+}
