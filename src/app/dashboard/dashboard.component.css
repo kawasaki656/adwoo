@@ -533,14 +533,15 @@ button:hover {
   border-bottom: 1px solid rgb(234, 234, 234);
 }
 .content .property .wrapper .card .left .gallery .item {
-  display: inline-block;
-  float: left;
-  height: 117px;
-  width: 21%;
-  background: #e9e9e9;;
-  box-sizing: border-box;
-  overflow: hidden;
-  border: 7px solid white
+    display: inline-block;
+    float: left;
+    height: 117px;
+    width: 21%;
+    background: #e9e9e9;;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 7px solid white;
+    border-radius: 14px;
 }
 .content .property .wrapper .card .left .gallery .item.main {
   width: 37%;
@@ -556,8 +557,14 @@ button:hover {
   text-align: center;
 }
 .content .property .wrapper .card .left .gallery .item.add {
+  position: relative;
   background: linear-gradient(to left, #fc7858, #fd4e75);
-  border-radius: 14px;
+}
+.content .property .wrapper .card .left .gallery .item.add img {
+  position: absolute;
+  left: 50%;
+  margin-left: 0px;
+  height: 80px;
 }
 .content .property .wrapper .card .left .gallery .item.main img {
   transform: translate(-50%, -50%) scale(.7);
@@ -589,15 +596,19 @@ button:hover {
   margin-bottom: 10px;
 }
 .content .property .wrapper .card .left .interests .add-input button {
-  display: inline-block;
-  float: left;
-  margin: 0;
-  width: 30px;
-  height: 30px;
-  border-radius: 0;
-  background: linear-gradient(to left, #fc7858, #fd4e75);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding-left: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 0;
+    background: linear-gradient(to left, #fc7858, #fd4e75);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.content .property .wrapper .card .left .interests .add-input button img {
+    height: 18px;
 }
 .content .property .wrapper .card .left .interests .list button {
   display: inline-block;
@@ -650,4 +661,7 @@ button:hover {
   width: 70px;
   height: 3px;
   background: linear-gradient(to left, #fc7858, #fd4e75);
+}
+.content .property .wrapper {
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
 }
