@@ -324,12 +324,17 @@
                   </div>
                   <div class="setting full">
                     <span>Profession:</span>
-                    <mat-form-field class="example-full-width">
+                    <mat-form-field>
                       <input matInput [(value)]="property.profession" [(ngModel)]="property.profession" #property="ngModel">
                     </mat-form-field>
                   </div>
                   <div class="setting">
                     <mat-checkbox>Show my birthday</mat-checkbox>
+                  </div>
+                  <div class="setting">
+                    <mat-form-field>
+                      <input matInput ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
+                    </mat-form-field>
                   </div>
                 </div>
               </div>

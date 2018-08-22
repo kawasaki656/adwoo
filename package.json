@@ -30,6 +30,7 @@
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "ng2-bootstrap-modal": "^1.0.1",
+    "ngx-google-places-autocomplete": "^2.0.1",
     "pixi-viewport": "^2.7.0",
     "pixi.js": "^4.8.1",
     "rxjs": "^5.1.0",

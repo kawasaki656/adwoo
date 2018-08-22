@@ -31,6 +31,7 @@ import { ProfileComponent } from './header/profile/profile.component';
 
 import { UserModule } from './user/user.module';
 import { MaterialModule } from './material.module';
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 
 const ROUTES:Routes = [
   {
@@ -72,6 +73,7 @@ const ROUTES:Routes = [
     FormsModule,
     UserModule,
     MaterialModule,
+    GooglePlaceModule,
     RouterModule.forRoot(ROUTES),
   ],
   exports: [
